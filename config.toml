@@ -1,4 +1,8 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
+languageCode = "jp"
 title = "My New Hugo Site"
 theme = "learn"
+
+# github公開用
+publishDir = "docs"
+canonifyurls = true
