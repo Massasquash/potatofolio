@@ -1,7 +1,7 @@
 baseURL = "https://massasquash.github.io/potatofolio/"
 languageCode = "jp"
 title = "My New Hugo Site"
-theme = "learn"
+theme = "clarity"
 
 # github公開用
 publishDir = "docs"
