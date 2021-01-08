@@ -2,25 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Potatofolio</title>
-    <link>https://massasquash.github.io/potatofolio/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language>
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Category 1</title>
-      <link>https://massasquash.github.io/potatofolio/categories/category-1/</link>
+      <link>/categories/category-1/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/categories/category-1/</guid>
+      <guid>/categories/category-1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Category 2</title>
-      <link>https://massasquash.github.io/potatofolio/categories/category-2/</link>
+      <link>/categories/category-2/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/categories/category-2/</guid>
+      <guid>/categories/category-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugoブログ</title>
+      <link>/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/</guid>
       <description></description>
     </item>
     

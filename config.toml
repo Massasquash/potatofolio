@@ -1,96 +1,71 @@
-baseURL = "https://massasquash.github.io/potatofolio/"
-# baseurl = "/"
-# languageCode = "ja"
-defaultContentLanguage = "ja"
+baseurl = "/"
+# baseurl = "https://massasquash.github.io/potatofolio/"
 title = "Potatofolio"
+languageCode = "ja"
+paginate = "10" # Number of posts per page
 theme = "mainroad"
-# paginate = "10" # Number of posts per page
+disqusShortname = "" # Enable comments by entering your Disqus shortname
+googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 # github公開用
 publishDir = "docs"
-# canonifyurls = true
 
-# Github example を元にカスタマイズ。 https://github.com/vimux/mainroad/
-disqusShortname = "" # Enable Disqus comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
-
-[Author] # Used in authorbox
+[Author]
   name = "Massa"
-  # bio = "John Doe's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
-  # avatar = "img/avatar.png"
+  bio = ""
+  avatar = "img/avatar.png"
 
 [Params]
-  # subtitle = "hogehogehogehoge" # Deprecated in favor of .Site.Params.logo.subtitle
-  # description = "John Doe's Personal blog about everything" # Site description. Used in meta description
-  copyright = "Massa" # Footer copyright holder, otherwise will use site title
-  opengraph = false # Enable OpenGraph if true
-  schema = true # Enable Schema
-  twitter_cards = false # Enable Twitter Cards if true
+  description = "My Learning And Development Note" # Description of your site
+  opengraph = true
+  twitter_cards = false
   readmore = true # Show "Read more" button in list if true
-  # authorbox = true # Show authorbox at bottom of pages if true
-  toc = true # Enable Table of Contents
-  pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
+  authorbox = true
+  pager = true
   post_meta = ["date", "categories"] # Order of post meta information
-  mainSections = ["post", "blog", "news"] # Specify section pages to show on home page and the "Recent articles" widget
-  dateformat = "2006-01-02" # Change the format of dates
-  mathjax = true # Enable MathJax
-  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
-  mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
-  googleFontsLink = "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" # Load Google Fonts
-  highlightColor = "" # Deprecated in favor of .Site.Params.style.vars.highlightColor
-  customCSS = ["css/custom.css"] # Include custom CSS files
-  customJS = ["js/custom.js"] # Include custom JS files
-
-[Params.style.vars]
-  highlightColor = "#2d91e2" # Override highlight color
-
-  # Override font-family sets. Secondary font-family set responsible for pre, code, kbd, and samp tags font
-  # Take care of different quotes OR escaping symbols in these params if necessary
-  fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
-  fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
 
 [Params.logo]
-  image = "img/page_logo.jpg" # Logo image. Path relative to "static"
-  title = "Potatofolio" # Logo title, otherwise will use site title
   subtitle = "My Learning And Development Note" # Logo subtitle
+  image = "img/page_logo.jpg" # Logo image. Path relative to "static"
 
 [Params.sidebar]
-  home = "right" # Configure layout for home page
-  list = "right"  # Configure layout for list pages
+  home = "right"   # Configure layout for home page
+  list = "right"   # Configure layout for list pages
   single = "right" # Configure layout for single pages
   # Enable widgets in given order
-  widgets = ["search", "categories", "taglist", "social"]
-  # alternatively "ddg-search" can be used, to search via DuckDuckGo
-  # widgets = ["ddg-search", "recent", "categories", "taglist", "social", "languages"]
+  widgets = ["ddg-search", "recent", "categories", "taglist", "social"]
 
 [Params.widgets]
   recent_num = 5 # Set the number of articles in the "Recent articles" widget
-  tags_counter = false # Enable counter for each tag in "Tags" widget
+  tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
 
 [Params.widgets.social]
   # Enable parts of social widget
   twitter = "massasquash"
-  instagram = "ohsakifarm"
   github = "Massasquash"
-  #note = "agrifeel_labo"
 
+# Custom social links
+[[Params.widgets.social.custom]]
+  title = "Note"
+  url = "https://note.com/agrifeel_labo"
+  #icon = "youtube.svg"
 
 [[Params.widgets.social.custom]]
   title = "Youtube"
   url = "https://www.youtube.com/channel/UCsu1mENsBiVFsdc-yq0a4Aw"
   #icon = "youtube.svg"
 
-[[Params.widgets.social.custom]]
-  title = "Note"
-  url = "https://note.com/agrifeel_labo"
-  #icon = "youtube.svg"
+
+# Style
+[Params.style.vars]
+  highlightColor = "#2d91e2" # Override highlight color
 
 
 # メインメニュー
 [[Menus.main]]
-  Name = "ホーム"
-  URL = "/posts/"
+  Name = "Home"
+  URL = "/"
 
 [[Menus.main]]
-  Name = "投稿一覧"
-  URL = "/"
+  Name = "Info"
+  URL = "/info/"

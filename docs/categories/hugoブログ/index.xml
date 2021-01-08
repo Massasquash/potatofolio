@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Potatofolio</title>
-    <link>/</link>
-    <description>Recent content on Potatofolio</description>
+    <title>Hugoブログ on Potatofolio</title>
+    <link>/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/</link>
+    <description>Recent content in Hugoブログ on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Hugoブログ]構築をはじめる</title>
       <link>/posts/hugo_blog_01/</link>
@@ -33,31 +33,6 @@ $ hugo new site &amp;lt;site-name&amp;gt; これでsite-nameというディレ�
 というところかもしれません。
 テーマの設定 先ほど作ったディレクトリ直下のthemesディレクトリに、githubのリモートリポジトリからテーマをクローンします。
 $ cd themes $ git clone https://github.</description>
-    </item>
-    
-    <item>
-      <title>Info</title>
-      <link>/info/</link>
-      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/info/</guid>
-      <description>Header a a
-a a
-a
-Markdown a
-b
-c
-d
-Code i = 1 j = [1, 2, 3, 4, 5] </description>
-    </item>
-    
-    <item>
-      <title>My Third Post</title>
-      <link>/posts/my-third-post/</link>
-      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/my-third-post/</guid>
-      <description>ccc ddd eee</description>
     </item>
     
   </channel>

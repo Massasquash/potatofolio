@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="ja">
+<html class="no-js" lang="en">
 <head>
 	<meta name="generator" content="Hugo 0.79.1" />
 	<meta charset="UTF-8">
@@ -7,20 +7,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta itemprop="name" content="Potatofolio">
-<meta itemprop="description" content="">
+	<meta name="description" content="My Learning And Development Note">
+		<meta property="og:title" content="Potatofolio" />
+<meta property="og:description" content="My Learning And Development Note" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+<meta property="og:updated_time" content="2021-01-08T00:00:00+00:00" />
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 
-	<link rel="stylesheet" href="/potatofolio/css/style.css">
-	<link rel="stylesheet" href="/potatofolio/css/custom.css">
-	<link rel="alternate" type="application/rss+xml" href="/potatofolio/index.xml" title="Potatofolio">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Potatofolio">
 
-	<link rel="shortcut icon" href="/potatofolio/favicon.ico">
+	<link rel="shortcut icon" href="/favicon.ico">
 		
 </head>
 <body class="body">
@@ -29,9 +32,9 @@
 	<div class="container header__container">
 		
 	<div class="logo logo--mixed">
-		<a class="logo__link" href="/potatofolio/" title="Potatofolio" rel="home">
+		<a class="logo__link" href="/" title="Potatofolio" rel="home">
 			<div class="logo__item logo__imagebox">
-					<img class="logo__img" src="/potatofolio/img/page_logo.jpg">
+					<img class="logo__img" src="/img/page_logo.jpg">
 				</div><div class="logo__item logo__text">
 					<div class="logo__title">Potatofolio</div>
 					<div class="logo__tagline">My Learning And Development Note</div>
@@ -41,20 +44,20 @@
 		
 <nav class="menu">
 	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
-		<span class="menu__btn-title" tabindex="-1">メニュー</span>
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
 	</button>
 	<ul class="menu__list">
-		<li class="menu__item">
-			<a class="menu__link" href="/potatofolio/posts/">
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/">
 				
-				<span class="menu__text">ホーム</span>
+				<span class="menu__text">Home</span>
 				
 			</a>
 		</li>
-		<li class="menu__item menu__item--active">
-			<a class="menu__link" href="/potatofolio/">
+		<li class="menu__item">
+			<a class="menu__link" href="/info/">
 				
-				<span class="menu__text">投稿一覧</span>
+				<span class="menu__text">Info</span>
 				
 			</a>
 		</li>
@@ -67,61 +70,112 @@
 			<div class="primary">
 			
 <main class="main list" role="main">
-	
-		<div class="warning">
-			<svg class="warning__icon icon icon-files" width="96" height="96" viewBox="0 0 384 384"><path d="m368 64h-224-16v16 288 16h16 224 16v-16-288-16zm-16 288h-192v-256h192zm-320-320h192v16h32v-32-16h-16-224-16v16 288 16h16 96v-32h-80zm144 272h160v-32h-160zm0-64h160v-32h-160zm0-64h160v-32h-160zm-128 64h64v-32h-64zm0-64h64v-32h-64zm0-64h64v-32h-64z"/></svg>
-			<h3 class="warning__headline">まだ何も投稿していません！</h3>
-			<div class="warning__text">
-				<p class="warning__description"><b>content</b> 以下のどこかのディレクトリに投稿を追加するとここに表示されます。デフォルトでは（最も投稿の多い）１つのセクション だけがメインページに表示されます。</p>
-				<p class="warning__tip"><b>ヒント:</b> 設定のパラメーター <b><a href="https://gohugo.io/functions/where/#mainsections" rel="nofollow noopener" target="_blank">mainSections</a></b> を使って好きな数だけセクションを表示させることもできます。</p>
-			</div>
-		</div>
-	
+	<article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/hugo_blog_01/" rel="bookmark">
+			[Hugoブログ]構築をはじめる
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-08T00:00:00Z">January 08, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/" rel="category">Hugoブログ</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		はじめに 学習・開発ブログとして、Hugoという静的サイトジェネレータを使って、ブログを構築していきます。
+導入の目的としては、
+ 学習・開発の履歴を残すため気楽にアウトプットできる場所を作りたい ローカルで、かつMarkdownで書ける気軽さ そのままポートフォリオとしても使えるもの  既存のブログサービス（Massa - Crieit）やQiitaも活用しているが、そちらにはまとめた情報をアップして、引き続き活用していきたいと思っています。
+今回のアジェンダ Hugo導入からテーマ選定、ローカルでの表示まで。
+Hugoの導入 参考書は、以前に技術書店で購入したコチラ。 Hugo で始める静的サイト構築入門~静的サイトジェネレーターで作る自作サイト~ - tucca - BOOTH
+ただ実は以前に試した経緯があったので、今回の構築ではHugoのインストールまで済んでいました。 初期設定から行いたい場合は、他のページを参考にしていただくのが良いかと思います。すみません。
+インストール済Hugoのアップデート そんな訳で、インストール済みのHugoアップデートから行います。
+以下を参照しました。 Hugoのアップデート方法 | B-log
+$ hugo version // バージョン確認 $ brew upgrade hugo // アップデートするコマンド サイトの構築 Hugoのインストールが終わったら、サイトの構築スタートです。
+cdでサイトを制作したいリポジトリに入って
+$ hugo new site &lt;site-name&gt; これでsite-nameというディレクトリ直下にサイトの元となるディレクトリ・ファイル群がズラーっと作られます。
+テーマ選び ブログのテーマを選んで設定していきます。 Complete List | Hugo Themes
+今回この中から「Mainload」というテーマを使わせていただくことにしました。
+テーマ決めで意識したことは、ブログ形式というよりはドキュメント形式が良いなというところでした。検索性を良くしたかったです。
+欲しい機能として、
+ カテゴリとタグ機能 検索バー  これに合致するデザインは豊富で、テーマを選ぶのが難しかったのですが、最終的な決め手は
+「設定のサンプルコードをそのまま使ってある程度形になっている」「カスタマイズの情報が詳しく書かれているページを見つけた」
+というところかもしれません。
+テーマの設定 先ほど作ったディレクトリ直下のthemesディレクトリに、githubのリモートリポジトリからテーマをクローンします。
+$ cd themes $ git clone https://github.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/hugo_blog_01/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/my-third-post/" rel="bookmark">
+			My Third Post
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-08T00:00:00Z">January 08, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/category-1/" rel="category">Category 1</a>, <a class="meta__link" href="/categories/category-2/" rel="category">Category 2</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		ccc ddd eee
+	</div>
+</article>
 </main>
 
 
 			</div>
 			<aside class="sidebar"><div class="widget-search widget">
-	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+	<form class="widget-search__form" role="search" method="get" action="https://duckduckgo.com/">
 		<label>
-			<input class="widget-search__field" type="search" placeholder="検索…" value="" name="q" aria-label="検索…">
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://massasquash.github.io/potatofolio/" />
+		<input type="hidden" name="sites" value="/"/>
 	</form>
 </div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/hugo_blog_01/">[Hugoブログ]構築をはじめる</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/my-third-post/">My Third Post</a></li>
+		</ul>
+	</div>
+</div>
 <div class="widget-categories widget">
-	<h4 class="widget__title">カテゴリー</h4>
+	<h4 class="widget__title">Categories</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item">
-				<a class="widget__link" href="/potatofolio/categories/category-1/">Category 1</a>
+				<a class="widget__link" href="/categories/category-1/">Category 1</a>
 			</li>
 			<li class="widget__item">
-				<a class="widget__link" href="/potatofolio/categories/category-2/">Category 2</a>
+				<a class="widget__link" href="/categories/category-2/">Category 2</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
 			</li>
 		</ul>
 	</div>
 </div>
 <div class="widget-taglist widget">
-	<h4 class="widget__title">タグ</h4>
+	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/potatofolio/tags/test/" title="Test">Test</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/test/" title="Test">Test</a>
 	</div>
 </div>
 <div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">ソーシャル</h4>
+	<h4 class="widget-social__title widget__title">Social</h4>
 	<div class="widget-social__content widget__content">
 		<div class="widget-social__item widget__item">
 			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/massasquash" target="_blank">
 				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
 				<span>Twitter</span>
-			</a>
-		</div>
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/ohsakifarm" target="_blank">
-				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
-				<span>Instagram</span>
 			</a>
 		</div>
 		<div class="widget-social__item widget__item">
@@ -133,14 +187,14 @@
 
 		
 		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Youtube" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCsu1mENsBiVFsdc-yq0a4Aw" target="_blank">
-				<span>Youtube</span>
+			<a class="widget-social__link widget__link btn" title="Note" rel="noopener noreferrer" href="https://note.com/agrifeel_labo" target="_blank">
+				<span>Note</span>
 			</a>
 		</div>
 		
 		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Note" rel="noopener noreferrer" href="https://note.com/agrifeel_labo" target="_blank">
-				<span>Note</span>
+			<a class="widget-social__link widget__link btn" title="Youtube" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCsu1mENsBiVFsdc-yq0a4Aw" target="_blank">
+				<span>Youtube</span>
 			</a>
 		</div>
 		
@@ -152,12 +206,12 @@
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2021 Massa.
-			<span class="footer__copyright-credits">このサイトは <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> と <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> テーマで生成されています。</span>
+			&copy; 2021 Potatofolio.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
 </footer>
 	</div>
-<script async defer src="/potatofolio/js/menu.js"></script>
-<script src="/potatofolio/js/custom.js"></script></body>
+<script async defer src="/js/menu.js"></script>
+</body>
 </html>
