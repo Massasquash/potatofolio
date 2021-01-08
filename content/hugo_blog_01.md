@@ -4,9 +4,6 @@ date: 2021-01-08
 description: "Hugo導入からテーマ選定、ローカルでの表示まで"
 categories:
   - "Hugoブログ"
-
-# Theme-Defined params
-comments: true
 ---
 
 ## はじめに
@@ -23,10 +20,10 @@ comments: true
 Hugo導入からテーマ選定、ローカルでの表示まで。
 
 ## Hugoの導入
-参考書は、以前に技術書店で購入したコチラ。
+参考書は、以前に技術書店で購入したコチラ。  
 [Hugo で始める静的サイト構築入門~静的サイトジェネレーターで作る自作サイト~ - tucca - BOOTH](https://booth.pm/ja/items/2368187)
 
-ただ実は以前に試した経緯があったので、今回の構築ではHugoのインストールまで済んでいました。
+ただ実は以前に試した経緯があったので、今回の構築ではHugoのインストールまで済んでいました。  
 初期設定から行いたい場合は、他のページを参考にしていただくのが良いかと思います。すみません。
 
 ## インストール済Hugoのアップデート
@@ -54,7 +51,7 @@ $ hugo new site <site-name>
 
 
 ## テーマ選び
-ブログのテーマを選んで設定していきます。
+ブログのテーマを選んで設定していきます。  
 [Complete List | Hugo Themes](https://themes.gohugo.io/)
 
 今回この中から「[Mainload](https://github.com/vimux/mainroad/)」というテーマを使わせていただくことにしました。

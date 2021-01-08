@@ -1,5 +1,4 @@
 # baseurl = "/"
-baseurl = "https://massasquash.github.io/potatofolio/"
 title = "Potatofolio"
 languageCode = "ja"
 paginate = "10" # Number of posts per page
@@ -8,7 +7,9 @@ disqusShortname = "" # Enable comments by entering your Disqus shortname
 googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 # github公開用
+baseurl = "https://massasquash.github.io/potatofolio/"
 publishDir = "docs"
+canonifyurls = true
 
 [Author]
   name = "Massa"
@@ -20,7 +21,8 @@ publishDir = "docs"
   opengraph = true
   twitter_cards = false
   readmore = true # Show "Read more" button in list if true
-  authorbox = true
+  authorbox = false
+  comments = true
   pager = true
   post_meta = ["date", "categories"] # Order of post meta information
 
