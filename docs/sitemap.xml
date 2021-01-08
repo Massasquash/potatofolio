@@ -4,14 +4,37 @@
   
   <url>
     <loc>https://massasquash.github.io/potatofolio/categories/</loc>
+    <lastmod>2021-01-08T15:07:04+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/categories/category-1/</loc>
+    <lastmod>2021-01-08T15:07:04+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/categories/category-2/</loc>
+    <lastmod>2021-01-08T15:07:04+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/my-third-post/</loc>
+    <lastmod>2021-01-08T15:07:04+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://massasquash.github.io/potatofolio/</loc>
+    <lastmod>2021-01-08T15:07:04+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://massasquash.github.io/potatofolio/tags/</loc>
+    <lastmod>2021-01-08T15:07:04+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/tags/test/</loc>
+    <lastmod>2021-01-08T15:07:04+09:00</lastmod>
   </url>
   
 </urlset>

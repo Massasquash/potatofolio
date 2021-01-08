@@ -4,6 +4,16 @@
     <title>Tags on Potatofolio</title>
     <link>https://massasquash.github.io/potatofolio/tags/</link>
     <description>Recent content in Tags on Potatofolio</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://massasquash.github.io/potatofolio/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Jan 2021 15:07:04 +0900</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://massasquash.github.io/potatofolio/tags/test/</link>
+      <pubDate>Fri, 08 Jan 2021 15:07:04 +0900</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/tags/test/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
