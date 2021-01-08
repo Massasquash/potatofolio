@@ -1,5 +1,5 @@
-baseurl = "/"
-# baseurl = "https://massasquash.github.io/potatofolio/"
+# baseurl = "/"
+baseurl = "https://massasquash.github.io/potatofolio/"
 title = "Potatofolio"
 languageCode = "ja"
 paginate = "10" # Number of posts per page

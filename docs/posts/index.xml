@@ -2,45 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Potatofolio</title>
-    <link>/posts/</link>
+    <link>https://massasquash.github.io/potatofolio/posts/</link>
     <description>Recent content in Posts on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[Hugoブログ]構築をはじめる</title>
-      <link>/posts/hugo_blog_01/</link>
-      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/hugo_blog_01/</guid>
-      <description>はじめに 学習・開発ブログとして、Hugoという静的サイトジェネレータを使って、ブログを構築していきます。
-導入の目的としては、
- 学習・開発の履歴を残すため気楽にアウトプットできる場所を作りたい ローカルで、かつMarkdownで書ける気軽さ そのままポートフォリオとしても使えるもの  既存のブログサービス（Massa - Crieit）やQiitaも活用しているが、そちらにはまとめた情報をアップして、引き続き活用していきたいと思っています。
-今回のアジェンダ Hugo導入からテーマ選定、ローカルでの表示まで。
-Hugoの導入 参考書は、以前に技術書店で購入したコチラ。 Hugo で始める静的サイト構築入門~静的サイトジェネレーターで作る自作サイト~ - tucca - BOOTH
-ただ実は以前に試した経緯があったので、今回の構築ではHugoのインストールまで済んでいました。 初期設定から行いたい場合は、他のページを参考にしていただくのが良いかと思います。すみません。
-インストール済Hugoのアップデート そんな訳で、インストール済みのHugoアップデートから行います。
-以下を参照しました。 Hugoのアップデート方法 | B-log
-$ hugo version // バージョン確認 $ brew upgrade hugo // アップデートするコマンド サイトの構築 Hugoのインストールが終わったら、サイトの構築スタートです。
-cdでサイトを制作したいリポジトリに入って
-$ hugo new site &amp;lt;site-name&amp;gt; これでsite-nameというディレクトリ直下にサイトの元となるディレクトリ・ファイル群がズラーっと作られます。
-テーマ選び ブログのテーマを選んで設定していきます。 Complete List | Hugo Themes
-今回この中から「Mainload」というテーマを使わせていただくことにしました。
-テーマ決めで意識したことは、ブログ形式というよりはドキュメント形式が良いなというところでした。検索性を良くしたかったです。
-欲しい機能として、
- カテゴリとタグ機能 検索バー  これに合致するデザインは豊富で、テーマを選ぶのが難しかったのですが、最終的な決め手は
-「設定のサンプルコードをそのまま使ってある程度形になっている」「カスタマイズの情報が詳しく書かれているページを見つけた」
-というところかもしれません。
-テーマの設定 先ほど作ったディレクトリ直下のthemesディレクトリに、githubのリモートリポジトリからテーマをクローンします。
-$ cd themes $ git clone https://github.</description>
-    </item>
-    
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Third Post</title>
-      <link>/posts/my-third-post/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/my-third-post/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/my-third-post/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/my-third-post/</guid>
       <description>ccc ddd eee</description>
     </item>
     

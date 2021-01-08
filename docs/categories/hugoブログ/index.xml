@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugoブログ on Potatofolio</title>
-    <link>/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/</link>
+    <link>https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/</link>
     <description>Recent content in Hugoブログ on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Hugoブログ]構築をはじめる</title>
-      <link>/posts/hugo_blog_01/</link>
+      <link>https://massasquash.github.io/potatofolio/hugo_blog_01/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/hugo_blog_01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/hugo_blog_01/</guid>
       <description>はじめに 学習・開発ブログとして、Hugoという静的サイトジェネレータを使って、ブログを構築していきます。
 導入の目的としては、
  学習・開発の履歴を残すため気楽にアウトプットできる場所を作りたい ローカルで、かつMarkdownで書ける気軽さ そのままポートフォリオとしても使えるもの  既存のブログサービス（Massa - Crieit）やQiitaも活用しているが、そちらにはまとめた情報をアップして、引き続き活用していきたいと思っています。
