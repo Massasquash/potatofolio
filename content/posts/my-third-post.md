@@ -1,6 +1,6 @@
 ---
 title: "My Third Post"
-date: 2021-01-08T15:07:04+09:00
+date: 2021-01-08
 description: "Example article description"
 categories:
   - "Category 1"
@@ -10,3 +10,5 @@ tags:
 ---
 
 ccc
+ddd
+eee

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Category 2 on Potatofolio</title>
-    <link>https://massasquash.github.io/potatofolio/categories/category-2/</link>
-    <description>Recent content in Category 2 on Potatofolio</description>
+    <title>Posts on Potatofolio</title>
+    <link>https://massasquash.github.io/potatofolio/posts/</link>
+    <description>Recent content in Posts on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/category-2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Third Post</title>
       <link>https://massasquash.github.io/potatofolio/posts/my-third-post/</link>

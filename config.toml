@@ -8,7 +8,7 @@ theme = "mainroad"
 
 # github公開用
 publishDir = "docs"
-canonifyurls = true
+# canonifyurls = true
 
 # Github example を元にカスタマイズ。 https://github.com/vimux/mainroad/
 disqusShortname = "" # Enable Disqus comments by entering your Disqus shortname
@@ -84,3 +84,13 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   title = "Note"
   url = "https://note.com/agrifeel_labo"
   #icon = "youtube.svg"
+
+
+# メインメニュー
+[[Menus.main]]
+  Name = "ホーム"
+  URL = "/posts/"
+
+[[Menus.main]]
+  Name = "投稿一覧"
+  URL = "/"
