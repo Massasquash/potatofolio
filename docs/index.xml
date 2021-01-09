@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Hugoブログ01]構築をはじめる</title>
-      <link>https://massasquash.github.io/potatofolio/hugo_blog_01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/hugo_blog_01/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/hugo_blog_01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog_01/</guid>
       <description>はじめに Hugoという静的サイトジェネレータを使って、ブログを構築してみました。
 導入の目的としては、
  学習・開発の履歴を残すため気楽にアウトプットできる場所を作りたい そのままポートフォリオとしても使えるもの ローカルで、かつMarkdownで書ける気軽さを重視  以前にHugoとPelicanを比較して試した経緯があったので、今回の構築を始める前にHugoのインストールは済んでいました。もし初期設定から行いたくて読んでいただいている場合は、他のページを参考にしていただくのが良いかもしれません。
@@ -41,10 +41,10 @@ Complete List | Hugo Themes
     
     <item>
       <title>[Hugoブログ02]GitHub Pagesで公開する</title>
-      <link>https://massasquash.github.io/potatofolio/hugo_blog_02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/hugo_blog_02/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/hugo_blog_02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog_02/</guid>
       <description>はじめに 前回、以下のコマンドでローカルサーバーにアクセスしてブラウザ表示させるところまでできました。
 hugo server -D 現状これだとブログはローカルでしか見られない状態（自分のPCからのみアクセスすることができる状態）なので、一般公開できる状態にしていきます。
 今回GitHub Pagesを利用しました。
