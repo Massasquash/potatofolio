@@ -75,7 +75,7 @@
 	<header class="list__header">
 		<h2 class="list__title post__title">
 			<a href="https://massasquash.github.io/potatofolio/hugo_blog_01/" rel="bookmark">
-			[Hugoブログ]構築をはじめる
+			[Hugoブログ01]構築をはじめる
 			</a>
 		</h2>
 		<div class="list__meta meta">
@@ -85,32 +85,58 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		はじめに 学習・開発ブログとして、Hugoという静的サイトジェネレータを使って、ブログを構築していきます。
+		はじめに Hugoという静的サイトジェネレータを使って、ブログを構築してみました。
 導入の目的としては、
- 学習・開発の履歴を残すため気楽にアウトプットできる場所を作りたい ローカルで、かつMarkdownで書ける気軽さ そのままポートフォリオとしても使えるもの  既存のブログサービス（Massa - Crieit）やQiitaも活用しているが、そちらにはまとめた情報をアップして、引き続き活用していきたいと思っています。
+ 学習・開発の履歴を残すため気楽にアウトプットできる場所を作りたい そのままポートフォリオとしても使えるもの ローカルで、かつMarkdownで書ける気軽さを重視  以前にHugoとPelicanを比較して試した経緯があったので、今回の構築を始める前にHugoのインストールは済んでいました。もし初期設定から行いたくて読んでいただいている場合は、他のページを参考にしていただくのが良いかもしれません。
 今回のアジェンダ Hugo導入からテーマ選定、ローカルでの表示まで。
-Hugoの導入 参考書は、以前に技術書店で購入したコチラ。
+Hugoとは？ 静的サイトジェネレータ（Static Site Generator）というツール。Go言語で実装されている。他の方が制作したテーマを使ってブログが作成できて、記事を書く時はローカルの使い慣れたエディタを使ってMarkdown形式で書くことができる。 ネットワークの知識やターミナル操作に慣れていないと難しいと思うが、練習にも良いと思う。
+Hugoの導入 導入する際に使った参考書は、以前に技術書店で購入したコチラ。
 Hugo で始める静的サイト構築入門~静的サイトジェネレーターで作る自作サイト~ - tucca - BOOTH
-ただ実は以前に試した経緯があったので、今回の構築ではHugoのインストールまで済んでいました。
-初期設定から行いたい場合は、他のページを参考にしていただくのが良いかと思います。すみません。
+知識を整理するためにとても良いなと思った書籍です。
+こちらのブログもわかりやすいです。
+Hugoでgh-pagesにブログを作ってみた · var StraySheep
 インストール済Hugoのアップデート そんな訳で、インストール済みのHugoアップデートから行います。
-以下を参照しました。 Hugoのアップデート方法 | B-log
-$ hugo version // バージョン確認 $ brew upgrade hugo // アップデートするコマンド サイトの構築 Hugoのインストールが終わったら、サイトの構築スタートです。
+$ hugo version // バージョン確認 $ brew upgrade hugo // アップデートするコマンド 参考 Hugoのアップデート方法 | B-log
+サイトの構築 Hugoのインストールが終わったら、サイトの構築スタートです。
 cdでサイトを制作したいリポジトリに入って
 $ hugo new site &lt;site-name&gt; これでsite-nameというディレクトリ直下にサイトの元となるディレクトリ・ファイル群がズラーっと作られます。
-テーマ選び ブログのテーマを選んで設定していきます。
+テーマ選び ブログのテーマを選んで設定していきます。以下にテーマが一覧で載っています。
 Complete List | Hugo Themes
 今回この中から「Mainload」というテーマを使わせていただくことにしました。
-テーマ決めで意識したことは、ブログ形式というよりはドキュメント形式が良いなというところでした。検索性を良くしたかったです。
-欲しい機能として、
- カテゴリとタグ機能 検索バー  これに合致するデザインは豊富で、テーマを選ぶのが難しかったのですが、最終的な決め手は
-「設定のサンプルコードをそのまま使ってある程度形になっている」「カスタマイズの情報が詳しく書かれているページを見つけた」
-というところかもしれません。
-テーマの設定 先ほど作ったディレクトリ直下のthemesディレクトリに、githubのリモートリポジトリからテーマをクローンします。
-$ cd themes $ git clone https://github.
+どんなブログにしたいかでテーマ決めをしてみます。
+僕はブログ形式というよりはドキュメント形式みたいなのが良いなと思っていました。検索性を良くしたかったです。
+ただ選んでいくうちに、ドキュメント形式よりもブログ形式の方が（気持ち的に）気楽に更新できるだろうと思って、ブログ形式で検索性の良いものを探すことにしました。
+これに合致するデザインは豊富で、テーマを選ぶのが難しいです。
+欲しい機能を洗い出すと、
+ カテゴリとタグ機能 検索バー  この辺り。
 	</div>
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="https://massasquash.github.io/potatofolio/hugo_blog_01/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="https://massasquash.github.io/potatofolio/hugo_blog_02/" rel="bookmark">
+			[Hugoブログ02]GitHub Pagesで公開する
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-08T00:00:00Z">January 08, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/" rel="category">Hugoブログ</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		はじめに 前回、以下のコマンドでローカルサーバーにアクセスしてブラウザ表示させるところまでできました。
+hugo server -D 現状これだとブログはローカルでしか見られない状態（自分のPCからのみアクセスすることができる状態）なので、一般公開できる状態にしていきます。
+今回GitHub Pagesを利用しました。
+今回のアジェンダ x
+GitHub Pagesとは？ GitHubアカウントがあれば、リポジトリを作成することで簡単に静的サイトを公開できるツール。通常自前のサイトを公開するにはレンタルサーバーを借りてファイルをアップロードしたりする必要があるが、Github Pagesだとその手間がなく基本的に無料で公開できる。
+ Hugo + GitHub Pagesでのサイト構築は、 Hugoでgh-pagesにブログを作ってみた · var StraySheep
+GitHubリポジトリの準備 GitHubのページで、ブログ用のリポジトリを制作しておきます。
+設定ファイルconfig.tomlに公開用設定を記述 config.toml
+baseurl = &#34;http://&lt;GitHubに登録している名前&gt;.github.io/&#34; # github-pagesでのURL publishDir = &#34;docs&#34; # 公開用ディレクトリをdocsに指定 canonifyurls = true # CSSを反映させるために必要 アップロードした後に「CSSが反映されていない」ということが起こったら、この設定ファイルを見直すと良さそうです。
+ baseurlのパスの最後の/が抜けていないか cononifyurlsをtrueにしているか  おわりに 今回はここまで。 今後、Github pagesを使って公開したり、テーマをカスタマイズしていったりします。
 	</div>
 </article>
 </main>
@@ -127,34 +153,14 @@ $ cd themes $ git clone https://github.
 		<input type="hidden" name="sites" value="https://massasquash.github.io/potatofolio/"/>
 	</form>
 </div>
-<div class="widget-recent widget">
-	<h4 class="widget__title">Recent Posts</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/my-third-post/">My Third Post</a></li>
-		</ul>
-	</div>
-</div>
 <div class="widget-categories widget">
 	<h4 class="widget__title">Categories</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item">
-				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/category-1/">Category 1</a>
-			</li>
-			<li class="widget__item">
-				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/category-2/">Category 2</a>
-			</li>
-			<li class="widget__item">
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
 			</li>
 		</ul>
-	</div>
-</div>
-<div class="widget-taglist widget">
-	<h4 class="widget__title">Tags</h4>
-	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/test/" title="Test">Test</a>
 	</div>
 </div>
 <div class="widget-social widget">
