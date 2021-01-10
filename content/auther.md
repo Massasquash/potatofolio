@@ -45,7 +45,7 @@ pager: false
 ★ [Github](https://github.com/Massasquash)  
 ★ [開発・学習記録（このHUGOブログ）](https://massasquash.github.io/potatofolio/)  
 
-※[Crieit](https://crieit.net/users/massasquash)という技術ブログ投稿サイトもSNS的にこのHUGOブログと同記事を投稿しています。
+※[Crieit](https://crieit.net/users/massasquash)という技術ブログ投稿サイトも活用しています（基本的にこのHUGO記事の内容を投稿）
 
 **＜農業風景（ぼちぼち更新）＞**  
 ★ [Instagram](https://www.instagram.com/ohsakifarm/)  

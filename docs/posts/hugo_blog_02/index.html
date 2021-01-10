@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-08T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="615">
+<meta itemprop="wordCount" content="2550">
 
 
 
@@ -95,9 +95,12 @@
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#github-pagesとは">GitHub Pagesとは？</a></li>
-    <li><a href="#heading"></a></li>
     <li><a href="#githubリポジトリの準備">GitHubリポジトリの準備</a></li>
     <li><a href="#設定ファイルconfigtomlに公開用設定を記述">設定ファイルconfig.tomlに公開用設定を記述</a></li>
+    <li><a href="#gitの初期設定とリモートリポジトリとの紐付け">gitの初期設定とリモートリポジトリとの紐付け</a></li>
+    <li><a href="#githubリポジトリでpagesで公開するための設定">GitHubリポジトリでPagesで公開するための設定</a></li>
+    <li><a href="#ビルドを行いリモートリポジトリへプッシュする">ビルドを行い、リモートリポジトリへプッシュする</a></li>
+    <li><a href="#コラムビルドの仕組み">（コラム）ビルドの仕組み</a></li>
     <li><a href="#おわりに">おわりに</a></li>
   </ul>
 </nav>
@@ -111,22 +114,92 @@
 <p>今回<code>GitHub Pages</code>を利用しました。</p>
 <h2 id="github-pagesとは">GitHub Pagesとは？</h2>
 <p>GitHubアカウントがあれば、リポジトリを作成することで簡単に静的サイトを公開できるツール。通常自前のサイトを公開するにはレンタルサーバーを借りてファイルをアップロードしたりする必要があるが、Github Pagesだとその手間がなく基本的に無料で公開できる。</p>
-<h2 id="heading"></h2>
-<p>Hugo + GitHub Pagesでのサイト構築は、
-<a href="http://straysheep3.github.io/post/hugo-gh-pages-blog-create/">Hugoでgh-pagesにブログを作ってみた · var StraySheep</a></p>
+<p>Hugo + GitHub Pagesでのサイト構築は、この辺りを参考にさせていただいています。
+<a href="https://qiita.com/ysdyt/items/a581277dd1312a0e83c3">Hugo + GitHub Pages（独自ドメイン適応）でサイトを作成・公開する - Qiita</a></p>
+<p>こちらが公式。
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on GitHub | Hugo</a></p>
 <h2 id="githubリポジトリの準備">GitHubリポジトリの準備</h2>
-<p><a href="https://github.com/">GitHub</a>のページで、ブログ用のリポジトリを制作しておきます。</p>
+<p>まずは事前準備として、<a href="https://github.com/">GitHub</a>のページで、ブログ用のリポジトリを制作しておきます。publicリポジトリで作らないと公開できなさそうです。</p>
+<p>ここで制作したリポジトリ名が、公開した時のサイトURLになります。
+<code>https://&lt;GitHubユーザー名&gt;.github.io/&lt;リポジトリ名&gt;/</code></p>
+<p>こんなURLになります。<br>
+後から設定すれば独自ドメインを利用することもできるようですね。</p>
+<p>また、GitHub Pagesを使って公開するやり方には現在２種類あり、</p>
+<ul>
+<li>Hugoで作ったファイル全てをmainブランチに公開する方法</li>
+<li>公開するフォルダのみをGithubに公開するgh-pagesブランチを使う方法</li>
+</ul>
+<p>がありますが、簡単なため前者のやり方で実装します。</p>
+<p>※いろんな記事を参照するときは、GitHubのブランチ名が「master」「main」で混在しているので、更新日に注意。2020年10月からGitHubのデフォルトブランチ名は「main」になっています。</p>
 <h2 id="設定ファイルconfigtomlに公開用設定を記述">設定ファイルconfig.tomlに公開用設定を記述</h2>
-<p><strong>config.toml</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseurl</span> = <span style="color:#e6db74">&#34;http://&lt;GitHubに登録している名前&gt;.github.io/&#34;</span> <span style="color:#75715e"># github-pagesでのURL</span>
+<p>設定ファイル<code>config.toml</code>に、ブログ公開のための設定を記述しておきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseurl</span> = <span style="color:#e6db74">&#34;`https://&lt;GitHubユーザー名&gt;.github.io/&lt;リポジトリ名&gt;/`&#34;</span> <span style="color:#75715e"># github-pagesで公開するURL</span>
 <span style="color:#a6e22e">publishDir</span> = <span style="color:#e6db74">&#34;docs&#34;</span> <span style="color:#75715e"># 公開用ディレクトリをdocsに指定</span>
 <span style="color:#a6e22e">canonifyurls</span> = <span style="color:#66d9ef">true</span> <span style="color:#75715e"># CSSを反映させるために必要</span>
-</code></pre></div><p>アップロードした後に「CSSが反映されていない」ということが起こったら、この設定ファイルを見直すと良さそうです。</p>
+</code></pre></div><p>後ほどでアップロードした後に「CSSが反映されていない」ということが起こることがあるのですが、その際にはこの設定ファイルを見直すと良さそうです。</p>
 <ul>
 <li>baseurlのパスの最後の<code>/</code>が抜けていないか</li>
-<li>cononifyurlsをtrueにしているか</li>
+<li>cononifyurlsをtrue（絶対パス指定）にしているか</li>
 </ul>
+<p>パスの指定が重要、ということでしょうか。</p>
+<p>参考
+<a href="http://straysheep3.github.io/post/hugo-gh-pages-blog-create/">Hugoでgh-pagesにブログを作ってみた · var StraySheep</a></p>
+<h2 id="gitの初期設定とリモートリポジトリとの紐付け">gitの初期設定とリモートリポジトリとの紐付け</h2>
+<p>ここからはコマンドラインで操作します。<br>
+（gitのインストールは済んでいる前提になります）</p>
+<p>まずは、gitの初期化をします。<code>config.toml</code>のあるディレクトリにいることを確認してから</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
+</code></pre></div><p>これでディレクトリに隠しファイル<code>.git</code>が作成されて、gitでのバージョン管理ができる状態になりました。次に、ステージングとコミット。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add .
+git commit -m <span style="color:#e6db74">&#34;First commit&#34;</span>
+</code></pre></div><p>次に、ローカルファイルをGitHubリポジトリにプッシュして両者を紐付けします。GitHubでリポジトリを作った時に出てきたページの、真ん中らへんにある「push an existing repository from the command line」の部分をコピペして実行出来ます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add origin https://github.com/&lt;GitHubユーザー名&gt;/&lt;リポジトリ名&gt;.git
+git branch -M main
+git push -u origin main
+</code></pre></div><h2 id="githubリポジトリでpagesで公開するための設定">GitHubリポジトリでPagesで公開するための設定</h2>
+<p>[TODO]詳細記述</p>
+<p>「Settings」タブに移動して、そのまま下へスクロールしていくと下の方に「GitHub Pages」という項目があります。そこで色々設定。</p>
+<p>ちょっと省略。</p>
+<p>参考までに、僕の状態です。</p>
+<p>![aaa][1]
+[1]: posts/20210110_ghp.png</p>
+<h2 id="ビルドを行いリモートリポジトリへプッシュする">ビルドを行い、リモートリポジトリへプッシュする</h2>
+<p>再びコマンドライン操作に戻ります。<code>hugo</code>コマンドを打ち込むだけで、ビルドが自動で行われます（ビルドについては後述）。<br>
+この<code>hugo</code>コマンドは今後も使いますが、<code>config.toml</code>のあるディレクトリにいないと出来ないので、注意です。</p>
+<pre><code>hugo
+</code></pre><p>これで、手元にあるHugoで作成したファイル群（元となるソースコード）からWebに公開するために必要なファイル群（HTMLやCSSなど）が生成された、と考えれば良さそうです。
+<code>docs</code>というディレクトリに、公開するファイルが出来ているはず。</p>
+<p>最後にステージング、コミット、プッシュの一連の</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add .
+git commit -m <span style="color:#e6db74">&#34;First Build&#34;</span>
+git push origin main
+</code></pre></div><p>これで、OKのはずです。
+反映されるまで少し時間がかかると思いますが、
+<code>https://&lt;GitHubユーザー名&gt;.github.io/&lt;リポジトリ名&gt;/</code></p>
+<h2 id="コラムビルドの仕組み">（コラム）ビルドの仕組み</h2>
+<p>[TODO]ビルドについて調べる</p>
+<p>Hugoのビルドの仕組みがわかりやすそうだったので抜粋してみました。
+<a href="~https://dev.to/mshr_h/hugo-github-pages-35me~">Hugo+Github Pagesで新しい個人ウェブサイトを作った - DEV Community</a></p>
+<blockquote>
+<p>hugoでビルドしたページはpublic/ディレクトリに生成される。このディレクトリをusername.github.ioにプッシュすることで、GitHub Pagesが更新される。
+hugoで作成したblogディレクトリをリモートのblog/リポジトリに紐付け、public/ディレクトリをusername.github.ioリポジトリに紐付ける。</p>
+</blockquote>
+<p>上記にはpublicディレクトリとありますが、おそらく新しい情報だとこれがdocsディレクトリである必要がありそうです。</p>
 <h2 id="おわりに">おわりに</h2>
+<p>途中[TODO]として端折っている項目は、今後修正していきたいところです。<br>
+今後は記事の更新についてと、テーマのカスタマイズについて。</p>
+<hr>
+<p>MEMO</p>
+<ul>
+<li>
+<p>git関連の理解
+<a href="https://oldbigbuddha.dev/posts/for-git-beginners">何も考えずにGitでaddしてcommitしてpushしてるだけのあなたへ | Simple is Best</a></p>
+</li>
+<li>
+<p>ビルドの理解
+<a href="https://wa3.i-3-i.info/word12775.html">ビルド (build)とは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典</a></p>
+</li>
+</ul>
 
 		</div>
 	</article>

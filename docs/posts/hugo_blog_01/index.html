@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-08T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1759">
+<meta itemprop="wordCount" content="2380">
 
 
 
@@ -101,10 +101,11 @@
         <li><a href="#インストール済hugoのアップデート">インストール済Hugoのアップデート</a></li>
         <li><a href="#サイトの構築">サイトの構築</a></li>
         <li><a href="#テーマ選び">テーマ選び</a></li>
-        <li><a href="#テーマの設定">テーマの設定</a></li>
+        <li><a href="#テーマ選びと設定">テーマ選びと設定</a></li>
         <li><a href="#ローカルで出力">ローカルで出力</a></li>
       </ul>
     </li>
+    <li><a href="#コラムテーマ選びで考えたこと">（コラム）テーマ選びで考えたこと</a></li>
     <li><a href="#おわりに">おわりに</a>
       <ul>
         <li><a href="#memo">MEMO</a></li>
@@ -160,8 +161,11 @@ $ brew upgrade hugo  // アップデートするコマンド
 後からカスタマイズもできますが、あまり難しいカスタマイズは自信がなかったので、この辺りがでもページにも載っていて実装しやすいものにしました。最終的な決め手は</p>
 <p>「設定のサンプルコードをそのまま使ってある程度形になっている」「カスタマイズの情報が詳しく書かれているページを見つけた」</p>
 <p>というところかもしれません。</p>
-<h3 id="テーマの設定">テーマの設定</h3>
-<p>先ほど作ったディレクトリ直下の<code>themes</code>ディレクトリに、githubのリモートリポジトリからテーマをクローンします。</p>
+<h3 id="テーマ選びと設定">テーマ選びと設定</h3>
+<p>ブログのテーマを選んで設定していきます。以下にテーマが一覧で載っています。<br>
+<a href="https://themes.gohugo.io/">Complete List | Hugo Themes</a></p>
+<p>今回この中から「<a href="https://github.com/vimux/mainroad/">Mainload</a>」というテーマを使わせていただくことにしました（選んだ理由は後述）。<br>
+先ほど作ったディレクトリ直下の<code>themes</code>ディレクトリに、githubのリモートリポジトリからテーマをクローンします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd themes
 $ git clone https://github.com/Vimux/Mainroad.git mainroad
 $ rm -rf mainroad/.git
@@ -172,13 +176,28 @@ $ rm -rf mainroad/.git
 <pre><code class="language-tomi" data-lang="tomi">theme = &quot;mainroad&quot;
 </code></pre><p>と記述します。この<code>mainroad</code>は、themesディレクトリにクローンしてきた際に作ったディレクトリ名になります。</p>
 <h3 id="ローカルで出力">ローカルで出力</h3>
-<p>これでひとまず、ローカルで確認できるはずです。</p>
+<p>これでひとまず、ローカルで確認できるはずです。
+<code>pdw</code>コマンドで<code>config.toml</code>のあるディレクトリにいることを確認してから
+（うっかりテーマのディレクトリに移動した状態のままコマンド実行して「出来ない！」となったりするので注意です）</p>
 <pre><code>hugo server -D
 </code></pre><p>この<code>-D</code>オプションは、ドラフト状態の記事も表示させる、というオプションらしいです。<br>
 ターミナルに出力されている<code>http://localhost:1313</code>のようなアドレス（ローカルサーバーのURL？）をChromeなどブラウザで開くと、ひとまず表示させることができています。</p>
+<h2 id="コラムテーマ選びで考えたこと">（コラム）テーマ選びで考えたこと</h2>
+<p>どんなブログにしたいかでテーマ決めをしましたが、数が多くどれも魅力的で結構悩みます。</p>
+<p>最初はブログ形式というよりはドキュメント形式みたいなのが良いなと思っていました。検索性を良くしたかったです。<br>
+ただ選んでいくうちに、ブログ形式の方が気持ち的に気楽に更新できるだろうと思って、「読み方がドキュメント形式に近いブログ形式」（伝わりますかね？）で検索性の良いものを探すことにしました。</p>
+<p>欲しい機能を洗い出すと、</p>
+<ul>
+<li>カテゴリ機能があり、カテゴリが一覧で常に表示される（プロジェクトごとにカテゴリで管理したいため）</li>
+<li>検索バーは欲しい</li>
+</ul>
+<p>このくらいでした。後からカスタマイズもできますが、あまり難しいカスタマイズは自信がなかったので、この辺りがでもページにも載っていて実装しやすいものにしました。最終的な決め手は</p>
+<p>「設定のサンプルコードをそのまま使ってある程度形になっている」「カスタマイズの情報が詳しく書かれているページを見つけた」</p>
+<p>というところかもしれません。</p>
 <h2 id="おわりに">おわりに</h2>
 <p>今回はここまで。
 今後、Github pagesを使って公開したり、テーマをカスタマイズしていったりします。</p>
+<hr>
 <h3 id="memo">MEMO</h3>
 <p>調べていて言語化しておきたい用語など</p>
 <ul>
