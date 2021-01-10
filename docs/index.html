@@ -7,12 +7,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="My Learning And Development Note">
+	<meta name="description" content="">
 		<meta property="og:title" content="Potatofolio" />
-<meta property="og:description" content="My Learning And Development Note" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://massasquash.github.io/potatofolio/" />
 <meta property="og:updated_time" content="2021-01-08T00:00:00+00:00" />
+
+		<meta itemprop="name" content="Potatofolio">
+<meta itemprop="description" content="">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -37,7 +40,7 @@
 					<img class="logo__img" src="https://massasquash.github.io/potatofolio/img/page_logo.jpg">
 				</div><div class="logo__item logo__text">
 					<div class="logo__title">Potatofolio</div>
-					<div class="logo__tagline">My Learning And Development Note</div>
+					<div class="logo__tagline">Agrifeel-LABO - My Learning And Development Note</div>
 				</div>
 		</a>
 	</div>
@@ -55,9 +58,9 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="https://massasquash.github.io/potatofolio/info/">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/auther/">
 				
-				<span class="menu__text">Info</span>
+				<span class="menu__text">auther</span>
 				
 			</a>
 		</li>
@@ -77,6 +80,7 @@
 			[Hugoブログ01]構築をはじめる
 			</a>
 		</h2>
+		<p class="list__lead post__lead">Hugo導入からテーマ選定、ローカルでの表示まで</p>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-08T00:00:00Z">January 08, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/" rel="category">Hugoブログ</a>
@@ -84,33 +88,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		はじめに Hugoという静的サイトジェネレータを使って、ブログを構築してみました。
-導入の目的としては、
- 学習・開発の履歴を残すため気楽にアウトプットできる場所を作りたい そのままポートフォリオとしても使えるもの ローカルで、かつMarkdownで書ける気軽さを重視  以前にHugoとPelicanを比較して試した経緯があったので、今回の構築を始める前にHugoのインストールは済んでいました。もし初期設定から行いたくて読んでいただいている場合は、他のページを参考にしていただくのが良いかもしれません。
-今回のアジェンダ Hugo導入からテーマ選定、ローカルでの表示まで。
-Hugoとは？ 静的サイトジェネレータ（Static Site Generator）というツール。Go言語で実装されている。他の方が制作したテーマを使ってブログが作成できて、記事を書く時はローカルの使い慣れたエディタを使ってMarkdown形式で書くことができる。 ネットワークの知識やターミナル操作に慣れていないと難しいと思うが、練習にも良いと思う。
-Hugoの導入 導入する際に使った参考書は、以前に技術書店で購入したコチラ。
-Hugo で始める静的サイト構築入門~静的サイトジェネレーターで作る自作サイト~ - tucca - BOOTH
-知識を整理するためにとても良いなと思った書籍です。
-こちらのブログもわかりやすいです。
-Hugoでgh-pagesにブログを作ってみた · var StraySheep
-インストール済Hugoのアップデート そんな訳で、インストール済みのHugoアップデートから行います。
-$ hugo version // バージョン確認 $ brew upgrade hugo // アップデートするコマンド 参考 Hugoのアップデート方法 | B-log
-サイトの構築 Hugoのインストールが終わったら、サイトの構築スタートです。
-cdでサイトを制作したいリポジトリに入って
-$ hugo new site &lt;site-name&gt; これでsite-nameというディレクトリ直下にサイトの元となるディレクトリ・ファイル群がズラーっと作られます。
-テーマ選び ブログのテーマを選んで設定していきます。以下にテーマが一覧で載っています。
-Complete List | Hugo Themes
-今回この中から「Mainload」というテーマを使わせていただくことにしました。
-どんなブログにしたいかでテーマ決めをしてみます。
-僕はブログ形式というよりはドキュメント形式みたいなのが良いなと思っていました。検索性を良くしたかったです。
-ただ選んでいくうちに、ドキュメント形式よりもブログ形式の方が（気持ち的に）気楽に更新できるだろうと思って、ブログ形式で検索性の良いものを探すことにしました。
-これに合致するデザインは豊富で、テーマを選ぶのが難しいです。
-欲しい機能を洗い出すと、
- カテゴリとタグ機能 検索バー  この辺り。
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_01/">Read more…</a>
+		
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -126,16 +104,7 @@ Complete List | Hugo Themes
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		はじめに 前回、以下のコマンドでローカルサーバーにアクセスしてブラウザ表示させるところまでできました。
-hugo server -D 現状これだとブログはローカルでしか見られない状態（自分のPCからのみアクセスすることができる状態）なので、一般公開できる状態にしていきます。
-今回GitHub Pagesを利用しました。
-今回のアジェンダ x
-GitHub Pagesとは？ GitHubアカウントがあれば、リポジトリを作成することで簡単に静的サイトを公開できるツール。通常自前のサイトを公開するにはレンタルサーバーを借りてファイルをアップロードしたりする必要があるが、Github Pagesだとその手間がなく基本的に無料で公開できる。
- Hugo + GitHub Pagesでのサイト構築は、 Hugoでgh-pagesにブログを作ってみた · var StraySheep
-GitHubリポジトリの準備 GitHubのページで、ブログ用のリポジトリを制作しておきます。
-設定ファイルconfig.tomlに公開用設定を記述 config.toml
-baseurl = &#34;http://&lt;GitHubに登録している名前&gt;.github.io/&#34; # github-pagesでのURL publishDir = &#34;docs&#34; # 公開用ディレクトリをdocsに指定 canonifyurls = true # CSSを反映させるために必要 アップロードした後に「CSSが反映されていない」ということが起こったら、この設定ファイルを見直すと良さそうです。
- baseurlのパスの最後の/が抜けていないか cononifyurlsをtrueにしているか  おわりに 今回はここまで。 今後、Github pagesを使って公開したり、テーマをカスタマイズしていったりします。
+		
 	</div>
 </article>
 </main>
@@ -206,8 +175,11 @@ baseurl = &#34;http://&lt;GitHubに登録している名前&gt;.github.io/&#34; 
 		<footer class="footer">
 	<div class="container footer__container flex">
 		
+<div class="footer__links">
+	<a class="footer__link" href="https://massasquash.github.io/potatofolio/privacy/">プライバシーポリシー</a>
+</div>
 		<div class="footer__copyright">
-			&copy; 2021 Potatofolio.
+			&copy; 2021 John Doe.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

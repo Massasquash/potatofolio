@@ -13,30 +13,7 @@
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog_01/</guid>
-      <description>はじめに Hugoという静的サイトジェネレータを使って、ブログを構築してみました。
-導入の目的としては、
- 学習・開発の履歴を残すため気楽にアウトプットできる場所を作りたい そのままポートフォリオとしても使えるもの ローカルで、かつMarkdownで書ける気軽さを重視  以前にHugoとPelicanを比較して試した経緯があったので、今回の構築を始める前にHugoのインストールは済んでいました。もし初期設定から行いたくて読んでいただいている場合は、他のページを参考にしていただくのが良いかもしれません。
-今回のアジェンダ Hugo導入からテーマ選定、ローカルでの表示まで。
-Hugoとは？ 静的サイトジェネレータ（Static Site Generator）というツール。Go言語で実装されている。他の方が制作したテーマを使ってブログが作成できて、記事を書く時はローカルの使い慣れたエディタを使ってMarkdown形式で書くことができる。 ネットワークの知識やターミナル操作に慣れていないと難しいと思うが、練習にも良いと思う。
-Hugoの導入 導入する際に使った参考書は、以前に技術書店で購入したコチラ。
-Hugo で始める静的サイト構築入門~静的サイトジェネレーターで作る自作サイト~ - tucca - BOOTH
-知識を整理するためにとても良いなと思った書籍です。
-こちらのブログもわかりやすいです。
-Hugoでgh-pagesにブログを作ってみた · var StraySheep
-インストール済Hugoのアップデート そんな訳で、インストール済みのHugoアップデートから行います。
-$ hugo version // バージョン確認 $ brew upgrade hugo // アップデートするコマンド 参考 Hugoのアップデート方法 | B-log
-サイトの構築 Hugoのインストールが終わったら、サイトの構築スタートです。
-cdでサイトを制作したいリポジトリに入って
-$ hugo new site &amp;lt;site-name&amp;gt; これでsite-nameというディレクトリ直下にサイトの元となるディレクトリ・ファイル群がズラーっと作られます。
-テーマ選び ブログのテーマを選んで設定していきます。以下にテーマが一覧で載っています。
-Complete List | Hugo Themes
-今回この中から「Mainload」というテーマを使わせていただくことにしました。
-どんなブログにしたいかでテーマ決めをしてみます。
-僕はブログ形式というよりはドキュメント形式みたいなのが良いなと思っていました。検索性を良くしたかったです。
-ただ選んでいくうちに、ドキュメント形式よりもブログ形式の方が（気持ち的に）気楽に更新できるだろうと思って、ブログ形式で検索性の良いものを探すことにしました。
-これに合致するデザインは豊富で、テーマを選ぶのが難しいです。
-欲しい機能を洗い出すと、
- カテゴリとタグ機能 検索バー  この辺り。</description>
+      <description></description>
     </item>
     
     <item>
@@ -45,16 +22,7 @@ Complete List | Hugo Themes
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog_02/</guid>
-      <description>はじめに 前回、以下のコマンドでローカルサーバーにアクセスしてブラウザ表示させるところまでできました。
-hugo server -D 現状これだとブログはローカルでしか見られない状態（自分のPCからのみアクセスすることができる状態）なので、一般公開できる状態にしていきます。
-今回GitHub Pagesを利用しました。
-今回のアジェンダ x
-GitHub Pagesとは？ GitHubアカウントがあれば、リポジトリを作成することで簡単に静的サイトを公開できるツール。通常自前のサイトを公開するにはレンタルサーバーを借りてファイルをアップロードしたりする必要があるが、Github Pagesだとその手間がなく基本的に無料で公開できる。
- Hugo + GitHub Pagesでのサイト構築は、 Hugoでgh-pagesにブログを作ってみた · var StraySheep
-GitHubリポジトリの準備 GitHubのページで、ブログ用のリポジトリを制作しておきます。
-設定ファイルconfig.tomlに公開用設定を記述 config.toml
-baseurl = &amp;#34;http://&amp;lt;GitHubに登録している名前&amp;gt;.github.io/&amp;#34; # github-pagesでのURL publishDir = &amp;#34;docs&amp;#34; # 公開用ディレクトリをdocsに指定 canonifyurls = true # CSSを反映させるために必要 アップロードした後に「CSSが反映されていない」ということが起こったら、この設定ファイルを見直すと良さそうです。
- baseurlのパスの最後の/が抜けていないか cononifyurlsをtrueにしているか  おわりに 今回はここまで。 今後、Github pagesを使って公開したり、テーマをカスタマイズしていったりします。</description>
+      <description></description>
     </item>
     
   </channel>

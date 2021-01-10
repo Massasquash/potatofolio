@@ -2,32 +2,42 @@
 title = "Potatofolio"
 languageCode = "ja"
 paginate = "10" # Number of posts per page
+hasCJKLanguage = true # 日本語・中国語・韓国語の単語カウントを有効にする
+summaryLength = 0 # サマリーの長さ
 theme = "mainroad"
-disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+# disqusShortname = "" # Enable comments by entering your Disqus shortname
+# googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 # github公開用
 baseurl = "https://massasquash.github.io/potatofolio/"
 publishDir = "docs"
 canonifyurls = true
 
+
 [Author]
   name = "Massa"
   bio = ""
   avatar = "img/avatar.png"
 
+
 [Params]
-  description = "My Learning And Development Note" # Description of your site
-  opengraph = true
-  twitter_cards = false
-  readmore = true # Show "Read more" button in list if true
+  # description = "Agrifeel-LABO - My Learning And Development Note" # Description of your site
+  copyright = "John Doe" # Footer copyright holder, otherwise will use site title
+  opengraph = true # Enable OpenGraph if true
+  schema = true # Enable Schema
+  readmore = false # Show "Read more" button in list if true
   authorbox = false
   comments = true
   pager = true
+  toc = true # Enable Table of Contents for specific page
+  mathjax = true # Enable MathJax
+  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
+  mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
   post_meta = ["date", "categories"] # Order of post meta information
+  mainSections = ["posts"] # Specify section pages to show on home page and the "Recent articles" widget
 
 [Params.logo]
-  subtitle = "My Learning And Development Note" # Logo subtitle
+  subtitle = "Agrifeel-LABO - My Learning And Development Note" # Logo subtitle
   image = "img/page_logo.jpg" # Logo image. Path relative to "static"
 
 [Params.sidebar]
@@ -67,7 +77,14 @@ canonifyurls = true
 [[Menus.main]]
   Name = "Home"
   URL = "/"
+  weight = -110
 
 [[Menus.main]]
-  Name = "Info"
-  URL = "/info/"
+  Name = "auther"
+  URL = "/auther/"
+  weight = -100
+
+# フッターメニュー
+[[Menus.footer]]
+  Name = "プライバシーポリシー"
+  URL = "/privacy/"

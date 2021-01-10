@@ -6,13 +6,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>[Hugoブログ01]構築をはじめる - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="Hugo導入からテーマ選定、ローカルでの表示まで">
+	<meta name="description" content="">
 		<meta property="og:title" content="[Hugoブログ01]構築をはじめる" />
-<meta property="og:description" content="Hugo導入からテーマ選定、ローカルでの表示まで" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/hugo_blog_01/" />
 <meta property="article:published_time" content="2021-01-08T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-01-08T00:00:00+00:00" />
+
+		<meta itemprop="name" content="[Hugoブログ01]構築をはじめる">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2021-01-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1759">
+
+
+
+<meta itemprop="keywords" content="" />
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -36,7 +46,7 @@
 					<img class="logo__img" src="https://massasquash.github.io/potatofolio/img/page_logo.jpg">
 				</div><div class="logo__item logo__text">
 					<div class="logo__title">Potatofolio</div>
-					<div class="logo__tagline">My Learning And Development Note</div>
+					<div class="logo__tagline">Agrifeel-LABO - My Learning And Development Note</div>
 				</div>
 		</a>
 	</div>
@@ -54,9 +64,9 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="https://massasquash.github.io/potatofolio/info/">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/auther/">
 				
-				<span class="menu__text">Info</span>
+				<span class="menu__text">auther</span>
 				
 			</a>
 		</li>
@@ -72,12 +82,39 @@
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">[Hugoブログ01]構築をはじめる</h1>
+			<p class="post__lead">Hugo導入からテーマ選定、ローカルでの表示まで</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-08T00:00:00Z">January 08, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/" rel="category">Hugoブログ</a>
 	</span>
 </div></div>
-		</header><div class="content post__content clearfix">
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#hugoとは">Hugoとは？</a></li>
+    <li><a href="#hugoの導入">Hugoの導入</a>
+      <ul>
+        <li><a href="#インストール済hugoのアップデート">インストール済Hugoのアップデート</a></li>
+        <li><a href="#サイトの構築">サイトの構築</a></li>
+        <li><a href="#テーマ選び">テーマ選び</a></li>
+        <li><a href="#テーマの設定">テーマの設定</a></li>
+        <li><a href="#ローカルで出力">ローカルで出力</a></li>
+      </ul>
+    </li>
+    <li><a href="#おわりに">おわりに</a>
+      <ul>
+        <li><a href="#memo">MEMO</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
 <p>Hugoという静的サイトジェネレータを使って、ブログを構築してみました。</p>
 <p>導入の目的としては、</p>
@@ -87,29 +124,26 @@
 <li>ローカルで、かつMarkdownで書ける気軽さを重視</li>
 </ul>
 <p>以前にHugoとPelicanを比較して試した経緯があったので、今回の構築を始める前にHugoのインストールは済んでいました。もし初期設定から行いたくて読んでいただいている場合は、他のページを参考にしていただくのが良いかもしれません。</p>
-<h3 id="今回のアジェンダ">今回のアジェンダ</h3>
-<p>Hugo導入からテーマ選定、ローカルでの表示まで。</p>
 <h2 id="hugoとは">Hugoとは？</h2>
-<p>静的サイトジェネレータ（Static Site Generator）というツール。Go言語で実装されている。他の方が制作したテーマを使ってブログが作成できて、記事を書く時はローカルの使い慣れたエディタを使ってMarkdown形式で書くことができる。
-ネットワークの知識やターミナル操作に慣れていないと難しいと思うが、練習にも良いと思う。</p>
+<p>静的サイトジェネレータ（Static Site Generator）というツール。Go言語で実装されている。他の方が制作したテーマを使ってブログが作成できて、記事を書く時はローカルの使い慣れたエディタを使ってMarkdown形式で書くことができる。ただ、ネットワークの知識やターミナル操作に慣れていないと導入が難しい。</p>
 <h2 id="hugoの導入">Hugoの導入</h2>
 <p>導入する際に使った参考書は、以前に技術書店で購入したコチラ。<br>
 <a href="https://booth.pm/ja/items/2368187">Hugo で始める静的サイト構築入門~静的サイトジェネレーターで作る自作サイト~ - tucca - BOOTH</a></p>
 <p>知識を整理するためにとても良いなと思った書籍です。</p>
 <p>こちらのブログもわかりやすいです。<br>
 <a href="http://straysheep3.github.io/post/hugo-gh-pages-blog-create/">Hugoでgh-pagesにブログを作ってみた · var StraySheep</a></p>
-<h2 id="インストール済hugoのアップデート">インストール済Hugoのアップデート</h2>
+<h3 id="インストール済hugoのアップデート">インストール済Hugoのアップデート</h3>
 <p>そんな訳で、インストール済みのHugoアップデートから行います。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo version  // バージョン確認
 $ brew upgrade hugo  // アップデートするコマンド
 </code></pre></div><p>参考
 <a href="https://beacats.com/how_to_update_hugo/">Hugoのアップデート方法 | B-log</a></p>
-<h2 id="サイトの構築">サイトの構築</h2>
+<h3 id="サイトの構築">サイトの構築</h3>
 <p>Hugoのインストールが終わったら、サイトの構築スタートです。<br>
 <code>cd</code>でサイトを制作したいリポジトリに入って</p>
 <pre><code>$ hugo new site &lt;site-name&gt;
 </code></pre><p>これで<code>site-name</code>というディレクトリ直下にサイトの元となるディレクトリ・ファイル群がズラーっと作られます。</p>
-<h2 id="テーマ選び">テーマ選び</h2>
+<h3 id="テーマ選び">テーマ選び</h3>
 <p>ブログのテーマを選んで設定していきます。以下にテーマが一覧で載っています。<br>
 <a href="https://themes.gohugo.io/">Complete List | Hugo Themes</a></p>
 <p>今回この中から「<a href="https://github.com/vimux/mainroad/">Mainload</a>」というテーマを使わせていただくことにしました。</p>
@@ -126,7 +160,7 @@ $ brew upgrade hugo  // アップデートするコマンド
 後からカスタマイズもできますが、あまり難しいカスタマイズは自信がなかったので、この辺りがでもページにも載っていて実装しやすいものにしました。最終的な決め手は</p>
 <p>「設定のサンプルコードをそのまま使ってある程度形になっている」「カスタマイズの情報が詳しく書かれているページを見つけた」</p>
 <p>というところかもしれません。</p>
-<h2 id="テーマの設定">テーマの設定</h2>
+<h3 id="テーマの設定">テーマの設定</h3>
 <p>先ほど作ったディレクトリ直下の<code>themes</code>ディレクトリに、githubのリモートリポジトリからテーマをクローンします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd themes
 $ git clone https://github.com/Vimux/Mainroad.git mainroad
@@ -137,7 +171,7 @@ $ rm -rf mainroad/.git
 <p>次に、<code>config.tomi</code>に、</p>
 <pre><code class="language-tomi" data-lang="tomi">theme = &quot;mainroad&quot;
 </code></pre><p>と記述します。この<code>mainroad</code>は、themesディレクトリにクローンしてきた際に作ったディレクトリ名になります。</p>
-<h2 id="ローカルで出力">ローカルで出力</h2>
+<h3 id="ローカルで出力">ローカルで出力</h3>
 <p>これでひとまず、ローカルで確認できるはずです。</p>
 <pre><code>hugo server -D
 </code></pre><p>この<code>-D</code>オプションは、ドラフト状態の記事も表示させる、というオプションらしいです。<br>
@@ -232,13 +266,18 @@ $ rm -rf mainroad/.git
 		<footer class="footer">
 	<div class="container footer__container flex">
 		
+<div class="footer__links">
+	<a class="footer__link" href="https://massasquash.github.io/potatofolio/privacy/">プライバシーポリシー</a>
+</div>
 		<div class="footer__copyright">
-			&copy; 2021 Potatofolio.
+			&copy; 2021 John Doe.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
 </footer>
 	</div>
 <script async defer src="https://massasquash.github.io/potatofolio/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>
