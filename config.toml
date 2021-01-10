@@ -5,7 +5,7 @@ paginate = "10" # Number of posts per page
 hasCJKLanguage = true # 日本語・中国語・韓国語の単語カウントを有効にする
 summaryLength = 0 # サマリーの長さ
 theme = "mainroad"
-# disqusShortname = "" # Enable comments by entering your Disqus shortname
+# disqusShortname = "potatofolio" # Enable comments by entering your Disqus shortname
 # googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 # github公開用
@@ -22,7 +22,7 @@ canonifyurls = true
 
 [Params]
   # description = "Agrifeel-LABO - My Learning And Development Note" # Description of your site
-  copyright = "John Doe" # Footer copyright holder, otherwise will use site title
+  copyright = "Massa" # Footer copyright holder, otherwise will use site title
   opengraph = true # Enable OpenGraph if true
   schema = true # Enable Schema
   readmore = false # Show "Read more" button in list if true

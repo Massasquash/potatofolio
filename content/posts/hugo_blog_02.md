@@ -1,7 +1,7 @@
 ---
 title: "[Hugoブログ02]GitHub Pagesで公開する"
 date: 2021-01-08
-description: ""
+lead: "ローカル・リモートリポジトリの設定を行いWebでページを表示させる"
 categories:
   - "Hugoブログ"
 ---
@@ -144,9 +144,9 @@ Hugoのビルドの仕組みがわかりやすそうだったので抜粋して�
 今後は記事の更新についてと、テーマのカスタマイズについて。
 
 ---
-MEMO
-- git関連の理解
+## MEMO
+- git関連の理解  
 [何も考えずにGitでaddしてcommitしてpushしてるだけのあなたへ | Simple is Best](https://oldbigbuddha.dev/posts/for-git-beginners)
 
-- ビルドの理解
+- ビルドの理解  
 [ビルド (build)とは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典](https://wa3.i-3-i.info/word12775.html)
