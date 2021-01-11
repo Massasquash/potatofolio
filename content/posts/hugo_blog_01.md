@@ -4,7 +4,7 @@ date: 2021-01-08
 lead: "Hugo導入からテーマ選定、ローカルでの表示まで"
 categories:
   - "Hugoブログ"
-
+comments: true
 ---
 
 ## はじめに
