@@ -84,6 +84,11 @@ canonifyurls = true
   URL = "/auther/"
   weight = -100
 
+[[Menus.main]]
+  Name = "about"
+  URL = "/about/"
+  weight = -18
+
 # フッターメニュー
 [[Menus.footer]]
   Name = "プライバシーポリシー"

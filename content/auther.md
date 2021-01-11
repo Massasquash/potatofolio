@@ -16,6 +16,9 @@ pager: false
 現場の人間としてプログラミングやIT技術を活用して「業務をラクに・楽しく」したい。  
 また今後は農業データの活用について学び、業務に活かしたり農業の発展に貢献するような働き方をしていけたら、というのが１つの目標です。
 
+このブログは主に、個人的に制作したもの・学習したことについて、手元のメモを見ながら後から振り返ってまとめていく、備忘録的なブログになっています。  
+着実にアウトプットするために一旦[TODO]として残したまま先に進めたりもしています。抜けている部分、間違っている部分、わかりづらい部分など見つけたらコメントいただけると嬉しいです。
+
 ### スキル
 - 主な言語：GAS, Python
 - 主な制作物：GASでの業務効率化ツール、Pythonでのスクレイピングツール、LINEbot、楽天市場の価格の収集・分析など
@@ -49,7 +52,7 @@ pager: false
 ★ [Github](https://github.com/Massasquash)  
 ★ [開発・学習記録（このHUGOブログ）](https://massasquash.github.io/potatofolio/)  
 
-※[Crieit](https://crieit.net/users/massasquash)という技術ブログ投稿サイトも活用しています（基本的にこのHUGO記事の内容を投稿）
+※[Crieit](https://crieit.net/users/massasquash)という技術ブログ投稿サイトも活用しています（基本的にこのHUGO記事の内容を清書して投稿していきます）
 
 **＜農業風景（ぼちぼち更新）＞**  
 ★ [Instagram](https://www.instagram.com/ohsakifarm/)  
