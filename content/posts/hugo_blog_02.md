@@ -1,6 +1,6 @@
 ---
 title: "[Hugoブログ02]GitHub Pagesで公開する"
-date: 2021-01-08
+date: 2021-01-09
 lead: "ローカル・リモートリポジトリの設定を行いWebでページを表示させる"
 categories:
   - "Hugoブログ"
@@ -98,7 +98,7 @@ git push -u origin main
 
 参考までに、僕の状態です。
 
-![aaa](img/posts/20210110_ghp.png)
+![GitHub Pages Settings](/img/posts/20210110_ghp.png)
 
 ## ビルドを行い、リモートリポジトリへプッシュする
 再びコマンドライン操作に戻ります。`hugo`コマンドを打ち込むだけで、ビルドが自動で行われます（ビルドについては後述）。  

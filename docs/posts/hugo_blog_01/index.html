@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-08T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2395">
+<meta itemprop="wordCount" content="1941">
 
 
 
@@ -100,7 +100,6 @@
       <ul>
         <li><a href="#インストール済hugoのアップデート">インストール済Hugoのアップデート</a></li>
         <li><a href="#サイトの構築">サイトの構築</a></li>
-        <li><a href="#テーマ選び">テーマ選び</a></li>
         <li><a href="#テーマ選びと設定">テーマ選びと設定</a></li>
         <li><a href="#ローカルで出力">ローカルで出力</a></li>
       </ul>
@@ -141,23 +140,6 @@ $ brew upgrade hugo  // アップデートするコマンド
 <code>cd</code>でサイトを制作したいリポジトリに入って</p>
 <pre><code>$ hugo new site &lt;site-name&gt;
 </code></pre><p>これで<code>site-name</code>というディレクトリ直下にサイトの元となるディレクトリ・ファイル群がズラーっと作られます。</p>
-<h3 id="テーマ選び">テーマ選び</h3>
-<p>ブログのテーマを選んで設定していきます。以下にテーマが一覧で載っています。<br>
-<a href="https://themes.gohugo.io/">Complete List | Hugo Themes</a></p>
-<p>今回この中から「<a href="https://github.com/vimux/mainroad/">Mainroad</a>」というテーマを使わせていただくことにしました。</p>
-<p>どんなブログにしたいかでテーマ決めをしてみます。<br>
-僕はブログ形式というよりはドキュメント形式みたいなのが良いなと思っていました。検索性を良くしたかったです。<br>
-ただ選んでいくうちに、ドキュメント形式よりもブログ形式の方が（気持ち的に）気楽に更新できるだろうと思って、ブログ形式で検索性の良いものを探すことにしました。</p>
-<p>これに合致するデザインは豊富で、テーマを選ぶのが難しいです。<br>
-欲しい機能を洗い出すと、</p>
-<ul>
-<li>カテゴリとタグ機能</li>
-<li>検索バー</li>
-</ul>
-<p>この辺り。<br>
-後からカスタマイズもできますが、あまり難しいカスタマイズは自信がなかったので、この辺りがでもページにも載っていて実装しやすいものにしました。最終的な決め手は</p>
-<p>「設定のサンプルコードをそのまま使ってある程度形になっている」「カスタマイズの情報が詳しく書かれているページを見つけた」</p>
-<p>というところかもしれません。</p>
 <h3 id="テーマ選びと設定">テーマ選びと設定</h3>
 <p>ブログのテーマを選んで設定していきます。以下にテーマが一覧で載っています。<br>
 <a href="https://themes.gohugo.io/">Complete List | Hugo Themes</a></p>
@@ -208,16 +190,10 @@ $ rm -rf mainroad/.git
 
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_02/" rel="prev">
-			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Hugoブログ02]GitHub Pagesで公開する</p>
-		</a>
-	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_03/" rel="next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_02/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[Hugoブログ03]記事更新する際の手順</p>
+			<p class="pager__title">[Hugoブログ02]GitHub Pagesで公開する</p>
 		</a>
 	</div>
 </nav>
@@ -238,8 +214,8 @@ $ rm -rf mainroad/.git
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_03/">[Hugoブログ03]記事更新する際の手順</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_01/">[Hugoブログ01]構築をはじめる</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_02/">[Hugoブログ02]GitHub Pagesで公開する</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_01/">[Hugoブログ01]構築をはじめる</a></li>
 		</ul>
 	</div>
 </div>
