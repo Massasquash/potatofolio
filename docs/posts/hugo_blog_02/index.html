@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-08T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2550">
+<meta itemprop="wordCount" content="2610">
 
 
 
@@ -138,7 +138,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseurl</span> = <span style="color:#e6db74">&#34;`https://&lt;GitHubユーザー名&gt;.github.io/&lt;リポジトリ名&gt;/`&#34;</span> <span style="color:#75715e"># github-pagesで公開するURL</span>
 <span style="color:#a6e22e">publishDir</span> = <span style="color:#e6db74">&#34;docs&#34;</span> <span style="color:#75715e"># 公開用ディレクトリをdocsに指定</span>
 <span style="color:#a6e22e">canonifyurls</span> = <span style="color:#66d9ef">true</span> <span style="color:#75715e"># CSSを反映させるために必要</span>
-</code></pre></div><p>後ほどでアップロードした後に「CSSが反映されていない」ということが起こることがあるのですが、その際にはこの設定ファイルを見直すと良さそうです。</p>
+</code></pre></div><p>後ほどでアップロードした後に「CSSが反映されていない」ということが起こることがあるのですが（ここで若干ハマりました）、その際にはこの設定ファイルを見直すと良さそうです。</p>
 <ul>
 <li>baseurlのパスの最後の<code>/</code>が抜けていないか</li>
 <li>cononifyurlsをtrue（絶対パス指定）にしているか</li>
@@ -160,11 +160,9 @@ git branch -M main
 git push -u origin main
 </code></pre></div><h2 id="githubリポジトリでpagesで公開するための設定">GitHubリポジトリでPagesで公開するための設定</h2>
 <p>[TODO]詳細記述</p>
-<p>「Settings」タブに移動して、そのまま下へスクロールしていくと下の方に「GitHub Pages」という項目があります。そこで色々設定。</p>
-<p>ちょっと省略。</p>
+<p>「Settings」タブに移動して、そのまま下へスクロールしていくと下の方に「GitHub Pages」という項目があります。そこで色々設定。ちょっとここは省略しますが、出てくる情報をもとに設定すれば問題なくいきました。</p>
 <p>参考までに、僕の状態です。</p>
-<p>![aaa][1]
-[1]: posts/20210110_ghp.png</p>
+<p><img src="img/posts/20210110_ghp.png" alt="aaa"></p>
 <h2 id="ビルドを行いリモートリポジトリへプッシュする">ビルドを行い、リモートリポジトリへプッシュする</h2>
 <p>再びコマンドライン操作に戻ります。<code>hugo</code>コマンドを打ち込むだけで、ビルドが自動で行われます（ビルドについては後述）。<br>
 この<code>hugo</code>コマンドは今後も使いますが、<code>config.toml</code>のあるディレクトリにいないと出来ないので、注意です。</p>
@@ -192,6 +190,7 @@ hugoで作成したblogディレクトリをリモートのblog/リポジトリ�
 今後は記事の更新についてと、テーマのカスタマイズについて。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
+<p>用語の意味や仕組みを理解したいところ</p>
 <ul>
 <li>
 <p>git関連の理解<br>
@@ -232,6 +231,7 @@ hugoで作成したblogディレクトリをリモートのblog/リポジトリ�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_03/">[Hugoブログ03]記事更新する際の手順</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_01/">[Hugoブログ01]構築をはじめる</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_02/">[Hugoブログ02]GitHub Pagesで公開する</a></li>
 		</ul>
@@ -245,6 +245,12 @@ hugoで作成したblogディレクトリをリモートのblog/リポジトリ�
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
 			</li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/clip_%E3%83%96%E3%83%AD%E3%82%B0%E6%8A%95%E7%A8%BF/" title="clip_ブログ投稿">clip_ブログ投稿</a>
 	</div>
 </div>
 <div class="widget-social widget">

@@ -4,6 +4,7 @@ date: 2021-01-08
 lead: "Hugo導入からテーマ選定、ローカルでの表示まで"
 categories:
   - "Hugoブログ"
+
 ---
 
 ## はじめに
@@ -54,7 +55,7 @@ $ hugo new site <site-name>
 ブログのテーマを選んで設定していきます。以下にテーマが一覧で載っています。  
 [Complete List | Hugo Themes](https://themes.gohugo.io/)
 
-今回この中から「[Mainload](https://github.com/vimux/mainroad/)」というテーマを使わせていただくことにしました。
+今回この中から「[Mainroad](https://github.com/vimux/mainroad/)」というテーマを使わせていただくことにしました。
 
 どんなブログにしたいかでテーマ決めをしてみます。  
 僕はブログ形式というよりはドキュメント形式みたいなのが良いなと思っていました。検索性を良くしたかったです。  
@@ -136,7 +137,7 @@ hugo server -D
 今後、Github pagesを使って公開したり、テーマをカスタマイズしていったりします。
 
 ---
-### MEMO
-調べていて言語化しておきたい用語など
+## MEMO
+調べていて気になった・言語化しておきたい用語など
 - 静的サイト
-- ループバックアドレス localhost
+- ループバックアドレス/localhost
