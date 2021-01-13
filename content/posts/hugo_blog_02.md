@@ -72,22 +72,22 @@ canonifyurls = true # CSSを反映させるために必要
 まずは、gitの初期化をします。`config.toml`のあるディレクトリにいることを確認してから
 
 ```bash
-git init
+$ git init
 ```
 
 これでディレクトリに隠しファイル`.git`が作成されて、gitでのバージョン管理ができる状態になりました。次に、ステージングとコミット。
 
 ```bash
-git add .
-git commit -m "First commit"
+$ git add .
+$ git commit -m "First commit"
 ```
 
 次に、ローカルファイルをGitHubリポジトリにプッシュして両者を紐付けします。GitHubでリポジトリを作った時に出てきたページの、真ん中らへんにある「push an existing repository from the command line」の部分をコピペして実行出来ます。
 
 ```bash
-git remote add origin https://github.com/<GitHubユーザー名>/<リポジトリ名>.git
-git branch -M main
-git push -u origin main
+$ git remote add origin https://github.com/<GitHubユーザー名>/<リポジトリ名>.git
+$ git branch -M main
+$ git push -u origin main
 ```
 
 ## GitHubリポジトリの設定
@@ -103,19 +103,19 @@ git push -u origin main
 再びコマンドライン操作に戻ります。`hugo`コマンドを打ち込むだけで、ビルドが自動で行われます（ビルドについては後述）。  
 この`hugo`コマンドは今後も使いますが、`config.toml`のあるディレクトリにいないと出来ないので、注意です。
 
-```
-hugo
+```bash
+$ hugo
 ```
 
 これで、手元にあるHugoで作成したファイル群（元となるソースコード）からWebに公開するために必要なファイル群（HTMLやCSSなど）が生成された（ビルドされた）と考えれば良さそうです。
 `docs`というディレクトリに公開するファイル群が出来ているはず。
 
-最後にgitのステージング、コミット、プッシュの一連のコマンドを実行。
+最後にgitのステージング、コミット、プッシュの一連のコマンドを実行。このセットはよく使います。
 
 ```bash
-git add .
-git commit -m "First Build"
-git push origin main
+$ git add .
+$ git commit -m "First Build"
+$ git push origin main
 ```
 
 これで、OKのはずです。
@@ -149,3 +149,4 @@ git push origin main
 
 - ビルドの理解  
 [ビルド (build)とは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典](https://wa3.i-3-i.info/word12775.html)
+---

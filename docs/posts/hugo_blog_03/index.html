@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-11T09:46:35+09:00" />
 <meta itemprop="dateModified" content="2021-01-11T09:46:35+09:00" />
-<meta itemprop="wordCount" content="1707">
+<meta itemprop="wordCount" content="1682">
 
 
 
@@ -46,7 +46,7 @@
 					<img class="logo__img" src="https://massasquash.github.io/potatofolio/img/page_logo.jpg">
 				</div><div class="logo__item logo__text">
 					<div class="logo__title">Potatofolio</div>
-					<div class="logo__tagline">Agrifeel-LABO - My Learning And Development Note</div>
+					<div class="logo__tagline">Agrifeel-LABO - My Development Note</div>
 				</div>
 		</a>
 	</div>
@@ -119,18 +119,18 @@
 <p>まずは記事となるmdファイルを作成するパス名を指定して、<code>hugo new</code>コマンドでファイル作成。<br>
 パス名は<code>content</code>以下の相対パスで指定します。今回<code>content/posts/article01.md</code>というマークダウンファイルを作ります。</p>
 <p>今後、記事を更新したい場合も基本的にこの手順で大丈夫そうです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new posts/article01.md
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo new posts/article01.md
 <span style="color:#75715e"># hugo new &lt;パス名.md&gt;</span>
 </code></pre></div><p>ここにマークダウンで何か色々書いて、ブログ記事を作成します。</p>
 <p>次にローカルで確認したい場合は、ローカルサーバー起動して出てくるローカル専用のURLをブラウザで開けば、見ることができます(Ctrl+C でコマンドラインに戻る)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server -D <span style="color:#75715e">#-Dオプションでdraft記事も見れる</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server -D <span style="color:#75715e">#-Dオプションでdraft記事も見れる</span>
 </code></pre></div><p>ブログ記事をWebに公開して見られる状態にしたい場合は、ビルドしてGitHubにプッシュします。<br>
 URLは<code>https://&lt;GitHubユーザー名&gt;.github.io/&lt;リポジトリ名&gt;/</code>というURLでした。反映するまで少しタイムラグがあるので注意です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo <span style="color:#75715e">#ビルド</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo <span style="color:#75715e">#ビルド</span>
 
-git add .
-git commit -m <span style="color:#e6db74">&#34;&lt;コミットメッセージ&gt;&#34;</span>
-git push origin main
+$ git add .
+$ git commit -m <span style="color:#e6db74">&#34;&lt;コミットメッセージ&gt;&#34;</span>
+$ git push origin main
 </code></pre></div><p>僕はコミットメッセージには、単純な記事更新ならその日の日付、Hugoブログ自体の設定をいじったりした時は設定したこと書くようにしています（とはいえ結局一人開発なので、コミットメッセージは結構適当に書いてしまいます&hellip;）</p>
 <h2 id="公開した記事が表示されない場合">公開した記事が表示されない場合</h2>
 <p>公開したはずの記事が出てこないという場合は、下書きの状態（ドラフト）になっていないかをチェック。<br>
@@ -167,7 +167,7 @@ draft: true
 <p>困ったらひとまず「テーマのサンプルページの構造を見る」と解決策のヒントが見つかるかもしれないな、と思いました。<br>
 各テーマにはそれぞれのベストプラクティスがありそうです。</p>
 <p>今回でひとまず記事更新ができる形になりました。<br>
-ですがまだ見た目が整っていないので、次回からHugonの構造を理解しながらカスタマイズを行って行きたいと思います。テーマは僕の使っている「<a href="https://github.com/vimux/mainroad/">Mainroad</a>」でやっていきます。</p>
+ですがまだ見た目が整っていないので、次回からHugoの構造を理解しながらカスタマイズを行っていきたいと思います。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
 <ul>
@@ -180,6 +180,7 @@ draft: true
 <a href="https://github.com/vimux/mainroad/">GitHub - Vimux/Mainroad: Responsive, simple, clean and content-focused Hugo theme based on the MH Magazine lite WordPress theme</a></p>
 </li>
 </ul>
+<hr>
 
 		</div>
 		<footer class="post__footer">
@@ -204,6 +205,12 @@ draft: true
 			<p class="pager__title">[Hugoブログ02]GitHub Pagesで公開する</p>
 		</a>
 	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_04/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[Hugoブログ04]テーマのカスタマイズその１</p>
+		</a>
+	</div>
 </nav>
 
 
@@ -221,6 +228,7 @@ draft: true
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_04/">[Hugoブログ04]テーマのカスタマイズその１</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_03/">[Hugoブログ03]記事更新する際の手順</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_02/">[Hugoブログ02]GitHub Pagesで公開する</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_01/">[Hugoブログ01]構築をはじめる</a></li>
@@ -231,6 +239,9 @@ draft: true
 	<h4 class="widget__title">Categories</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/category/">category</a>
+			</li>
 			<li class="widget__item">
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
 			</li>

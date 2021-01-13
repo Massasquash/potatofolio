@@ -19,7 +19,7 @@ tags:
 今後、記事を更新したい場合も基本的にこの手順で大丈夫そうです。
 
 ```bash
-hugo new posts/article01.md
+$ hugo new posts/article01.md
 # hugo new <パス名.md>
 ```
 
@@ -27,17 +27,17 @@ hugo new posts/article01.md
 
 次にローカルで確認したい場合は、ローカルサーバー起動して出てくるローカル専用のURLをブラウザで開けば、見ることができます(Ctrl+C でコマンドラインに戻る)
 ```bash
-hugo server -D #-Dオプションでdraft記事も見れる
+$ hugo server -D #-Dオプションでdraft記事も見れる
 ```
 
 ブログ記事をWebに公開して見られる状態にしたい場合は、ビルドしてGitHubにプッシュします。  
 URLは`https://<GitHubユーザー名>.github.io/<リポジトリ名>/`というURLでした。反映するまで少しタイムラグがあるので注意です。
 ```bash
-hugo #ビルド
+$ hugo #ビルド
 
-git add .
-git commit -m "<コミットメッセージ>"
-git push origin main
+$ git add .
+$ git commit -m "<コミットメッセージ>"
+$ git push origin main
 ```
 
 僕はコミットメッセージには、単純な記事更新ならその日の日付、Hugoブログ自体の設定をいじったりした時は設定したこと書くようにしています（とはいえ結局一人開発なので、コミットメッセージは結構適当に書いてしまいます...）
@@ -93,7 +93,7 @@ draft: true
 各テーマにはそれぞれのベストプラクティスがありそうです。
 
 今回でひとまず記事更新ができる形になりました。  
-ですがまだ見た目が整っていないので、次回からHugonの構造を理解しながらカスタマイズを行って行きたいと思います。テーマは僕の使っている「[Mainroad](https://github.com/vimux/mainroad/)」でやっていきます。
+ですがまだ見た目が整っていないので、次回からHugoの構造を理解しながらカスタマイズを行っていきたいと思います。
 
 ---
 ## MEMO
@@ -102,3 +102,4 @@ draft: true
 
 - テーマ「Mainroad」公式  
 [GitHub - Vimux/Mainroad: Responsive, simple, clean and content-focused Hugo theme based on the MH Magazine lite WordPress theme](https://github.com/vimux/mainroad/)
+---

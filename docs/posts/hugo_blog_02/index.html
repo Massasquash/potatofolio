@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2681">
+<meta itemprop="wordCount" content="2704">
 
 
 
@@ -46,7 +46,7 @@
 					<img class="logo__img" src="https://massasquash.github.io/potatofolio/img/page_logo.jpg">
 				</div><div class="logo__item logo__text">
 					<div class="logo__title">Potatofolio</div>
-					<div class="logo__tagline">Agrifeel-LABO - My Learning And Development Note</div>
+					<div class="logo__tagline">Agrifeel-LABO - My Development Note</div>
 				</div>
 		</a>
 	</div>
@@ -157,14 +157,14 @@
 <p>ここからはコマンドラインで操作します。<br>
 （gitのインストールは済んでいる前提になります）</p>
 <p>まずは、gitの初期化をします。<code>config.toml</code>のあるディレクトリにいることを確認してから</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git init
 </code></pre></div><p>これでディレクトリに隠しファイル<code>.git</code>が作成されて、gitでのバージョン管理ができる状態になりました。次に、ステージングとコミット。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add .
-git commit -m <span style="color:#e6db74">&#34;First commit&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git add .
+$ git commit -m <span style="color:#e6db74">&#34;First commit&#34;</span>
 </code></pre></div><p>次に、ローカルファイルをGitHubリポジトリにプッシュして両者を紐付けします。GitHubでリポジトリを作った時に出てきたページの、真ん中らへんにある「push an existing repository from the command line」の部分をコピペして実行出来ます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add origin https://github.com/&lt;GitHubユーザー名&gt;/&lt;リポジトリ名&gt;.git
-git branch -M main
-git push -u origin main
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git remote add origin https://github.com/&lt;GitHubユーザー名&gt;/&lt;リポジトリ名&gt;.git
+$ git branch -M main
+$ git push -u origin main
 </code></pre></div><h2 id="githubリポジトリの設定">GitHubリポジトリの設定</h2>
 <p>[TODO]詳細記述</p>
 <p>「Settings」タブに移動して、そのまま下へスクロールしていくと下の方に「GitHub Pages」という項目があります。そこで色々設定。ここは省略してしまいますが、調べて出てくる情報をもとに設定すれば問題なくいきました。</p>
@@ -173,13 +173,13 @@ git push -u origin main
 <h2 id="ビルドを行いリモートリポジトリへプッシュする">ビルドを行いリモートリポジトリへプッシュする</h2>
 <p>再びコマンドライン操作に戻ります。<code>hugo</code>コマンドを打ち込むだけで、ビルドが自動で行われます（ビルドについては後述）。<br>
 この<code>hugo</code>コマンドは今後も使いますが、<code>config.toml</code>のあるディレクトリにいないと出来ないので、注意です。</p>
-<pre><code>hugo
-</code></pre><p>これで、手元にあるHugoで作成したファイル群（元となるソースコード）からWebに公開するために必要なファイル群（HTMLやCSSなど）が生成された（ビルドされた）と考えれば良さそうです。
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo
+</code></pre></div><p>これで、手元にあるHugoで作成したファイル群（元となるソースコード）からWebに公開するために必要なファイル群（HTMLやCSSなど）が生成された（ビルドされた）と考えれば良さそうです。
 <code>docs</code>というディレクトリに公開するファイル群が出来ているはず。</p>
-<p>最後にgitのステージング、コミット、プッシュの一連のコマンドを実行。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add .
-git commit -m <span style="color:#e6db74">&#34;First Build&#34;</span>
-git push origin main
+<p>最後にgitのステージング、コミット、プッシュの一連のコマンドを実行。このセットはよく使います。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git add .
+$ git commit -m <span style="color:#e6db74">&#34;First Build&#34;</span>
+$ git push origin main
 </code></pre></div><p>これで、OKのはずです。
 反映されるまで少し時間がかかると思いますが、
 <code>https://&lt;GitHubユーザー名&gt;.github.io/&lt;リポジトリ名&gt;/</code></p>
@@ -209,6 +209,7 @@ hugoで作成したblogディレクトリをリモートのblog/リポジトリ�
 <a href="https://wa3.i-3-i.info/word12775.html">ビルド (build)とは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典</a></p>
 </li>
 </ul>
+<hr>
 
 		</div>
 	</article>
@@ -245,6 +246,7 @@ hugoで作成したblogディレクトリをリモートのblog/リポジトリ�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_04/">[Hugoブログ04]テーマのカスタマイズその１</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_03/">[Hugoブログ03]記事更新する際の手順</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_02/">[Hugoブログ02]GitHub Pagesで公開する</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_01/">[Hugoブログ01]構築をはじめる</a></li>
@@ -255,6 +257,9 @@ hugoで作成したblogディレクトリをリモートのblog/リポジトリ�
 	<h4 class="widget__title">Categories</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/category/">category</a>
+			</li>
 			<li class="widget__item">
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
 			</li>

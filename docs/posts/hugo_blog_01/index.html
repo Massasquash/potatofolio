@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-08T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2052">
+<meta itemprop="wordCount" content="2106">
 
 
 
@@ -46,7 +46,7 @@
 					<img class="logo__img" src="https://massasquash.github.io/potatofolio/img/page_logo.jpg">
 				</div><div class="logo__item logo__text">
 					<div class="logo__title">Potatofolio</div>
-					<div class="logo__tagline">Agrifeel-LABO - My Learning And Development Note</div>
+					<div class="logo__tagline">Agrifeel-LABO - My Development Note</div>
 				</div>
 		</a>
 	</div>
@@ -135,7 +135,10 @@
 <h2 id="コラムhugoとは">（コラム）Hugoとは？</h2>
 <p>静的サイトジェネレータ（Static Site Generator）というツール。Go言語で実装されている。他の方が制作したテーマを使ってブログが作成できて、記事を書く時はローカルの使い慣れたエディタを使ってMarkdown形式で書くことができる。ただ、ネットワークの知識やターミナル操作に慣れていないと導入が難しい。</p>
 <h2 id="hugoのインストールアップデート">Hugoのインストール・アップデート</h2>
-<p>そんな訳で、インストール済みのHugoアップデートから行います。</p>
+<p>Hugoを導入していきます。<br>
+インストールはMacの場合はHomebrewで行います。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install hugo
+</code></pre></div><p>今回実際にはインストールが済んでいたので、Hugoアップデートから行いました。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo version  // バージョン確認
 $ brew upgrade hugo  // アップデートするコマンド
 </code></pre></div><p>参考
@@ -163,8 +166,8 @@ $ rm -rf mainroad/.git
 <p>これでひとまず、ローカルで確認できるはずです。
 <code>pdw</code>コマンドで<code>config.toml</code>のあるディレクトリにいることを確認してから、以下のコマンド。
 （うっかりテーマのディレクトリに移動した状態のままコマンド実行して「出来ない！」となったりするので注意です）</p>
-<pre><code>hugo server -D
-</code></pre><p>この<code>-D</code>オプションは、ドラフト状態の記事も表示させる、というオプションらしいです。<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server -D
+</code></pre></div><p>この<code>-D</code>オプションは、ドラフト状態の記事も表示させる、というオプションらしいです。<br>
 ターミナルに出力されている<code>http://localhost:1313</code>のようなアドレス（ローカルサーバーのURL？）をChromeなどブラウザで開くと、ひとまず表示させることができています。</p>
 <p>また、 Ctrl+C でコマンドラインに戻ることができます。そうするとローカルサーバーが立ち上がっていない状態になるので、ブラウザでは見られなくなります。</p>
 <h2 id="コラムテーマ選びで考えたこと">（コラム）テーマ選びで考えたこと</h2>
@@ -189,6 +192,7 @@ $ rm -rf mainroad/.git
 <li>静的サイト</li>
 <li>ループバックアドレス/localhost</li>
 </ul>
+<hr>
 
 		</div>
 	</article>
@@ -219,6 +223,7 @@ $ rm -rf mainroad/.git
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_04/">[Hugoブログ04]テーマのカスタマイズその１</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_03/">[Hugoブログ03]記事更新する際の手順</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_02/">[Hugoブログ02]GitHub Pagesで公開する</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog_01/">[Hugoブログ01]構築をはじめる</a></li>
@@ -229,6 +234,9 @@ $ rm -rf mainroad/.git
 	<h4 class="widget__title">Categories</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/category/">category</a>
+			</li>
 			<li class="widget__item">
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
 			</li>
