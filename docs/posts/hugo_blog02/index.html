@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2704">
+<meta itemprop="wordCount" content="2706">
 
 
 
@@ -101,22 +101,26 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#コラムgithub-pagesとは">（コラム）GitHub Pagesとは？</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#githubリポジトリの準備">GitHubリポジトリの準備</a></li>
     <li><a href="#設定ファイルconfigtomlに公開用設定を記述">設定ファイルconfig.tomlに公開用設定を記述</a></li>
     <li><a href="#gitの初期設定とリモートリポジトリとの紐付け">gitの初期設定とリモートリポジトリとの紐付け</a></li>
     <li><a href="#githubリポジトリの設定">GitHubリポジトリの設定</a></li>
     <li><a href="#ビルドを行いリモートリポジトリへプッシュする">ビルドを行いリモートリポジトリへプッシュする</a></li>
     <li><a href="#コラムビルドの仕組">（コラム）ビルドの仕組</a></li>
-    <li><a href="#おわりに">おわりに</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#memo">MEMO</a></li>
   </ul>
 </nav>
 	</div>
 </div>
 <div class="content post__content clearfix">
-			<h2 id="はじめに">はじめに</h2>
+			<h1 id="はじめに">はじめに</h1>
 <p>前回、以下のコマンドでローカルサーバーにアクセスしてブラウザ表示させるところまでできました。</p>
 <pre><code>hugo server -D
 </code></pre><p>現状これだとブログはローカルでしか見られない状態（自分のPCからのみアクセスすることができる状態）なので、一般公開できる状態にしていきます。</p>
@@ -127,6 +131,7 @@
 <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on GitHub | Hugo</a></p>
 <h2 id="コラムgithub-pagesとは">（コラム）GitHub Pagesとは？</h2>
 <p>GitHubアカウントがあれば、リポジトリを作成することで簡単に静的サイトを公開できるツール。通常自前のサイトを公開するにはレンタルサーバーを借りてファイルをアップロードしたりする必要があるが、Github Pagesだとその手間がなく基本的に無料で公開できる。</p>
+<h1 id="実装">実装</h1>
 <h2 id="githubリポジトリの準備">GitHubリポジトリの準備</h2>
 <p>まずは事前準備として、<a href="https://github.com/">GitHub</a>のページで、ブログ用のリポジトリを制作しておきます。publicリポジトリで作らないと公開できなさそうです。</p>
 <p>ここで制作したリポジトリ名が、公開した時のサイトURLになります。
@@ -193,7 +198,7 @@ hugoで作成したblogディレクトリをリモートのblog/リポジトリ�
 </blockquote>
 <p>上記にはpublicディレクトリとありますが、今回publicではなくdocsディレクトリに指定しています。<br>
 どうも2020年1月時点の情報では、この公開するディレクトリを今回のようにdocsに指定する必要がありそうです。</p>
-<h2 id="おわりに">おわりに</h2>
+<h1 id="おわりに">おわりに</h1>
 <p>途中[TODO]として端折っている項目は、今後修正していきたいところです。<br>
 今後は記事の更新についてと、テーマのカスタマイズについて。</p>
 <hr>

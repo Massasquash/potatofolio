@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-11T10:15:30+09:00" />
 <meta itemprop="dateModified" content="2021-01-11T10:15:30+09:00" />
-<meta itemprop="wordCount" content="3196">
+<meta itemprop="wordCount" content="3198">
 
 
 
@@ -101,21 +101,25 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#概要">概要</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#ブログの基本情報の設定">ブログの基本情報の設定</a></li>
     <li><a href="#デザインカラーの設定">デザイン（カラー）の設定</a></li>
     <li><a href="#メインの表示設定">メインの表示設定</a></li>
     <li><a href="#ウィジェットの設定">ウィジェットの設定</a></li>
     <li><a href="#ソーシャル情報の設定">ソーシャル情報の設定</a></li>
-    <li><a href="#おわりに">おわりに</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#memo">MEMO</a></li>
   </ul>
 </nav>
 	</div>
 </div>
 <div class="content post__content clearfix">
-			<h2 id="はじめに">はじめに</h2>
+			<h1 id="はじめに">はじめに</h1>
 <p>Hugoの構造を理解しながらカスタマイズを行っていきます。
 僕の使っているテーマは「<a href="https://github.com/vimux/mainroad/">Mainroad</a>」なので、こちらでカスタマイズしていきます。</p>
 <p>基本的には、</p>
@@ -135,6 +139,7 @@
 必要な部分だけ理解しながらコピペしてきて、追加したい機能が出てきたら後で追加する、というやり方が今後のためにも良いかなと思います。</p>
 <p>また、Hugoを完全に理解したり、HTML, CSSやGolangを読み解く…というところまではここでは目標としていません。
 今回は、必要に応じて表示させてみて試しながら、調べたことや<a href="https://gohugo.io/documentation/">Hugoのドキュメント</a>と照らし合わせてカスタマイズしていきます。</p>
+<h1 id="実装">実装</h1>
 <h2 id="ブログの基本情報の設定">ブログの基本情報の設定</h2>
 <ul>
 <li>タイトル</li>
@@ -263,7 +268,7 @@
 この<code>icon</code>に画像を指定できますが、ここでもやはり<code>static/</code>ディレクトリからの相対パスで指定します。なので<code>static/</code>ディレクトリに追加したいSNSリンクの画像を入れてやります（なくても問題ありません）。</p>
 <p>どこかで見た気がするのですが、仮に<code>static/</code>ディレクトリに指定のパスが見つからない場合は、<code>themes/mainroad/static/</code>とテーマの中にある<code>static/</code>ディレクトリの中を探しに行ってくれている様子です。</p>
 <p>[TODO]ソース</p>
-<h2 id="おわりに">おわりに</h2>
+<h1 id="おわりに">おわりに</h1>
 <p>次はメニューバーから飛べる固定ページを作ったり、記事に関する詳細な設定を追加していきます。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
