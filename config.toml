@@ -80,21 +80,21 @@ canonifyurls = true
 
 # メインメニュー
 [[Menus.main]]
-  Name = "Home"
-  URL = "/"
-  weight = -110
+  name = "Home"
+  url = "/"
+  weight = 1
 
 [[Menus.main]]
-  Name = "auther"
-  URL = "/auther/"
-  weight = -100
+  name = "auther"
+  url = "/auther/"
+  weight = 2
 
 [[Menus.main]]
-  Name = "about"
-  URL = "/about/"
-  weight = -18
+  name = "about"
+  url = "/about/"
+  weight = 3
 
 # フッターメニュー
 [[Menus.footer]]
-  Name = "プライバシーポリシー"
-  URL = "/privacy/"
+  name = "プライバシーポリシー"
+  url = "/privacy/"
