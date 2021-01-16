@@ -28,21 +28,6 @@
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/categories/category/</loc>
-    <lastmod>2021-01-14T09:21:02+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/test/test/</loc>
-    <lastmod>2021-01-14T09:21:02+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/test/</loc>
-    <lastmod>2021-01-14T09:21:02+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://massasquash.github.io/potatofolio/posts/hugo_blog04/</loc>
     <lastmod>2021-01-11T10:15:30+09:00</lastmod>
   </url>
@@ -70,6 +55,31 @@
   <url>
     <loc>https://massasquash.github.io/potatofolio/posts/hugo_blog01/</loc>
     <lastmod>2021-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/learnings/20200721_udemy-gcp/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/learnings/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/tags/%E5%AD%A6%E7%BF%92/</loc>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/learnings/20200601_book_itnouka/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/20201004_vscode-github/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

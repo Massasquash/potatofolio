@@ -17,15 +17,6 @@
     </item>
     
     <item>
-      <title>Test</title>
-      <link>https://massasquash.github.io/potatofolio/test/test/</link>
-      <pubDate>Thu, 14 Jan 2021 09:21:02 +0900</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/test/test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>[Hugoブログ04]テーマのカスタマイズその１</title>
       <link>https://massasquash.github.io/potatofolio/posts/hugo_blog04/</link>
       <pubDate>Mon, 11 Jan 2021 10:15:30 +0900</pubDate>
@@ -59,6 +50,33 @@
       
       <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog01/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>[Udemy]現役エンジニアが教える、手を動かして学ぶGoogle Cloud Platform(GCP) 入門</title>
+      <link>https://massasquash.github.io/potatofolio/learnings/20200721_udemy-gcp/</link>
+      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/learnings/20200721_udemy-gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[書籍]IT農家のラズパイ製ディープ・ラーニング・カメラ</title>
+      <link>https://massasquash.github.io/potatofolio/learnings/20200601_book_itnouka/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/learnings/20200601_book_itnouka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://massasquash.github.io/potatofolio/20201004_vscode-github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/20201004_vscode-github/</guid>
+      <description>title: 新規作成を始める際のGithub・ローカルフォルダ作成の覚え書き Slug: vscode-github Date: 2020-10-04 13:19 Category: Article Tags: github Summary: Github立ち上げ手順、ローカルフォルダ名の付け方ルールなど</description>
     </item>
     
     <item>

@@ -77,10 +77,11 @@ categories:
   - "category"
 draft: true
 ---
-## はじめに
+# はじめに
+# 実装
 ## 1
 ## 2
-## おわりに
+# おわりに
 ---
 ## MEMO
 ```
@@ -98,8 +99,8 @@ draft: true
 ---
 ## MEMO
 - 記事のフロントマターの書き方  
-[Hugoで記事を書く方法(フロントマター編) - たかけんテックラボ](https://takaken.tokyo/dev/hugo/post/write-post/)
+  - [Hugoで記事を書く方法(フロントマター編) - たかけんテックラボ](https://takaken.tokyo/dev/hugo/post/write-post/)
 
 - テーマ「Mainroad」公式  
-[GitHub - Vimux/Mainroad: Responsive, simple, clean and content-focused Hugo theme based on the MH Magazine lite WordPress theme](https://github.com/vimux/mainroad/)
+  - [GitHub - Vimux/Mainroad: Responsive, simple, clean and content-focused Hugo theme based on the MH Magazine lite WordPress theme](https://github.com/vimux/mainroad/)
 ---

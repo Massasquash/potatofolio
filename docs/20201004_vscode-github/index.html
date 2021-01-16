@@ -4,17 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>404 Page not found - Potatofolio</title>
+	<title> - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="This Is My Dïevelopment Note" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://massasquash.github.io/potatofolio/404.html" />
+		<meta property="og:title" content="" />
+<meta property="og:description" content="title: 新規作成を始める際のGithub・ローカルフォルダ作成の覚え書き Slug: vscode-github Date: 2020-10-04 13:19 Category: Article Tags: github Summary: Github立ち上げ手順、ローカルフォルダ名の付け方ルールなど" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/20201004_vscode-github/" />
 
 
-		<meta itemprop="name" content="404 Page not found">
-<meta itemprop="description" content="This Is My Dïevelopment Note">
+		<meta itemprop="name" content="">
+<meta itemprop="description" content="title: 新規作成を始める際のGithub・ローカルフォルダ作成の覚え書き Slug: vscode-github Date: 2020-10-04 13:19 Category: Article Tags: github Summary: Github立ち上げ手順、ローカルフォルダ名の付け方ルールなど">
+
+<meta itemprop="wordCount" content="80">
+
+
+
+<meta itemprop="keywords" content="" />
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -78,15 +84,126 @@
 			<div class="primary">
 			
 <main class="main" role="main">
-	<div class="warning">
-		<h1 class="warning__headline">404. Page not found</h1>
-		<p class="warning__text">The page you were looking for appears to have been moved, deleted or does not exist. Please, use search or go to <a href="https://massasquash.github.io/potatofolio/">main page</a>.</p>
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title"></h1>
+			
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#前提vscodeの活用">前提：VSCodeの活用</a></li>
+    <li><a href="#１個人利用目的のツール制作を始める際の手順">（１）個人利用目的のツール制作を始める際の手順</a>
+      <ul>
+        <li><a href="#githubリポジトリ">Githubリポジトリ</a></li>
+        <li><a href="#ローカルディレクトリ制作">ローカルディレクトリ制作</a></li>
+      </ul>
+    </li>
+    <li><a href="#２新規プロジェクトを始める際の手順">（２）新規プロジェクトを始める際の手順</a>
+      <ul>
+        <li><a href="#githubリポジトリの作成">Githubリポジトリの作成</a></li>
+        <li><a href="#ローカルにクローンしフォルダ名を変更">ローカルにクローンし、フォルダ名を変更</a></li>
+        <li><a href="#git初期化とプッシュ">git初期化とプッシュ</a></li>
+      </ul>
+    </li>
+    <li><a href="#おまけgitignoreの書き方">おまけ：gitignoreの書き方</a></li>
+    <li><a href="#気になること">気になること：</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
 	</div>
+</div>
+<div class="content post__content clearfix">
+			<p>title: 新規作成を始める際のGithub・ローカルフォルダ作成の覚え書き
+Slug: vscode-github
+Date: 2020-10-04 13:19
+Category: Article
+Tags: github
+Summary: Github立ち上げ手順、ローカルフォルダ名の付け方ルールなど</p>
+<h2 id="はじめに">はじめに</h2>
+<p>新しくプロジェクトを作成するときの手順の備忘録
+完全自分用
+VSCode, Githubを利用</p>
+<h2 id="前提vscodeの活用">前提：VSCodeの活用</h2>
+<p>ローカルの<code>Documents</code>フォルダをワークスペースに突っ込んでおく。</p>
+<h2 id="１個人利用目的のツール制作を始める際の手順">（１）個人利用目的のツール制作を始める際の手順</h2>
+<h3 id="githubリポジトリ">Githubリポジトリ</h3>
+<p>こちらに追加していく形で制作する
+<a href="https://github.com/Massasquash/mytools">GitHub - Massasquash/mytools: 自作のツール置き場[Python]</a></p>
+<h3 id="ローカルディレクトリ制作">ローカルディレクトリ制作</h3>
+<p><code>[DEV]my-tools</code>に新しいフォルダを作成し、その中で制作していく。
+名前は<code>20200925_pdf_to_pic</code>のように、</p>
+<ul>
+<li>着手年月日 8桁</li>
+<li>プロジェクト名</li>
+</ul>
+<p>をつけるようにする。</p>
+<p>以降、制作を進めて適宜コミット・プッシュする</p>
+<h2 id="２新規プロジェクトを始める際の手順">（２）新規プロジェクトを始める際の手順</h2>
+<h3 id="githubリポジトリの作成">Githubリポジトリの作成</h3>
+<p>Github公式より、新規リポジトリを作成する。
+名前の付け方ルールはおいおい整備。</p>
+<h3 id="ローカルにクローンしフォルダ名を変更">ローカルにクローンし、フォルダ名を変更</h3>
+<ul>
+<li>Githubで作成したリポジトリのhttpsのURLをコピー</li>
+<li>ターミナル操作をしてクローンを作成。</li>
+<li>フォルダ名を<code>[DEV]</code>から始まるプロジェクト名に変更しておく</li>
+</ul>
+<pre><code>cd Documents
+git clone &lt;https://github***/***.git&gt;
+</code></pre><h3 id="git初期化とプッシュ">git初期化とプッシュ</h3>
+<ul>
+<li>必要に応じて<code>.gitignore</code>を用意</li>
+</ul>
+<p>以下はクローンした際に必要かどうかわからないけど、初期化</p>
+<pre><code>git init
+git add .
+git commit -m &quot;First Commit&quot;
+</code></pre><ul>
+<li>リポジトリへのpush</li>
+</ul>
+<pre><code>git push origin master
+</code></pre><h2 id="おまけgitignoreの書き方">おまけ：gitignoreの書き方</h2>
+<p>gitignoreを書くときは</p>
+<ul>
+<li>
+<p>特定の拡張子を除きたい場合
+<code>*.jpg</code>
+<code>*.ipynb</code></p>
+</li>
+<li>
+<p>特定の名前から始まるファイルを除きたい場合
+正規表現が使える
+<code>arcive*</code></p>
+</li>
+</ul>
+<h2 id="気になること">気になること：</h2>
+<ul>
+<li>ファイルパスをどうするか、githubにあげない方が良さそうだが、どう管理する？</li>
+</ul>
+<h2 id="参考">参考</h2>
+<p><a href="https://qiita.com/ynack/items/b6daaa6aedc285fddf6f">VSCodeとGitHubの連携方法【Mac】 - Qiita</a></p>
+
+		</div>
+	</article>
 </main>
 
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/about/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">このブログについて</p>
+		</a>
+	</div>
+</nav>
+
+
 			</div>
-			
-<aside class="sidebar"><div class="widget-search widget">
+			<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://duckduckgo.com/">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
@@ -171,5 +288,7 @@
 </footer>
 	</div>
 <script async defer src="https://massasquash.github.io/potatofolio/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>
