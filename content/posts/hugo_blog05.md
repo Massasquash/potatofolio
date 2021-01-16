@@ -4,7 +4,6 @@ date: 2021-01-15
 lead: "固定ページや記事に関する詳細を設定していく"
 categories:
   - "Hugoブログ"
-draft: true
 ---
 
 # はじめに
@@ -77,7 +76,7 @@ pager: false # ページャーを表示させない
 
 ## フッターに「プライバシーポリシー」ページを追加
 メニューに固定ページを追加した時と同様の手順で追加できます。
-記事ファイルを作り、`config.toml`に
+記事ファイルを作り上記と同じようにフロントマターを記述し、`config.toml`に
 
 ```
 [[Menus.footer]]
@@ -111,7 +110,7 @@ summaryLength = 20 # サマリーの長さ
 最初に`languageCode = "ja"`と、言語を日本語を指定していることを確認。  
 そして`hasCJKLanguage = true`を指定することで、日本語で単語カウントをするように設定できます。  
 （この行がないと日本語で思い通りの長さになりません）  
-`summaryLength`が文字数なので、好きな数をここで指定してやります。  
+`summaryLength`が文字数なので、好きな数をここで指定してやります。
 
 これだけでもいいのですが、「ReadMore」ボタンを追加してみます。
 こちらは`[Params]`ブロックに記述します。
@@ -129,7 +128,8 @@ summaryLength = 20 # サマリーの長さ
 記事の個別ページは「Single Page Template」と呼ばれるテンプレートとして定義されているようです。  
 (Hugo公式 [Single Page Templates | Hugo](https://gohugo.io/templates/single-page-templates/))
 
-こちらも`config.toml`の`[Params]`に記述。先ほど書いた`readmore = true`の下に続ける形で大丈夫です。
+まずは全体に適用するものを、こちらも`config.toml`の`[Params]`に記述。  
+先ほど書いた`readmore = true`の下に続ける形で大丈夫です。
 
 ```toml
 [Params]
@@ -152,34 +152,23 @@ summaryLength = 20 # サマリーの長さ
   avatar = "img/avatar.png"
 ```
 
-`pager`は各記事に「次へ」「前へ」リンクをつけて、記事間を移動できるようなる機能。便利なのでtrueにしておきます。
+`pager`は各記事に「次へ」「前へ」リンクをつけて、記事間を移動できるようなる機能。便利なのでtrueにしておきます。  
 `toc`は記事の頭に目次を表示するかどうか。Markdownの見出し（#, ##, ###, ...）に対応しています。これも便利なのでtrueにしました。
 
-
-これらは、記事のフロントマターに設定することで、記事ごとの設定もできます。  
-一括で指定したい場合は、ここでやったように`config.toml`に書けばOKです。
-
-
-## 記事ページを整える
-- カテゴリー、タグ
-- ディスクリプションを表示する
-
-single
-
-共通設定とフロントマターでの個別設定
-
-
-
-
-
+ここで`config.toml`に指定しておくことで、全ての記事に適用されます。  
+これらは、各記事のフロントマターに設定することで記事ごとに個別に設定もできます（上で個別ページを制作したときに指定したのがそれでした）。
 
 
 # おわりに
-一旦ここまでとします。
-今後、Google Analyticsとの連携や、Disqusを使ったコメント機能の追加、またサーチバーをもっと使いやすいようにカスタマイズできればと思っています。
-この辺りはまだ手付かずですので、今後の課題とします。
+さて、これで一通りブログの設定ができたかなと思うので、導入としては一旦ここまでとします。  
+今後、Google Analyticsとの連携や、Disqusを使ったコメント機能の追加、またサーチバーをもっと使いやすいようにカスタマイズできればと思っています。  
 
+この辺りはまだ手付かずですので、今後の課題とします。
 
 ---
 ## MEMO
+- Hugo公式ページ
+  - [Menus | Hugo](https://gohugo.io/content-management/menus/#readout)
+  - [Lists of Content in Hugo | Hugo](https://gohugo.io/templates/lists/#readout))
+  - [Single Page Templates | Hugo](https://gohugo.io/templates/single-page-templates/))
 ---
