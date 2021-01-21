@@ -4,21 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[Effective Python]項目1 使用するPythonのバージョンを知っておく - Potatofolio</title>
+	<title>「Effective python第２版」項目2 PEP 8スタイルガイドに従う - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[Effective Python]項目1 使用するPythonのバージョンを知っておく" />
+		<meta property="og:title" content="「Effective python第２版」項目2 PEP 8スタイルガイドに従う" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python01_1/" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python01_2/" />
 <meta property="article:published_time" content="2021-01-21T09:26:50+09:00" />
 <meta property="article:modified_time" content="2021-01-21T09:26:50+09:00" />
 
-		<meta itemprop="name" content="[Effective Python]項目1 使用するPythonのバージョンを知っておく">
+		<meta itemprop="name" content="「Effective python第２版」項目2 PEP 8スタイルガイドに従う">
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-21T09:26:50+09:00" />
 <meta itemprop="dateModified" content="2021-01-21T09:26:50+09:00" />
-<meta itemprop="wordCount" content="775">
+<meta itemprop="wordCount" content="1675">
 
 
 
@@ -88,7 +88,7 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[Effective Python]項目1 使用するPythonのバージョンを知っておく</h1>
+			<h1 class="post__title">「Effective python第２版」項目2 PEP 8スタイルガイドに従う</h1>
 			<p class="post__lead">「Effective python第２版」の学習備忘録</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
@@ -101,7 +101,7 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#項目1-使用するpythonのバージョンを知っておく">項目1 使用するPythonのバージョンを知っておく</a>
+    <li><a href="#項目2-pep-8スタイルガイドに従う">項目2 PEP 8スタイルガイドに従う</a>
       <ul>
         <li><a href="#解説">解説</a></li>
         <li><a href="#感想">感想</a></li>
@@ -114,35 +114,77 @@
 </div>
 <div class="content post__content clearfix">
 			<h1 id="はじめに">はじめに</h1>
-<p>この記事は「Effective Python 第二版」を学習していく備忘録です。</p>
-<h2 id="項目1-使用するpythonのバージョンを知っておく">項目1 使用するPythonのバージョンを知っておく</h2>
-<p>Python3.8が2019年10月にリリースされてから、多くの構文が導入されました。
-Python2は2020年1月にサポートがなくなり、さらに2020年4月に使用期限が終わり公式な保守が行われなくなりました。
-自己責任で使うことはできますが、Python2の利用は避け、Python3をプロジェクトに使っていきましょう。</p>
+<p>この記事は「Effective Python 第二版」の学習の備忘録です。</p>
+<h2 id="項目2-pep-8スタイルガイドに従う">項目2 PEP 8スタイルガイドに従う</h2>
+<p>Pythonのコードを書くときは<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に従うと扱いやすくなります。
+コミュニティや開発メンバーで行う場合は、PEP8を含めて独自ルールなどは共通スタイルを共有しておくことで、協働作業が捗ります。
+自分だけが読むコードの場合でも、一貫したスタイルで書くことで後から修正しやすくなります。</p>
 <h3 id="解説">解説</h3>
-<p>使用しているPythonのバージョンを調べる方法は
-（１）コマンドラインで調べる方法
-（２）Python実行時（Jupyter Notebookのセル上で）調べる方法</p>
-<p>（１）の方法は、ターミナルで確認する方法。自分のインストールしているpythonのバージョンを調べられます。
-<code>python</code>コマンドと<code>python3</code>コマンドでは結果が違い、どのPython言語をインストールしたかによって変わってきます。
-（例えばPython3をインストールしていない場合は、Python3コマンドは動きません）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python --version  <span style="color:#75715e">#-&gt; Python 2.7.10</span>
-$ python3 --version <span style="color:#75715e">#-&gt; Python 3.8.0</span>
-</code></pre></div><p>（２）はPythonスクリプト上で。組み込み関数<code>sys</code>を使います。
-Jupyter Notebook上などで確認する場合は、このようなやり方で確認できます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
-<span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>version_info)
-<span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>version)
-</code></pre></div><h3 id="感想">感想</h3>
-<p>プログラミング言語自体も、その実は誰かがプログラミングで作ったものです。
-Pythonはオープンソースなので裏側でコミュニティの皆さんが保守管理してくれているため、僕らは安心してPythonでプログラミングを書くことができています。
-より良くなるようにバグの改善・セキュリティ向上など改善を続けているので、しっかりと「サポートが受けられているバージョン」をプロジェクトに使っていくのが良さそうです。</p>
+<p>PEP8は「Pythonのコードをどのようにフォーマットするかのスタイルガイド」です。どのようにコードを書けば良いか？が整理されています。
+特に初心者〜中級者のうちに効果が出やすそうな一部を挙げてみます。</p>
+<p>（１）空白</p>
+<ul>
+<li>インデントにはタブではなく4個のスペースを使う</li>
+<li>各行は、長さを79文字までとする</li>
+<li>ファイルでは、関数とクラスは空白２行で分ける</li>
+<li>変数代入の前後には、空白を１つ、必ず１つだけを置く
+（良い例 <code>hoge = 'huga'</code> ／悪い例 <code>hoge=     huga</code>）</li>
+<li>辞書では、キーとコロンの間には空白を置かず、同じ行に値を書く場合には値の前に空白を１つ置く
+（良い例<code>{key: value}}</code> ／悪い例<code>{key:value}</code>, <code>{key :value}</code>）</li>
+</ul>
+<p>１行の長さに制限があるのは、「エディタで80文字で折り返す際に改行されないようにするため」とのこと（MEMOの参考記事）。
+長さ調整には（３）で出てくる「カッコの中身の改行テクニック」が役に立ちます。</p>
+<p>（２）変数名の付け方</p>
+<ul>
+<li>関数・変数・属性は、小文字のスネークケース （例 <code>lowercase_underscore</code>）</li>
+<li>モジュールでの定数は、大文字のスネークケース （例 <code>ALL_CAPS</code>）</li>
+</ul>
+<p>「モジュールでの定数」と言うのは、モジュール全体から呼び出せるファイルの一番頭に描いておく定数値のことかなと思います。</p>
+<p>（３）式と文</p>
+<ul>
+<li>式の否定（<code>if not a is b</code>）ではなく、内側の項の否定（<code>if a is not b</code>）を使う</li>
+<li>コンテナやシーケンスの長さ（<code>if len(somelist) == 0</code>）を使って、空値（<code>[]</code>や<code>''</code>など）かどうかをチェックしない。<code>if not somelist</code>を使って、空値が暗黙にFalseと評価されることを使う</li>
+<li>式が1行に治らない場合は、括弧でくくって複数行にして、読みやすいようにインデントする</li>
+<li><code>\</code>で行分けするよりは、括弧を使って複数の指揮を囲む方が良い</li>
+</ul>
+<p>PEP8での改行についてはとても奥深いです。
+リストやタプルを途中で改行す場合は、（どちらでも可だがプロジェクトで統一すること！）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_list <span style="color:#f92672">=</span> [
+    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>,
+    <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>,
+    ]
+
+my_list <span style="color:#f92672">=</span> [
+    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>,
+    <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>,
+]
+</code></pre></div><p><code>()</code>, <code>[]</code>などのかっこで囲まれた部分の改行は繋がっているものとして認識してくれるので、これを上手く活用するとスムーズに改行することができます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">foo <span style="color:#f92672">=</span> long_function_name(
+    var_one, var_two,
+    var_three, var_four)
+</code></pre></div><p>（４）インポート</p>
+<ul>
+<li>import文は常にファイルの先頭におく</li>
+<li>インポートは、①標準ライブラリモジュール、②サードパーティモジュール、③自分の作成したモジュール、の順に行う。</li>
+<li>それぞれの間には一行空白を置いて、それぞれの部分ではアルファベット順にインポートする</li>
+</ul>
+<p>インストールなしで使えるのが標準ライブラリで、インストールして使うのがサードパーティーモジュール。
+標準ライブラリについては<a href="https://docs.python.org/ja/3/library/index.html">公式ドキュメント</a>で見られます。</p>
+<h3 id="感想">感想</h3>
+<p>上で挙げたのはごく一例。<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>を読むともっと興味深いコーディング規約が載っています。
+VSCodeを使っている場合は拡張機能を使うのも便利です。</p>
+<p>基本を学ぶことで「とりあえず正しく動くコードの書き方」を身に着けることができたら、次のステップとして「保守管理しやすいコードの書き方」が必要になってきます。
+基礎文法の次として「リーダブルコード」がプログラミング全般における考え方を学べる書籍だとしたら、「<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>」はリーダブルコードの考え方をPythonで実践する具体的な書き方、と言う感じかもしれません。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
-<p>【参考書籍】</p>
+<p>【参考記事】</p>
 <ul>
-<li>Effective Python
-<a href="https://www.oreilly.co.jp/books/9784873119175/">O’Reilly Japan - Effective Python 第2版</a></li>
+<li>PEP8スタイルガイド
+<a href="https://pep8-ja.readthedocs.io/ja/latest/">はじめに — pep8-ja 1.0 ドキュメント</a></li>
+<li>公式ドキュメント。ython標準ライブラリ
+<a href="https://docs.python.org/ja/3/library/index.html">Python 標準ライブラリ — Python 3.9.1 ドキュメント</a></li>
+<li>なぜ79文字？
+<a href="https://python.ms/pep7/#_1-%E8%A1%8C%E3%81%8B%E3%82%99-79-%E6%96%87%E5%AD%97%E4%BB%A5%E5%86%85%E3%81%A6%E3%82%99%E3%81%82%E3%82%8B%E7%90%86%E7%94%B1">Python で 1 行が 79 文字以内で、インデントがスペース 4 文字なのはなんで？ | 民主主義に乾杯</a></li>
 </ul>
 <hr>
 
@@ -152,10 +194,10 @@ Pythonはオープンソースなので裏側でコミュニティの皆さん�
 
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_2/" rel="prev">
-			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">「Effective python第２版」項目2 PEP 8スタイルガイドに従う</p>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_1/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[Effective Python]項目1 使用するPythonのバージョンを知っておく</p>
 		</a>
 	</div>
 </nav>
