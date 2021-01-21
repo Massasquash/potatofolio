@@ -1,6 +1,6 @@
 ---
 title: "「Effective python第２版」"
-date: 2021-01-21T09:26:50+09:00
+date: 2021-01-20T09:26:50+09:00
 lead: "description"
 categories:
   - "category"
