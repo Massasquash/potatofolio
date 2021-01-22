@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-21T09:26:50+09:00" />
 <meta itemprop="dateModified" content="2021-01-21T09:26:50+09:00" />
-<meta itemprop="wordCount" content="1467">
+<meta itemprop="wordCount" content="1460">
 
 
 
@@ -104,6 +104,8 @@
     <li><a href="#項目25キーワード専用引数と位置専用引数で明確さを高める">項目25:キーワード専用引数と位置専用引数で明確さを高める</a>
       <ul>
         <li><a href="#解説">解説</a></li>
+        <li><a href="#呼び出し方の違い">呼び出し方の違い</a></li>
+        <li><a href="#それぞれのメリット">それぞれのメリット</a></li>
         <li><a href="#感想">感想</a></li>
       </ul>
     </li>
@@ -131,15 +133,32 @@
 <li>項目26 functools.wrapsを使って関数デコレータを定義する</li>
 </ul>
 <h2 id="項目25キーワード専用引数と位置専用引数で明確さを高める">項目25:キーワード専用引数と位置専用引数で明確さを高める</h2>
-<p>関数呼び出しの際に、仮引数名を指定して渡す実引数を「キーワード引数」、指定しないで渡す実引数を「キーワード引数」と呼びます。<br>
+<p>関数呼び出しの際に、仮引数名を指定して渡す実引数を「キーワード引数」、指定しないで渡す実引数を「位置引数」と呼びます。<br>
 Python関数の引数のデフォルトはこのどちらの方式でも呼び出すことができますが、関数定義時に「キーワード専用引数」「位置専用引数」として呼び出し方を指定してしまう方法があります。<br>
 これを活用すると関数呼び出し時の書き方が統一されるので、読みやすいコードにすることができます。</p>
 <h3 id="解説">解説</h3>
 <p>関数定義の時の仮引数に、<code>*</code>や<code>/</code>の記号を使って指定することができます。</p>
-<p>|  表記  |  解説  |  構文例  |
-| :——: | :——: | :——: |
-|  * |  以降がキーワード専用引数になる  | <code>def(page, *, ignore_error=False)</code> |
-|  /  |  その前までが位置専用引数になる  | <code>def(x, y, /)</code> |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">表記</th>
+<th style="text-align:center">解説</th>
+<th style="text-align:center">構文例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">以降がキーワード専用引数になる</td>
+<td style="text-align:center"><code>def(page, *, ignore_error=False)</code></td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">その前までが位置専用引数になる</td>
+<td style="text-align:center"><code>def(x, y, /)</code></td>
+</tr>
+</tbody>
+</table>
 <p><strong>使用例</strong><br>
 <a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_25.py">サンプルコード</a>を記載します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Example 13</span>
@@ -163,20 +182,22 @@ Python関数の引数のデフォルトはこのどちらの方式でも呼び�
   numerator, denominator, <span style="color:#f92672">/</span>, <span style="color:#f92672">*</span>,
   ignore_overflow<span style="color:#f92672">=</span>False,
   ignore_zero_division<span style="color:#f92672">=</span>False):
-</code></pre></div><p>仮引数に<code>*</code>を使うと、それ以降が**「キーワード専用引数」**になり、呼び出し時にキーワードを指定しないと呼び出せなくなります。<br>
+</code></pre></div><h3 id="呼び出し方の違い">呼び出し方の違い</h3>
+<p>仮引数に<code>*</code>を使うと、それ以降が**「キーワード専用引数」**になり、呼び出し時にキーワードを指定しないと呼び出せなくなります。<br>
 <code>safe_division_d(2, 5, ignore_overflow=True, ignore_zero_division=True)</code>  だとOK<br>
 <code>safe_division_d(2, 5, True, True)</code>  だとエラーとなる</p>
 <p>仮引数に<code>/</code>を使うと、その前までが**「位置専用引数」**になり、呼び出し時にキーワード指定できなくなります。<br>
 <code>safe_division_d(2, 5)</code>  だとOK<br>
 <code>safe_division_d(numerator=2, denominator=5)</code>  だとエラーとなる</p>
-<p><strong>キーワード専用引数が有効な例</strong>
-上の例のようにブール値がオプションとして並ぶ場合、呼び出し時にキーワードで指定する方がなんのオプションなのか一目でわかります。</p>
-<p><strong>位置専用引数が有効な例</strong>
+<h3 id="それぞれのメリット">それぞれのメリット</h3>
+<p><strong>キーワード専用引数が有効な例</strong><br>
+上の例のようにブール値がオプションとして並ぶ場合、呼び出し時にキーワードで指定する方が何の意味を表しているのかが一目でわかります。</p>
+<p><strong>位置専用引数が有効な例</strong><br>
 のちに呼び出す関数の仮引数名を変更したくなることがあるかと思います。<br>
 呼び出し時にキーワードを使えないようにするだけで、仮引数名を変えても呼び出し時に影響が出ないので、メンテナンスが楽になります。</p>
 <p>また、<code>/</code>と<code>*</code>で挟まれた仮引数がある場合は、呼び出し時にどちらの方式でも呼び出すことができます。</p>
 <h3 id="感想">感想</h3>
-<p>シンプルで活用しやすそうだな、と言う印象でした。関数の引数に関しては初心者にはすごく複雑で、</p>
+<p>この表記はシンプルで活用しやすそうだな、と言う印象でした。関数の引数に関しては初心者にはすごく複雑で、</p>
 <ul>
 <li>様々な用語「仮引数」「実引数」「位置引数」「キーワード引数」「可変長引数（位置・キーワード）」</li>
 <li>記述の仕方として「デフォルト値」「アノテーション」</li>
