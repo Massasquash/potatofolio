@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-21T09:26:50+09:00" />
 <meta itemprop="dateModified" content="2021-01-21T09:26:50+09:00" />
-<meta itemprop="wordCount" content="2136">
+<meta itemprop="wordCount" content="2133">
 
 
 
@@ -59,7 +59,21 @@
 		<li class="menu__item">
 			<a class="menu__link" href="https://massasquash.github.io/potatofolio/">
 				
-				<span class="menu__text">Home</span>
+				<span class="menu__text">Works</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/python/">
+				
+				<span class="menu__text">python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/notes/">
+				
+				<span class="menu__text">Notes</span>
 				
 			</a>
 		</li>
@@ -92,7 +106,7 @@
 			<p class="post__lead">「Effective python第２版」の学習備忘録</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-21T09:26:50&#43;09:00">January 21, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/python/" rel="category">python</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-21T09:26:50&#43;09:00">January 21, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/" rel="category">Effective Python</a>
 	</span>
 </div></div>
 		</header>
@@ -104,6 +118,10 @@
     <li><a href="#項目2pep8スタイルガイドに従う">項目2:PEP8スタイルガイドに従う</a>
       <ul>
         <li><a href="#解説">解説</a></li>
+        <li><a href="#１空白">（１）空白</a></li>
+        <li><a href="#２変数名の付け方">（２）変数名の付け方</a></li>
+        <li><a href="#３式と文">（３）式と文</a></li>
+        <li><a href="#４インポート">（４）インポート</a></li>
         <li><a href="#感想">感想</a></li>
       </ul>
     </li>
@@ -133,13 +151,13 @@
 <li>項目10 代入式で繰り返しを防ぐ</li>
 </ul>
 <h2 id="項目2pep8スタイルガイドに従う">項目2:PEP8スタイルガイドに従う</h2>
-<p>Pythonのコードを書くときは<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に従うと扱いやすくなります。
-これは「Pythonのコードをどのようにフォーマットするかのスタイルガイド」です。どのようにコードを書けば良いか？が整理されています。
-コミュニティや開発メンバーで行う場合は、PEP8を含めて独自ルールなどは共通スタイルを共有しておくことで、協働作業が捗ります。
+<p>Pythonのコードを書くときは<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に従うと扱いやすくなります。<br>
+「Pythonのコードをどのようにフォーマットするかのスタイルガイド」で、どのようにコードを書けば良いかが整理されています。</p>
+<p>コミュニティや開発メンバーで行う場合は、PEP8を土台として独自ルールなどは共通スタイルを共有しておくことで、協働作業が捗ります。<br>
 自分だけが読むコードの場合でも、一貫したスタイルで書くことで後から修正しやすくなります。</p>
 <h3 id="解説">解説</h3>
 <p>以下、特に初心者〜中級者のうちに効果が出やすそうな一部を挙げてみます。　</p>
-<p><strong>（１）空白</strong></p>
+<h3 id="１空白">（１）空白</h3>
 <ul>
 <li>インデントにはタブではなく4個のスペースを使う</li>
 <li>各行は、長さを79文字までとする</li>
@@ -151,13 +169,13 @@
 </ul>
 <p>１行の長さに制限があるのは、「エディタで80文字で折り返す際に改行されないようにするため」とのこと（MEMOの参考記事）。
 長さ調整には（３）で出てくる「カッコの中身の改行テクニック」が役に立ちそうです。</p>
-<p><strong>（２）変数名の付け方</strong></p>
+<h3 id="２変数名の付け方">（２）変数名の付け方</h3>
 <ul>
 <li>関数・変数・属性は、小文字のスネークケース （例 <code>lowercase_underscore</code>）</li>
 <li>モジュールでの定数は、大文字のスネークケース （例 <code>ALL_CAPS</code>）</li>
 </ul>
 <p>「モジュールでの定数」と言うのは、モジュール全体から呼び出せるファイルの一番頭に描いておく定数値のことかなと思います。</p>
-<p><strong>（３）式と文</strong></p>
+<h3 id="３式と文">（３）式と文</h3>
 <ul>
 <li>式の否定（<code>if not a is b</code>）ではなく、内側の項の否定（<code>if a is not b</code>）を使う</li>
 <li>コンテナやシーケンスの長さ（<code>if len(somelist) == 0</code>）を使って、空値（<code>[]</code>や<code>''</code>など）かどうかをチェックしない。<code>if not somelist</code>を使って、空値が暗黙にFalseと評価されることを使う</li>
@@ -179,7 +197,7 @@ my_list <span style="color:#f92672">=</span> [
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">foo <span style="color:#f92672">=</span> long_function_name(
     var_one, var_two,
     var_three, var_four)
-</code></pre></div><p><strong>（４）インポート</strong></p>
+</code></pre></div><h3 id="４インポート">（４）インポート</h3>
 <ul>
 <li>import文は常にファイルの先頭におく</li>
 <li>インポートは、①標準ライブラリモジュール、②サードパーティモジュール、③自分の作成したモジュール、の順に行う。</li>
@@ -241,11 +259,11 @@ VSCodeを使っている場合はPEP8準拠の拡張機能を使ってみるの�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog05/">[Hugoブログ05]テーマのカスタマイズその２</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog04/">[Hugoブログ04]テーマのカスタマイズその１</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog03/">[Hugoブログ03]記事更新する際の手順</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog02/">[Hugoブログ02]GitHub Pagesで公開する</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/hugo_blog01/">[Hugoブログ01]構築をはじめる</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog05/">[Hugoブログ05]テーマのカスタマイズその２</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog04/">[Hugoブログ04]テーマのカスタマイズその１</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog03/">[Hugoブログ03]記事更新する際の手順</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog02/">[Hugoブログ02]GitHub Pagesで公開する</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog01/">[Hugoブログ01]構築をはじめる</a></li>
 		</ul>
 	</div>
 </div>
@@ -254,10 +272,10 @@ VSCodeを使っている場合はPEP8準拠の拡張機能を使ってみるの�
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item">
-				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/">Effective Python</a>
 			</li>
 			<li class="widget__item">
-				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/python/">python</a>
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
 			</li>
 		</ul>
 	</div>
@@ -265,7 +283,6 @@ VSCodeを使っている場合はPEP8準拠の拡張機能を使ってみるの�
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/clip_%E3%83%96%E3%83%AD%E3%82%B0%E6%8A%95%E7%A8%BF/" title="clip_ブログ投稿">clip_ブログ投稿</a>
 		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/%E5%AD%A6%E7%BF%92/" title="学習">学習</a>
 	</div>
 </div>

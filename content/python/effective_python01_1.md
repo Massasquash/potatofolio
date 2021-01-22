@@ -3,7 +3,7 @@ title: "[Effective Python]項目1:使用するPythonのバージョンを知っ�
 date: 2021-01-20T09:26:50+09:00
 lead: "「Effective python第２版」の学習備忘録"
 categories:
-  - "python"
+  - "Effective Python"
 ---
 
 # はじめに
@@ -32,10 +32,12 @@ Python3.8が2019年10月にリリースされてから、多くの構文が導�
 
 ### 解説
 使用しているPythonのバージョンを調べる方法は
-（１）コマンドラインで調べる方法
-（２）Python実行時（Jupyter Notebookのセル上で）調べる方法
+- （１）コマンドラインで調べる方法
+- （２）Python実行時（Jupyter Notebookのセル上で）調べる方法
 
-（１）の方法は、ターミナルで確認する方法。自分のインストールしているpythonのバージョンを調べられます。
+
+### （１）コマンドラインでバージョンを調べる方法
+まずはターミナルで確認する方法。自分のインストールしているpythonのバージョンを調べられます。
 `python`コマンドと`python3`コマンドでは結果が違い、どのPython言語をインストールしたかによって変わってきます。
 （例えばPython3をインストールしていない場合は、Python3コマンドは動きません）。
 ```bash
@@ -43,7 +45,8 @@ $ python --version  #-> Python 2.7.10
 $ python3 --version #-> Python 3.8.0
 ```
 
-（２）はPythonスクリプト上で。組み込み関数`sys`を使います。
+### （２）Python実行時にバージョンを調べる方法
+次にPythonスクリプト上でバージョンを確認します。組み込み関数`sys`を使います。
 Jupyter Notebook上などで確認する場合は、このようなやり方で確認できます。
 ```python
 import sys

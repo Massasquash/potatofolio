@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugoブログ on Potatofolio</title>
-    <link>https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/</link>
-    <description>Recent content in Hugoブログ on Potatofolio</description>
+    <title>Works on Potatofolio</title>
+    <link>https://massasquash.github.io/potatofolio/works/</link>
+    <description>Recent content in Works on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 15 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/works/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Hugoブログ05]テーマのカスタマイズその２</title>
       <link>https://massasquash.github.io/potatofolio/works/hugo_blog05/</link>
