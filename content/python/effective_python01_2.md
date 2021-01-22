@@ -103,11 +103,11 @@ VSCodeを使っている場合はPEP8準拠の拡張機能を使ってみるの�
 
 ---
 ## MEMO
-【参考書籍】
-- [O’Reilly Japan - Effective Python 第2版](https://www.oreilly.co.jp/books/9784873119175/)
-
 【参考記事】
 - [はじめに — pep8-ja 1.0 ドキュメント](https://pep8-ja.readthedocs.io/ja/latest/)
 - [Python 標準ライブラリ — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/index.html)
 - [Python で 1 行が 79 文字以内で、インデントがスペース 4 文字なのはなんで？ | 民主主義に乾杯](https://python.ms/pep7/#_1-%E8%A1%8C%E3%81%8B%E3%82%99-79-%E6%96%87%E5%AD%97%E4%BB%A5%E5%86%85%E3%81%A6%E3%82%99%E3%81%82%E3%82%8B%E7%90%86%E7%94%B1)
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+
 ---

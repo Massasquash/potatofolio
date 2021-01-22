@@ -73,6 +73,9 @@ canonifyurls = true
   #icon = "youtube.svg"
 
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 # Style
 [Params.style.vars]
   highlightColor = "#2d91e2" # Override highlight color
@@ -81,7 +84,7 @@ canonifyurls = true
 # メインメニュー
 [[Menus.main]]
   name = "Works"
-  url = "/"
+  url = "/works/"
   weight = 1
 
 [[Menus.main]]
