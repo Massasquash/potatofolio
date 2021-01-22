@@ -29,13 +29,15 @@ categories:
 Python関数の引数のデフォルトはこのどちらの方式でも呼び出すことができますが、関数定義時に「キーワード専用引数」「位置専用引数」として呼び出し方を指定してしまう方法があります。  
 これを活用すると関数呼び出し時の書き方が統一されるので、読みやすいコードにすることができます。  
 
+また、`/`と`*`に挟まれた引数はどちらの呼び出し方でも呼び出せます（Pythonの関数引数のデフォルト）。
+
 ### 解説
 関数定義の時の仮引数に、`*`や`/`の記号を使って指定することができます。
 
 |  表記  |  解説  |  構文例  |
 | :---: | :---: | :---: |
-|  * |  以降がキーワード専用引数になる  | `def(page, *, ignore_error=False)` |
-|  /  |  その前までが位置専用引数になる  | `def(x, y, /)` |
+|  * |  以降がキーワード専用引数になる  | `def(page, *, ignore_error=False):` |
+|  /  |  その前までが位置専用引数になる  | `def(x, y, /):` |
 
 
 **使用例**  
@@ -70,11 +72,11 @@ def safe_division_d(
 ```
 
 ### 呼び出し方の違い
-仮引数に`*`を使うと、それ以降が**「キーワード専用引数」**になり、呼び出し時にキーワードを指定しないと呼び出せなくなります。  
+仮引数に`*`を使うと、それ以降が **「キーワード専用引数」** になり、呼び出し時にキーワードを指定しないと呼び出せなくなります。  
 `safe_division_d(2, 5, ignore_overflow=True, ignore_zero_division=True)`  だとOK  
 `safe_division_d(2, 5, True, True)`  だとエラーとなる  
 
-仮引数に`/`を使うと、その前までが**「位置専用引数」**になり、呼び出し時にキーワード指定できなくなります。  
+仮引数に`/`を使うと、その前までが **「位置専用引数」** になり、呼び出し時にキーワード指定できなくなります。  
 `safe_division_d(2, 5)`  だとOK  
 `safe_division_d(numerator=2, denominator=5)`  だとエラーとなる  
 
@@ -105,5 +107,6 @@ def safe_division_d(
 - [O’Reilly Japan - Effective Python 第2版](https://www.oreilly.co.jp/books/9784873119175/)
 - [Python実践入門](https://www.amazon.co.jp/Python%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80-%E8%A8%80%E8%AA%9E%E3%81%AE%E5%8A%9B%E3%82%92%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%97%E3%80%81%E9%96%8B%E7%99%BA%E5%8A%B9%E7%8E%87%E3%82%92%E9%AB%98%E3%82%81%E3%82%8B-WEB-PRESS-plus-ebook/dp/B0842JDVBZ)
 
+【Effective Pythonサンプルコード】
 - [GitHub - bslatkin/effectivepython: Effective Python: Second Edition — Source Code and Errata for the Book](https://github.com/bslatkin/effectivepython)
 ---
