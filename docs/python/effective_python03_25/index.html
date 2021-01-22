@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-21T09:26:50+09:00" />
 <meta itemprop="dateModified" content="2021-01-21T09:26:50+09:00" />
-<meta itemprop="wordCount" content="1453">
+<meta itemprop="wordCount" content="1467">
 
 
 
@@ -119,23 +119,25 @@
 <blockquote>
 <p>Pythonの関数には、プログラマを助けるためのさまざまな機能があります。一部は、他のプログラミング言語にもある機能ですが、多くはPythonに特有のものです。3章では、関数をどのように使えば、プログラムの意図が明確になり、再利用を促進し、バグを減らせるかを示します。</p>
 </blockquote>
-<p>（目次）
-項目19 複数の戻り値では、4個以上の変数なら決してアンパックしない
-項目20 Noneを返すのではなく例外を送出する
-項目21 クロージャが変数スコープとどう関わるかを把握しておく
-項目22 可変長位置引数を使って、見た目をすっきりさせる
-項目23 キーワード引数にオプションの振る舞いを与える
-項目24 動的なデフォルト引数を指定するときにはNoneとdocstringを使う
-<strong>項目25 キーワード専用引数と位置専用引数で明確さを高める</strong>
-項目26 functools.wrapsを使って関数デコレータを定義する</p>
+<p>（目次）</p>
+<ul>
+<li>項目19 複数の戻り値では、4個以上の変数なら決してアンパックしない</li>
+<li>項目20 Noneを返すのではなく例外を送出する</li>
+<li>項目21 クロージャが変数スコープとどう関わるかを把握しておく</li>
+<li>項目22 可変長位置引数を使って、見た目をすっきりさせる</li>
+<li>項目23 キーワード引数にオプションの振る舞いを与える</li>
+<li>項目24 動的なデフォルト引数を指定するときにはNoneとdocstringを使う</li>
+<li><strong>項目25 キーワード専用引数と位置専用引数で明確さを高める</strong></li>
+<li>項目26 functools.wrapsを使って関数デコレータを定義する</li>
+</ul>
 <h2 id="項目25キーワード専用引数と位置専用引数で明確さを高める">項目25:キーワード専用引数と位置専用引数で明確さを高める</h2>
-<p>関数呼び出しの際に、仮引数名を指定して渡す実引数を「キーワード引数」、指定しないで渡す実引数を「キーワード引数」と呼びます。
-Python関数の引数のデフォルトはこのどちらの方式でも呼び出すことができますが、関数定義時に「キーワード専用引数」「位置専用引数」として呼び出し方を指定してしまう方法があります。
+<p>関数呼び出しの際に、仮引数名を指定して渡す実引数を「キーワード引数」、指定しないで渡す実引数を「キーワード引数」と呼びます。<br>
+Python関数の引数のデフォルトはこのどちらの方式でも呼び出すことができますが、関数定義時に「キーワード専用引数」「位置専用引数」として呼び出し方を指定してしまう方法があります。<br>
 これを活用すると関数呼び出し時の書き方が統一されるので、読みやすいコードにすることができます。</p>
 <h3 id="解説">解説</h3>
 <p>関数定義の時の仮引数に、<code>*</code>や<code>/</code>の記号を使って指定することができます。</p>
 <p>|  表記  |  解説  |  構文例  |
-| —— | —— | —— |
+| :——: | :——: | :——: |
 |  * |  以降がキーワード専用引数になる  | <code>def(page, *, ignore_error=False)</code> |
 |  /  |  その前までが位置専用引数になる  | <code>def(x, y, /)</code> |</p>
 <p><strong>使用例</strong><br>
@@ -156,21 +158,21 @@ Python関数の引数のデフォルトはこのどちらの方式でも呼び�
             <span style="color:#66d9ef">return</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
         <span style="color:#66d9ef">else</span>:
             <span style="color:#66d9ef">raise</span>
-</code></pre></div><p>この関数定義の部分に使います。</p>
+</code></pre></div><p>この関数定義の部分に使っています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">safe_division_d</span>(
   numerator, denominator, <span style="color:#f92672">/</span>, <span style="color:#f92672">*</span>,
   ignore_overflow<span style="color:#f92672">=</span>False,
   ignore_zero_division<span style="color:#f92672">=</span>False):
-</code></pre></div><p>仮引数に<code>*</code>を使うと、それ以降が**「キーワード専用引数」**になり、呼び出し時にキーワードを指定しないと呼び出せなくなります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">safe_division_d(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, ignore_overflow<span style="color:#f92672">=</span>True, ignore_zero_division<span style="color:#f92672">=</span>True)  <span style="color:#75715e"># OK</span>
-safe_division_d(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, True, True)  <span style="color:#75715e"># エラーとなる</span>
-</code></pre></div><p>仮引数に<code>/</code>を使うと、その前までが**「位置専用引数」**になり、呼び出し時にキーワード指定できなくなります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">safe_division_d(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e"># OK</span>
-safe_division_d(numerator<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, denominator<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)  <span style="color:#75715e"># エラーとなる</span>
-</code></pre></div><p><strong>キーワード専用引数が有効な例</strong>
+</code></pre></div><p>仮引数に<code>*</code>を使うと、それ以降が**「キーワード専用引数」**になり、呼び出し時にキーワードを指定しないと呼び出せなくなります。<br>
+<code>safe_division_d(2, 5, ignore_overflow=True, ignore_zero_division=True)</code>  だとOK<br>
+<code>safe_division_d(2, 5, True, True)</code>  だとエラーとなる</p>
+<p>仮引数に<code>/</code>を使うと、その前までが**「位置専用引数」**になり、呼び出し時にキーワード指定できなくなります。<br>
+<code>safe_division_d(2, 5)</code>  だとOK<br>
+<code>safe_division_d(numerator=2, denominator=5)</code>  だとエラーとなる</p>
+<p><strong>キーワード専用引数が有効な例</strong>
 上の例のようにブール値がオプションとして並ぶ場合、呼び出し時にキーワードで指定する方がなんのオプションなのか一目でわかります。</p>
 <p><strong>位置専用引数が有効な例</strong>
-のちに呼び出す関数の仮引数名を変更したくなることがあるかと思います。
+のちに呼び出す関数の仮引数名を変更したくなることがあるかと思います。<br>
 呼び出し時にキーワードを使えないようにするだけで、仮引数名を変えても呼び出し時に影響が出ないので、メンテナンスが楽になります。</p>
 <p>また、<code>/</code>と<code>*</code>で挟まれた仮引数がある場合は、呼び出し時にどちらの方式でも呼び出すことができます。</p>
 <h3 id="感想">感想</h3>
