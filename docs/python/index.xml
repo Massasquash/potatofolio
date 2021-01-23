@@ -6,7 +6,16 @@
     <description>Recent content in Pythons on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_4/</link>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Effective Python]項目2 PEP8スタイルガイドに従う</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_2/</link>

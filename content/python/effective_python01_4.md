@@ -4,7 +4,6 @@ date: 2021-01-04
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"
-draft: true
 ---
 
 # はじめに
