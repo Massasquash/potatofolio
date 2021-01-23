@@ -1,6 +1,6 @@
 ---
-title: "[Effective Python]項目2:PEP8スタイルガイドに従う"
-date: 2021-01-21T09:26:50+09:00
+title: "[Effective Python]項目2 PEP8スタイルガイドに従う"
+date: 2021-01-02
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"
@@ -26,14 +26,14 @@ categories:
 
 
 
-## 項目2:PEP8スタイルガイドに従う
+## 項目2 PEP8スタイルガイドに従う
 Pythonのコードを書くときは[PEP8スタイルガイド](https://pep8-ja.readthedocs.io/ja/latest/)に従うと扱いやすくなります。  
 「Pythonのコードをどのようにフォーマットするかのスタイルガイド」で、どのようにコードを書けば良いかが整理されています。  
 
 コミュニティや開発メンバーで行う場合は、PEP8を土台として独自ルールなどは共通スタイルを共有しておくことで、協働作業が捗ります。  
 自分だけが読むコードの場合でも、一貫したスタイルで書くことで後から修正しやすくなります。
 
-### 解説
+## 解説
 
 以下、特に初心者〜中級者のうちに効果が出やすそうな一部を挙げてみます。　
 
@@ -94,7 +94,7 @@ foo = long_function_name(
 標準ライブラリについては[公式ドキュメント](https://docs.python.org/ja/3/library/index.html)で見られます。
 
 
-### 感想
+## 感想
 上で挙げたのはごく一例。[PEP8スタイルガイド](https://pep8-ja.readthedocs.io/ja/latest/)を読むともっと興味深いコーディング規約が載っています。
 VSCodeを使っている場合はPEP8準拠の拡張機能を使ってみるのもコードを自動で整えられて便利です。
 
