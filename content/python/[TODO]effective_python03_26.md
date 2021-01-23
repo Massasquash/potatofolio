@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]項目26 functools.wrapsを使って関数デコレータを定義する"
-date: 2021-03-25
+date: 2020-03-25
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"
@@ -25,7 +25,8 @@ categories:
 
 
 ## 項目26 functools.wrapsを使って関数デコレータを定義する
-Pythonのデータポータル
+Pythonの「デコレータ」構文を使うと、関数実行時にその関数の動きに装飾を加えることができる。
+
 
 
 

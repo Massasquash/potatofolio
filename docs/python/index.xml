@@ -6,11 +6,20 @@
     <description>Recent content in Pythons on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Effective Python]項目26 functools.wrapsを使って関数デコレータを定義する</title>
+      <link>https://massasquash.github.io/potatofolio/python/todoeffective_python03_26/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/todoeffective_python03_26/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_4/</link>
-      <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/python/effective_python01_4/</guid>
       <description></description>
@@ -19,7 +28,7 @@
     <item>
       <title>[Effective Python]項目2 PEP8スタイルガイドに従う</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_2/</link>
-      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/python/effective_python01_2/</guid>
       <description></description>
@@ -28,9 +37,18 @@
     <item>
       <title>[Effective Python]項目1 使用するPythonのバージョンを知っておく</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_1/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/python/effective_python01_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python03_25/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python03_25/</guid>
       <description></description>
     </item>
     

@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]項目3 bytesとstrの違いを知っておく"
-date: 2021-01-03
+date: 2020-01-03
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"
