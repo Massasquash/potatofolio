@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む"
-date: 2020-01-04
+date: 2021-01-23
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"

@@ -3,27 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://massasquash.github.io/potatofolio/categories/</loc>
+    <lastmod>2021-01-24T09:33:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/</loc>
+    <lastmod>2021-01-24T09:33:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/works/</loc>
+    <lastmod>2021-01-24T09:33:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/categories/%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8/</loc>
+    <lastmod>2021-01-24T09:33:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/works/output_plan/</loc>
+    <lastmod>2021-01-24T09:33:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/python/effective_python01_5/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/python/effective_python01_4/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/categories/effective-python/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/python/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/python/effective_python03_25/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/python/effective_python01_2/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/python/effective_python01_1/</loc>
+    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://massasquash.github.io/potatofolio/works/hugo_blog05/</loc>
     <lastmod>2021-01-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/categories/</loc>
-    <lastmod>2021-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/</loc>
-    <lastmod>2021-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/</loc>
-    <lastmod>2021-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/works/</loc>
     <lastmod>2021-01-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -70,40 +115,6 @@
   <url>
     <loc>https://massasquash.github.io/potatofolio/notes/20200601_book_itnouka/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/python/todoeffective_python03_26/</loc>
-    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/categories/effective-python/</loc>
-    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/python/</loc>
-    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/python/effective_python01_4/</loc>
-    <lastmod>2020-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/python/effective_python01_2/</loc>
-    <lastmod>2020-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/python/effective_python01_1/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/python/effective_python03_25/</loc>
   </url>
   
   <url>
