@@ -6,22 +6,31 @@
     <description>Recent content in Pythons on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_4/</link>
-      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      <title>[Effective Python]項目10 代入式で繰り返しを防ぐ</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_10/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_4/</guid>
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_10/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]項目5 複雑な式の代わりにヘルパー関数を書く</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_5/</link>
-      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/python/effective_python01_5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_4/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_4/</guid>
       <description></description>
     </item>
     

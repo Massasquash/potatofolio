@@ -11,14 +11,14 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python01_5/" />
-<meta property="article:published_time" content="2021-01-23T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-01-23T00:00:00+00:00" />
+<meta property="article:published_time" content="2021-01-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-25T00:00:00+00:00" />
 
 		<meta itemprop="name" content="[Effective Python]項目5 複雑な式の代わりにヘルパー関数を書く">
 <meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-01-23T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-01-23T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2960">
+<meta itemprop="datePublished" content="2021-01-25T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-25T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3050">
 
 
 
@@ -106,7 +106,7 @@
 			<p class="post__lead">「Effective python第２版」の学習備忘録</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-23T00:00:00Z">January 23, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/" rel="category">Effective Python</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-25T00:00:00Z">January 25, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/" rel="category">Effective Python</a>
 	</span>
 </div></div>
 		</header>
@@ -155,7 +155,7 @@
 さらに、繰り返し出てくる処理はそれを <strong>ヘルパー関数</strong>として別の関数に切り分けておくと便利です。一般的に、再利用しやすいように便利な機能を切り出した関数をヘルパー関数と呼ぶようです。</p>
 <p>プログラミングには <strong>DRYの原則</strong> というものがあります。 &ldquo;Don&rsquo;t Repeat Yourself&rdquo;。「同じコードを繰り返すな」ということです。繰り返しコードを書かないように、関数を切り分けるというのが、可読性・保守性を上げるための１つのテクニックです。</p>
 <h2 id="解説">解説</h2>
-<p>この章の本題は、</p>
+<p>この項目の主題は、</p>
 <ol>
 <li>「条件式のあるロジックをどう書くか？」</li>
 </ol>
@@ -168,10 +168,9 @@
 <li>「繰り返し使われるロジックを、 <strong>ヘルパー関数</strong> として別に切り分ける」</li>
 </ol>
 <p>というところです。
-本題に入る前に、出てくる構文について２つほどチェックします。</p>
+主題については書籍の項目を追っていくと掴めるかと思いますが、読解するために、ちょっと引っかかりそうな構文について２つほどチェックします。</p>
 <h3 id="1構文dictgetメソッドについて">（1）構文：dict.getメソッドについて</h3>
-<p>本題に入る前に、この章でさらっと出てくるdict型の<code>get</code>メソッドについてまず整理します。
-このメソッドは、一言で言うと<code>KeyError</code>対策。つまり <strong>「辞書に存在しないキーを参照した場合にもエラーにならず値を返してくれる」</strong> と言うものです。</p>
+<p>このメソッドは、一言で言うと<code>KeyError</code>対策。つまり <strong>「辞書に存在しないキーを参照した場合にもエラーにならず何らかの値を返してくれるようにする」</strong> というものです。</p>
 <p>まず、dict型とはリテラルは<code>values = {'red': 5, 'blue': 0, 'green': 0 }</code>のように波括弧を使って書き、キーとバリュー（値）をセットで扱うデータ型です（他の言語では「ハッシュ」「連想配列」などと呼ばれたりもします）。<br>
 dict型ではキーをインデックスとして利用することで、格納された値を取り出すことができます。</p>
 <p>ここでdict型に対する基本的な操作としては、</p>
@@ -194,6 +193,7 @@ dict型ではキーをインデックスとして利用することで、格納�
 <span style="color:#66d9ef">print</span>(values<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;opacity&#39;</span>, <span style="color:#ae81ff">0</span>))  <span style="color:#75715e"># -&gt; 0</span>
 </code></pre></div><p>このように、キーが存在している場合は参照した値を返し、キーが存在していない場合はエラーにならず別の値を返してくれるようになります。
 第一引数にキーの名前、第二引数にはキーがない場合に返したい値を入れることができます。</p>
+<p>似たようなメソッドで<code>dict.setdefault()</code>というのがありますが、後の項目で出てくるのでその際に整理します。</p>
 <h3 id="2構文論理式を使った条件分岐について">（2）構文：論理式を使った条件分岐について</h3>
 <p>もう１つ、論理式を使って条件分岐を行う構文がさりげなく使われていますので、こちらも整理しておきます。</p>
 <p><code>x and y</code>や<code>x or y</code>がブール値<code>True/False</code>どちらかを返す、と言うのは直感的にわかりやすい使い方だと思うのですが、返り値がブール値でないこともあります。
@@ -213,14 +213,15 @@ y <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>
 </code></pre></div><p>というように、出力結果が<code>x</code>の値によって変わります。このケースは、プログラミングに慣れていないと直感的にわかりづらいのかな、と思います。</p>
 <p><a href="https://docs.python.org/ja/3/reference/expressions.html#boolean-operations">公式ドキュメント</a>を見ると、</p>
 <blockquote>
-<p>式 x and y は、まず x を評価します; x が偽なら x の値を返します; それ以外の場合には、 y の値を評価し、その結果を返します。
+<p>式 x and y は、まず x を評価します; x が偽なら x の値を返します; それ以外の場合には、 y の値を評価し、その結果を返します。<br>
 式 x or y は、まず x を評価します; x が真なら x の値を返します; それ以外の場合には、 y の値を評価し、その結果を返します。</p>
 </blockquote>
-<p>式は左から順に処理をしていくので、左側の<code>x</code>を先に評価することで右側の<code>y</code>が評価されない、と言うことが起こります（<strong>ショートサーキット（短絡評価）</strong>）。</p>
-<p>この章では、この論理式の性質を活用して、ちょっとした条件分岐を作っています。</p>
+<p>式は左から順に処理をしていくので、左側の<code>x</code>を先に評価することで結論が出てしまい、右側の<code>y</code>が評価されない、と言うことが起こっています（<strong>ショートサーキット（短絡評価）</strong>）。</p>
+<p>この項目ではこの論理式の性質を活用して、ちょっとした条件分岐を作っています。</p>
 <h3 id="３論理式とifelse条件式どれがわかりやすいか">（３）論理式とif/else条件式どれがわかりやすいか？</h3>
-<p>次に「条件式のあるロジックをどう書くか？」と言う部分で、この章で登場する３つの書き方を並べてみました。
-<a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py">サンプルコード</a>を参照させてもらいます。</p>
+<p>最後にこの項目の主題に関係する部分。<br>
+「条件式のあるロジックをどう書くか？」と言う部分で、この章で登場する３つの書き方を並べてみました。</p>
+<p><a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py">サンプルコード</a>を参照させてもらいます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> urllib.parse <span style="color:#f92672">import</span> parse_qs
 
 my_values <span style="color:#f92672">=</span> parse_qs(<span style="color:#e6db74">&#39;red=5&amp;blue=0&amp;green=&#39;</span>,
@@ -244,7 +245,8 @@ opacity_str <span style="color:#f92672">=</span> my_values<span style="color:#f9
 <span style="color:#66d9ef">else</span>:
     opacity <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;Opacity: {opacity!r}&#39;</span>)  <span style="color:#75715e"># -&gt; Opacity: 0</span>
-</code></pre></div><p>結論としては、この3つ目の<code>if/else</code>の基本形を使うパターンが一番長いものの、何を意味しているのかがわかりやすいコードになっています。この部分だけを見ると長く感じてしまいますが、この部分を使い回せるように別の関数に切り分けることで、長さは気にならなくなり、かえって可読性・保守性の上がるコードにすることができます。</p>
+</code></pre></div><p>結論としては、この3つ目の<code>if/else</code>の基本形を使うパターンが一番長いものの、何を意味しているのかがわかりやすいコードになっています。</p>
+<p>この部分だけを見ると長く感じてしまいますが、このコードを使い回せるように別の関数に切り分けることで、長さは気にならなくなり、かえって可読性・保守性の上がるコードにすることができます。</p>
 <h2 id="感想">感想</h2>
 <p>このケースでは「基本的な書き方を守るのが一番可読性が高い」と言うことになりました。<br>
 基本を守ってわかりやすい式を書く・関数を切り分けると言うテクニックは、プログラミングの上でとても重要だと思います。<br>
@@ -271,15 +273,15 @@ opacity_str <span style="color:#f92672">=</span> my_values<span style="color:#f9
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_4/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める</p>
+			<p class="pager__title">[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_4/" rel="next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</p>
+			<p class="pager__title">[Effective Python]項目10 代入式で繰り返しを防ぐ</p>
 		</a>
 	</div>
 </nav>
