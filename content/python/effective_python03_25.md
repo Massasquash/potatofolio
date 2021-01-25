@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める"
-date: 2021-01-22
+date: 2021-01-25
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"

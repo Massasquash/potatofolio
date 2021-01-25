@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]項目6 インデックスではなく複数代入アンパックを使う"
-date: 2021-01-25
+date: 2021-01-23
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"
