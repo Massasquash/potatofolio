@@ -28,22 +28,41 @@ draft : true
 
 
 ## 項目6 インデックスではなく複数代入アンパックを使う
-Pythonの組み込み型のtupleは、値の変更不可能なシーケンスを作る型。listとの違いは、ミュータブルかイミュータブルか、というところです。
-このtupleを使った「アンパック構文」というのがあり、１つの代入式で複数の値に代入でき、この構文を使うと見た目がすっきりして、行数が少なくなります。この構文はインデックスを使用しないので、より明快でよりPythonicなコードになります。
+Pythonの組み込み型のタプルは、値の変更不可能なシーケンスを作る型です。このタプルを使った**アンパック構文**という便利な書き方があり、１つの代入式で複数の値に代入することができます。  
+この構文を使うと見た目がすっきりとして行数も少なくなり、Pythonicなコードになります。
 
-このアンパック構文を利用した組み込み関数`enumerate()`関数の活用が、次の項目7で出てきます。
+この構文の便利な例として、例えば値の交換（スワップ）に不要な一時変数を定義する必要がなくシンプルに書くことができる、というのがあります。  
+また組み込み関数`enumerate()`関数を活用する際にも便利になります（項目7で詳しく見ていきます）
 
-スワップがシンプルにできるのがポイントです。
+## 解説
 
+### （１）リストとタプル
+リストやタプルは**シーケンス型**に分類されています。  
+シーケンス型には、文字列、リスト、タプル、`range`オブジェクトが分類されます（辞書やセット型はシーケンスではありません）。
+
+シーケンスとは、順番のあるデータ型です。例えばスライスで要素の一部を取り出したりすることが可能になります。
+シーケンスに関する演算の一覧
+[組み込み型 — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/stdtypes.html#typesseq)
+
+
+[組み込み型 — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/stdtypes.html#list)
+>リスト型 (list)
+>リストはミュータブルなシーケンスで、一般的に同種の項目の集まりを格納するために使われます (厳密な類似の度合いはアプリケーションによって異なる場合があります)。
+
+[組み込み型 — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/stdtypes.html#tuples)
+>タプル型 (tuple)
+>タプルはイミュータブルなシーケンスで、一般的に異種のデータの集まり (組み込みの enumerate() で作られた 2-タプルなど) を格納するために使われます。タプルはまた、同種のデータのイミュータブルなシーケンスが必要な場合 (set インスタンスや dict インスタンスに保存できるようにするためなど) にも使われます。
+
+
+
+### （２）アンパック構文
 
 
 
 ---
 ## MEMO
 【参考記事】
-- [Pythonの辞書のgetメソッドでキーから値を取得（存在しないキーでもOK） | note.nkmk.me](https://note.nkmk.me/python-dict-get/)
-- [Pythonの論理演算子and, or, not（論理積、論理和、否定） | note.nkmk.me](https://note.nkmk.me/python-boolean-operation/)
-- [6. 式 (expression) — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/reference/expressions.html#boolean-operations)
+- [組み込み型 — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/stdtypes.html#typesseq)
 
 【Effective Pythonサンプルコード】
 - [GitHub - bslatkin/effectivepython: Effective Python: Second Edition — Source Code and Errata for the Book](https://github.com/bslatkin/effectivepython)

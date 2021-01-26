@@ -26,24 +26,39 @@ draft: true
 
 
 ## 項目26 functools.wrapsを使って関数デコレータを定義する
-Pythonの「デコレータ」構文を使うと、関数実行時にその関数の動きに装飾を加えることができる。
+Pythonの**デコレータ**構文を使うと、関数実行時にその関数の動きに装飾を加えることができます。  
+しかし自分でデコレータを定義して実際に関数に適用してみると、表向きの動作には問題がないのですが、デコレータを適用した関数名が変わってしまい`help`関数や`docstring`が働かない、という副作用があります。  
 
-
-
-
-
+これを解消するために、デコレータを定義する時には組み込みモジュール`functools`の`wraps`ヘルパー関数を使うと良い、というのがこの項目の内容です。この`functools.wraps()`は「デコレータを書くのを助けるデコレータ」と言えます。
 
 ## 解説
 
-### デコレータ
+### （１）デコレータ構文
 
+### （２）デコレータが役に立つ例
 
+## 感想
+この項目は僕のようにデコレータそのものに馴染みがない人だと、わかりづらいところかもしれません。  
+今回は **「デコレータの構文と使うと便利な例を知る」**こと、そして今後自分でデコレータを作ることになった際には **「活用するべき標準ライブラリがある」** ということを抑えておけばいいのかな、と思いました。
+
+以前flaskアプリを制作した際に、ルーティングを定義するために以下のような構文がありました。
+
+```python
+@app.route('/')
+def hello():
+    return 'Hello World!'
+```
+
+ここの`@app.route('/')`でデコレータ構文が使われています。
 
 
 ---
 ## MEMO
 【参考書籍】
 - [Python実践入門](https://www.amazon.co.jp/Python%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80-%E8%A8%80%E8%AA%9E%E3%81%AE%E5%8A%9B%E3%82%92%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%97%E3%80%81%E9%96%8B%E7%99%BA%E5%8A%B9%E7%8E%87%E3%82%92%E9%AB%98%E3%82%81%E3%82%8B-WEB-PRESS-plus-ebook/dp/B0842JDVBZ)
+
+【参考記事】
+- [Pythonのデコレータを理解するための12Step - Qiita](https://qiita.com/_rdtr/items/d3bc1a8d4b7eb375c368)
 
 【Effective Pythonサンプルコード】
 - [GitHub - bslatkin/effectivepython: Effective Python: Second Edition — Source Code and Errata for the Book](https://github.com/bslatkin/effectivepython)

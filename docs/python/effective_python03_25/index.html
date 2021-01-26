@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-25T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1475">
+<meta itemprop="wordCount" content="1474">
 
 
 
@@ -175,7 +175,8 @@ Python関数の引数のデフォルトはこのどちらの方式でも呼び�
 </tbody>
 </table>
 <p><strong>使用例</strong><br>
-<a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_25.py">サンプルコード</a>を記載します。</p>
+<a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_25.py">サンプルコード</a>を記載します。<br>
+この関数定義の部分に、この記法が使われています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Example 13</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">safe_division_d</span>(numerator, denominator, <span style="color:#f92672">/</span>, <span style="color:#f92672">*</span>,  <span style="color:#75715e"># Changed</span>
                     ignore_overflow<span style="color:#f92672">=</span>False,
@@ -192,11 +193,6 @@ Python関数の引数のデフォルトはこのどちらの方式でも呼び�
             <span style="color:#66d9ef">return</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
         <span style="color:#66d9ef">else</span>:
             <span style="color:#66d9ef">raise</span>
-</code></pre></div><p>この関数定義の部分に使っています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">safe_division_d</span>(
-  numerator, denominator, <span style="color:#f92672">/</span>, <span style="color:#f92672">*</span>,
-  ignore_overflow<span style="color:#f92672">=</span>False,
-  ignore_zero_division<span style="color:#f92672">=</span>False):
 </code></pre></div><h3 id="１呼び出し方の違い">（１）呼び出し方の違い</h3>
 <p>仮引数に<code>*</code>を使うと、それ以降が <strong>「キーワード専用引数」</strong> になり、呼び出し時にキーワードを指定しないとエラーが出て呼び出せなくなります。<br>
 OK -&gt; <code>safe_division_d(2, 5, ignore_overflow=True, ignore_zero_division=True)</code><br>

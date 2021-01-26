@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1211">
+<meta itemprop="wordCount" content="1545">
 
 
 
@@ -149,30 +149,33 @@
 <li>項目10 代入式で繰り返しを防ぐ</li>
 </ul>
 <h2 id="項目1-使用するpythonのバージョンを知っておく">項目1 使用するPythonのバージョンを知っておく</h2>
-<p>Python3.8が2019年10月にリリースされてから、多くの構文が導入されました。
-またPython2は2020年1月にサポートがなくなり、さらに2020年4月に使用期限が終わり公式な保守が行われなくなりました。
-自己責任で使うことはできますが、Python2の利用は避け、Python3をプロジェクトに使っていきましょう。</p>
+<p>Python3.8が2019年10月にリリースされ、多くの便利な構文が導入されました。<br>
+またPython2は2020年1月にサポートがなくなり、さらに2020年4月に使用期限が終わり公式な保守が行われなくなりました。<br>
+自己責任で使うことはできますが、Python2の利用は避け、Python3をプロジェクトに使っていくのが安全です。そのためにどのバージョンがインストールされているのかの確認の仕方が整理されているのがこの項目の内容です。</p>
 <h2 id="解説">解説</h2>
-<p>使用しているPythonのバージョンを調べる方法は</p>
+<p>使用しているPythonのバージョンを調べるには、以下の方法でそれぞれ調べられます。</p>
 <ul>
 <li>（１）コマンドラインで調べる方法</li>
 <li>（２）Python実行時（Jupyter Notebookのセル上で）調べる方法</li>
 </ul>
 <h3 id="１コマンドラインでバージョンを調べる方法">（１）コマンドラインでバージョンを調べる方法</h3>
-<p>まずはターミナルで確認する方法。自分のインストールしているpythonのバージョンを調べられます。
-<code>python</code>コマンドと<code>python3</code>コマンドでは結果が違い、どのPython言語をインストールしたかによって変わってきます。
-（例えばPython3をインストールしていない場合は、Python3コマンドは動きません）。</p>
+<p>まずはターミナルで確認する方法。自分のPCにインストールしているPythonのバージョンを調べられます。<br>
+<code>python</code>コマンドと<code>python3</code>コマンドでは結果が違い、インストール状況によって変わってきます。<br>
+例えばPython3をインストールしていない場合は、python3コマンドは動きません。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python --version  <span style="color:#75715e">#-&gt; Python 2.7.10</span>
 $ python3 --version <span style="color:#75715e">#-&gt; Python 3.8.0</span>
-</code></pre></div><h3 id="２python実行時にバージョンを調べる方法">（２）Python実行時にバージョンを調べる方法</h3>
-<p>次にPythonスクリプト上でバージョンを確認します。組み込み関数<code>sys</code>を使います。
-Jupyter Notebook上などで確認する場合は、このようなやり方で確認できます。</p>
+</code></pre></div><p>もしかすると学習したての頃は「プログラミング言語」にバージョンがあること、PCに複数のバージョンが同時に入っていることがあまりイメージがしづらいかもしれませんが、「プログラミング言語もソフトウェアの一種」という考え方をすると少しイメージしやすいかなと思います。ソフトウェアは日々更新されてより良いバージョンが出てきたり、古いバージョンのソフトウェアを使い続けることができるのと同じような理屈かなと思います。</p>
+<h3 id="２python実行時にバージョンを調べる方法">（２）Python実行時にバージョンを調べる方法</h3>
+<p>次にPythonスクリプト上でバージョンを確認します。組み込み関数<code>sys</code>を使います。<br>
+ここではJupyter Notebook上で確認することを想定していますが、ターミナルで<code>python3</code>（もしくは<code>python</code>）とコマンドを打ち、対話モードにした状態で確認することもできます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
 <span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>version_info)
+<span style="color:#75715e"># -&gt; sys.version_info(major=3, minor=8, micro=6, releaselevel=&#39;final&#39;, serial=0)</span>
 <span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>version)
+<span style="color:#75715e"># -&gt;3.8.6 (default, Oct  8 2020, 14:07:53) </span>
 </code></pre></div><h2 id="感想">感想</h2>
-<p>プログラミング言語自体も、その実は誰かがプログラミングで作ったものです。
-Pythonはオープンソースなので裏側でコミュニティの皆さんが保守管理してくれているため、僕らは安心してPythonでプログラミングを書くことができています。
+<p>プログラミング言語自体も、その実は誰かがプログラミングで作ったものです。<br>
+Pythonはオープンソースなので裏側でコミュニティの皆さんが保守管理してくれているため、僕らは安心してPythonでプログラミングを書くことができています。<br>
 より良くなるようにバグの改善・セキュリティ向上など改善を続けているので、しっかりと「サポートが受けられているバージョン」をプロジェクトに使っていくのが良さそうです。</p>
 <hr>
 <h2 id="memo">MEMO</h2>

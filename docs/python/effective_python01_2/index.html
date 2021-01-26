@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2209">
+<meta itemprop="wordCount" content="2254">
 
 
 
@@ -151,12 +151,11 @@
 <li>項目10 代入式で繰り返しを防ぐ</li>
 </ul>
 <h2 id="項目2-pep8スタイルガイドに従う">項目2 PEP8スタイルガイドに従う</h2>
-<p>Pythonのコードを書くときは<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に従うと扱いやすくなります。<br>
-「Pythonのコードをどのようにフォーマットするかのスタイルガイド」で、どのようにコードを書けば良いかが整理されています。</p>
-<p>コミュニティや開発メンバーで行う場合は、PEP8を土台として独自ルールなどは共通スタイルを共有しておくことで、協働作業が捗ります。<br>
+<p>Pythonのコードを書くときは<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に従うと扱いやすくなります。これは<strong>Pythonコードを書く際のベストプラクティスが記載されたスタイルガイド</strong>で、美しいコードを書くためのルールが記載されています。</p>
+<p>コミュニティや開発メンバーで行う場合は、このPEP8を土台として独自ルールなどは共通スタイルを共有しておくことで、協働作業が捗ります。<br>
 自分だけが読むコードの場合でも、一貫したスタイルで書くことで後から修正しやすくなります。</p>
 <h2 id="解説">解説</h2>
-<p>PEP8には色々載っていますが、以下にまず手はじめに意識すると効果がありそうな項目を挙げてみます。　</p>
+<p>PEP8には色々載っていますが、まずはじめに特に抑えておくと良さそうな項目をさらっと挙げてみます。　</p>
 <h3 id="１空白">（１）空白</h3>
 <ul>
 <li>インデントにはタブではなく4個のスペースを使う</li>
@@ -182,8 +181,8 @@
 <li>式が1行に治らない場合は、括弧でくくって複数行にして、読みやすいようにインデントする</li>
 <li><code>\</code>で行分けするよりは、括弧を使って複数の指揮を囲む方が良い</li>
 </ul>
-<p>PEP8での改行についてはとても奥深いです（以下はPEP8に載っている例）。<br>
-リストやタプルを途中で改行す場合は、以下のような改行の仕方ができます（どちらでも可だがプロジェクトで統一すると良い）。</p>
+<p>カッコを使った改行についてはとても奥深いです。例えば、リストやタプルを途中で改行す場合は、以下のような改行の仕方ができます。
+以下は<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に載っている例です。どちらの書き方でも可能ですが、プロジェクトでは統一すると良さそうです。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_list <span style="color:#f92672">=</span> [
     <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>,
     <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>,
@@ -193,7 +192,7 @@ my_list <span style="color:#f92672">=</span> [
     <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>,
     <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>,
 ]
-</code></pre></div><p>また、<code>()</code>, <code>[]</code>などのかっこで囲まれた部分の改行は繋がっているものとして認識してくれるので、これを上手く活用すると自然にカッコ良く改行することができます。</p>
+</code></pre></div><p>このように<code>()</code>, <code>[]</code>などのカッコで囲まれた部分の改行は繋がっているものとして認識してくれるので、これを上手く活用することで自然体のまま長いコードを改行することができます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">foo <span style="color:#f92672">=</span> long_function_name(
     var_one, var_two,
     var_three, var_four)
@@ -206,10 +205,10 @@ my_list <span style="color:#f92672">=</span> [
 <p>基本的にはインストールなしで使えるのが標準ライブラリで、インストールして使うのがサードパーティーモジュール、というところでしょうか。<br>
 例えば<code>sys</code>, <code>os</code>, <code>datetime</code>などが標準ライブラリに当たります。標準ライブラリについては<a href="https://docs.python.org/ja/3/library/index.html">公式ドキュメント</a>で確認することができます。</p>
 <h2 id="感想">感想</h2>
-<p>上で挙げたのはごく一例。<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>を読むともっと興味深いコーディング規約が載っています。
+<p>上で挙げたのはごく一例。<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>を読むともっと興味深いコーディング規約が載っています。<br>
 VSCodeを使っている場合はPEP8準拠の拡張機能を使ってみるのもコードを自動で整えられて便利です。</p>
-<p>基本を学ぶことで「とりあえず正しく動くコードの書き方」を身に着けることができたら、次のステップとして「保守管理しやすいコードの書き方」が必要になってきます。
-基礎文法の次として「リーダブルコード」がプログラミング全般における考え方を学べる書籍だとしたら、「<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>」はリーダブルコードの考え方をPythonで実践する具体的な書き方、と言う感じかもしれません。</p>
+<p>プログラミング学習においては、基本を学んでひとまず「正しく動くコードの書き方」を身に着けることができたら、次のステップとして「保守管理しやすいコードの書き方」が必要になってきます。<br>
+その際に <strong>「リーダブルコード」</strong> がプログラミング全般における考え方を学べる書籍だとすると、「<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>」はリーダブルコードの考え方をPythonで実践する具体的な書き方、と言う感じかもしれません。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
 <p>【参考記事】</p>
@@ -219,6 +218,9 @@ VSCodeを使っている場合はPEP8準拠の拡張機能を使ってみるの�
 <li><a href="https://python.ms/pep7/#_1-%E8%A1%8C%E3%81%8B%E3%82%99-79-%E6%96%87%E5%AD%97%E4%BB%A5%E5%86%85%E3%81%A6%E3%82%99%E3%81%82%E3%82%8B%E7%90%86%E7%94%B1">Python で 1 行が 79 文字以内で、インデントがスペース 4 文字なのはなんで？ | 民主主義に乾杯</a></li>
 </ul>
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+　
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873115655&linkId=8721a639c1e440dfa00e6d00a2f7b191&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
+    </iframe>
 <hr>
 
 		</div>

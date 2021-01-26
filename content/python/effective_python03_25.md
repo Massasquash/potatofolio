@@ -41,7 +41,8 @@ Python関数の引数のデフォルトはこのどちらの方式でも呼び�
 
 
 **使用例**  
-[サンプルコード](https://github.com/bslatkin/effectivepython/blob/master/example_code/item_25.py)を記載します。
+[サンプルコード](https://github.com/bslatkin/effectivepython/blob/master/example_code/item_25.py)を記載します。  
+この関数定義の部分に、この記法が使われています。
 
 ```python
 # Example 13
@@ -62,14 +63,6 @@ def safe_division_d(numerator, denominator, /, *,  # Changed
             raise
 ```
 
-この関数定義の部分に使っています。
-
-```python
-def safe_division_d(
-  numerator, denominator, /, *,
-  ignore_overflow=False,
-  ignore_zero_division=False):
-```
 
 ### （１）呼び出し方の違い
 仮引数に`*`を使うと、それ以降が **「キーワード専用引数」** になり、呼び出し時にキーワードを指定しないとエラーが出て呼び出せなくなります。  

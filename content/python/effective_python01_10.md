@@ -81,12 +81,13 @@ while command != "quit":
 <img src="/img/posts/20210125_do_while.png" width="300">
 
 
-**代入式（walrus演算子）を使う場合と使わない場合の比較**
+### （３）代入式（walrus演算子）を使う場合と使わない場合の比較
 それぞれのアルゴリズムで、代入式を使う場合とそうでない場合でどのように変わるのか、比較してみました。  
-[サンプルコード](https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py)を参照させてもらいました。  
-前提として必要な関数が多く、この記事だけで理解するにはわかりづらいものになってしまったので、書籍を読んで整理していただくのが良いかもしれません。ここでは細かい内容よりも代入式を使うことで「行数が短くなる」「ネストが浅くなる」ことを確認するために、コードを並べて比較してみます。
 
-まず、条件分岐：switch/case文をPythonで実装するケース。  
+[サンプルコード](https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py)を参照させてもらいました。  
+以下に書いたコードは前提として必要な関数が多く、この記事だけで理解するにはわかりづらいものになってしまったので、詳しくは書籍を読んで整理していただくのが良いかもしれません。ここでは細かい内容はともかく、コードを並べてみることで、代入式を使うと「行数が短くなる」「ネストが浅くなる」ことを確認したいと思います。
+
+まず、条件分岐：`switch/case`文をPythonで実装するケース。  
 `fresh_fruit`という果物と在庫数を表した辞書から、果物の個数に応じて飲み物を作る、という想定の処理です。途中で出てくる関数`slice_bananas()`, `make_smoothies()`, `make_cider`, `make_lemonade()`は、この項目の例の中で出てくる独自に作っている関数です。
 
 ```python
@@ -128,7 +129,7 @@ else:
 ```
 
 
-次に、繰り返し処理：do/while文をPythonで実装するケース。  
+次に、繰り返し処理：`do/while`文をPythonで実装するケース。  
 新たに果物が届いてジュースを瓶詰めする、という想定のコードです。この例でも`pick_fruit()`, `make_juice`という関数を別で定義しています。
 
 ```python
@@ -165,7 +166,7 @@ print(bottles)
 
 ## 感想
 walrus演算子`:=`はセイウチの横顔に見えるためこのような名前がついているようで、シャレが効いていて面白いですよね。  
-またPythonには他の言語ではあるような制御構文が一部存在しないというのも興味深いです。こちら[pythonにswitch文がない経緯・理由 - gogochephy’s diary](http://gogochephy.hatenablog.com/entry/2015/07/02/135614)を参照させていただくと、公式ドキュメントにもしっかり`switch`や`case`文が無い理由が載っており、Pythonコミュニティでも議論がなされている話題のようです。
+またPythonには他の言語ではあるような制御構文が一部存在しないというのも興味深いです。こちら[pythonにswitch文がない経緯・理由 - gogochephy’s diary](http://gogochephy.hatenablog.com/entry/2015/07/02/135614)を参照させていただくと、公式ドキュメントにもしっかり`switch/case`文が無い理由が載っており、Pythonコミュニティでも議論がなされている話題のようです。
 
 
 ---
@@ -175,8 +176,6 @@ walrus演算子`:=`はセイウチの横顔に見えるためこのような名�
 - [PEP 572 — Assignment Expressions | Python.org](https://www.python.org/dev/peps/pep-0572/)
 
 - [pythonにswitch文がない経緯・理由 - gogochephy’s diary](http://gogochephy.hatenablog.com/entry/2015/07/02/135614)
-
-
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 
