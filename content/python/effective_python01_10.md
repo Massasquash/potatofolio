@@ -80,10 +80,13 @@ while command != "quit":
 <img src="/img/posts/20210125_while.png" width="300">
 <img src="/img/posts/20210125_do_while.png" width="300">
 
-それぞれのアルゴリズムで、代入式（walrus演算子）を使う場合と使わない場合の比較を並べてみました。  
-[サンプルコード](https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py)を参照させてもらいます。
 
-まず、条件分岐：switch/case文をPythonで実装。  
+**代入式（walrus演算子）を使う場合と使わない場合の比較**
+それぞれのアルゴリズムで、代入式を使う場合とそうでない場合でどのように変わるのか、比較してみました。  
+[サンプルコード](https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py)を参照させてもらいました。  
+前提として必要な関数が多く、この記事だけで理解するにはわかりづらいものになってしまったので、書籍を読んで整理していただくのが良いかもしれません。ここでは細かい内容よりも代入式を使うことで「行数が短くなる」「ネストが浅くなる」ことを確認するために、コードを並べて比較してみます。
+
+まず、条件分岐：switch/case文をPythonで実装するケース。  
 `fresh_fruit`という果物と在庫数を表した辞書から、果物の個数に応じて飲み物を作る、という想定の処理です。途中で出てくる関数`slice_bananas()`, `make_smoothies()`, `make_cider`, `make_lemonade()`は、この項目の例の中で出てくる独自に作っている関数です。
 
 ```python
@@ -125,7 +128,7 @@ else:
 ```
 
 
-次に、繰り返し処理：do/while文をPythonで実装。  
+次に、繰り返し処理：do/while文をPythonで実装するケース。  
 新たに果物が届いてジュースを瓶詰めする、という想定のコードです。この例でも`pick_fruit()`, `make_juice`という関数を別で定義しています。
 
 ```python
@@ -157,7 +160,7 @@ while True:                     # Loop
 print(bottles)
 ```
 
-代入式を使った方が行数が短くなったり、ネストが浅くなったりしているのがわかります。
+代入式を使うことで、「行数が短くなる」「ネストが浅くなる」ことが確認できるかと思います。
 
 
 ## 感想

@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-26T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1477">
+<meta itemprop="wordCount" content="2106">
 
 
 
@@ -150,13 +150,49 @@
 </ul>
 <h2 id="項目27-mapやfilterの代わりにリスト内包表記を使う">項目27 mapやfilterの代わりにリスト内包表記を使う</h2>
 <p>Pythonの<strong>リスト内包表記</strong>を使うと、他のシーケンスやイテラブルオブジェクトから簡単な記法でリストを作ることができます。
-内包表記を使うと１つ１つリストに追加するという処理を行わずに済むため、通常の<code>for</code>文よりも実行速度が速い、というメリットもあります。
-リストだけでなくタプル、辞書、集合も内包表記で作ることができます。</p>
+内包表記を使うと通常の<code>for</code>文よりも実行速度が速い、というメリットもあります。<br>
+リストだけでなく辞書、集合も内包表記で作ることができます。似たような表記で<strong>ジェネレータ式</strong>という記法もあります。</p>
 <p>組み込みの<code>map()</code>関数を使うと同じような操作ができますが、ラムダ関数を直接引数に入れると少し回りくどい書き方になってしまいます。内包表記の方が短く明確な書き方になります。また、同じく組み込みの<code>filter()</code>関数を使って要素の抽出ができますが、内包表記だと同じような要素の抽出も簡単にできてしまいます。</p>
 <h2 id="解説">解説</h2>
 <h3 id="１内包表記">（１）内包表記</h3>
-<h3 id="２map関数とfilter関数">（２）map関数とfilter関数</h3>
+<p>内包表記の基本的な使い方を整理します。<br>
+リストを作るカッコ<code>[]</code>中で<code>for</code>, <code>if</code>を使い、繰り返しや抽出条件を表現することでアルゴリズム的にリストを作ることができます。<br>
+数学の集合の表記（例：<code>集合A = {x | xは10以下の自然数}</code>）と感覚的に似たような書き方をするので、数式に慣れていると書き方がすんなり入ってくる印象です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">numbers <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
+
+doubles <span style="color:#f92672">=</span> [i<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> numbers]
+evens <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> numbers <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>]
+
+<span style="color:#66d9ef">print</span>(numbers)
+<span style="color:#75715e"># -&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+<span style="color:#66d9ef">print</span>(doubles)
+<span style="color:#75715e"># -&gt; [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span>
+<span style="color:#66d9ef">print</span>(evens)
+<span style="color:#75715e"># -&gt; [0, 2, 4, 6, 8]</span>
+</code></pre></div><p>通常のfor文と比較すると、リストに追加する際の<code>append()</code>をする必要がない分、動作が軽くなるようです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># リスト内包表記</span>
+numbers <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
+
+<span style="color:#75715e"># 通常のfor文</span>
+numbers <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+  numbers<span style="color:#f92672">.</span>append(i)
+</code></pre></div><h3 id="２map関数とfilter関数">（２）map関数とfilter関数</h3>
 <p>組み込み関数の<code>map()</code>と<code>filter()</code>についてもここで整理しておきます。</p>
+<p>基本的な使い方として、「リストの各要素を２倍した新しいリストを作りたい」「リストから偶数のみ抽出した新しいリストを作りたい」という想定で、<code>map()</code>と<code>filter()</code>を使って結果を見てみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">numbers <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">10</span>))
+
+doubles <span style="color:#f92672">=</span> map(<span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>, numbers)
+evens <span style="color:#f92672">=</span> filter(<span style="color:#66d9ef">lambda</span> x: x <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>, numbers)
+
+<span style="color:#66d9ef">print</span>(type(numbers), numbers)
+<span style="color:#75715e"># -&gt; &lt;class &#39;list&#39;&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+<span style="color:#66d9ef">print</span>(type(doubles), list(doubles))
+<span style="color:#75715e"># -&gt; &lt;class &#39;map&#39;&gt; [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span>
+<span style="color:#66d9ef">print</span>(type(evens), list(evens))
+<span style="color:#75715e"># -&gt; &lt;class &#39;filter&#39;&gt; [0, 2, 4, 6, 8]</span>
+</code></pre></div><p><code>type()</code>関数の結果でわかる通り、これらの組み込み関数で返されるオブジェクトはリストではなくあくまで<strong>イテラブルオブジェクト</strong>なので、リストを作りたい場合は組み込み関数<code>list()</code>でリスト型に変換してあげる必要があります。</p>
+<p>関数の詳細は以下のように整理できます。</p>
 <table>
 <thead>
 <tr>
@@ -180,19 +216,20 @@
 </table>
 <p><code>map()</code>関数は、</p>
 <ul>
-<li>イテラブルの全要素に対して同じ関数を適用し、その結果が入ったapオブジェクトというイテレータにして返す</li>
+<li>イテラブルの全要素に対して同じ関数を適用し、その結果が入った<strong>mapオブジェクト</strong>というイテレータにして返す</li>
 <li>一番シンプルな形は、第二引数に１つのイテラブル、第一引数の関数は１つの値を返す関数</li>
 <li>第二引数以降に複数のイテラブルを渡すこともできて、その場合は第一引数の関数には同じ数の引数を受け取る関数を渡す</li>
 </ul>
 <p><code>filter()</code>関数は、</p>
 <ul>
-<li>イテラブルの各要素に関数を適用して、条件に当てはまる（<code>True</code>を返す）要素のみを絞り込んでfilterオブジェクトというイテレータにして返す</li>
+<li>イテラブルの各要素に関数を適用して、条件に当てはまる（<code>True</code>を返す）要素のみを絞り込んで<strong>filterオブジェクト</strong>というイテレータにして返す</li>
 <li>第二引数にはイテラブルを１つだけ渡し、第一引数の関数には引数を１つだけとる関数を渡す</li>
-<li>第一引数に<code>None</code>を渡すと、要素自体の真理値評価の結果を使ってフィルタリングを行ってくれる</li>
+<li>第一引数に<code>None</code>を渡すと、要素自体の真理値評価の結果を使ってフィルタリングを行ってくれる
+（例えば数値型なら<code>0</code>が<code>False</code>、それ以外なら<code>True</code>）</li>
 </ul>
 <h2 id="感想">感想</h2>
-<p>個人的に内包表記は大好きですが、**「イテレータ」「ジェネレータ」**という用語については整理していきたいなと思っています。
-内包表記は簡単な記法なのでちょっとしたものならワンライナーで書けるのが良いのですが、面白いからと多用すると可読性が落ちてしまうという副作用があるので、気をつけたいところです。</p>
+<p>個人的に内包表記は大好きです。ちょっとしたものが簡単にかけてしまう記法なのでワンライナーで書けるのが良いのですが、面白いからと多用すると可読性が落ちてしまうという副作用があるので、気をつけたいところです。
+関係する用語として **「イテレータ」 「ジェネレータ」**についてはわかりづらく理解が必要なところなので、今後整理していきます。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
 <p>【参考書籍】</p>

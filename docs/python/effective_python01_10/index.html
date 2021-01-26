@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-24T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2509">
+<meta itemprop="wordCount" content="2689">
 
 
 
@@ -184,9 +184,11 @@ command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#
 <p>以下のようなフローチャートのイメージです。</p>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210125_while.png" width="300">
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210125_do_while.png" width="300">
-<p>それぞれのアルゴリズムで、代入式（walrus演算子）を使う場合と使わない場合の比較を並べてみました。<br>
-<a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py">サンプルコード</a>を参照させてもらいます。</p>
-<p>まず、条件分岐：switch/case文をPythonで実装。<br>
+<p><strong>代入式（walrus演算子）を使う場合と使わない場合の比較</strong>
+それぞれのアルゴリズムで、代入式を使う場合とそうでない場合でどのように変わるのか、比較してみました。<br>
+<a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py">サンプルコード</a>を参照させてもらいました。<br>
+前提として必要な関数が多く、この記事だけで理解するにはわかりづらいものになってしまったので、書籍を読んで整理していただくのが良いかもしれません。ここでは細かい内容よりも代入式を使うことで「行数が短くなる」「ネストが浅くなる」ことを確認するために、コードを並べて比較してみます。</p>
+<p>まず、条件分岐：switch/case文をPythonで実装するケース。<br>
 <code>fresh_fruit</code>という果物と在庫数を表した辞書から、果物の個数に応じて飲み物を作る、という想定の処理です。途中で出てくる関数<code>slice_bananas()</code>, <code>make_smoothies()</code>, <code>make_cider</code>, <code>make_lemonade()</code>は、この項目の例の中で出てくる独自に作っている関数です。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fresh_fruit <span style="color:#f92672">=</span> {
     <span style="color:#e6db74">&#39;apple&#39;</span>: <span style="color:#ae81ff">10</span>,
@@ -223,7 +225,7 @@ count <span style="color:#f92672">=</span> fresh_fruit<span style="color:#f92672
         <span style="color:#66d9ef">else</span>:
             to_enjoy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Nothing&#39;</span>
 
-</code></pre></div><p>次に、繰り返し処理：do/while文をPythonで実装。<br>
+</code></pre></div><p>次に、繰り返し処理：do/while文をPythonで実装するケース。<br>
 新たに果物が届いてジュースを瓶詰めする、という想定のコードです。この例でも<code>pick_fruit()</code>, <code>make_juice</code>という関数を別で定義しています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">FRUIT_TO_PICK <span style="color:#f92672">=</span> [
     {<span style="color:#e6db74">&#39;apple&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;banana&#39;</span>: <span style="color:#ae81ff">3</span>},
@@ -251,7 +253,7 @@ bottles <span style="color:#f92672">=</span> []
         batch <span style="color:#f92672">=</span> make_juice(fruit, count)
         bottles<span style="color:#f92672">.</span>extend(batch)
 <span style="color:#66d9ef">print</span>(bottles)
-</code></pre></div><p>代入式を使った方が行数が短くなったり、ネストが浅くなったりしているのがわかります。</p>
+</code></pre></div><p>代入式を使うことで、「行数が短くなる」「ネストが浅くなる」ことが確認できるかと思います。</p>
 <h2 id="感想">感想</h2>
 <p>walrus演算子<code>:=</code>はセイウチの横顔に見えるためこのような名前がついているようで、シャレが効いていて面白いですよね。<br>
 またPythonには他の言語ではあるような制御構文が一部存在しないというのも興味深いです。こちら<a href="http://gogochephy.hatenablog.com/entry/2015/07/02/135614">pythonにswitch文がない経緯・理由 - gogochephy’s diary</a>を参照させていただくと、公式ドキュメントにもしっかり<code>switch</code>や<code>case</code>文が無い理由が載っており、Pythonコミュニティでも議論がなされている話題のようです。</p>
