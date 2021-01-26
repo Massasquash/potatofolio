@@ -27,15 +27,15 @@ categories:
 
 
 ## 項目10 代入式で繰り返しを防ぐ
-Python3.8より**代入式**という新たな構文（**walrus（セイウチ）演算子**`:=`を使う）が追加され、これによって「変数への代入（初期化）」と「変数の使用（評価）」を１つの式で行うことができるようになりました。この構文が追加される前（通常の変数代入と使用のやり方）は、例えば`if`文の条件式などで変数の評価をする際にはその前に変数を初期化しておく必要があったものが、それらをひとまとめにして条件式の中に書くことができ、無駄な行を省くことができるようになりました。
+Python3.8より**代入式**という新たな構文（**walrus（セイウチ）演算子**`:=`を使う）が追加され、これによって「変数への代入（初期化）」と「変数の使用（評価）」を１つの式で行うことができるようになりました。  
+この構文が追加される前（通常の変数代入と使用のやり方）は、例えば`if`文の条件式などで変数の評価をする際にはその前に変数を初期化しておく必要があったものが、それらをひとまとめにして条件式の中に書くことができ、無駄な行を省くことができるようになりました。
 
 また、PythonにはC言語など他の言語と異なり「`switch/case`文がない」「`do/while`文がない」など制御構文を書く際に不便なことがありますが、これらが代入式を使うと簡潔に書くことができます。
 
 
 ## 解説
-
 ### （１）代入式の基本構文（walrus演算子）
-基本的な使い方が[ドキュメント](https://docs.python.org/ja/3/reference/expressions.html#assignment-expressions)、またより詳しくは[PEP 572](https://www.python.org/dev/peps/pep-0572/)にてまとめられています。
+基本的な使い方は[ドキュメント](https://docs.python.org/ja/3/reference/expressions.html#assignment-expressions)、またより詳しくは[PEP 572](https://www.python.org/dev/peps/pep-0572/)にてまとめられています。
 
 PEP572より１つ、イメージのわきやすそうな代入式を使ったコードを見てみます。  
 `input()`関数でユーザー入力を繰り返し受け付けてその内容を表示し、"quit"が入力されたら終了するコードです。  
@@ -80,8 +80,88 @@ while command != "quit":
 <img src="/img/posts/20210125_while.png" width="300">
 <img src="/img/posts/20210125_do_while.png" width="300">
 
+それぞれのアルゴリズムで、代入式（walrus演算子）を使う場合と使わない場合の比較を並べてみました。  
+[サンプルコード](https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py)を参照させてもらいます。
+
+まず、条件分岐：switch/case文をPythonで実装。  
+`fresh_fruit`という果物と在庫数を表した辞書から、果物の個数に応じて飲み物を作る、という想定の処理です。途中で出てくる関数`slice_bananas()`, `make_smoothies()`, `make_cider`, `make_lemonade()`は、この項目の例の中で出てくる独自に作っている関数です。
+
+```python
+fresh_fruit = {
+    'apple': 10,
+    'banana': 8,
+    'lemon': 5,
+}
+
+# 代入式を使うパターン
+# Example 11
+if (count := fresh_fruit.get('banana', 0)) >= 2:
+    pieces = slice_bananas(count)
+    to_enjoy = make_smoothies(pieces)
+elif (count := fresh_fruit.get('apple', 0)) >= 4:
+    to_enjoy = make_cider(count)
+elif count := fresh_fruit.get('lemon', 0):
+    to_enjoy = make_lemonade(count)
+else:
+    to_enjoy = 'Nothing'
+
+# 代入式を使わないパターン
+# Example 10
+count = fresh_fruit.get('banana', 0)
+if count >= 2:
+    pieces = slice_bananas(count)
+    to_enjoy = make_smoothies(pieces)
+else:
+    count = fresh_fruit.get('apple', 0)
+    if count >= 4:
+        to_enjoy = make_cider(count)
+    else:
+        count = fresh_fruit.get('lemon', 0)
+        if count:
+            to_enjoy = make_lemonade(count)
+        else:
+            to_enjoy = 'Nothing'
+
+```
+
+
+次に、繰り返し処理：do/while文をPythonで実装。  
+新たに果物が届いてジュースを瓶詰めする、という想定のコードです。この例でも`pick_fruit()`, `make_juice`という関数を別で定義しています。
+
+```python
+FRUIT_TO_PICK = [
+    {'apple': 1, 'banana': 3},
+    {'lemon': 2, 'lime': 5},
+    {'orange': 3, 'melon': 2},
+]
+
+# 代入式を使うパターン
+# Example 14
+bottles = []
+while fresh_fruit := pick_fruit():
+    for fruit, count in fresh_fruit.items():
+        batch = make_juice(fruit, count)
+        bottles.extend(batch)
+print(bottles)
+
+# 代入式を使わないパターン
+# Example 13
+bottles = []
+while True:                     # Loop
+    fresh_fruit = pick_fruit()
+    if not fresh_fruit:         # And a half
+        break
+    for fruit, count in fresh_fruit.items():
+        batch = make_juice(fruit, count)
+        bottles.extend(batch)
+print(bottles)
+```
+
+代入式を使った方が行数が短くなったり、ネストが浅くなったりしているのがわかります。
+
+
 ## 感想
-walrus演算子`:=`はセイウチの横顔に見えるためこのような名前がついているようで、ちょっと面白いです。
+walrus演算子`:=`はセイウチの横顔に見えるためこのような名前がついているようで、シャレが効いていて面白いですよね。  
 またPythonには他の言語ではあるような制御構文が一部存在しないというのも興味深いです。こちら[pythonにswitch文がない経緯・理由 - gogochephy’s diary](http://gogochephy.hatenablog.com/entry/2015/07/02/135614)を参照させていただくと、公式ドキュメントにもしっかり`switch`や`case`文が無い理由が載っており、Pythonコミュニティでも議論がなされている話題のようです。
 
 

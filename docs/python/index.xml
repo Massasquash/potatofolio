@@ -6,7 +6,16 @@
     <description>Recent content in Pythons on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Effective Python]項目27 mapやfilterの代わりにリスト内包表記を使う</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python04_27/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python04_27/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python03_25/</link>
