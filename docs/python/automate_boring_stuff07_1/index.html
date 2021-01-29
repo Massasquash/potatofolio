@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-29T19:02:28+09:00" />
 <meta itemprop="dateModified" content="2021-01-29T19:02:28+09:00" />
-<meta itemprop="wordCount" content="675">
+<meta itemprop="wordCount" content="778">
 
 
 
@@ -103,7 +103,7 @@
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">[退屈Python]7章 正規表現によるパターンマッチング</h1>
-			<p class="post__lead">description</p>
+			<p class="post__lead">「退屈なことはPythonにやらせよう」の学習備忘録</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-29T19:02:28&#43;09:00">January 29, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/" rel="category">退屈Python</a>
@@ -116,7 +116,12 @@
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#正規表現regexオブジェクト">正規表現Regexオブジェクト</a></li>
-    <li><a href="#正規表現に用いる記号">正規表現に用いる記号</a></li>
+    <li><a href="#正規表現に用いる記号">正規表現に用いる記号</a>
+      <ul>
+        <li><a href="#出現回数と繰り返し系の表現">出現回数と繰り返し系の表現</a></li>
+        <li><a href="#文字集合">文字集合</a></li>
+      </ul>
+    </li>
     <li><a href="#スニペット">スニペット</a>
       <ul>
         <li><a href="#heading"></a></li>
@@ -140,6 +145,11 @@
 
 phone_num_regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;</span>)
 </code></pre></div><h2 id="正規表現に用いる記号">正規表現に用いる記号</h2>
+<h3 id="出現回数と繰り返し系の表現">出現回数と繰り返し系の表現</h3>
+<ul>
+<li>文字集合の後にくっつける記号</li>
+<li>正確には「文字」 -&gt; 「グループ」。正規表現の中で<code>()</code>で括られたものが１グループになる。</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -149,31 +159,32 @@ phone_num_regex <span style="color:#f92672">=</span> re<span style="color:#f9267
 </thead>
 <tbody>
 <tr>
-<td>*</td>
-<td>直前の文字の0回以上の繰り返しにマッチ</td>
-</tr>
-<tr>
-<td>+</td>
-<td>直前の文字の1文字以上の繰り返しにマッチ</td>
-</tr>
-<tr>
 <td>?</td>
 <td>直前の文字の0回か1回の出現にマッチ</td>
 </tr>
 <tr>
+<td>*</td>
+<td>直前の文字の0回以上の出現にマッチ</td>
+</tr>
+<tr>
+<td>+</td>
+<td>直前の文字の1文字以上の出現にマッチ</td>
+</tr>
+<tr>
 <td>{n}</td>
-<td>直前の文字をn回一致。 [0-9]{3}で３桁の数字</td>
+<td>直前の文字のn回の出現にマッチ。例えば[0-9]{3}で3桁の数字</td>
 </tr>
 <tr>
 <td>{n,}</td>
-<td>直前の文字をn回以上と一致。 [0-9]{3,}で３桁以上の数字</td>
+<td>直前の文字をn回以上の出現にマッチ。例えば[0-9]{3,}で3桁以上の数字</td>
 </tr>
 <tr>
 <td>{m, n}</td>
-<td>直前の文字をm〜n回一致。 [0-9]{3, 5}で３〜５桁の数字</td>
+<td>直前の文字をm〜n回の出現にマッチ。例えば[0-9]{3, 5}で3〜5桁の数字</td>
 </tr>
 </tbody>
 </table>
+<h3 id="文字集合">文字集合</h3>
 <table>
 <thead>
 <tr>
@@ -184,26 +195,8 @@ phone_num_regex <span style="color:#f92672">=</span> re<span style="color:#f9267
 <tbody>
 <tr>
 <td>.</td>
-<td>改行以外の１文字</td>
+<td>ワイルドカード。改行以外の１文字</td>
 </tr>
-<tr>
-<td>\s</td>
-<td>空白文字に一致</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>空白文字以外に一致（[^\s]と同意）</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>文字</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>\w</td>
 <td>文字（大文字/小文字の英字・数字・アンダースコア）。 [A-Za-z0-9]と同じ</td>
@@ -219,6 +212,14 @@ phone_num_regex <span style="color:#f92672">=</span> re<span style="color:#f9267
 <tr>
 <td>\D</td>
 <td>数字以外。 [^0-9]と同じ</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>空白文字に一致</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>空白文字以外に一致（[^\s]と同意）</td>
 </tr>
 </tbody>
 </table>
