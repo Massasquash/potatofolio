@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-24T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2708">
+<meta itemprop="wordCount" content="2705">
 
 
 
@@ -118,9 +118,9 @@
     <li><a href="#項目10-代入式で繰り返しを防ぐ">項目10 代入式で繰り返しを防ぐ</a></li>
     <li><a href="#解説">解説</a>
       <ul>
-        <li><a href="#１代入式の基本構文walrus演算子">（１）代入式の基本構文（walrus演算子）</a></li>
+        <li><a href="#１代入式の基本構文ウォルラス演算子">（１）代入式の基本構文（ウォルラス演算子）</a></li>
         <li><a href="#２pythonにはない制御構文">（２）Pythonにはない制御構文</a></li>
-        <li><a href="#３代入式walrus演算子を使う場合と使わない場合の比較">（３）代入式（walrus演算子）を使う場合と使わない場合の比較</a></li>
+        <li><a href="#３代入式ウォルラス演算子を使う場合と使わない場合の比較">（３）代入式（ウォルラス演算子）を使う場合と使わない場合の比較</a></li>
       </ul>
     </li>
     <li><a href="#感想">感想</a></li>
@@ -150,11 +150,11 @@
 <li><strong>項目10 代入式で繰り返しを防ぐ</strong></li>
 </ul>
 <h2 id="項目10-代入式で繰り返しを防ぐ">項目10 代入式で繰り返しを防ぐ</h2>
-<p>Python3.8より<strong>代入式</strong>という新たな構文（<strong>walrus（セイウチ）演算子</strong><code>:=</code>を使う）が追加され、これによって「変数への代入（初期化）」と「変数の使用（評価）」を１つの式で行うことができるようになりました。<br>
+<p>Python3.8より<strong>代入式</strong>という新たな構文（<strong>walrus（ウォルラス）演算子</strong><code>:=</code>を使う）が追加され、これによって「変数への代入（初期化）」と「変数の使用（評価）」を１つの式で行うことができるようになりました。<br>
 この構文が追加される前（通常の変数代入と使用のやり方）は、例えば<code>if</code>文の条件式などで変数の評価をする際にはその前に変数を初期化しておく必要があったものが、それらをひとまとめにして条件式の中に書くことができ、無駄な行を省くことができるようになりました。</p>
 <p>また、PythonにはC言語など他の言語と異なり「<code>switch/case</code>文がない」「<code>do/while</code>文がない」など制御構文を書く際に不便なことがありますが、これらが代入式を使うと簡潔に書くことができます。</p>
 <h2 id="解説">解説</h2>
-<h3 id="１代入式の基本構文walrus演算子">（１）代入式の基本構文（walrus演算子）</h3>
+<h3 id="１代入式の基本構文ウォルラス演算子">（１）代入式の基本構文（ウォルラス演算子）</h3>
 <p>基本的な使い方は<a href="https://docs.python.org/ja/3/reference/expressions.html#assignment-expressions">ドキュメント</a>、またより詳しくは<a href="https://www.python.org/dev/peps/pep-0572/">PEP 572</a>にてまとめられています。</p>
 <p>PEP572より１つ、イメージのわきやすそうな代入式を使ったコードを見てみます。<br>
 <code>input()</code>関数でユーザー入力を繰り返し受け付けてその内容を表示し、&ldquo;quit&quot;が入力されたら終了するコードです。<br>
@@ -169,7 +169,7 @@ command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#
 <span style="color:#66d9ef">while</span> command <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;quit&#34;</span>:
     command <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;&gt; &#34;</span>)
     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;You entered:&#34;</span>, command)
-</code></pre></div><p>明らかに前者の方が簡潔に書けています。<code>command := input(&quot;&gt; &quot;)</code>の部分でwalrus演算子を使って、<code>command</code>という変数への代入と評価を１回で行っています。</p>
+</code></pre></div><p>明らかに前者の方が簡潔に書けています。<code>command := input(&quot;&gt; &quot;)</code>の部分でウォルラス演算子を使って、<code>command</code>という変数への代入と評価を１回で行っています。</p>
 <p><code>if</code>条件式の中で代入して比較する場合は、カッコで括るのがポイントです。カッコがないと誤った値（式）が代入されてしまいます。</p>
 <h3 id="２pythonにはない制御構文">（２）Pythonにはない制御構文</h3>
 <p>この項目の中で「Pythonを使い始めたプログラマが苛立つこと」として２点、Pythonには「<code>switch/case</code>文がないこと」「<code>do/while</code>文がないこと」が挙げられています。これらの構文の理解のためにフローチャートで整理しておきます。</p>
@@ -185,7 +185,7 @@ command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#
 <p>以下のようなフローチャートのイメージです。</p>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210125_while.png" width="300">
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210125_do_while.png" width="300">
-<h3 id="３代入式walrus演算子を使う場合と使わない場合の比較">（３）代入式（walrus演算子）を使う場合と使わない場合の比較</h3>
+<h3 id="３代入式ウォルラス演算子を使う場合と使わない場合の比較">（３）代入式（ウォルラス演算子）を使う場合と使わない場合の比較</h3>
 <p>それぞれのアルゴリズムで、代入式を使う場合とそうでない場合でどのように変わるのか、比較してみました。</p>
 <p><a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_05.py">サンプルコード</a>を参照させてもらいました。<br>
 以下に書いたコードは前提として必要な関数が多く、この記事だけで理解するにはわかりづらいものになってしまったので、詳しくは書籍を読んで整理していただくのが良いかもしれません。ここでは細かい内容はともかく、コードを並べてみることで、代入式を使うと「行数が短くなる」「ネストが浅くなる」ことを確認したいと思います。</p>
@@ -256,7 +256,7 @@ bottles <span style="color:#f92672">=</span> []
 <span style="color:#66d9ef">print</span>(bottles)
 </code></pre></div><p>代入式を使うことで、「行数が短くなる」「ネストが浅くなる」ことが確認できるかと思います。</p>
 <h2 id="感想">感想</h2>
-<p>walrus演算子<code>:=</code>はセイウチの横顔に見えるためこのような名前がついているようで、シャレが効いていて面白いですよね。<br>
+<p>ウォルラス演算子<code>:=</code>はセイウチの横顔に見えるためこのような名前がついているようで、シャレが効いていて面白いですよね。<br>
 またPythonには他の言語ではあるような制御構文が一部存在しないというのも興味深いです。こちら<a href="http://gogochephy.hatenablog.com/entry/2015/07/02/135614">pythonにswitch文がない経緯・理由 - gogochephy’s diary</a>を参照させていただくと、公式ドキュメントにもしっかり<code>switch/case</code>文が無い理由が載っており、Pythonコミュニティでも議論がなされている話題のようです。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
@@ -310,11 +310,11 @@ bottles <span style="color:#f92672">=</span> []
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/">[退屈Python]7章 正規表現によるパターンマッチング</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27/">[Effective Python]項目27 mapやfilterの代わりにリスト内包表記を使う</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/">[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/">[Effective Python]項目10 代入式で繰り返しを防ぐ</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_5/">[Effective Python]項目5 複雑な式の代わりにヘルパー関数を書く</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_4/">[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</a></li>
 		</ul>
 	</div>
 </div>
@@ -330,6 +330,9 @@ bottles <span style="color:#f92672">=</span> []
 			</li>
 			<li class="widget__item">
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8/">ひとりごと</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/">退屈Python</a>
 			</li>
 		</ul>
 	</div>

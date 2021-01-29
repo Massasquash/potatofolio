@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1545">
+<meta itemprop="wordCount" content="1563">
 
 
 
@@ -151,12 +151,12 @@
 <h2 id="項目1-使用するpythonのバージョンを知っておく">項目1 使用するPythonのバージョンを知っておく</h2>
 <p>Python3.8が2019年10月にリリースされ、多くの便利な構文が導入されました。<br>
 またPython2は2020年1月にサポートがなくなり、さらに2020年4月に使用期限が終わり公式な保守が行われなくなりました。<br>
-自己責任で使うことはできますが、Python2の利用は避け、Python3をプロジェクトに使っていくのが安全です。そのためにどのバージョンがインストールされているのかの確認の仕方が整理されているのがこの項目の内容です。</p>
+自己責任で使うことはできますが、Python2の利用は避け、Python3をプロジェクトに使っていくのが安全です。そのために、自分のPCにどのバージョンがインストールされているのかを確認する方法が整理されているのがこの項目の内容です。</p>
 <h2 id="解説">解説</h2>
-<p>使用しているPythonのバージョンを調べるには、以下の方法でそれぞれ調べられます。</p>
+<p>使用しているPythonのバージョンを調べるには、以下の方法があります。</p>
 <ul>
 <li>（１）コマンドラインで調べる方法</li>
-<li>（２）Python実行時（Jupyter Notebookのセル上で）調べる方法</li>
+<li>（２）Python実行時（対話モードやJupyter Notebookのセル上などで）調べる方法</li>
 </ul>
 <h3 id="１コマンドラインでバージョンを調べる方法">（１）コマンドラインでバージョンを調べる方法</h3>
 <p>まずはターミナルで確認する方法。自分のPCにインストールしているPythonのバージョンを調べられます。<br>
@@ -164,7 +164,7 @@
 例えばPython3をインストールしていない場合は、python3コマンドは動きません。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python --version  <span style="color:#75715e">#-&gt; Python 2.7.10</span>
 $ python3 --version <span style="color:#75715e">#-&gt; Python 3.8.0</span>
-</code></pre></div><p>もしかすると学習したての頃は「プログラミング言語」にバージョンがあること、PCに複数のバージョンが同時に入っていることがあまりイメージがしづらいかもしれませんが、「プログラミング言語もソフトウェアの一種」という考え方をすると少しイメージしやすいかなと思います。ソフトウェアは日々更新されてより良いバージョンが出てきたり、古いバージョンのソフトウェアを使い続けることができるのと同じような理屈かなと思います。</p>
+</code></pre></div><p>プログラミング自体を学習しはじめの頃は、プログラミング言語にバージョンがあることや、PCに複数のバージョンが同時に入っていること、という自体のイメージがしづらいかもしれませんが、「プログラミング言語もソフトウェアの一種」という考え方をすると少しイメージしやすいかなと思います。ソフトウェアは日々更新されてより良いバージョンが出てきたり、古いバージョンのソフトウェアを使い続けることができるのと同じような理屈かなと思います。</p>
 <h3 id="２python実行時にバージョンを調べる方法">（２）Python実行時にバージョンを調べる方法</h3>
 <p>次にPythonスクリプト上でバージョンを確認します。組み込み関数<code>sys</code>を使います。<br>
 ここではJupyter Notebook上で確認することを想定していますが、ターミナルで<code>python3</code>（もしくは<code>python</code>）とコマンドを打ち、対話モードにした状態で確認することもできます。</p>
@@ -188,6 +188,12 @@ Pythonはオープンソースなので裏側でコミュニティの皆さん�
 
 
 <nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_28/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Effective Python]項目28 内包表記では、3つ以上の式を避ける</p>
+		</a>
+	</div>
 	<div class="pager__item pager__item--next">
 		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_2/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
@@ -211,11 +217,11 @@ Pythonはオープンソースなので裏側でコミュニティの皆さん�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/">[退屈Python]7章 正規表現によるパターンマッチング</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27/">[Effective Python]項目27 mapやfilterの代わりにリスト内包表記を使う</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/">[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/">[Effective Python]項目10 代入式で繰り返しを防ぐ</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_5/">[Effective Python]項目5 複雑な式の代わりにヘルパー関数を書く</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_4/">[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</a></li>
 		</ul>
 	</div>
 </div>
@@ -231,6 +237,9 @@ Pythonはオープンソースなので裏側でコミュニティの皆さん�
 			</li>
 			<li class="widget__item">
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8/">ひとりごと</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/">退屈Python</a>
 			</li>
 		</ul>
 	</div>

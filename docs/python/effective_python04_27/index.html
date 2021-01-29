@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-26T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2106">
+<meta itemprop="wordCount" content="2097">
 
 
 
@@ -157,7 +157,7 @@
 <h3 id="１内包表記">（１）内包表記</h3>
 <p>内包表記の基本的な使い方を整理します。<br>
 リストを作るカッコ<code>[]</code>中で<code>for</code>, <code>if</code>を使い、繰り返しや抽出条件を表現することでアルゴリズム的にリストを作ることができます。<br>
-数学の集合の表記（例：<code>集合A = {x | xは10以下の自然数}</code>）と感覚的に似たような書き方をするので、数式に慣れていると書き方がすんなり入ってくる印象です。</p>
+数学の集合の表記（例：<code>集合A = {x | xは10以下の自然数}</code>）と感覚的に似たような書き方をするので、このような表記に慣れている人なら書き方をイメージしやすいかもしれません。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">numbers <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
 
 doubles <span style="color:#f92672">=</span> [i<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> numbers]
@@ -169,7 +169,7 @@ evens <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</s
 <span style="color:#75715e"># -&gt; [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span>
 <span style="color:#66d9ef">print</span>(evens)
 <span style="color:#75715e"># -&gt; [0, 2, 4, 6, 8]</span>
-</code></pre></div><p>通常のfor文と比較すると、リストに追加する際の<code>append()</code>をする必要がない分、動作が軽くなるようです。</p>
+</code></pre></div><p>通常のfor文と比較すると、リストに追加する際の<code>append()</code>をする必要がない分、動作が軽くなります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># リスト内包表記</span>
 numbers <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
 
@@ -229,7 +229,7 @@ evens <span style="color:#f92672">=</span> filter(<span style="color:#66d9ef">la
 </ul>
 <h2 id="感想">感想</h2>
 <p>個人的に内包表記は大好きです。ちょっとしたものが簡単にかけてしまう記法なのでワンライナーで書けるのが良いのですが、面白いからと多用すると可読性が落ちてしまうという副作用があるので、気をつけたいところです。
-関係する用語として **「イテレータ」 「ジェネレータ」**についてはわかりづらく理解が必要なところなので、今後整理していきます。</p>
+関係する用語として <strong>「イテレータ」「ジェネレータ」</strong> についてはわかりづらく今後整理が必要そうです。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
 <p>【参考書籍】</p>
@@ -253,6 +253,12 @@ evens <span style="color:#f92672">=</span> filter(<span style="color:#66d9ef">la
 			<p class="pager__title">[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める</p>
 		</a>
 	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[退屈Python]7章 正規表現によるパターンマッチング</p>
+		</a>
+	</div>
 </nav>
 
 
@@ -270,11 +276,11 @@ evens <span style="color:#f92672">=</span> filter(<span style="color:#66d9ef">la
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/">[退屈Python]7章 正規表現によるパターンマッチング</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27/">[Effective Python]項目27 mapやfilterの代わりにリスト内包表記を使う</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/">[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/">[Effective Python]項目10 代入式で繰り返しを防ぐ</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_5/">[Effective Python]項目5 複雑な式の代わりにヘルパー関数を書く</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_4/">[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</a></li>
 		</ul>
 	</div>
 </div>
@@ -290,6 +296,9 @@ evens <span style="color:#f92672">=</span> filter(<span style="color:#66d9ef">la
 			</li>
 			<li class="widget__item">
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8/">ひとりごと</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/">退屈Python</a>
 			</li>
 		</ul>
 	</div>

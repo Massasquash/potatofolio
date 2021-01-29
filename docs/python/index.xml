@@ -6,7 +6,16 @@
     <description>Recent content in Pythons on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 26 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Jan 2021 19:02:28 +0900</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[退屈Python]7章 正規表現によるパターンマッチング</title>
+      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</link>
+      <pubDate>Fri, 29 Jan 2021 19:02:28 +0900</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Effective Python]項目27 mapやfilterの代わりにリスト内包表記を使う</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python04_27/</link>
@@ -67,6 +76,15 @@
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/python/effective_python01_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]項目28 内包表記では、3つ以上の式を避ける</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python04_28/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python04_28/</guid>
       <description></description>
     </item>
     

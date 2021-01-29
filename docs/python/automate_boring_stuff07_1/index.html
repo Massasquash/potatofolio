@@ -4,17 +4,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Notes - Potatofolio</title>
+	<title>[退屈Python]7章 正規表現によるパターンマッチング - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="Notes" />
-<meta property="og:description" content="This Is My Dïevelopment Note" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://massasquash.github.io/potatofolio/notes/" />
-<meta property="og:updated_time" content="2020-07-21T00:00:00+00:00" />
+		<meta property="og:title" content="[退屈Python]7章 正規表現によるパターンマッチング" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/" />
+<meta property="article:published_time" content="2021-01-29T19:02:28+09:00" />
+<meta property="article:modified_time" content="2021-01-29T19:02:28+09:00" />
 
-		<meta itemprop="name" content="Notes">
-<meta itemprop="description" content="This Is My Dïevelopment Note">
+		<meta itemprop="name" content="[退屈Python]7章 正規表現によるパターンマッチング">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2021-01-29T19:02:28+09:00" />
+<meta itemprop="dateModified" content="2021-01-29T19:02:28+09:00" />
+<meta itemprop="wordCount" content="675">
+
+
+
+<meta itemprop="keywords" content="" />
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -23,7 +31,6 @@
 
 	<link rel="stylesheet" href="https://massasquash.github.io/potatofolio/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="https://massasquash.github.io/potatofolio/notes/index.xml" title="Potatofolio">
 
 	<link rel="shortcut icon" href="https://massasquash.github.io/potatofolio/favicon.ico">
 		
@@ -63,7 +70,7 @@
 				
 			</a>
 		</li>
-		<li class="menu__item menu__item--active">
+		<li class="menu__item">
 			<a class="menu__link" href="https://massasquash.github.io/potatofolio/notes/">
 				
 				<span class="menu__text">Notes</span>
@@ -92,46 +99,181 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main">
-	<header class="main__header">
-		<h1 class="main__title">Notes</h1>
-	</header><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="https://massasquash.github.io/potatofolio/notes/20200721_udemy-gcp/" rel="bookmark">
-			[Udemy]現役エンジニアが教える、手を動かして学ぶGoogle Cloud Platform(GCP) 入門
-			</a>
-		</h2>
-		<p class="list__lead post__lead">色々なGCPサービスの概要を掴む</p>
-		<div class="list__meta meta">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[退屈Python]7章 正規表現によるパターンマッチング</h1>
+			<p class="post__lead">description</p>
+			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-21T00:00:00Z">July 21, 2020</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-29T19:02:28&#43;09:00">January 29, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/" rel="category">退屈Python</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#正規表現regexオブジェクト">正規表現Regexオブジェクト</a></li>
+    <li><a href="#正規表現に用いる記号">正規表現に用いる記号</a></li>
+    <li><a href="#スニペット">スニペット</a>
+      <ul>
+        <li><a href="#heading"></a></li>
+        <li><a href="#電話番号とメールアドレスの正規表現">電話番号とメールアドレスの正規表現</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#memo">MEMO</a></li>
+  </ul>
+</nav>
 	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="https://massasquash.github.io/potatofolio/notes/20200601_book_itnouka/" rel="bookmark">
-			[書籍]IT農家のラズパイ製ディープ・ラーニング・カメラ
-			</a>
-		</h2>
-		<p class="list__lead post__lead">ディープラーニングで野菜選別のための学習済みモデルを制作する流れ</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-01T00:00:00Z">June 01, 2020</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
-</article>
+</div>
+<div class="content post__content clearfix">
+			<h1 id="はじめに">はじめに</h1>
+<p>この記事はO’Reilly「退屈なことはPythonにやらせよう」の学習の備忘録です。</p>
+<h2 id="正規表現regexオブジェクト">正規表現Regexオブジェクト</h2>
+<p>Regexオブジェクトの生成</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
+
+phone_num_regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;</span>)
+</code></pre></div><h2 id="正規表現に用いる記号">正規表現に用いる記号</h2>
+<table>
+<thead>
+<tr>
+<th>文字</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>直前の文字の0回以上の繰り返しにマッチ</td>
+</tr>
+<tr>
+<td>+</td>
+<td>直前の文字の1文字以上の繰り返しにマッチ</td>
+</tr>
+<tr>
+<td>?</td>
+<td>直前の文字の0回か1回の出現にマッチ</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>直前の文字をn回一致。 [0-9]{3}で３桁の数字</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>直前の文字をn回以上と一致。 [0-9]{3,}で３桁以上の数字</td>
+</tr>
+<tr>
+<td>{m, n}</td>
+<td>直前の文字をm〜n回一致。 [0-9]{3, 5}で３〜５桁の数字</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>文字</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>改行以外の１文字</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>空白文字に一致</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>空白文字以外に一致（[^\s]と同意）</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>文字</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\w</td>
+<td>文字（大文字/小文字の英字・数字・アンダースコア）。 [A-Za-z0-9]と同じ</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>文字（大文字/小文字の英字・数字・アンダースコア）以外。 [^\w]と同じ</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>数字。 [0-9]と同じ</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>数字以外。 [^0-9]と同じ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="スニペット">スニペット</h2>
+<h3 id="heading"></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 改行も含めて複数行をマッチ</span>
+<span style="color:#f92672">/</span>[\s\S]<span style="color:#f92672">*/</span>
+</code></pre></div><h3 id="電話番号とメールアドレスの正規表現">電話番号とメールアドレスの正規表現</h3>
+<p><a href="https://github.com/oreilly-japan/automatestuff-ja/blob/master/ch07/phoneAndEmail.py">サンプルコード</a>より一部変更して（書籍版に記載されているバージョン）記載させていただきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 日本の電話番号用の正規表現</span>
+<span style="color:#75715e"># （市外局番が0から始まる1〜4桁、市内局番が1〜4桁、加入者番号4桁）</span>
+phone_regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">  (\d{1,4}|\(\d{1,4}\))  # 市外局番
+</span><span style="color:#e6db74">  (\s|-)           # 区切り
+</span><span style="color:#e6db74">  (\d){1,4})            # ３桁の番号
+</span><span style="color:#e6db74">  (\s|-)           # 区切り
+</span><span style="color:#e6db74">  (\d{3,4})             # ４桁の番号
+</span><span style="color:#e6db74">  (\s*(ext|x|ext.)\s*(\d{2, 5}))?  # 内線番号
+</span><span style="color:#e6db74">  &#39;&#39;&#39;</span>, re<span style="color:#f92672">.</span>VERBOSE)
+
+
+<span style="color:#75715e"># 電子メールの正規表現</span>
+phone_regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">  [a-zA-Z0-9._%+-]+   # ユーザー名
+</span><span style="color:#e6db74">  @
+</span><span style="color:#e6db74">  [a-zA-Z0-9.-]+      # ドメイン名
+</span><span style="color:#e6db74">  (\.[a-zA-Z]{2,4})  # ドットなんとか
+</span><span style="color:#e6db74">  &#39;&#39;&#39;</span>, re<span style="color:#f92672">.</span>VERBOSE)
+</code></pre></div><h1 id="おわりに">おわりに</h1>
+<hr>
+<h2 id="memo">MEMO</h2>
+<p>【参考書籍】</p>
+<ul>
+<li>公式Web版（英語）<a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a></li>
+<li>公式サンプルコード <a href="https://github.com/oreilly-japan/automatestuff-ja">GitHub - oreilly-japan/automatestuff-ja: 『退屈なことはPythonにやらせよう』のリポジトリ</a></li>
+</ul>
+<hr>
+
+		</div>
+	</article>
 </main>
 
 
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Effective Python]項目27 mapやfilterの代わりにリスト内包表記を使う</p>
+		</a>
+	</div>
+</nav>
+
+
 			</div>
-			
-<aside class="sidebar"><div class="widget-search widget">
+			<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://duckduckgo.com/">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
@@ -224,5 +366,7 @@
 </footer>
 	</div>
 <script async defer src="https://massasquash.github.io/potatofolio/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

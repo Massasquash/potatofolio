@@ -4,17 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Notes - Potatofolio</title>
+	<title>[Effective Python]項目28 内包表記では、3つ以上の式を避ける - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="Notes" />
-<meta property="og:description" content="This Is My Dïevelopment Note" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://massasquash.github.io/potatofolio/notes/" />
-<meta property="og:updated_time" content="2020-07-21T00:00:00+00:00" />
+		<meta property="og:title" content="[Effective Python]項目28 内包表記では、3つ以上の式を避ける" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python04_28/" />
 
-		<meta itemprop="name" content="Notes">
-<meta itemprop="description" content="This Is My Dïevelopment Note">
+
+		<meta itemprop="name" content="[Effective Python]項目28 内包表記では、3つ以上の式を避ける">
+<meta itemprop="description" content="">
+
+<meta itemprop="wordCount" content="738">
+
+
+
+<meta itemprop="keywords" content="" />
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -23,7 +29,6 @@
 
 	<link rel="stylesheet" href="https://massasquash.github.io/potatofolio/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="https://massasquash.github.io/potatofolio/notes/index.xml" title="Potatofolio">
 
 	<link rel="shortcut icon" href="https://massasquash.github.io/potatofolio/favicon.ico">
 		
@@ -63,7 +68,7 @@
 				
 			</a>
 		</li>
-		<li class="menu__item menu__item--active">
+		<li class="menu__item">
 			<a class="menu__link" href="https://massasquash.github.io/potatofolio/notes/">
 				
 				<span class="menu__text">Notes</span>
@@ -92,46 +97,77 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main">
-	<header class="main__header">
-		<h1 class="main__title">Notes</h1>
-	</header><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="https://massasquash.github.io/potatofolio/notes/20200721_udemy-gcp/" rel="bookmark">
-			[Udemy]現役エンジニアが教える、手を動かして学ぶGoogle Cloud Platform(GCP) 入門
-			</a>
-		</h2>
-		<p class="list__lead post__lead">色々なGCPサービスの概要を掴む</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-21T00:00:00Z">July 21, 2020</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[Effective Python]項目28 内包表記では、3つ以上の式を避ける</h1>
+			<p class="post__lead">「Effective python第２版」の学習備忘録</p>
+			<div class="post__meta meta"><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/" rel="category">Effective Python</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#項目28-内包表記では3つ以上の式を避ける">項目28 内包表記では、3つ以上の式を避ける</a></li>
+    <li><a href="#memo">MEMO</a></li>
+  </ul>
+</nav>
 	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="https://massasquash.github.io/potatofolio/notes/20200601_book_itnouka/" rel="bookmark">
-			[書籍]IT農家のラズパイ製ディープ・ラーニング・カメラ
-			</a>
-		</h2>
-		<p class="list__lead post__lead">ディープラーニングで野菜選別のための学習済みモデルを制作する流れ</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-01T00:00:00Z">June 01, 2020</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
-</article>
+</div>
+<div class="content post__content clearfix">
+			<h1 id="はじめに">はじめに</h1>
+<p>この記事は「Effective Python 第二版」の学習の備忘録です。</p>
+<p><strong>4章 内包表記とジェネレータ</strong></p>
+<blockquote>
+<p>Pythonには、リスト、辞書、集合の要素を簡単にイテレーションする特別な構文が用意されていて、派生的なデータ構造が作れます。また、列挙可能なストリームから値を取り出し、1つずつ返す関数も作れます。4章では、これらの機能を使い、性能向上、メモリ使用量削減、読みやすさの改善をどのようにして達成するかを述べます。（まえがき xii より引用）</p>
+</blockquote>
+<p>（目次）</p>
+<ul>
+<li>項目27 mapやfilterの代わりにリスト内包表記を使う</li>
+<li><strong>項目28 内包表記では、3つ以上の式を避ける</strong></li>
+<li>項目29 代入式を使い内包表記での繰り返し作業をなくす</li>
+<li>項目30 リストを返さずにジェネレータを返すことを考える</li>
+<li>項目31 引数に対してイテレータを使うときには確実さを優先する</li>
+<li>項目32 大きなリスト内包表記にはジェネレータ式を考える</li>
+<li>項目33 yield fromで複数のジェネレータを作る</li>
+<li>項目34 sendでジェネレータにデータを注入するのは避ける</li>
+<li>項目35 ジェネレータでthrowによる状態遷移を起こすのは避ける</li>
+<li>項目36 イテレータとジェネレータの作業ではitertoolsを使う</li>
+</ul>
+<h2 id="項目28-内包表記では3つ以上の式を避ける">項目28 内包表記では、3つ以上の式を避ける</h2>
+<p><a href="https://massasquash.github.io/potatofolio/python/effective_python04_27/">項目27</a>で見た内包表記は<code>for</code>や<code>if</code>を繰り返して多重ループや複数の条件を使うこともできます。便利な反面、あまり多用しすぎると読むのが難しく可読性が下がってしまい、内包表記の「短く書ける」という長所も生かされなくなってしまいます。<br>
+目安として<strong>内包表記では３つ以上の式を使うことを避ける</strong>、つまり</p>
+<ul>
+<li>２つの条件</li>
+<li>２つのループ</li>
+<li>１つの条件と１つのループ
+までにして、それよりも複雑になる場合は通常の<code>if</code>文や<code>for</code>文を使って書くのが良い、というのがこの項目の内容です。</li>
+</ul>
+<hr>
+<h2 id="memo">MEMO</h2>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+<hr>
+
+		</div>
+	</article>
 </main>
 
 
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_1/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[Effective Python]項目1 使用するPythonのバージョンを知っておく</p>
+		</a>
+	</div>
+</nav>
+
+
 			</div>
-			
-<aside class="sidebar"><div class="widget-search widget">
+			<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://duckduckgo.com/">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
@@ -224,5 +260,7 @@
 </footer>
 	</div>
 <script async defer src="https://massasquash.github.io/potatofolio/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>
