@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-29T19:02:28+09:00" />
 <meta itemprop="dateModified" content="2021-01-29T19:02:28+09:00" />
-<meta itemprop="wordCount" content="1296">
+<meta itemprop="wordCount" content="2649">
 
 
 
@@ -115,19 +115,25 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#１正規表現regexオブジェクト">（１）正規表現Regexオブジェクト</a>
+    <li><a href="#１正規表現とは">（１）正規表現とは</a></li>
+    <li><a href="#２テキストパターンを検索する基本的な流れ">（２）テキストパターンを検索する基本的な流れ</a>
       <ul>
         <li><a href="#1regexオブジェクトの生成">1.Regexオブジェクトの生成</a></li>
-        <li><a href="#2正規表現パターンを検索する基本的な流れ">2.正規表現パターンを検索する基本的な流れ</a></li>
-        <li><a href="#3文字列の置換">3.文字列の置換</a></li>
+        <li><a href="#2正規表現パターンを検索する">2.正規表現パターンを検索する</a></li>
+        <li><a href="#3文字列を置換する">3.文字列を置換する</a></li>
       </ul>
     </li>
-    <li><a href="#２正規表現に用いる記号">（２）正規表現に用いる記号</a>
+    <li><a href="#３正規表現パターン">（３）正規表現パターン</a>
       <ul>
-        <li><a href="#文字の表現ワイルドカード文字集合">文字の表現（ワイルドカード、文字集合）</a></li>
-        <li><a href="#出現回数と繰り返し系の表現">出現回数と繰り返し系の表現</a></li>
+        <li><a href="#1文字の表現ワイルドカード文字集合">1.文字の表現（ワイルドカード、文字集合）</a></li>
+        <li><a href="#2出現回数を表す表現">2.出現回数を表す表現</a></li>
         <li><a href="#位置関係を表す表現">位置関係を表す表現</a></li>
         <li><a href="#その他の表現">その他の表現</a></li>
+      </ul>
+    </li>
+    <li><a href="#４色々なオプション">（４）色々なオプション</a>
+      <ul>
+        <li><a href="#1recompileに渡すオプション">1.<code>re.compile()</code>に渡すオプション</a></li>
       </ul>
     </li>
     <li><a href="#memo">MEMO</a></li>
@@ -137,50 +143,96 @@
 </div>
 <div class="content post__content clearfix">
 			<h1 id="はじめに">はじめに</h1>
-<p>この記事はO’Reilly「退屈なことはPythonにやらせよう」の学習の備忘録です。</p>
-<h2 id="１正規表現regexオブジェクト">（１）正規表現Regexオブジェクト</h2>
+<p>この記事はO’Reilly「退屈なことはPythonにやらせよう」をベースに学習した内容を残した備忘録です。</p>
+<h2 id="１正規表現とは">（１）正規表現とは</h2>
+<ul>
+<li>テキストパターンの記述表のこと</li>
+<li>英語ではregular expression、略してregexと呼ばれる</li>
+</ul>
+<h2 id="２テキストパターンを検索する基本的な流れ">（２）テキストパターンを検索する基本的な流れ</h2>
+<ul>
+<li><code>re</code>モジュールをインポートする</li>
+<li><code>re.compile()</code>関数で正規表現パターンを使ってRegexオブジェクトを生成する（この時raw文字列を使うと良い）</li>
+<li>Regexオブジェクトの<code>search()</code>メソッドに検索対象の文字列を渡し、Matchメソッドを返す</li>
+<li>Matchオブジェクトの<code>group()</code>メソッドを使って実際にマッチした文字列を取得する</li>
+</ul>
 <h3 id="1regexオブジェクトの生成">1.Regexオブジェクトの生成</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
-regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&lt;正規表現パターン&gt;&#39;</span>)
-</code></pre></div><blockquote>
+regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d\d\d&#39;</span>)  <span style="color:#75715e"># -&gt; 101</span>
+</code></pre></div><ul>
+<li><code>re.compile()</code>の引数に正規表現パターンを渡す</li>
+<li>Regexオブジェクトが返る</li>
+<li>正規表現パターンにはrow文字列を使うと、バックスラッシュを使った文字をエスケープせずそのまま表示させることができる （例：<code>r'\n'</code>）</li>
+<li>正規表現パターンの書き方については後述</li>
+</ul>
+<p><strong>re.compile()のヘルプ</strong>（<code>help()</code>でドキュメントを確認）</p>
+<blockquote>
 <p>compile(pattern, flags=0)<br>
 Compile a regular expression pattern, returning a Pattern object.</p>
 </blockquote>
-<p><code>re</code>モジュールの<code>compile()</code>関数を使うと、Regexパターンオブジェクト（Regexオブジェクト）が返る。<br>
-正規表現パターンを表す文字列には、raw文字列を渡すと便利（バックスラッシュがエスケープされないようになるため）</p>
-<h3 id="2正規表現パターンを検索する基本的な流れ">2.正規表現パターンを検索する基本的な流れ</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Matchオブジェクトを取得する</span>
-mo <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;&lt;検索対象の文字列&gt;&#39;</span>)
+<h3 id="2正規表現パターンを検索する">2.正規表現パターンを検索する</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 検索して最初のMatchオブジェクトを取得する</span>
+mo <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;101匹わんちゃんを133回数見た&#39;</span>)
 
 <span style="color:#75715e"># 取得したMatchオブジェクトの文字列を取得する</span>
 <span style="color:#66d9ef">print</span>(mo<span style="color:#f92672">.</span>group())
-</code></pre></div><p>以下、<code>help()</code>関数でドキュメントを見てみた結果。</p>
-<p><strong>Regexオブジェクトの<code>search()</code>メソッド</strong></p>
+</code></pre></div><ul>
+<li>Regexオブジェクトの<code>serch()</code>メソッドで渡された文字列の中から正規表現にマッチする部分を探し、Matchオブジェクトを返す</li>
+<li>マッチするパターンが見つからなければ、<code>None</code>を返す</li>
+<li>Matchオブジェクトの<code>group()</code>メソッドを使うと、マッチしたテキストを返す</li>
+<li>正規表現パターンを<code>()</code>でグルーピングした場合は、<code>group()</code>の引数にインデックスを渡すことでグループを取り出せる</li>
+<li>引数が<code>0</code>また引数なしの時は、マッチした文字列全体を返す</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 全ての文字列を探す場合</span>
+mo <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;101匹わんちゃんを133回数見た&#39;</span>)
+<span style="color:#66d9ef">print</span>(mo)  <span style="color:#75715e"># -&gt; [&#39;101&#39;, &#39;133&#39;]</span>
+</code></pre></div><ul>
+<li>Regexオブジェクトの<code>findall()</code>メソッドで、全てのマッチを探すことができる</li>
+<li><code>search()</code>メソッドが見つかった文字列のMatchオブジェクトを返すのに対して<code>findall()</code>メソッドは見つかった全ての文字列のリストを返す</li>
+<li>グループのある正規表現パターンの場合は、タプルのリストを返す</li>
+</ul>
+<p><strong><code>search()</code>メソッドのヘルプ</strong></p>
 <blockquote>
 <p>search(pattern, string, flags=0)<br>
 Scan through string looking for a match to the pattern, returning<br>
 a Match object, or None if no match was found.</p>
 </blockquote>
-<p>渡した文字列のなかに正規表現パターンに一致するものがあった場合に、Matchオブジェクトを取得する。<br>
-もしなければ<code>None</code>が返ってくる。</p>
-<p><strong>Matchオブジェクトの<code>search()</code>メソッド</strong></p>
+<p><strong><code>search()</code>メソッドのヘルプ</strong></p>
 <blockquote>
 <p>group(&hellip;) method of re.Match instance<br>
 group([group1, &hellip;]) -&gt; str or tuple.<br>
 Return subgroup(s) of the match by indices or names.<br>
 For 0 returns the entire match.</p>
 </blockquote>
-<p>文字列かタプルを返す。</p>
-<h3 id="3文字列の置換">3.文字列の置換</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 文字列を置換する</span>
-regex<span style="color:#f92672">.</span>sub()
+<p><strong><code>findall()</code>メソッドのヘルプ</strong></p>
+<blockquote>
+<p>findall(string, pos=0, endpos=9223372036854775807) method of re.Pattern instance<br>
+Return a list of all non-overlapping matches of pattern in string.</p>
+</blockquote>
+<h3 id="3文字列を置換する">3.文字列を置換する</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
+regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d\d\d&#39;</span>)
 
-</code></pre></div><h2 id="２正規表現に用いる記号">（２）正規表現に用いる記号</h2>
-<h3 id="文字の表現ワイルドカード文字集合">文字の表現（ワイルドカード、文字集合）</h3>
-<ul>
-<li><code>[]</code>の中の最初にキャレット記号<code>^</code>をつけると、補集合になる</li>
-<li></li>
+<span style="color:#75715e"># 文字列を置換</span>
+after <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">&#39;xxx&#39;</span>, <span style="color:#e6db74">&#39;101匹わんちゃんを133回数見た&#39;</span>)
+<span style="color:#66d9ef">print</span>(after)  <span style="color:#75715e"># -&gt; xxx匹わんちゃんをxxx回見た</span>
+</code></pre></div><ul>
+<li>Regexオブジェクトの<code>sub()</code>メソッドの第１引数に置き換える文字列、第２引数に検索置換対象の文字列を入れると、置換後の文字列を返す</li>
+<li>全てのマッチ部分が置換される</li>
 </ul>
+<p><strong><code>sub()</code>メソッドのヘルプ</strong></p>
+<blockquote>
+<p>sub(repl, string, count=0) method of re.Pattern instance<br>
+Return the string obtained by replacing the leftmost non-overlapping occurrences of pattern in string by the replacement repl.</p>
+</blockquote>
+<h2 id="３正規表現パターン">（３）正規表現パターン</h2>
+<ul>
+<li>Regexオブジェクトを作るために<code>re.compile(r'&lt;正規表現パターン&gt;')</code>の引数に渡す際の書き方</li>
+<li><code>[]</code>で囲むとその中の文字列のどれかを表す （例：[a-zA-Z0-9], [0-9._%+-]）</li>
+<li><code>[]</code>の中の最初にキャレット記号<code>^</code>をつけると、補集合になる（例：[^0-9] 数値以外）</li>
+<li>複数のパターンを縦棒<code>|</code>で区切ると、「または」のような意味になる （例：<code>Bat(man|mobile|copter|bat))</code>）</li>
+</ul>
+<h3 id="1文字の表現ワイルドカード文字集合">1.文字の表現（ワイルドカード、文字集合）</h3>
 <table>
 <thead>
 <tr>
@@ -219,10 +271,10 @@ regex<span style="color:#f92672">.</span>sub()
 </tr>
 </tbody>
 </table>
-<h3 id="出現回数と繰り返し系の表現">出現回数と繰り返し系の表現</h3>
+<h3 id="2出現回数を表す表現">2.出現回数を表す表現</h3>
 <ul>
 <li>文字集合の後にくっつける記号</li>
-<li>正確には「文字」 -&gt; 「グループ」。正規表現の中で<code>()</code>で括られたものが１グループになる。</li>
+<li>例えば<code>.*</code>で「改行以外の全ての文字列」</li>
 </ul>
 <table>
 <thead>
@@ -234,27 +286,27 @@ regex<span style="color:#f92672">.</span>sub()
 <tbody>
 <tr>
 <td>?</td>
-<td>直前の文字の0回か1回の出現にマッチ</td>
+<td>直前のグループの0回か1回の出現にマッチ</td>
 </tr>
 <tr>
 <td>*</td>
-<td>直前の文字の0回以上の出現にマッチ</td>
+<td>直前のグループの0回以上の出現にマッチ</td>
 </tr>
 <tr>
 <td>+</td>
-<td>直前の文字の1文字以上の出現にマッチ</td>
+<td>直前のグループの1文字以上の出現にマッチ</td>
 </tr>
 <tr>
 <td>{n}</td>
-<td>直前の文字のn回の出現にマッチ。例えば[0-9]{3}で3桁の数字</td>
+<td>直前のグループのn回の出現にマッチ。例えば[0-9]{3}で3桁の数字</td>
 </tr>
 <tr>
 <td>{n,}</td>
-<td>直前の文字をn回以上の出現にマッチ。例えば[0-9]{3,}で3桁以上の数字</td>
+<td>直前のグループのn回以上の出現にマッチ。例えば[0-9]{3,}で3桁以上の数字</td>
 </tr>
 <tr>
 <td>{m, n}</td>
-<td>直前の文字をm〜n回の出現にマッチ。例えば[0-9]{3, 5}で3〜5桁の数字</td>
+<td>直前のグループのm〜n回の出現にマッチ。例えば[0-9]{3, 5}で3〜5桁の数字</td>
 </tr>
 </tbody>
 </table>
@@ -281,30 +333,30 @@ regex<span style="color:#f92672">.</span>sub()
 <!-- |  \>  |  ド単語の末尾にマッチ | -->
 <h3 id="その他の表現">その他の表現</h3>
 <ul>
-<li>デフォルトでは「貪欲マッチ」＝最も長いものにマッチする。</li>
+<li><code>()</code>でグルーピングができる</li>
+<li>Matchオブジェクトが複数の可能性がある場合に、デフォルトでは「貪欲マッチ」＝最も長いものにマッチする</li>
+<li><code>{n,m}?</code>, <code>*?</code>, <code>+?</code>と出現回数を表す記号の後に<code>?</code>をつけると、直前のグループの「非貪欲マッチ」＝最も短いものにマッチする（例: <code>\d{3,5}?</code>, <code>.*?</code>）</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>記号</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>()</td>
-<td>グループを表す</td>
-</tr>
-<tr>
-<td>?</td>
-<td>正規表現グループに?をつけると非貪欲マッチになる（例: <code>\d{3,5}?</code>, <code>.*?</code>）</td>
-</tr>
-</tbody>
-</table>
+<h2 id="４色々なオプション">（４）色々なオプション</h2>
+<p><a href="https://github.com/oreilly-japan/automatestuff-ja/blob/master/ch07/phoneAndEmail.py">サンプルコード</a>より記載させていただきます。</p>
+<h3 id="1recompileに渡すオプション">1.<code>re.compile()</code>に渡すオプション</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 日本の電話番号用の正規表現</span>
+<span style="color:#75715e"># （市外局番が0から始まる1〜4桁、市内局番が1〜4桁、加入者番号4桁）</span>
+phone_regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">  (\d{1,4}|\(\d{1,4}\))            # 市外局番
+</span><span style="color:#e6db74">  (\s|-)                           # 区切り
+</span><span style="color:#e6db74">  (\d){1,4})                       # ３桁の番号
+</span><span style="color:#e6db74">  (\s|-)                           # 区切り
+</span><span style="color:#e6db74">  (\d{3,4})                        # ４桁の番号
+</span><span style="color:#e6db74">  (\s*(ext|x|ext.)\s*(\d{2, 5}))?  # 内線番号
+</span><span style="color:#e6db74">  &#39;&#39;&#39;</span>, re<span style="color:#f92672">.</span>VERBOSE)
+</code></pre></div><ul>
+<li><code>re.compile()</code>の第２引数にオプションを指定する</li>
+<li><code>re.VERBOSE</code>を渡すと冗長モードに。正規表現パターンの空白文字やコメントを無視してくれるので、コードが見やすくなる（上記コード参照）</li>
+<li><code>re.IGNORECASE</code>もしくは<code>re.I</code>を渡すと、大文字・小文字の区別をなくす</li>
+<li><code>re.DOTALL</code>を渡すと、ドット文字<code>.</code>（ワイルドカード）が改行を含む全ての文字とマッチするようになる</li>
+<li>これらのオプションを組み合わせる場合は<code>|</code>でつなぐ（例： <code>re.IGNORECASE | re.DOTALL</code>）</li>
+</ul>
 <!-- 
 ## （3）解読
 
@@ -339,9 +391,12 @@ phone_regex = re.compile(r'''
 <h2 id="memo">MEMO</h2>
 <p>【参考書籍】</p>
 <ul>
-<li>公式Web版（英語）<a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a></li>
-<li>公式サンプルコード <a href="https://github.com/oreilly-japan/automatestuff-ja">GitHub - oreilly-japan/automatestuff-ja: 『退屈なことはPythonにやらせよう』のリポジトリ</a></li>
-<li>公式の演習問題の解答例 <a href="https://github.com/oreilly-japan/automatestuff-ja">GitHub - oreilly-japan/automatestuff-ja: 『退屈なことはPythonにやらせよう』のリポジトリ</a></li>
+<li>公式Web版（英語）<br>
+<a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a></li>
+<li>公式サンプルコード<br>
+<a href="https://github.com/oreilly-japan/automatestuff-ja">GitHub - oreilly-japan/automatestuff-ja: 『退屈なことはPythonにやらせよう』のリポジトリ</a></li>
+<li>公式の演習問題の解答例<br>
+<a href="https://github.com/oreilly-japan/automatestuff-ja">GitHub - oreilly-japan/automatestuff-ja: 『退屈なことはPythonにやらせよう』のリポジトリ</a></li>
 </ul>
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=487311778X&linkId=691e891718cdd36feb75e664a0a2f53a&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 <hr>
