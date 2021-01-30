@@ -140,10 +140,9 @@ print(after)  # -> xxx匹わんちゃんをxxx回見た
 
 
 
-## （４）色々なオプション
+## （４）re.compile()に渡すオプション
 [サンプルコード](https://github.com/oreilly-japan/automatestuff-ja/blob/master/ch07/phoneAndEmail.py)より記載させていただきます。
 
-### 1.`re.compile()`に渡すオプション
 ```python
 # 日本の電話番号用の正規表現
 # （市外局番が0から始まる1〜4桁、市内局番が1〜4桁、加入者番号4桁）
@@ -157,7 +156,7 @@ phone_regex = re.compile(r'''
   ''', re.VERBOSE)
 ```
 
-- `re.compile()`の第２引数にオプションを指定する
+- `re.compile()`の第２引数にオプションを指定することができる
 - `re.VERBOSE`を渡すと冗長モードに。正規表現パターンの空白文字やコメントを無視してくれるので、コードが見やすくなる（上記コード参照）
 - `re.IGNORECASE`もしくは`re.I`を渡すと、大文字・小文字の区別をなくす
 - `re.DOTALL`を渡すと、ドット文字`.`（ワイルドカード）が改行を含む全ての文字とマッチするようになる

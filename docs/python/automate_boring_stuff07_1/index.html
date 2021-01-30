@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-29T19:02:28+09:00" />
 <meta itemprop="dateModified" content="2021-01-29T19:02:28+09:00" />
-<meta itemprop="wordCount" content="2649">
+<meta itemprop="wordCount" content="2645">
 
 
 
@@ -131,11 +131,7 @@
         <li><a href="#その他の表現">その他の表現</a></li>
       </ul>
     </li>
-    <li><a href="#４色々なオプション">（４）色々なオプション</a>
-      <ul>
-        <li><a href="#1recompileに渡すオプション">1.<code>re.compile()</code>に渡すオプション</a></li>
-      </ul>
-    </li>
+    <li><a href="#４recompileに渡すオプション">（４）re.compile()に渡すオプション</a></li>
     <li><a href="#memo">MEMO</a></li>
   </ul>
 </nav>
@@ -337,9 +333,8 @@ Return the string obtained by replacing the leftmost non-overlapping occurrences
 <li>Matchオブジェクトが複数の可能性がある場合に、デフォルトでは「貪欲マッチ」＝最も長いものにマッチする</li>
 <li><code>{n,m}?</code>, <code>*?</code>, <code>+?</code>と出現回数を表す記号の後に<code>?</code>をつけると、直前のグループの「非貪欲マッチ」＝最も短いものにマッチする（例: <code>\d{3,5}?</code>, <code>.*?</code>）</li>
 </ul>
-<h2 id="４色々なオプション">（４）色々なオプション</h2>
+<h2 id="４recompileに渡すオプション">（４）re.compile()に渡すオプション</h2>
 <p><a href="https://github.com/oreilly-japan/automatestuff-ja/blob/master/ch07/phoneAndEmail.py">サンプルコード</a>より記載させていただきます。</p>
-<h3 id="1recompileに渡すオプション">1.<code>re.compile()</code>に渡すオプション</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 日本の電話番号用の正規表現</span>
 <span style="color:#75715e"># （市外局番が0から始まる1〜4桁、市内局番が1〜4桁、加入者番号4桁）</span>
 phone_regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&#39;&#39;
@@ -351,7 +346,7 @@ phone_regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.
 </span><span style="color:#e6db74">  (\s*(ext|x|ext.)\s*(\d{2, 5}))?  # 内線番号
 </span><span style="color:#e6db74">  &#39;&#39;&#39;</span>, re<span style="color:#f92672">.</span>VERBOSE)
 </code></pre></div><ul>
-<li><code>re.compile()</code>の第２引数にオプションを指定する</li>
+<li><code>re.compile()</code>の第２引数にオプションを指定することができる</li>
 <li><code>re.VERBOSE</code>を渡すと冗長モードに。正規表現パターンの空白文字やコメントを無視してくれるので、コードが見やすくなる（上記コード参照）</li>
 <li><code>re.IGNORECASE</code>もしくは<code>re.I</code>を渡すと、大文字・小文字の区別をなくす</li>
 <li><code>re.DOTALL</code>を渡すと、ドット文字<code>.</code>（ワイルドカード）が改行を含む全ての文字とマッチするようになる</li>
