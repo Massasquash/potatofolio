@@ -1,6 +1,6 @@
 ---
 title: "[Hugoブログ06]ブログにipynbファイルをアップする"
-date: 2021-01-15
+date: 2021-01-30
 lead: "Jupyter Notebookで作ったipynbファイルをそのままブログ記事にする"
 categories:
   - "Hugoブログ"
@@ -10,15 +10,16 @@ categories:
 
 
 ## 概要
-- ターミナル操作
-  - （１）HomebrewでGoをインストールする
-  - （２）Jupyter Notebook Handlerをインストールする
+ターミナル操作
+- （１）HomebrewでGoをインストールする
+- （２）Jupyter Notebook Handlerをインストールする
 
-- ipynbファイルの設定
-  - （３）frontmatterメタデータを設定する
-  - （４）Hugoのコンテンツディレクトリにipynbファイルを保存する
+ipynbファイルの設定
+- （３）frontmatterメタデータを設定する
+- （４）Hugoのコンテンツディレクトリにipynbファイルを保存する
 
 - （５）Hugoプロジェクトディレクトリにhugo.goを作成
+- （６）ビルド
 
 # 実装
 ## （１）HomebrewでGoをインストールする
@@ -55,10 +56,11 @@ Jupyter Notebookを立ち上げてブログにアップしたいipynbファイ�
   "frontmatter": {
     "title": "[退屈Python]7章 正規表現によるパターンマッチング　演習",
     "date": "2021-01-30T21:00",
+    "lead": "「退屈なことはPythonにやらせよう」の学習備忘録",
     "categories": [
       "退屈Python"
-    ]
-  },
+    ],
+   },
 ```
 
 JSON形式なので、ipynbをテキストエディタで開いて直接打ち込んでも可能です。  
