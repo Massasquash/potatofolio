@@ -4,21 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[退屈Python]7章 正規表現によるパターンマッチング 演習問題 - Potatofolio</title>
+	<title>[退屈Python]7章 正規表現によるパターンマッチング 演習 - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[退屈Python]7章 正規表現によるパターンマッチング 演習問題" />
+		<meta property="og:title" content="[退屈Python]7章 正規表現によるパターンマッチング 演習" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/" />
-<meta property="article:published_time" content="2021-01-29T19:02:28+09:00" />
-<meta property="article:modified_time" content="2021-01-29T19:02:28+09:00" />
+<meta property="article:published_time" content="2021-01-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-30T00:00:00+00:00" />
 
-		<meta itemprop="name" content="[退屈Python]7章 正規表現によるパターンマッチング 演習問題">
+		<meta itemprop="name" content="[退屈Python]7章 正規表現によるパターンマッチング 演習">
 <meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-01-29T19:02:28+09:00" />
-<meta itemprop="dateModified" content="2021-01-29T19:02:28+09:00" />
-<meta itemprop="wordCount" content="151">
+<meta itemprop="datePublished" content="2021-01-30T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-30T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1658">
 
 
 
@@ -102,11 +102,11 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[退屈Python]7章 正規表現によるパターンマッチング 演習問題</h1>
+			<h1 class="post__title">[退屈Python]7章 正規表現によるパターンマッチング 演習</h1>
 			<p class="post__lead">「退屈なことはPythonにやらせよう」の学習備忘録</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-29T19:02:28&#43;09:00">January 29, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/" rel="category">退屈Python</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-30T00:00:00Z">January 30, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/" rel="category">退屈Python</a>
 	</span>
 </div></div>
 		</header>
@@ -115,27 +115,276 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#演習7-20">演習7-20</a></li>
-    <li><a href="#memo">MEMO</a></li>
+    <li><a href="#演習7-17">演習7-17</a></li>
+    <li><a href="#演習7-18">演習7-18</a></li>
+    <li><a href="#演習7-20">演習7-20</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#演習7-21">演習7-21</a></li>
+    <li><a href="#7-22">7-22</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#演習プロジェクト">演習プロジェクト</a>
+      <ul>
+        <li><a href="#7181-強いパスワードの検出">7.18.1 強いパスワードの検出</a></li>
+        <li><a href="#7182-正規表現を用いたstripメソッド">7.18.2 正規表現を用いたstrip()メソッド</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 	</div>
 </div>
 <div class="content post__content clearfix">
 			<h1 id="はじめに">はじめに</h1>
-<p>この記事はO’Reilly「退屈なことはPythonにやらせよう」の学習の備忘録です。</p>
-<h2 id="演習7-20">演習7-20</h2>
-<p>３桁ごとにカンマのついた数字にマッチする正規表現を書く問題。</p>
-<hr>
-<h2 id="memo">MEMO</h2>
-<p>【参考書籍】</p>
-<ul>
-<li>公式Web版（英語）<a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a></li>
-<li>公式サンプルコード <a href="https://github.com/oreilly-japan/automatestuff-ja">GitHub - oreilly-japan/automatestuff-ja: 『退屈なことはPythonにやらせよう』のリポジトリ</a></li>
-</ul>
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=487311778X&linkId=691e891718cdd36feb75e664a0a2f53a&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
-<hr>
+<p>この記事はO’Reilly「退屈なことはPythonにやらせよう」をベースに学習した内容を残した備忘録です。　　
+このページでは、演習問題でやったことを残しておきます。</p>
+<h2 id="演習7-17">演習7-17</h2>
+<p>全ての数字と小文字にマッチする文字集合</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
 
+re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;[a-z0-9]&#39;</span>)
+</code></pre></div><pre><code>re.compile(r'[a-z0-9]', re.UNICODE)
+</code></pre>
+<h2 id="演習7-18">演習7-18</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">num_regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d+&#39;</span>)
+result <span style="color:#f92672">=</span> num_regex<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">&#39;X&#39;</span>, <span style="color:#e6db74">&#39;12 drummers, 11 pipers, five rings, 3hens&#39;</span>)
+result
+</code></pre></div><pre><code>'X drummers, X pipers, five rings, Xhens'
+</code></pre>
+<h2 id="演習7-20">演習7-20</h2>
+<p>３桁ごとのカンマのついた数字にマッチする正規表現を書く</p>
+<ul>
+<li>1〜3桁の数字があり、その後カンマの後に3桁の数字が続くのが、0回以上出現する</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
+
+<span style="color:#75715e"># 最初に数値が1〜3個、以下存在は自由で、カンマ、数値3個...</span>
+num_with_comma <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">    ^\d{1,3}
+</span><span style="color:#e6db74">    (,\d{3})+$
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>, re<span style="color:#f92672">.</span>VERBOSE)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(num_with_comma<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;私の所持金は12,345です&#39;</span>)<span style="color:#f92672">.</span>group())
+</code></pre></div><pre><code>12,345
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 上の例だと、全文が数字文字列の場合にしかマッチしない。文章の途中でもマッチできるコード</span>
+num_with_comma <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">    (?&lt;!\d)
+</span><span style="color:#e6db74">    \d{1,3}
+</span><span style="color:#e6db74">    (,\d{3})+
+</span><span style="color:#e6db74">    (?!\d)
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>, re<span style="color:#f92672">.</span>VERBOSE)
+</code></pre></div><h4 id="メモ">メモ</h4>
+<ul>
+<li>上記コードの参考記事　https://teratail.com/questions/85890</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1〜3桁の数字にマッチ</span>
+num_regexp <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d{1,3}&#39;</span>)
+<span style="color:#66d9ef">print</span>(num_regexp<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;12345&#39;</span>)<span style="color:#f92672">.</span>group())
+</code></pre></div><pre><code>123
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 上の例だと、3桁を超える場合でもマッチしてしまう</span>
+<span style="color:#75715e"># 桁数が合わないとマッチしないようにするには、^と$で行の始めと終わりのマッチを見るのがシンプル</span>
+num_regexp <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^\d{1,3}$&#39;</span>)
+<span style="color:#66d9ef">print</span>(num_regexp<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;123&#39;</span>)<span style="color:#f92672">.</span>group())
+</code></pre></div><pre><code>123
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(num_with_comma<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;12345&#39;</span>)<span style="color:#f92672">.</span>group())
+</code></pre></div><pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-162-f0e31216d05e&gt; in &lt;module&gt;
+----&gt; 1 print(num_with_comma.search('12345').group())
+
+
+AttributeError: 'NoneType' object has no attribute 'group'
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 以下だと、12345を検索した時に123がヒットしてしまう</span>
+num_with_comma <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">    \d{1,3}
+</span><span style="color:#e6db74">    (,\d{3})*
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>, re<span style="color:#f92672">.</span>VERBOSE)
+</code></pre></div><h2 id="演習7-21">演習7-21</h2>
+<p>姓が「Nakamoto」である人のフルネームにマッチする正規表現。</p>
+<ul>
+<li>名は姓の前にあり、姓名とも1単語で大文字から始まるとする</li>
+<li>名前がなかったり、前の単語に文字以外（Mr. でピリオドなど）が使われているのは省く</li>
+</ul>
+<p>条件を正規表現で表すと</p>
+<ul>
+<li>名の先頭は大文字の英字</li>
+<li>英字0つ以上の文字列（記号、数字は除く）</li>
+<li>半角スペース1つ</li>
+<li>Nakamoto</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
+
+nakamoto_regexp <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;[A-Z]\w*[　Nakamoto]&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(nakamura_regexp<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;Satoshi　Nakamoto&#39;</span>)<span style="color:#f92672">.</span>group())
+</code></pre></div><pre><code>Satoshi　Nakamoto
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(nakamura_regexp<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;satoshi nakamoto&#39;</span>)<span style="color:#f92672">.</span>group())
+</code></pre></div><pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-107-743b7d68bddb&gt; in &lt;module&gt;
+----&gt; 1 print(nakamura_regexp.search('satoshi nakamoto').group())
+
+
+AttributeError: 'NoneType' object has no attribute 'group'
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(nakamura_regexp<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;Mr.　Nakamoto&#39;</span>)<span style="color:#f92672">.</span>group())
+</code></pre></div><pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-104-3ef11e7c868d&gt; in &lt;module&gt;
+----&gt; 1 print(nakamura_regexp.search('Mr.　Nakamoto').group())
+
+
+AttributeError: 'NoneType' object has no attribute 'group'
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(nakamura_regexp<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;Nakamoto&#39;</span>)<span style="color:#f92672">.</span>group())
+</code></pre></div><pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-105-49e3955d3b06&gt; in &lt;module&gt;
+----&gt; 1 print(nakamura_regexp.search('Nakamoto').group())
+
+
+AttributeError: 'NoneType' object has no attribute 'group'
+</code></pre>
+<h2 id="7-22">7-22</h2>
+<p>以下のような文とマッチする正規表現。大文字と小文字を区別しない。</p>
+<ul>
+<li>最初の単語が AliceかBobかCarol</li>
+<li>２番目の単語が eatsかpetsかthrows</li>
+<li>３番目の単語が applesかcatsかbaseballs</li>
+<li>最後はピリオドで終わる文</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
+
+sentence_regexp <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;(Alice|Bob|Carol) (eats|pets|throws) (apples|cats|baseballs)\.&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(sentence_regexp<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;Alice pets cats.&#39;</span>)<span style="color:#f92672">.</span>group())
+</code></pre></div><pre><code>Alice pets cats.
+</code></pre>
+<h4 id="メモ-1">メモ</h4>
+<ul>
+<li>ドットを正規表現で表すには、バックスラッシュでエスケープする必要がある</li>
+</ul>
+<h2 id="演習プロジェクト">演習プロジェクト</h2>
+<h3 id="7181-強いパスワードの検出">7.18.1 強いパスワードの検出</h3>
+<p>引数に渡されたパスワード文字列が強いかどうかを正規表現を用いて確認する関数を作る。</p>
+<p>強いパスワードの条件　　</p>
+<ul>
+<li>８文字以上</li>
+<li>大文字と小文字を含む</li>
+<li>１つ以上の数字を含む</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 全体のスクリプト</span>
+<span style="color:#f92672">import</span> re
+
+PASSWORD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1234ab44&#39;</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">check_password</span>(password):
+    <span style="color:#e6db74">&#34;&#34;&#34;パスワード文字列の強さを判定
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Arguments:
+</span><span style="color:#e6db74">        password: パスワード文字列
+</span><span style="color:#e6db74">    Returns:
+</span><span style="color:#e6db74">        判定結果を文字列で返す
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#75715e"># 8桁以上あるかの判定</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> pass_regex<span style="color:#f92672">.</span>search(PASSWORD):
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;No...PASSWORD should have the above 8 characters.&#39;</span>
+
+    pattern1 <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;[a-z]&#39;</span>)
+    pattern2 <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;[A-Z]&#39;</span>)
+    pattern3 <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d&#39;</span>)
+    
+    <span style="color:#75715e"># 大文字・小文字、１つ以上の数字を含む判定</span>
+    <span style="color:#66d9ef">if</span> all((pattern1<span style="color:#f92672">.</span>search(PASSWORD),
+            pattern2<span style="color:#f92672">.</span>search(PASSWORD),
+            pattern3<span style="color:#f92672">.</span>search(PASSWORD))):
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;OK! This PASSWORD is strong!&#39;</span>
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;No...PASSWORD should be strong.&#39;</span>
+</code></pre></div><h4 id="メモ-2">メモ</h4>
+<ul>
+<li>もっと短くできそう</li>
+</ul>
+<h3 id="7182-正規表現を用いたstripメソッド">7.18.2 正規表現を用いたstrip()メソッド</h3>
+<ul>
+<li>文字列を引数にとり、文字列メソッドのstrip()と同等の動きをする関数を書く</li>
+<li>デフォルトでは、文字列の先頭と末尾から空白文字を除去する</li>
+<li>追加の文字列引数があれば、それを文字列の先頭と末尾から除去する</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">like_strip</span>(string, chars<span style="color:#f92672">=</span>None):
+    <span style="color:#e6db74">&#34;&#34;&#34;    
+</span><span style="color:#e6db74">    Arguments:
+</span><span style="color:#e6db74">       string: 処理したい文字列
+</span><span style="color:#e6db74">    Returns:
+</span><span style="color:#e6db74">        処理した後の文字列
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">if</span> chars:
+        delete_str <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(chars)
+    <span style="color:#66d9ef">else</span>:
+        delete_str <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\s&#39;</span>)        
+    <span style="color:#66d9ef">return</span> delete_str<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">&#39;&#39;</span>, string)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">like_strip( <span style="color:#e6db74">&#39;   ああああああ     　　　&#39;</span>)
+</code></pre></div><pre><code>'ああああああ'
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">like_strip( <span style="color:#e6db74">&#39;   ああああああ     　　　いいい&#39;</span>, <span style="color:#e6db74">&#39;い&#39;</span>)
+</code></pre></div><pre><code>'   ああああああ     \u3000\u3000\u3000'
+</code></pre>
+<h4 id="メモ-3">メモ</h4>
+<ul>
+<li><code>\u3000</code>は全角スペースを表すUniode文字</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">help(<span style="color:#e6db74">&#39;aaa&#39;</span><span style="color:#f92672">.</span>strip)
+</code></pre></div><pre><code>Help on built-in function strip:
+
+strip(chars=None, /) method of builtins.str instance
+    Return a copy of the string with leading and trailing whitespace removed.
+    
+    If chars is given and not None, remove characters in chars instead.
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># より短く書けるが、仮引数の初期値はNoneの方が自然な感じがする</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">like_strip_2</span>(string, chars<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\s&#39;</span>):
+    <span style="color:#e6db74">&#34;&#34;&#34;    
+</span><span style="color:#e6db74">    Arguments:
+</span><span style="color:#e6db74">       string: 処理したい文字列
+</span><span style="color:#e6db74">    Returns:
+</span><span style="color:#e6db74">        処理した後の文字列
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    delete_str <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\s&#39;</span>)        
+    <span style="color:#66d9ef">return</span> delete_str<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">&#39;&#39;</span>, string)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 初期値をNoneのまま変えずに、論理演算子を使って短くできた</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">like_strip_3</span>(string, chars<span style="color:#f92672">=</span>None):
+    <span style="color:#e6db74">&#34;&#34;&#34;    
+</span><span style="color:#e6db74">    Arguments:
+</span><span style="color:#e6db74">       string: 処理したい文字列
+</span><span style="color:#e6db74">    Returns:
+</span><span style="color:#e6db74">        処理した後の文字列
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    delete_str <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(chars <span style="color:#f92672">or</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\s&#39;</span>)
+    <span style="color:#66d9ef">return</span> delete_str<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">&#39;&#39;</span>, string)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># delete_strの挙動</span>
+<span style="color:#66d9ef">print</span>(re<span style="color:#f92672">.</span>compile(None <span style="color:#f92672">or</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\s&#39;</span>))
+<span style="color:#66d9ef">print</span>(re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">&#39;何らかの文字列&#39;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\s&#39;</span>))
+</code></pre></div><pre><code>re.compile('\\s')
+re.compile('何らかの文字列')
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+</code></pre></div>
 		</div>
 	</article>
 </main>
@@ -143,14 +392,8 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Effective Python]項目27 mapやfilterの代わりにリスト内包表記を使う</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[退屈Python]7章 正規表現によるパターンマッチング</p>
 		</a>
 	</div>
@@ -171,8 +414,8 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/">[退屈Python]7章 正規表現によるパターンマッチング 演習</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/">[退屈Python]7章 正規表現によるパターンマッチング</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/">[退屈Python]7章 正規表現によるパターンマッチング 演習問題</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27/">[Effective Python]項目27 mapやfilterの代わりにリスト内包表記を使う</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/">[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/">[Effective Python]項目10 代入式で繰り返しを防ぐ</a></li>

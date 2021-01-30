@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-30T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-30T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1308">
+<meta itemprop="wordCount" content="1611">
 
 
 
@@ -124,6 +124,7 @@
     <li><a href="#３frontmatterメタデータを設定する">（３）frontmatterメタデータを設定する</a></li>
     <li><a href="#４hugoのコンテンツディレクトリにipynbファイルを保存する">（４）Hugoのコンテンツディレクトリにipynbファイルを保存する</a></li>
     <li><a href="#５hugoプロジェクトディレクトリにhugogoを作成">（５）Hugoプロジェクトディレクトリにhugo.goを作成</a></li>
+    <li><a href="#６hugogoを実行したのちにビルド">（６）hugo.goを実行したのちにビルド</a></li>
   </ul>
 
   <ul>
@@ -134,6 +135,7 @@
 </div>
 <div class="content post__content clearfix">
 			<h1 id="はじめに">はじめに</h1>
+<p>Pythonの学習のために、Jupyter Notebookをそのままページにしたかったので、調べながらやってみました。</p>
 <h2 id="概要">概要</h2>
 <p>ターミナル操作</p>
 <ul>
@@ -152,7 +154,7 @@
 <p>（５）Hugoプロジェクトディレクトリにhugo.goを作成</p>
 </li>
 <li>
-<p>（６）ビルド</p>
+<p>（６）hugo.goを実行したのちにビルド</p>
 </li>
 </ul>
 <h1 id="実装">実装</h1>
@@ -179,7 +181,7 @@ go version
     <span style="color:#f92672">&#34;lead&#34;</span>: <span style="color:#e6db74">&#34;「退屈なことはPythonにやらせよう」の学習備忘録&#34;</span>,
     <span style="color:#f92672">&#34;categories&#34;</span>: [
       <span style="color:#e6db74">&#34;退屈Python&#34;</span>
-    ],
+    ]
    }<span style="color:#960050;background-color:#1e0010">,</span>
 </code></pre></div><p>JSON形式なので、ipynbをテキストエディタで開いて直接打ち込んでも可能です。<br>
 僕の環境だとVSCodeで開くと勝手にJupyter Notebook形式で開いてしまうので、フロントマター編集の仕方がわかりませんでした。要チェック。</p>
@@ -214,7 +216,13 @@ go version
 		}
 	}
 }
-</code></pre></div><h1 id="おわりに">おわりに</h1>
+</code></pre></div><h2 id="６hugogoを実行したのちにビルド">（６）hugo.goを実行したのちにビルド</h2>
+<p>下記のコマンドを実行し、<code>hugo.go</code>ファイルのスクリプトを実行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go run hugo.go server -w
+</code></pre></div><p>この後、普段記事をアップするときと同様の手順で、<code>hugo</code>コマンドでビルドしたのち必要なコマンドを実行していけばOKです。</p>
+<h1 id="おわりに">おわりに</h1>
+<p>これでipynbファイルがhugoブログに記事として投稿できるはずです。<br>
+僕がやったときは最初うまく更新されていなかったので、フロントマターを見直すとミスがありました（<code>]</code>の後にカンマがついていた）。コピペミスには注意です。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
 <ul>

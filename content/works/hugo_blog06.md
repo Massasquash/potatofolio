@@ -4,10 +4,11 @@ date: 2021-01-30
 lead: "Jupyter Notebookで作ったipynbファイルをそのままブログ記事にする"
 categories:
   - "Hugoブログ"
+draft: true
 ---
 
 # はじめに
-
+Pythonの学習のために、Jupyter Notebookをそのままページにしたかったので、調べながらやってみました。
 
 ## 概要
 ターミナル操作
@@ -19,7 +20,7 @@ ipynbファイルの設定
 - （４）Hugoのコンテンツディレクトリにipynbファイルを保存する
 
 - （５）Hugoプロジェクトディレクトリにhugo.goを作成
-- （６）ビルド
+- （６）hugo.goを実行
 
 # 実装
 ## （１）HomebrewでGoをインストールする
@@ -59,7 +60,7 @@ Jupyter Notebookを立ち上げてブログにアップしたいipynbファイ�
     "lead": "「退屈なことはPythonにやらせよう」の学習備忘録",
     "categories": [
       "退屈Python"
-    ],
+    ]
    },
 ```
 
@@ -103,10 +104,45 @@ func main() {
 }
 ```
 
-# おわりに
+これは、参考ページによると「Hugo CLIにJupyter Notebook Handlerをコンパイルタイムプラグインとして組み込む」ためのもののようです。  
+あまり意味がわからないままやっています。
 
+
+## （６）hugo.goを実行
+下記のコマンドを実行し、`hugo.go`ファイルのスクリプトを実行します。  
+今後、普段記事をアップするときに`hugo`コマンドの代わりに以下を実行したのち、必要なコマンドを実行していけばOKなのかなと思います
+
+```bash
+go run hugo.go server -w
+```
+
+[TODO]現状うまくアップできていないので、要チェック
+このコマンド実行時にエラーを確認しました。こんな感じでズラーっと並んでいます。
+
+```
+../../go/src/github.com/gohugoio/hugo/deploy/cloudfront.go:22:2: cannot find package "github.com/aws/aws-sdk-go/aws" in any of:
+        /usr/local/Cellar/go/1.15.6/libexec/src/github.com/aws/aws-sdk-go/aws (from $GOROOT)
+        /Users/m.ohsaki/go/src/github.com/aws/aws-sdk-go/aws (from $GOPATH)
+../../go/src/github.com/gohugoio/hugo/deploy/cloudfront.go:23:2: cannot find package "github.com/aws/aws-sdk-go/aws/session" in any of:
+        /usr/local/Cellar/go/1.15.6/libexec/src/github.com/aws/aws-sdk-go/aws/session (from $GOROOT)
+        /Users/m.ohsaki/go/src/github.com/aws/aws-sdk-go/aws/session (from $GOPATH)
+```
+
+どうやら、うまくgithubからパッケージを見つけられていないようです。
+
+もしかしたらこのライブラリ自体が3年前の更新で止まっているので、今は使えないのかもしれません。。。
+
+
+# おわりに
+<!-- これでipynbファイルがhugoブログに記事として投稿できるはずです。   -->
+<!-- 僕がやったときは最初うまく更新されていなかったので、フロントマターを見直すとミスがありました（`]`の後にカンマがついていた）。コピペミスには注意です。 -->
 
 ---
 ## MEMO
+【参考記事】
 - [MacにGoをインストールする - Qiita](https://qiita.com/sunnyG/items/cabc700e6d9a28219cc8)
+- [Jupyter NotebookをHugoのコンテンツとして使う方法 | kuune.org](https://kuune.org/text/2017/07/27/how-to-use-jupyter-notebook-as-hugo-content/)
+
+【Jupyter Notebook Handler for Hugo 公式】
+- [GitHub - naoina/hugo-jupyter-handler: Jupyter Notebook Handler for Hugo (Deprecated)](https://github.com/naoina/hugo-jupyter-handler#usage)
 ---
