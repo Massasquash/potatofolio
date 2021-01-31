@@ -26,16 +26,16 @@
     </item>
     
     <item>
-      <title>[Effective Python]項目27 mapやfilterの代わりにリスト内包表記を使う</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python04_27/</link>
+      <title>[Effective Python]27-28 リスト内包表記について</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python04_27-28/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python04_27/</guid>
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python04_27-28/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>[Effective Python]項目25 キーワード専用引数と位置専用引数で明確さを高める</title>
+      <title>[Effective Python]25 キーワード専用引数・位置専用引数の活用</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python03_25/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -53,7 +53,7 @@
     </item>
     
     <item>
-      <title>[Effective Python]項目10 代入式で繰り返しを防ぐ</title>
+      <title>[Effective Python]10 代入式で繰り返しを防ぐ</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_10/</link>
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -62,7 +62,7 @@
     </item>
     
     <item>
-      <title>[Effective Python]項目5 複雑な式の代わりにヘルパー関数を書く</title>
+      <title>[Effective Python]05 条件分岐(論理式・三項式)とヘルパー関数の活用</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_5/</link>
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -71,7 +71,7 @@
     </item>
     
     <item>
-      <title>[Effective Python]項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</title>
+      <title>[Effective Python]04 フォーマット済み文字列の活用</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_4/</link>
       <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -80,7 +80,7 @@
     </item>
     
     <item>
-      <title>[Effective Python]項目2 PEP8スタイルガイドに従う</title>
+      <title>[Effective Python]02 PEP8スタイルガイド</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_2/</link>
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -89,11 +89,20 @@
     </item>
     
     <item>
-      <title>[Effective Python]項目1 使用するPythonのバージョンを知っておく</title>
+      <title>[Effective Python]01 Pythonのバージョンについて</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python01_1/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/python/effective_python01_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]3 str型とbytes型</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_3/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_3/</guid>
       <description></description>
     </item>
     
@@ -157,15 +166,6 @@
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/notes/20200601_book_itnouka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]項目28 内包表記では、3つ以上の式を避ける</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python04_28/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python04_28/</guid>
       <description></description>
     </item>
     

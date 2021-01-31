@@ -1,5 +1,5 @@
 ---
-title: "[Effective Python]項目5 複雑な式の代わりにヘルパー関数を書く"
+title: "[Effective Python]05 条件分岐(論理式・三項式)とヘルパー関数の活用"
 date: 2021-01-22
 lead: "「Effective python第２版」の学習備忘録"
 categories:

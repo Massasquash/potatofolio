@@ -1,5 +1,5 @@
 ---
-title: "[Effective Python]項目1 使用するPythonのバージョンを知っておく"
+title: "[Effective Python]01 Pythonのバージョンについて"
 date: 2021-01-19
 lead: "「Effective python第２版」の学習備忘録"
 categories:

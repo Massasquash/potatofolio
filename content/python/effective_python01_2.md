@@ -1,5 +1,5 @@
 ---
-title: "[Effective Python]項目2 PEP8スタイルガイドに従う"
+title: "[Effective Python]02 PEP8スタイルガイド"
 date: 2021-01-20
 lead: "「Effective python第２版」の学習備忘録"
 categories:

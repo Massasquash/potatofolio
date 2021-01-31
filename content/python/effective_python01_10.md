@@ -1,5 +1,5 @@
 ---
-title: "[Effective Python]項目10 代入式で繰り返しを防ぐ"
+title: "[Effective Python]10 代入式で繰り返しを防ぐ"
 date: 2021-01-24
 lead: "「Effective python第２版」の学習備忘録"
 categories:

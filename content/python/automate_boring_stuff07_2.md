@@ -11,7 +11,8 @@ categories:
 この記事はO’Reilly「退屈なことはPythonにやらせよう」をベースに学習した内容を残した備忘録です。　　
 このページでは、演習問題でやったことを残しておきます。
 
-## 演習7-17
+## 演習問題
+### 7-17
 
  全ての数字と小文字にマッチする文字集合
 
@@ -29,7 +30,7 @@ re.compile(r'[a-z0-9]')
 
 
 
-## 演習7-18
+### 演習7-18
 
 
 ```python
@@ -45,7 +46,7 @@ result
 
 
 
-## 演習7-20
+### 演習7-20
 
 ３桁ごとのカンマのついた数字にマッチする正規表現を書く
 
@@ -131,7 +132,7 @@ num_with_comma = re.compile(r'''
     ''', re.VERBOSE)
 ```
 
-## 演習7-21
+### 7-21
 
 姓が「Nakamoto」である人のフルネームにマッチする正規表現。
 - 名は姓の前にあり、姓名とも1単語で大文字から始まるとする
@@ -209,7 +210,7 @@ print(nakamura_regexp.search('Nakamoto').group())
     AttributeError: 'NoneType' object has no attribute 'group'
 
 
-## 7-22
+### 7-22
 
 以下のような文とマッチする正規表現。大文字と小文字を区別しない。
 - 最初の単語が AliceかBobかCarol
@@ -384,9 +385,3 @@ print(re.compile('何らかの文字列' or r'\s'))
 
     re.compile('\\s')
     re.compile('何らかの文字列')
-
-
-
-```python
-
-```
