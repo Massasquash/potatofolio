@@ -1,6 +1,6 @@
 ---
-title: "[Effective Python]6 タプルとアンパック構文"
-date: 2021-01-23
+title: "[Effective Python]06 タプルとアンパック構文"
+date: 2021-01-01T01:06
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"

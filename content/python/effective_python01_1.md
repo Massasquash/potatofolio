@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]01 Pythonのバージョンについて"
-date: 2021-01-19
+date: 2021-01-01T01:01
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"

@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]03 str型とbytes型"
-date: 2021-01-31
+date: 2021-01-01T01:03
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"

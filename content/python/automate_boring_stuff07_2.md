@@ -1,6 +1,6 @@
 ---
 title: "[退屈Python]7章 正規表現によるパターンマッチング 演習"
-date: 2021-01-01
+date: 2021-01-30T11:00
 lead: "「退屈なことはPythonにやらせよう」の学習備忘録"
 categories:
   - "退屈Python"

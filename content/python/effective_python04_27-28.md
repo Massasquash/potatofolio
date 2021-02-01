@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]27-28 リスト内包表記について"
-date: 2021-01-26
+date: 2021-01-01T04:27
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"

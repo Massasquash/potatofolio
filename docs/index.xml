@@ -6,103 +6,13 @@
     <description>Recent content on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[Effective Python]03 str型とbytes型</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_3/</link>
-      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]27-28 リスト内包表記について</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python04_27-28/</link>
-      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python04_27-28/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]25 キーワード専用引数・位置専用引数の活用</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python03_25/</link>
-      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python03_25/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sun, 24 Jan 2021 09:33:09 +0900</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ブログアウトプットの方針</title>
       <link>https://massasquash.github.io/potatofolio/notes/output_plan/</link>
       <pubDate>Sun, 24 Jan 2021 09:33:09 +0900</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/notes/output_plan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]10 代入式で繰り返しを防ぐ</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_10/</link>
-      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_10/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]07-08 enumerate関数とzip関数</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_7-8/</link>
-      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_7-8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]6 タプルとアンパック構文</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_6/</link>
-      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]05 条件分岐(論理式・三項式)とヘルパー関数の活用</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_5/</link>
-      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]04 フォーマット済み文字列の活用</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_4/</link>
-      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]02 PEP8スタイルガイド</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_2/</link>
-      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]01 Pythonのバージョンについて</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_1/</link>
-      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_1/</guid>
       <description></description>
     </item>
     
@@ -152,24 +62,6 @@
     </item>
     
     <item>
-      <title>[退屈Python]7章 正規表現によるパターンマッチング</title>
-      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</link>
-      <pubDate>Fri, 01 Jan 2021 19:02:28 +0900</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[退屈Python]7章 正規表現によるパターンマッチング 演習</title>
-      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>[Udemy]現役エンジニアが教える、手を動かして学ぶGoogle Cloud Platform(GCP) 入門</title>
       <link>https://massasquash.github.io/potatofolio/notes/20200721_udemy-gcp/</link>
       <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
@@ -184,6 +76,132 @@
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/notes/20200601_book_itnouka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]目次</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python00/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python00/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]01 Pythonのバージョンについて</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]02 PEP8スタイルガイド</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]03 str型とbytes型</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]04 フォーマット済み文字列の活用</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]05 条件分岐(論理式・三項式)とヘルパー関数の活用</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]06 タプルとアンパック構文</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]07-08 enumerate関数とzip関数</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_7-8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_7-8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]10 代入式で繰り返しを防ぐ</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]25 キーワード専用引数・位置専用引数の活用</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python03_25/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python03_25/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]27-28 リスト内包表記について</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python04_27-28/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python04_27-28/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]項目26 functools.wrapsを使って関数デコレータを定義する</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python03_26/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python03_26/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[退屈Python]7章 正規表現によるパターンマッチング</title>
+      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[退屈Python]7章 正規表現によるパターンマッチング 演習</title>
+      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</guid>
       <description></description>
     </item>
     

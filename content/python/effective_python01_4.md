@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]04 フォーマット済み文字列の活用"
-date: 2021-01-21
+date: 2021-01-01T01:04
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"

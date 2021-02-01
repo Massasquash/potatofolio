@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python]項目29 代入式を使い内包表記での繰り返し作業をなくす"
-date: 2021-01-29T12:50
+date: 2021-01-01T04:29
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"

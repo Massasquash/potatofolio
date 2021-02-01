@@ -1,10 +1,9 @@
 ---
 title: "[Effective Python]項目26 functools.wrapsを使って関数デコレータを定義する"
-date: 2021-01-23
+date: 2021-01-01T03:26
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"
-draft: true
 ---
 
 # はじめに
@@ -50,8 +49,8 @@ def hello():
     return 'Hello World!'
 ```
 
-ここの`@app.route('/')`でデコレータ構文が使われています。
-
+ここの`@app.route('/')`でデコレータ構文が使われています。  
+ひとまずはこのような`@`のついた構文が出てきても身構えず「その下に出てくる関数に対して何かしらの処理を追加している関数なんだな〜」と思えるようになれば良いのかな、と思います。
 
 ---
 ## MEMO

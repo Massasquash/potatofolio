@@ -1,29 +1,31 @@
 ---
 title: "[Effective Python]目次"
-date: 2020-01-19
+date: 2020-01-01
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Effective Python"
-draft: true
 ---
 
 # はじめに
-この記事は「Effective Python 第二版」の学習の備忘録です。
+この一連の記事は「Effective Python 第二版」の学習の備忘録です。  
+学習した内容について、わかりづらかった点を整理したりして自分なりの視点で学んでいます。  
+
+ここではEffective Pythonの目次を並べてみます。
 
 **１章 Pythonic思考**  
 >Pythonコミュニティでは、特定のスタイルに沿ったコードを表すのにPythonicという形容詞を使います。Pythonのイディオムは、この言語を使い仲間と作業する経験から時間をかけて発展してきました。１章では、Pythonで最も中心的な共通的に使われる最良の方法を扱います。（まえがき xii より引用）
 
 （目次）
-- **項目1 使用するPythonのバージョンを知っておく**  
-- 項目2 PEP 8スタイルガイドに従う  
-- 項目3 bytesとstrの違いを知っておく  
-- 項目4 Cスタイルフォーマット文字列とstr.formatは使わずf 文字列で埋め込む  
-- 項目5 複雑な式の代わりにヘルパー関数を書く  
-- 項目6 インデックスではなく複数代入アンパックを使う  
-- 項目7 rangeではなくenumerateを使う  
-- 項目8 イテレータを並列に処理するにはzipを使う  
+- [項目1 使用するPythonのバージョンを知っておく](https://massasquash.github.io/potatofolio/python/effective_python01_1/)  
+- [項目2 PEP 8スタイルガイドに従う](https://massasquash.github.io/potatofolio/python/effective_python01_2/)  
+- [項目3 bytesとstrの違いを知っておく](https://massasquash.github.io/potatofolio/python/effective_python01_3/)  
+- [項目4 Cスタイルフォーマット文字列とstr.formatは使わずf 文字列で埋め込む](https://massasquash.github.io/potatofolio/python/effective_python01_4/)  
+- [項目5 複雑な式の代わりにヘルパー関数を書く](https://massasquash.github.io/potatofolio/python/effective_python01_5/)  
+- [項目6 インデックスではなく複数代入アンパックを使う](https://massasquash.github.io/potatofolio/python/effective_python01_6/)  
+- [項目7 rangeではなくenumerateを使う](https://massasquash.github.io/potatofolio/python/effective_python01_7-8/)  
+- [項目8 イテレータを並列に処理するにはzipを使う](https://massasquash.github.io/potatofolio/python/effective_python01_7-8/)  
 - 項目9 forループとwhileループの後のelseブロックは使わない  
-- 項目10 代入式で繰り返しを防ぐ  
+- [項目10 代入式で繰り返しを防ぐ](https://massasquash.github.io/potatofolio/python/effective_python01_10/)  
 
 
 **2章 リストと辞書**  
@@ -50,17 +52,17 @@ draft: true
 - 項目22 可変長位置引数を使って、見た目をすっきりさせる  
 - 項目23 キーワード引数にオプションの振る舞いを与える  
 - 項目24 動的なデフォルト引数を指定するときにはNoneとdocstringを使う  
-- 項目25 キーワード専用引数と位置専用引数で明確さを高める  
-- 項目26 functools.wrapsを使って関数デコレータを定義する  
+- [項目25 キーワード専用引数と位置専用引数で明確さを高める](https://massasquash.github.io/potatofolio/python/effective_python03_25/)  
+- [項目26 functools.wrapsを使って関数デコレータを定義する](https://massasquash.github.io/potatofolio/python/effective_python03_26/)  
 
 
 **4章 内包表記とジェネレータ**  
 >Pythonには、リスト、辞書、集合の要素を簡単にイテレーションする特別な構文が用意されていて、派生的なデータ構造が作れます。また、列挙可能なストリームから値を取り出し、1つずつ返す関数も作れます。4章では、これらの機能を使い、性能向上、メモリ使用量削減、読みやすさの改善をどのようにして達成するかを述べます。（まえがき xii より引用）
 
 （目次）  
-- 項目27 mapやfilterの代わりにリスト内包表記を使う  
-- 項目28 内包表記では、3つ以上の式を避ける  
-- 項目29 代入式を使い内包表記での繰り返し作業をなくす  
+- [項目27 mapやfilterの代わりにリスト内包表記を使う](https://massasquash.github.io/potatofolio/python/effective_python04_27-28/)  
+- [項目28 内包表記では、3つ以上の式を避ける](https://massasquash.github.io/potatofolio/python/effective_python04_27-28/)  
+- [項目29 代入式を使い内包表記での繰り返し作業をなくす](https://massasquash.github.io/potatofolio/python/effective_python04_89/)  
 - 項目30 リストを返さずにジェネレータを返すことを考える  
 - 項目31 引数に対してイテレータを使うときには確実さを優先する  
 - 項目32 大きなリスト内包表記にはジェネレータ式を考える  

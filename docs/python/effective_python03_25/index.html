@@ -11,14 +11,12 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python03_25/" />
-<meta property="article:published_time" content="2021-01-25T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-01-25T00:00:00+00:00" />
+
 
 		<meta itemprop="name" content="[Effective Python]25 キーワード専用引数・位置専用引数の活用">
 <meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-01-25T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-01-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1475">
+
+<meta itemprop="wordCount" content="1506">
 
 
 
@@ -104,9 +102,7 @@
 		<header class="post__header">
 			<h1 class="post__title">[Effective Python]25 キーワード専用引数・位置専用引数の活用</h1>
 			<p class="post__lead">「Effective python第２版」の学習備忘録</p>
-			<div class="post__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-25T00:00:00Z">January 25, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/" rel="category">Effective Python</a>
+			<div class="post__meta meta"><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/" rel="category">Effective Python</a>
 	</span>
 </div></div>
 		</header>
@@ -207,13 +203,13 @@ NG -&gt; <code>safe_division_d(numerator=2, denominator=5)</code></p>
 のちに呼び出す関数の仮引数名を変更したくなることがあるかと思います。<br>
 呼び出し時にキーワードを使えないようにするだけで、仮引数名を変えても呼び出し時に影響が出ないので、メンテナンスが楽になります。</p>
 <h3 id="感想">感想</h3>
-<p>この表記はシンプルで活用しやすそうだな、と言う印象でした。関数の引数に関しては初心者にはすごく複雑で、</p>
+<p>この表記はシンプルで活用しやすそうだな、と言う印象でした。関数の引数まわりの用語に関してはプログラミングに慣れていないうちはすごく複雑に感じるもので、</p>
 <ul>
 <li>様々な用語「仮引数」「実引数」「位置引数」「キーワード引数」「可変長引数（位置・キーワード）」</li>
 <li>記述の仕方として「デフォルト値」「アノテーション」</li>
 <li>記号や慣例としての<code>*</code>, <code>/</code>, <code>*arg</code>, <code>**kwargs</code></li>
 </ul>
-<p>などあって混乱しそうですが、基礎の使い方を覚えた後は用語を整理をして、色々な書き方を読み解けるようになると関数の活用度がグッと上がりそうです。</p>
+<p>色々と混乱しそうですが、関数の基礎の使い方を覚えた後は用語や記号を整理をして、書かれているコードを読み解けるようになると関数の活用度がグッと上がりそうです。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
 <p>【参考ページ】</p>
@@ -236,15 +232,15 @@ NG -&gt; <code>safe_division_d(numerator=2, denominator=5)</code></p>
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Effective Python]10 代入式で繰り返しを防ぐ</p>
+			<p class="pager__title">[Effective Python]27-28 リスト内包表記について</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/" rel="next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[Effective Python]27-28 リスト内包表記について</p>
+			<p class="pager__title">[Effective Python]10 代入式で繰り返しを防ぐ</p>
 		</a>
 	</div>
 </nav>
@@ -264,11 +260,11 @@ NG -&gt; <code>safe_division_d(numerator=2, denominator=5)</code></p>
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python00/">[Effective Python]目次</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_1/">[Effective Python]01 Pythonのバージョンについて</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_2/">[Effective Python]02 PEP8スタイルガイド</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_3/">[Effective Python]03 str型とbytes型</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/">[Effective Python]27-28 リスト内包表記について</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/">[Effective Python]25 キーワード専用引数・位置専用引数の活用</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/">[Effective Python]10 代入式で繰り返しを防ぐ</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_7-8/">[Effective Python]07-08 enumerate関数とzip関数</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_4/">[Effective Python]04 フォーマット済み文字列の活用</a></li>
 		</ul>
 	</div>
 </div>
