@@ -4,21 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[Effective Python]25 キーワード専用引数・位置専用引数の活用 - Potatofolio</title>
+	<title>[Effective Python]6 タプルとアンパック構文 - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[Effective Python]25 キーワード専用引数・位置専用引数の活用" />
+		<meta property="og:title" content="[Effective Python]6 タプルとアンパック構文" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python03_25/" />
-<meta property="article:published_time" content="2021-01-25T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-01-25T00:00:00+00:00" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python01_6/" />
+<meta property="article:published_time" content="2021-01-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-23T00:00:00+00:00" />
 
-		<meta itemprop="name" content="[Effective Python]25 キーワード専用引数・位置専用引数の活用">
+		<meta itemprop="name" content="[Effective Python]6 タプルとアンパック構文">
 <meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-01-25T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-01-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1475">
+<meta itemprop="datePublished" content="2021-01-23T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-23T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1622">
 
 
 
@@ -102,11 +102,11 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[Effective Python]25 キーワード専用引数・位置専用引数の活用</h1>
+			<h1 class="post__title">[Effective Python]6 タプルとアンパック構文</h1>
 			<p class="post__lead">「Effective python第２版」の学習備忘録</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-25T00:00:00Z">January 25, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/" rel="category">Effective Python</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-23T00:00:00Z">January 23, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/" rel="category">Effective Python</a>
 	</span>
 </div></div>
 		</header>
@@ -115,14 +115,14 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#項目25-キーワード専用引数と位置専用引数で明確さを高める">項目25 キーワード専用引数と位置専用引数で明確さを高める</a></li>
+    <li><a href="#項目6-インデックスではなく複数代入アンパックを使う">項目6 インデックスではなく複数代入アンパックを使う</a></li>
     <li><a href="#解説">解説</a>
       <ul>
-        <li><a href="#１呼び出し方の違い">（１）呼び出し方の違い</a></li>
-        <li><a href="#２それぞれのメリット">（２）それぞれのメリット</a></li>
-        <li><a href="#感想">感想</a></li>
+        <li><a href="#１リストとタプル">（１）リストとタプル</a></li>
+        <li><a href="#２アンパック構文">（２）アンパック構文</a></li>
       </ul>
     </li>
+    <li><a href="#感想">感想</a></li>
     <li><a href="#memo">MEMO</a></li>
   </ul>
 </nav>
@@ -131,102 +131,67 @@
 <div class="content post__content clearfix">
 			<h1 id="はじめに">はじめに</h1>
 <p>この記事は「Effective Python 第二版」の学習の備忘録です。</p>
-<p><strong>3章 関数</strong></p>
+<p><strong>１章 Pythonic思考</strong></p>
 <blockquote>
-<p>Pythonの関数には、プログラマを助けるためのさまざまな機能があります。一部は、他のプログラミング言語にもある機能ですが、多くはPythonに特有のものです。3章では、関数をどのように使えば、プログラムの意図が明確になり、再利用を促進し、バグを減らせるかを示します。（まえがき xii より引用）</p>
+<p>Pythonコミュニティでは、特定のスタイルに沿ったコードを表すのにPythonicという形容詞を使います。Pythonのイディオムは、この言語を使い仲間と作業する経験から時間をかけて発展してきました。１章では、Pythonで最も中心的な共通的に使われる最良の方法を扱います。（まえがき xii より引用）</p>
 </blockquote>
 <p>（目次）</p>
 <ul>
-<li>項目19 複数の戻り値では、4個以上の変数なら決してアンパックしない</li>
-<li>項目20 Noneを返すのではなく例外を送出する</li>
-<li>項目21 クロージャが変数スコープとどう関わるかを把握しておく</li>
-<li>項目22 可変長位置引数を使って、見た目をすっきりさせる</li>
-<li>項目23 キーワード引数にオプションの振る舞いを与える</li>
-<li>項目24 動的なデフォルト引数を指定するときにはNoneとdocstringを使う</li>
-<li><strong>項目25 キーワード専用引数と位置専用引数で明確さを高める</strong></li>
-<li>項目26 functools.wrapsを使って関数デコレータを定義する</li>
+<li>項目1 使用するPythonのバージョンを知っておく</li>
+<li>項目2 PEP8スタイルガイドに従う</li>
+<li>項目3 bytesとstrの違いを知っておく</li>
+<li>項目4 Cスタイルフォーマット文字列とstr.formatは使わずf 文字列で埋め込む</li>
+<li>項目5 複雑な式の代わりにヘルパー関数を書く</li>
+<li><strong>項目6 インデックスではなく複数代入アンパックを使う</strong></li>
+<li>項目7 rangeではなくenumerateを使う</li>
+<li>項目8 イテレータを並列に処理するにはzipを使う</li>
+<li>項目9 forループとwhileループの後のelseブロックは使わない</li>
+<li>項目10 代入式で繰り返しを防ぐ</li>
 </ul>
-<h2 id="項目25-キーワード専用引数と位置専用引数で明確さを高める">項目25 キーワード専用引数と位置専用引数で明確さを高める</h2>
-<p>関数呼び出しの際に、仮引数名を指定して渡す実引数を <strong>「キーワード引数」</strong>、指定しないで渡す実引数を <strong>「位置引数」</strong> と呼びます。<br>
-Python関数の引数のデフォルトはこのどちらの方式でも呼び出すことができますが、関数定義時に <strong>「キーワード専用引数」</strong> <strong>「位置専用引数」</strong> として呼び出し方を指定してしまう方法があります。<br>
-これを活用すると関数呼び出し時の書き方が統一されるので、読みやすいコードにすることができます。</p>
-<p>また、<code>/</code>と<code>*</code>に挟まれた引数はどちらの呼び出し方でも呼び出せます（Pythonの関数引数のデフォルト）。</p>
+<h2 id="項目6-インデックスではなく複数代入アンパックを使う">項目6 インデックスではなく複数代入アンパックを使う</h2>
+<p>Pythonの組み込み型のタプルは、値の変更不可能なシーケンスを作る型です。このタプルを使った<strong>アンパック構文</strong>という便利な書き方があり、１つの代入式で複数の値に代入することができます。<br>
+この構文を使うと見た目がすっきりとして行数も少なくなり、Pythonicなコードになります。</p>
+<p>この構文の便利な例として、例えば値の交換（スワップ）に不要な一時変数を定義する必要がなくシンプルに書くことができる、というのがあります。<br>
+また組み込み関数<code>enumerate()</code>関数を活用する際にも便利な構文です（項目7で詳しく見ていきます）。</p>
 <h2 id="解説">解説</h2>
-<p>関数定義の時の仮引数に、<code>*</code>や<code>/</code>の記号を使って指定することができます。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">表記</th>
-<th style="text-align:center">解説</th>
-<th style="text-align:center">構文例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">以降がキーワード専用引数になる</td>
-<td style="text-align:center"><code>def(page, *, ignore_error=False):</code></td>
-</tr>
-<tr>
-<td style="text-align:center">/</td>
-<td style="text-align:center">その前までが位置専用引数になる</td>
-<td style="text-align:center"><code>def(x, y, /):</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>使用例</strong><br>
-<a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_25.py">サンプルコード</a>を記載します。<br>
-この関数定義の部分に、この記法が使われています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Example 13</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">safe_division_d</span>(numerator, denominator, <span style="color:#f92672">/</span>, <span style="color:#f92672">*</span>,  <span style="color:#75715e"># Changed</span>
-                    ignore_overflow<span style="color:#f92672">=</span>False,
-                    ignore_zero_division<span style="color:#f92672">=</span>False):
-    <span style="color:#66d9ef">try</span>:
-        <span style="color:#66d9ef">return</span> numerator <span style="color:#f92672">/</span> denominator
-    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">OverflowError</span>:
-        <span style="color:#66d9ef">if</span> ignore_overflow:
-            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-        <span style="color:#66d9ef">else</span>:
-            <span style="color:#66d9ef">raise</span>
-    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
-        <span style="color:#66d9ef">if</span> ignore_zero_division:
-            <span style="color:#66d9ef">return</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
-        <span style="color:#66d9ef">else</span>:
-            <span style="color:#66d9ef">raise</span>
-</code></pre></div><h3 id="１呼び出し方の違い">（１）呼び出し方の違い</h3>
-<p>仮引数に<code>*</code>を使うと、それ以降が <strong>「キーワード専用引数」</strong> になり、呼び出し時にキーワードを指定しないとエラーが出て呼び出せなくなります。<br>
-OK -&gt; <code>safe_division_d(2, 5, ignore_overflow=True, ignore_zero_division=True)</code><br>
-NG -&gt; <code>safe_division_d(2, 5, True, True)</code></p>
-<p>仮引数に<code>/</code>を使うと、その前までが <strong>「位置専用引数」</strong> になり、呼び出し時にキーワード指定するとエラーが発生します。<br>
-OK -&gt; <code>safe_division_d(2, 5)</code><br>
-NG -&gt; <code>safe_division_d(numerator=2, denominator=5)</code></p>
-<h3 id="２それぞれのメリット">（２）それぞれのメリット</h3>
-<p><strong>キーワード専用引数が有効な例</strong><br>
-上の例のようにブール値がオプションとして並ぶ場合、呼び出し時にキーワードで指定する方が何の意味を表しているのかが一目でわかります。</p>
-<p><strong>位置専用引数が有効な例</strong><br>
-のちに呼び出す関数の仮引数名を変更したくなることがあるかと思います。<br>
-呼び出し時にキーワードを使えないようにするだけで、仮引数名を変えても呼び出し時に影響が出ないので、メンテナンスが楽になります。</p>
-<h3 id="感想">感想</h3>
-<p>この表記はシンプルで活用しやすそうだな、と言う印象でした。関数の引数に関しては初心者にはすごく複雑で、</p>
+<p>Pythonの「タプル」という組み込み型と、そのタプルのアンパック構文についての解説です。</p>
+<h3 id="１リストとタプル">（１）リストとタプル</h3>
+<p>どちらも、</p>
 <ul>
-<li>様々な用語「仮引数」「実引数」「位置引数」「キーワード引数」「可変長引数（位置・キーワード）」</li>
-<li>記述の仕方として「デフォルト値」「アノテーション」</li>
-<li>記号や慣例としての<code>*</code>, <code>/</code>, <code>*arg</code>, <code>**kwargs</code></li>
+<li>インデックスによる要素のアクセスができる</li>
+<li>スライスによる要素の切り出しができる</li>
 </ul>
-<p>などあって混乱しそうですが、基礎の使い方を覚えた後は用語を整理をして、色々な書き方を読み解けるようになると関数の活用度がグッと上がりそうです。</p>
+<p>という<strong>シーケンス</strong>型なのですが、大きな違いはリストが要素の追加・削除が後からできる（<strong>ミュータブル</strong>）のに対して、タプルはそれができず定義した時点から不変（<strong>イミュータブル</strong>）ということです。<br>
+タプルを使うと最初に定義した値を変更することができないため、変更されたくない値を扱う際により安全に変数を扱うことができます。</p>
+<p>参考までに、公式ドキュメントの表現を以下に引用させていただきます。</p>
+<p><strong>リスト型 (list)</strong>
+<a href="https://docs.python.org/ja/3/library/stdtypes.html#list">組み込み型 — Python 3.9.1 ドキュメント</a></p>
+<blockquote>
+<p>リストはミュータブルなシーケンスで、一般的に同種の項目の集まりを格納するために使われます (厳密な類似の度合いはアプリケーションによって異なる場合があります)。</p>
+</blockquote>
+<p><a href="https://docs.python.org/ja/3/library/stdtypes.html#tuples">組み込み型 — Python 3.9.1 ドキュメント</a></p>
+<blockquote>
+<p>タプルはイミュータブルなシーケンスで、一般的に異種のデータの集まり (組み込みの enumerate() で作られた 2-タプルなど) を格納するために使われます。タプルはまた、同種のデータのイミュータブルなシーケンスが必要な場合 (set インスタンスや dict インスタンスに保存できるようにするためなど) にも使われます。</p>
+</blockquote>
+<h3 id="２アンパック構文">（２）アンパック構文</h3>
+<p>アンパック構文は、**「１つの代入式で複数の値に代入できる」**と言う構文です。
+インデックスでタプルにアクセスする場合よりも行数が少なくシンプルに書くことができます。<br>
+例えば、Pythonではこのアンパック構文を使って値のスワップ（交換）が簡単にできる、と言うのが有名なようです。</p>
+<p>次回以降の項目で出てくる<code>enumerate()</code>関数, <code>zip()</code>関数でもこのアンパック構文を使うことでシンプルに書けるのが特徴です。</p>
+<h2 id="感想">感想</h2>
+<p>タプルを使ったアンパック構文は僕もすごく好きで、おそらく初心者が一番最初に触れる「Pythonic」な書き方なのかな？と思います。<br>
+積極的に使っていきたい構文です。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
-<p>【参考ページ】</p>
+<p>【参考記事】</p>
 <ul>
-<li><a href="https://www.amazon.co.jp/Python%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80-%E8%A8%80%E8%AA%9E%E3%81%AE%E5%8A%9B%E3%82%92%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%97%E3%80%81%E9%96%8B%E7%99%BA%E5%8A%B9%E7%8E%87%E3%82%92%E9%AB%98%E3%82%81%E3%82%8B-WEB-PRESS-plus-ebook/dp/B0842JDVBZ">Python実践入門</a></li>
+<li><a href="https://docs.python.org/ja/3/library/stdtypes.html#typesseq">組み込み型 — Python 3.9.1 ドキュメント</a></li>
 </ul>
 <p>【Effective Pythonサンプルコード】</p>
 <ul>
 <li><a href="https://github.com/bslatkin/effectivepython">GitHub - bslatkin/effectivepython: Effective Python: Second Edition — Source Code and Errata for the Book</a></li>
 </ul>
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
-　
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B0842JDVBZ&linkId=25d949cbd1c5fb4187836e2a7ab30cb3&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 <hr>
 
 		</div>
@@ -236,15 +201,15 @@ NG -&gt; <code>safe_division_d(numerator=2, denominator=5)</code></p>
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_5/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Effective Python]10 代入式で繰り返しを防ぐ</p>
+			<p class="pager__title">[Effective Python]05 条件分岐(論理式・三項式)とヘルパー関数の活用</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/" rel="next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_7-8/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[Effective Python]27-28 リスト内包表記について</p>
+			<p class="pager__title">[Effective Python]07-08 enumerate関数とzip関数</p>
 		</a>
 	</div>
 </nav>

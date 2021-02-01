@@ -1,6 +1,6 @@
 ---
 title: "[退屈Python]7章 正規表現によるパターンマッチング"
-date: 2021-01-29T19:02:28+09:00
+date: 2021-01-01T19:02:28+09:00
 lead: "「退屈なことはPythonにやらせよう」の学習備忘録"
 categories:
   - "退屈Python"
@@ -197,7 +197,7 @@ phone_regex = re.compile(r'''
 
 ---
 ## MEMO
-【参考書籍】
+【参考】
 - 公式Web版（英語）  
   [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 - 公式サンプルコード  

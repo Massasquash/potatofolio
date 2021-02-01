@@ -6,7 +6,16 @@
     <description>Recent content in Effective Python on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 26 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/effective-python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/effective-python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Effective Python]03 str型とbytes型</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_3/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_3/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Effective Python]27-28 リスト内包表記について</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python04_27-28/</link>
@@ -31,6 +40,24 @@
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/python/effective_python01_10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]07-08 enumerate関数とzip関数</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_7-8/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_7-8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]6 タプルとアンパック構文</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_6/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_6/</guid>
       <description></description>
     </item>
     
@@ -67,15 +94,6 @@
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/python/effective_python01_1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Effective Python]3 str型とbytes型</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_3/</link>
-      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_3/</guid>
       <description></description>
     </item>
     

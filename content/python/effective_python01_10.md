@@ -171,7 +171,7 @@ print(bottles)
 
 ---
 ## MEMO
-【参考記事】
+【参考ページ】
 - [6. 式 (expression) — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/reference/expressions.html#assignment-expressions)
 - [PEP 572 — Assignment Expressions | Python.org](https://www.python.org/dev/peps/pep-0572/)
 

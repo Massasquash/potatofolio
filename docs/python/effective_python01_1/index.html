@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1563">
+<meta itemprop="wordCount" content="1645">
 
 
 
@@ -151,22 +151,22 @@
 <h2 id="項目1-使用するpythonのバージョンを知っておく">項目1 使用するPythonのバージョンを知っておく</h2>
 <p>Python3.8が2019年10月にリリースされ、多くの便利な構文が導入されました。<br>
 またPython2は2020年1月にサポートがなくなり、さらに2020年4月に使用期限が終わり公式な保守が行われなくなりました。<br>
-自己責任で使うことはできますが、Python2の利用は避け、Python3をプロジェクトに使っていくのが安全です。そのために、自分のPCにどのバージョンがインストールされているのかを確認する方法が整理されているのがこの項目の内容です。</p>
+自己責任で使うことはできますが、Python2の利用は避け、Python3をプロジェクトに使っていくのが安全です。そのために、自分のPCにどのバージョンがインストールされているのかを確認する方法が整理されているのがこの項目の内容でした。</p>
 <h2 id="解説">解説</h2>
 <p>使用しているPythonのバージョンを調べるには、以下の方法があります。</p>
 <ul>
 <li>（１）コマンドラインで調べる方法</li>
 <li>（２）Python実行時（対話モードやJupyter Notebookのセル上などで）調べる方法</li>
 </ul>
+<p>それぞれの方法について具体的に見ていきます。</p>
 <h3 id="１コマンドラインでバージョンを調べる方法">（１）コマンドラインでバージョンを調べる方法</h3>
-<p>まずはターミナルで確認する方法。自分のPCにインストールしているPythonのバージョンを調べられます。<br>
+<p>まずはターミナルなどのコマンドライン確認する方法。自分のPCにインストールしているPythonのバージョンを調べられます。<br>
 <code>python</code>コマンドと<code>python3</code>コマンドでは結果が違い、インストール状況によって変わってきます。<br>
 例えばPython3をインストールしていない場合は、python3コマンドは動きません。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python --version  <span style="color:#75715e">#-&gt; Python 2.7.10</span>
 $ python3 --version <span style="color:#75715e">#-&gt; Python 3.8.0</span>
-</code></pre></div><p>プログラミング自体を学習しはじめの頃は、プログラミング言語にバージョンがあることや、PCに複数のバージョンが同時に入っていること、という自体のイメージがしづらいかもしれませんが、「プログラミング言語もソフトウェアの一種」という考え方をすると少しイメージしやすいかなと思います。ソフトウェアは日々更新されてより良いバージョンが出てきたり、古いバージョンのソフトウェアを使い続けることができるのと同じような理屈かなと思います。</p>
-<h3 id="２python実行時にバージョンを調べる方法">（２）Python実行時にバージョンを調べる方法</h3>
-<p>次にPythonスクリプト上でバージョンを確認します。組み込み関数<code>sys</code>を使います。<br>
+</code></pre></div><h3 id="２python実行時にバージョンを調べる方法">（２）Python実行時にバージョンを調べる方法</h3>
+<p>次にPythonスクリプト上でバージョンを確認する方法です。組み込み関数<code>sys</code>を使います。<br>
 ここではJupyter Notebook上で確認することを想定していますが、ターミナルで<code>python3</code>（もしくは<code>python</code>）とコマンドを打ち、対話モードにした状態で確認することもできます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
 <span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>version_info)
@@ -174,8 +174,11 @@ $ python3 --version <span style="color:#75715e">#-&gt; Python 3.8.0</span>
 <span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>version)
 <span style="color:#75715e"># -&gt;3.8.6 (default, Oct  8 2020, 14:07:53) </span>
 </code></pre></div><h2 id="感想">感想</h2>
-<p>プログラミング言語自体も、その実は誰かがプログラミングで作ったものです。<br>
-Pythonはオープンソースなので裏側でコミュニティの皆さんが保守管理してくれているため、僕らは安心してPythonでプログラミングを書くことができています。<br>
+<p>プログラミング自体を学習しはじめの頃は、プログラミング言語にバージョンがあることや、PCに複数のバージョンが同時に入っていること、という自体のイメージがしづらいかもしれません（自分はそうでした）。<br>
+「プログラミング言語もソフトウェアの一種」という考え方をすると少しイメージしやすいかなと思います。<br>
+ソフトウェアは日々更新されてより良いバージョンが出てきたり、古いバージョンのソフトウェアを使い続けることができるのと同じように、Python言語もにもバージョンがあり日々進化を続けています。</p>
+<p>プログラミング言語自体も、その中身は誰かがプログラミング言語で書いて作ったものです。<br>
+Pythonはオープンソースで作られている言語なので、裏側でコミュニティの皆さんが保守管理してくれているため、僕らは安心してコードを書いてプログラミングをすることができています。<br>
 より良くなるようにバグの改善・セキュリティ向上など改善を続けているので、しっかりと「サポートが受けられているバージョン」をプロジェクトに使っていくのが良さそうです。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
@@ -189,9 +192,9 @@ Pythonはオープンソースなので裏側でコミュニティの皆さん�
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_3/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Effective Python]3 str型とbytes型</p>
+			<p class="pager__title">[退屈Python]7章 正規表現によるパターンマッチング</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
@@ -217,11 +220,11 @@ Pythonはオープンソースなので裏側でコミュニティの皆さん�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/">[退屈Python]7章 正規表現によるパターンマッチング 演習</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/">[退屈Python]7章 正規表現によるパターンマッチング</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_3/">[Effective Python]03 str型とbytes型</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/">[Effective Python]27-28 リスト内包表記について</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/">[Effective Python]25 キーワード専用引数・位置専用引数の活用</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/">[Effective Python]10 代入式で繰り返しを防ぐ</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_7-8/">[Effective Python]07-08 enumerate関数とzip関数</a></li>
 		</ul>
 	</div>
 </div>

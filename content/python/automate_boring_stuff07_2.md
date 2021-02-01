@@ -1,6 +1,6 @@
 ---
 title: "[退屈Python]7章 正規表現によるパターンマッチング 演習"
-date: 2021-01-30
+date: 2021-01-01
 lead: "「退屈なことはPythonにやらせよう」の学習備忘録"
 categories:
   - "退屈Python"
@@ -65,7 +65,7 @@ num_with_comma = re.compile(r'''
 
 
 ```python
-print(num_with_comma.search('私の所持金は12,345です').group())
+print(num_with_comma.search('12,345').group())
 ```
 
     12,345
@@ -81,6 +81,12 @@ num_with_comma = re.compile(r'''
     (?!\d)
     ''', re.VERBOSE)
 ```
+
+```python
+print(num_with_comma.search('私の所持金は12,345です').group())
+```
+
+    12,345
 
 #### メモ
 - 上記コードの参考記事　https://teratail.com/questions/85890

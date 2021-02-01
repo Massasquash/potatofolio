@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-21T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-21T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2303">
+<meta itemprop="wordCount" content="2323">
 
 
 
@@ -121,7 +121,6 @@
         <li><a href="#１f文字列の基本構文">（１）f文字列の基本構文</a></li>
         <li><a href="#２f文字列で書式設定をつける">（２）f文字列で書式設定をつける</a></li>
         <li><a href="#３f文字列以外の出力フォーマットの記述法">（３）f文字列以外の出力フォーマットの記述法</a></li>
-        <li><a href="#備考変数名の後の-r-について">備考：変数名の後の !r について</a></li>
       </ul>
     </li>
     <li><a href="#感想">感想</a></li>
@@ -158,8 +157,9 @@
 <li>str.formatメソッド</li>
 <li>フォーマット済み文字列（f文字列）</li>
 </ol>
-<p>この中でどの書き方が良いのか、というのを検証しているのがこの項目。<br>
-結論から言うと、4つ目の<strong>フォーマット済み文字列（f文字列）</strong> の方法で書くのが一番簡潔で表現もしやすい、と言うことです。f文字列の記法はPython3.6以降にできた一番新しい構文です。</p>
+<p>この中でどの書き方が良いのか、というのを検証しているのがこの項目の内容でした。<br>
+結論から言うと、4つ目の<strong>フォーマット済み文字列（f文字列）</strong> の方法で書くのが一番簡潔で表現もしやすい、と言うことです。<br>
+f文字列の記法はPython3.6以降にできた一番新しい構文のため、この使い方だけでもマスターしておくのが大事そうです。</p>
 <h2 id="解説">解説</h2>
 <h3 id="１f文字列の基本構文">（１）f文字列の基本構文</h3>
 <p>フォーマット済み文字列（f文字列）は、文字列の中に式や値を埋め込むことができる構文です。
@@ -254,14 +254,12 @@ formatted <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;
 </code></pre></div><p>1つ目の方式だと文字列が長い場合に可読性が落ちたり、メンテナンス性が悪くなります（現在は非推奨になっているようです）。<br>
 新しい3つ目の方式のほうが冗長性はなくなるが、それでもやはり最新のf文字列が一番スッキリする書き方ができます。</p>
 <p>書籍のこの項目では、古い書き方それぞれの問題点について深掘りされていて、f文字列がなぜ優れているのかが解説されていました。</p>
-<h3 id="備考変数名の後の-r-について">備考：変数名の後の !r について</h3>
-<p>[TODO]</p>
 <h2 id="感想">感想</h2>
 <p>f文字列でもミニ言語でフォーマットを指定できるのは上手く活用していきたいです。特に数値のゼロ埋めやカンマ区切りなどが短く書けるのが実用性のありそうな印象でした。<br>
-その他のフォーマットについては正直不要だと思うのですが、古いコードを読んでいると出てくることもあるのかなと思います。こんな書き方があるんだと言うのを知っていれば、出てきた際に読み解きやすくなるのかなと思いました。</p>
+その他のフォーマットについては正直不要だと思うのですが、古いコードを読んでいると出てくることもあるのかなと思います。こんな書き方があるんだと言うのを知っていれば、出てきた際に読み解きやすくなるのかな、と思いました。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
-<p>【参考記事】</p>
+<p>【参考ページ】</p>
 <ul>
 <li>フォーマット済み文字列 <a href="https://docs.python.org/ja/3/tutorial/inputoutput.html#formatted-string-literals">7. 入力と出力 — Python 3.9.1 ドキュメント</a></li>
 <li>ミニ言語 <a href="https://docs.python.org/ja/3/library/string.html#formatspec">string — 一般的な文字列操作 — Python 3.9.1 ドキュメント</a></li>
@@ -308,11 +306,11 @@ formatted <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/">[退屈Python]7章 正規表現によるパターンマッチング 演習</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/">[退屈Python]7章 正規表現によるパターンマッチング</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_3/">[Effective Python]03 str型とbytes型</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/">[Effective Python]27-28 リスト内包表記について</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/">[Effective Python]25 キーワード専用引数・位置専用引数の活用</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/">[Effective Python]10 代入式で繰り返しを防ぐ</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_7-8/">[Effective Python]07-08 enumerate関数とzip関数</a></li>
 		</ul>
 	</div>
 </div>

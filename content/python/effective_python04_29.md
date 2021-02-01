@@ -28,7 +28,6 @@ draft: true
 
 
 ## 項目29 代入式を使い内包表記での繰り返し作業をなくす
-[項目27](https://massasquash.github.io/potatofolio/python/effective_python04_27/)、[項目28](https://massasquash.github.io/potatofolio/python/effective_python04_28/)に続く、内包表記に関する話題です。
 
 
 辞書型のgetメソッドについてはこちら -> [Effective Python項目5 複雑な式の代わりにヘルパー関数を書く - Potatofolio](https://massasquash.github.io/potatofolio/python/effective_python01_5/#1%E6%A7%8B%E6%96%87dictget%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)  

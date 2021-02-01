@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2254">
+<meta itemprop="wordCount" content="2295">
 
 
 
@@ -151,9 +151,10 @@
 <li>項目10 代入式で繰り返しを防ぐ</li>
 </ul>
 <h2 id="項目2-pep8スタイルガイドに従う">項目2 PEP8スタイルガイドに従う</h2>
-<p>Pythonのコードを書くときは<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に従うと扱いやすくなります。これは<strong>Pythonコードを書く際のベストプラクティスが記載されたスタイルガイド</strong>で、美しいコードを書くためのルールが記載されています。</p>
+<p>Pythonのコードを書くときは<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に従うと扱いやすく、読みやすいコードになります。このPEP8は<strong>Pythonコードを書く際のベストプラクティスが記載されたスタイルガイド</strong>で、美しいコードを書くための１つのルールが記載されています。</p>
 <p>コミュニティや開発メンバーで行う場合は、このPEP8を土台として独自ルールなどは共通スタイルを共有しておくことで、協働作業が捗ります。<br>
-自分だけが読むコードの場合でも、一貫したスタイルで書くことで後から修正しやすくなります。</p>
+自分だけが読むコードの場合でも、一貫したスタイルで書くことで後から修正しやすくなります。<br>
+そういった規則が紹介されているのがこの項目の内容でした。</p>
 <h2 id="解説">解説</h2>
 <p>PEP8には色々載っていますが、まずはじめに特に抑えておくと良さそうな項目をさらっと挙げてみます。　</p>
 <h3 id="１空白">（１）空白</h3>
@@ -166,8 +167,8 @@
 <li>辞書では、キーとコロンの間には空白を置かず、同じ行に値を書く場合には値の前に空白を１つ置く
 （良い例<code>{key: value}}</code> ／悪い例<code>{key:value}</code>, <code>{key :value}</code>）</li>
 </ul>
-<p>１行の長さに制限があるのは、「かつてエディタで80文字で折り返す際に改行されないようにするため」とのこと（MEMOの参考記事）。
-長さ調整には（３）で出てくる「カッコの中身の改行テクニック」が役に立ちそうです。</p>
+<p>１行の長さに制限があるのは「かつてエディタで80文字で折り返す際に改行されないようにするため」とのこと（MEMOの参考記事）。
+長さ調整には（３）で出てくる「カッコの中身の改行テクニック」が役に立ちます。</p>
 <h3 id="２変数名の付け方">（２）変数名の付け方</h3>
 <ul>
 <li>関数・変数・属性は、小文字のスネークケース （例 <code>lowercase_underscore</code>）</li>
@@ -181,8 +182,8 @@
 <li>式が1行に治らない場合は、括弧でくくって複数行にして、読みやすいようにインデントする</li>
 <li><code>\</code>で行分けするよりは、括弧を使って複数の指揮を囲む方が良い</li>
 </ul>
-<p>カッコを使った改行についてはとても奥深いです。例えば、リストやタプルを途中で改行す場合は、以下のような改行の仕方ができます。
-以下は<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に載っている例です。どちらの書き方でも可能ですが、プロジェクトでは統一すると良さそうです。</p>
+<p>カッコを使った改行についてはとても奥深いです。例えば、リストやタプルを途中で改行す場合は、以下のような改行の仕方ができます。<br>
+以下は<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>に載っている例です。どちらの書き方でも可能ですが、プロジェクト内では統一すると良さそうです。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_list <span style="color:#f92672">=</span> [
     <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>,
     <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>,
@@ -192,7 +193,7 @@ my_list <span style="color:#f92672">=</span> [
     <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>,
     <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>,
 ]
-</code></pre></div><p>このように<code>()</code>, <code>[]</code>などのカッコで囲まれた部分の改行は繋がっているものとして認識してくれるので、これを上手く活用することで自然体のまま長いコードを改行することができます。</p>
+</code></pre></div><p>このように<code>()</code>, <code>[]</code>などのカッコで囲まれた部分の改行は繋がっているものとして認識してくれるので、これを上手く活用することで自然に長いコードを改行することができます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">foo <span style="color:#f92672">=</span> long_function_name(
     var_one, var_two,
     var_three, var_four)
@@ -211,7 +212,7 @@ VSCodeを使っている場合はPEP8準拠の拡張機能を使ってみるの�
 その際に <strong>「リーダブルコード」</strong> がプログラミング全般における考え方を学べる書籍だとすると、「<a href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8スタイルガイド</a>」はリーダブルコードの考え方をPythonで実践する具体的な書き方、と言う感じかもしれません。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
-<p>【参考記事】</p>
+<p>【参考ページ】</p>
 <ul>
 <li><a href="https://pep8-ja.readthedocs.io/ja/latest/">はじめに — pep8-ja 1.0 ドキュメント</a></li>
 <li><a href="https://docs.python.org/ja/3/library/index.html">Python 標準ライブラリ — Python 3.9.1 ドキュメント</a></li>
@@ -258,11 +259,11 @@ VSCodeを使っている場合はPEP8準拠の拡張機能を使ってみるの�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/">[退屈Python]7章 正規表現によるパターンマッチング 演習</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/">[退屈Python]7章 正規表現によるパターンマッチング</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_3/">[Effective Python]03 str型とbytes型</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/">[Effective Python]27-28 リスト内包表記について</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/">[Effective Python]25 キーワード専用引数・位置専用引数の活用</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/">[Effective Python]10 代入式で繰り返しを防ぐ</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_7-8/">[Effective Python]07-08 enumerate関数とzip関数</a></li>
 		</ul>
 	</div>
 </div>

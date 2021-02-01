@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-01-22T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3091">
+<meta itemprop="wordCount" content="3305">
 
 
 
@@ -118,8 +118,8 @@
     <li><a href="#項目5-複雑な式の代わりにヘルパー関数を書く">項目5 複雑な式の代わりにヘルパー関数を書く</a></li>
     <li><a href="#解説">解説</a>
       <ul>
-        <li><a href="#1構文dictgetメソッドについて">（1）構文：dict.getメソッドについて</a></li>
-        <li><a href="#2構文論理式を使った条件分岐について">（2）構文：論理式を使った条件分岐について</a></li>
+        <li><a href="#1dictgetメソッドについて">（1）dict.getメソッドについて</a></li>
+        <li><a href="#２論理式を使った条件分岐について">（２）論理式を使った条件分岐について</a></li>
         <li><a href="#３論理式とifelse条件式どれがわかりやすいか">（３）論理式とif/else条件式どれがわかりやすいか？</a></li>
       </ul>
     </li>
@@ -153,7 +153,8 @@
 <p>Pythonの構文はシンプルで簡潔に書けるがために、かえって複雑で読みにくい１行の式が書けてしまいます。<br>
 例えば論理演算子<code>or</code>や<code>and</code>を使うとコードは短くなりますがわかりづらいことが多くなります。そんな時に、<code>if/else</code>条件式を使った方が長くなるものの読みやすい式が書けます。<br>
 さらに、繰り返し出てくる処理はそれを <strong>ヘルパー関数</strong>として別の関数に切り分けておくと便利です。一般的に、再利用しやすいように便利な機能を切り出した関数をヘルパー関数と呼ぶようです。</p>
-<p>プログラミングには <strong>DRYの原則</strong> というものがあります。 &ldquo;Don&rsquo;t Repeat Yourself&rdquo;「同じコードを繰り返すな」ということです。繰り返しコードを書かないように、関数を切り分けるというのが、可読性・保守性を上げるための１つのテクニックです。</p>
+<p>プログラミングには <strong>DRYの原則</strong> というものがあります。 **&ldquo;Don&rsquo;t Repeat Yourself&rdquo;「同じコードを繰り返すな」**と言われています。<br>
+繰り返し似たようなコードを書いてしまうとメンテナンス性が落ちるので、繰り返し使う処理はまとめて関数を切り分けるというのが、可読性・保守性を上げるための１つのテクニックとして紹介されています。</p>
 <h2 id="解説">解説</h2>
 <p>この項目は以下のような内容が主題になっています。</p>
 <ol>
@@ -168,36 +169,37 @@
 <li>繰り返し使われるロジックを、ヘルパー関数として別に切り分ける</li>
 </ol>
 <p>書籍の項目を追っていくと流れは掴めるかと思いますが、読解するために少し引っかかりそうな構文について２つほどチェックします。</p>
-<h3 id="1構文dictgetメソッドについて">（1）構文：dict.getメソッドについて</h3>
+<h3 id="1dictgetメソッドについて">（1）dict.getメソッドについて</h3>
 <p>このメソッドは、一言で言うと<code>KeyError</code>対策。つまり <strong>「辞書に存在しないキーを参照した場合にもエラーにならず何らかの値を返してくれるようにする」</strong> というものです。</p>
-<p>まず、dict型とはリテラルは<code>values = {'red': 5, 'blue': 0, 'green': 0 }</code>のように波括弧を使って書き、キーとバリュー（値）をセットで扱うデータ型です（他の言語では「ハッシュ」「連想配列」などと呼ばれたりもします）。<br>
-dict型ではキーをインデックスとして利用することで、格納された値を取り出すことができます。</p>
-<p>ここでdict型に対する基本的な操作としては、</p>
+<p>まず、dict（辞書）型について。リテラルは<code>values = {'red': 5, 'blue': 0, 'green': 0 }</code>のように波括弧を使って書き、キーとバリュー（値）をセットで扱うデータ型です（他の言語では「ハッシュ」「連想配列」などと呼ばれたりもします）。<br>
+辞書型ではキーをインデックスとして利用することで、格納された値を取り出すことができます。</p>
+<p>ここで辞書型に対する基本的な操作としては、</p>
 <ul>
-<li>キーによる要素の追加（・削除） <code>values['yellow'] = 1 </code></li>
+<li>キーによる要素の追加 <code>values['yellow'] = 1 </code></li>
 <li>キーによる要素の参照 <code>values['red']</code></li>
+<li>キーによる要素の削除　<code>del values['blue']</code></li>
 </ul>
-<p>があります。このうち「要素の参照」の役に立つのが<code>get</code>メソッドです。</p>
+<p>という操作があります。このうち「要素の参照」の役に立つのが<code>get</code>メソッドです。</p>
 <p>まず、キーが存在する要素を参照する場合と、キーが存在しない要素を参照しようとした場合は以下のようになります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">values <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;red&#39;</span>: <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;blue&#39;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;green&#39;</span>: <span style="color:#ae81ff">0</span> }
 
 <span style="color:#66d9ef">print</span>(values[<span style="color:#e6db74">&#39;red&#39;</span>])     <span style="color:#75715e"># -&gt; 5</span>
 <span style="color:#66d9ef">print</span>(values[<span style="color:#e6db74">&#39;opacity&#39;</span>])  <span style="color:#75715e"># -&gt; KeyError: &#39;opacity&#39;</span>
-</code></pre></div><p>このように、キーが存在しない要素を参照しようとすると<code>KeyError</code>が発生してしまいます。
+</code></pre></div><p>このように、キーが存在しない要素を参照しようとすると<code>KeyError</code>が発生してしまいます。<br>
 そこで、<code>get</code>メソッドを使うと、以下のようになります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(values<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;red&#39;</span>))     <span style="color:#75715e"># -&gt; 5</span>
 <span style="color:#66d9ef">print</span>(values<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;red&#39;</span>, <span style="color:#ae81ff">0</span>))  <span style="color:#75715e"># -&gt; 5</span>
 
 <span style="color:#66d9ef">print</span>(values<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;opacity&#39;</span>))     <span style="color:#75715e"># -&gt; None</span>
 <span style="color:#66d9ef">print</span>(values<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;opacity&#39;</span>, <span style="color:#ae81ff">0</span>))  <span style="color:#75715e"># -&gt; 0</span>
-</code></pre></div><p>このように、キーが存在している場合は参照した値を返し、キーが存在していない場合はエラーにならず別の値を返してくれるようになります。
+</code></pre></div><p>このように、キーが存在している場合は参照した値を返し、キーが存在していない場合はエラーにならず別の値を返してくれるようになります。<br>
 第一引数にキーの名前、第二引数にはキーがない場合に返したい値を入れることができます。</p>
 <p>似たようなメソッドで<code>dict.setdefault()</code>というのがありますが、後の項目で出てくるのでその際に整理します。</p>
-<h3 id="2構文論理式を使った条件分岐について">（2）構文：論理式を使った条件分岐について</h3>
-<p>もう１つ、論理式を使って条件分岐を行う構文がさりげなく使われていますので、こちらも整理しておきます。</p>
-<p><code>x and y</code>や<code>x or y</code>がブール値<code>True/False</code>どちらかを返す、と言うのは直感的にわかりやすい使い方だと思います。<br>
+<h3 id="２論理式を使った条件分岐について">（２）論理式を使った条件分岐について</h3>
+<p>論理式を使って条件分岐を行う構文がさりげなく使われていますので、こちらも整理しておきます。</p>
+<p>論理演算子を使った式、例えば<code>x and y</code>や<code>x or y</code>はブール値<code>True/False</code>どちらかを返す、と言うのは基礎を学んだら直感的にわかりやすい使い方です。<br>
 ところが、論理式を使う場合でも返り値がブール値でないこともあり、プログラミングに慣れていないと混乱してしまうポイントかなと思います。<br>
-例えば<code>x</code>, <code>y</code> が数値だったり文字列だったりした場合に、<code>x and y</code>や<code>x or y</code>の値はブール値ではなく<code>x</code>か<code>y</code>のどちらかの値が返ります。特に、前に来る<code>x</code>が空文字列や0などの「<code>False</code>扱いされる値」の場合に、結果が色々と変わってきます。</p>
+例えば<code>x</code>, <code>y</code> が数値だったり文字列だったりした場合に、<code>x and y</code>や<code>x or y</code>の値はブール値ではなく<code>x</code>か<code>y</code>のどちらかの値が返ります。特に、前に来る<code>x</code>が空文字列や<code>0</code>などの「<code>False</code>扱いされる値」の場合に、返ってくる値が色々と変わってくるのがポイントです。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 例1</span>
 x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>  <span style="color:#75715e"># True扱いの文字列</span>
 y <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>
@@ -216,7 +218,8 @@ y <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>
 式 x or y は、まず x を評価します; x が真なら x の値を返します; それ以外の場合には、 y の値を評価し、その結果を返します。</p>
 </blockquote>
 <p>式は左から順に処理をしていくので、左側の<code>x</code>を先に評価することで結論が出てしまい、右側の<code>y</code>が評価されない、と言うことが起こっています（<strong>ショートサーキット（短絡評価）</strong>）。</p>
-<p>この項目ではこの論理式の性質を活用して、ちょっとした条件分岐を作っています。</p>
+<p>この項目ではこの論理式の性質を活用して、ちょっとした条件分岐を作るテクニックがさりげなく使われています。<br>
+結論としてはこの書き方はわかりづらい例として書かれています。</p>
 <h3 id="３論理式とifelse条件式どれがわかりやすいか">（３）論理式とif/else条件式どれがわかりやすいか？</h3>
 <p>最後にこの項目の主題に関係する部分。<br>
 「条件式のあるロジックをどう書くのが一番わかりやすいか？」という視点で、この章で登場する３つの書き方を並べてみました。</p>
@@ -245,14 +248,15 @@ opacity_str <span style="color:#f92672">=</span> my_values<span style="color:#f9
     opacity <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;Opacity: {opacity!r}&#39;</span>)  <span style="color:#75715e"># -&gt; Opacity: 0</span>
 </code></pre></div><p>結論としては、この3つ目の<code>if/else</code>の基本形を使うパターンが一番長いものの、何を意味しているのかがわかりやすいコードになっています。</p>
-<p>この部分だけを見ると長く感じてしまいますが、このコードをヘルパー関数として別の関数に切り分けることで、コードの長さは問題にならなくなり、かえって可読性・保守性の上がるコードにすることができます。</p>
+<p>この部分だけを見ると長く感じてしまいますが、このコードをヘルパー関数として別の関数に切り分けることで、コードの長さは問題にならなくなりかえって可読性・保守性の上がるコードにすることができます。</p>
 <h2 id="感想">感想</h2>
 <p>このケースでは　<strong>基本的な書き方を守るのが一番可読性が高い</strong>という結論になりました。<br>
 基本を守ってわかりやすい式を書く・関数を切り分けると言うテクニックは、プログラミングの上でとても重要だと思います。<br>
-また、関数を作る際には <strong>「１つの関数に１つの機能」</strong> というのも学んだことがあります。合わせて関数の使い方をマスターしておきたいところです。</p>
+論理式を使った簡単な条件分岐は今回の例ではわかりにくい例として紹介されてしまっていましたが、本当にちょっとしたコードなら簡単に使えてワンライナーでかける便利なテクニックだな、と思います。</p>
+<p>関数を作る際には <strong>「１つの関数に１つの機能」</strong> というのも学んだことがあります。このようなヘルパー関数の使い方をマスターしておきたいところです。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
-<p>【参考記事】</p>
+<p>【参考ページ】</p>
 <ul>
 <li><a href="https://note.nkmk.me/python-dict-get/">Pythonの辞書のgetメソッドでキーから値を取得（存在しないキーでもOK） | note.nkmk.me</a></li>
 <li><a href="https://note.nkmk.me/python-boolean-operation/">Pythonの論理演算子and, or, not（論理積、論理和、否定） | note.nkmk.me</a></li>
@@ -278,9 +282,9 @@ opacity_str <span style="color:#f92672">=</span> my_values<span style="color:#f9
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/" rel="next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_6/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[Effective Python]10 代入式で繰り返しを防ぐ</p>
+			<p class="pager__title">[Effective Python]6 タプルとアンパック構文</p>
 		</a>
 	</div>
 </nav>
@@ -300,11 +304,11 @@ opacity_str <span style="color:#f92672">=</span> my_values<span style="color:#f9
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/">[退屈Python]7章 正規表現によるパターンマッチング 演習</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/">[退屈Python]7章 正規表現によるパターンマッチング</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_3/">[Effective Python]03 str型とbytes型</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/">[Effective Python]27-28 リスト内包表記について</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/">[Effective Python]25 キーワード専用引数・位置専用引数の活用</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_10/">[Effective Python]10 代入式で繰り返しを防ぐ</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_7-8/">[Effective Python]07-08 enumerate関数とzip関数</a></li>
 		</ul>
 	</div>
 </div>
