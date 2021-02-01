@@ -8,31 +8,36 @@ pager: false
 
 ## Massa（Masahiro Ohsaki）
 本業は、北海道の十勝地方の畑作専業農家です。  
-ちょっとした業務ツール制作なんかが好きで、2019年から趣味と実益を兼ねてコードを書いています。  
+ちょっとしたツール制作なんかが好きで、2019年から趣味と実益を兼ねてコードを書いています。  
 農業の仕事中に感じる小さな不便を解消すべく、プログラミングでの業務効率化やデータ活用といった情報に触れています。
 
-プログラミングは[MENTA](https://menta.work/)を活用したり、「[コミュニティ「ノンプログラマーのためのスキルアップ研究会」](https://tonari-it.com/community-nonpro-semi/)」に所属して学んでいます。
+プログラミングは[MENTA](https://menta.work/)を活用してきたり、現在は「[コミュニティ「ノンプログラマーのためのスキルアップ研究会」](https://tonari-it.com/community-nonpro-semi/)」に所属して学んでいます。
 
-現場の人間としてプログラミングやIT技術を活用して「業務をラクに・楽しく」したい。  
+現場の人間としてプログラミングやIT技術を活用して業務を楽に・楽しくやっていきたい、というのが動機です。  
 また今後は農業データの活用の仕方についても学び、業務に活かしたり農業の発展に貢献するような働き方をしていけたら、というのが目標です。
+
+趣味はあまりないけど、数学とカポエイラが好き。あと作業中にpodcastを結構聞いたり、最近はクイズ系のYoutubeよく見てます。  
+酒が苦手だけどビールはよく飲む人です。そんな感じ。
 
 ### スキル
 - 主な言語：GAS, Python
 - 主な制作物：GASでの業務効率化ツール、Pythonでのスクレイピングツール、LINEbot、楽天市場の価格の収集・分析など
 
-#### 過去に取り組んだり学習中だったり
-- マークアップ言語 HMTL/CSS： 一通り基礎やったけどあんまわかっていない
-- その他言語 Ruby： 最初に取り組んだプログラミング言語。ほぼ使っていない
-- データベース MySQL： 取り組み中
-- クラウド Heroku： PythonツールをSchedulerで定期実行
-- クラウド GCP: GAE試した程度。CloudFunctionが気になっている
-- ノーコード Glide： 取り組み中
+#### 過去に取り組んだり学習中だったりする技術
+- マークアップ言語 HMTL/CSS： 一通り基礎は触れたどあんまわかっていない
+- その他言語 Ruby： 最初に取り組んだプログラミング言語だけど使わなくなってほぼわかっていない
+- データベース MySQL： ちょっとずつ取り組み中
+- クラウド Heroku： PythonツールをSchedulerで定期実行するのを活用しています
+- クラウド GCP: GAE試した程度。CloudFunctionが気になっているものの手が出せていない
+- ノーコード Glide/AppSheet： ちょっとずつ取り組み中
+- DS/ML/AI分野： 全くわからんです
 
 #### その他興味
-- Google Workspaceの活用
+- GoogleのスプレッドシートやBIツールの活用
 - データベース知識とデータリテラシー
+- ノンプログラマーのAIの活用
 - IoTの活用
-- 数学
+- 数学を実用に生かす方法
 
 ----
 ### 2020年の制作物とアウトプットまとめ
@@ -43,13 +48,11 @@ pager: false
 ### 情報発信
 **＜メインSNS＞**  
 ★ [twitter](https://twitter.com/massasquash)  
-★ [情報発信用 note](https://note.mu/agrifeel_labo)
+★ [農業とITに関する情報発信用 note](https://note.mu/agrifeel_labo)
 
 **＜ポートフォリオ＞**  
 ★ [Github](https://github.com/Massasquash)  
-★ [開発・学習記録（このHUGOブログ）](https://massasquash.github.io/potatofolio/)  
-
-※[Crieit](https://crieit.net/users/massasquash)という技術ブログ投稿サイトも活用しています（基本的にこのHUGO記事の内容を清書して投稿していきます）
+★ [開発・学習記録（このHUGOブログ）](https://massasquash.github.io/potatofolio/)
 
 **＜農業風景（ぼちぼち更新）＞**  
 ★ [Instagram](https://www.instagram.com/ohsakifarm/)  
