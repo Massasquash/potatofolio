@@ -16,7 +16,7 @@
 		<meta itemprop="name" content="[Effective Python]27-28 リスト内包表記について">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="2334">
+<meta itemprop="wordCount" content="2397">
 
 
 
@@ -183,9 +183,15 @@ numbers <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for<
 numbers <span style="color:#f92672">=</span> []
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
   numbers<span style="color:#f92672">.</span>append(i)
+</code></pre></div><p>リスト内包表記の他に、辞書内包表記やセット内包表記もあります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 辞書内包表記</span>
+numbers_dict <span style="color:#f92672">=</span> {str(i): i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)}
+
+<span style="color:#75715e"># セット内包表記</span>
+numbers_set <span style="color:#f92672">=</span> {i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)}
 </code></pre></div><h3 id="２map関数とfilter関数">（２）map関数とfilter関数</h3>
 <p>組み込み関数の<code>map()</code>と<code>filter()</code>についてもここで整理しておきます。</p>
-<p>基本的な使い方として、「リストの各要素を２倍した新しいリストを作りたい」「リストから偶数のみ抽出した新しいリストを作りたい」という想定で、<code>map()</code>と<code>filter()</code>を使って結果を見てみます。</p>
+<p>まず基本的な使い方として、「リストの各要素を２倍した新しいリストを作りたい」「リストから偶数のみ抽出した新しいリストを作りたい」という想定で、<code>map()</code>と<code>filter()</code>を使って結果を見てみます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">numbers <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">10</span>))
 
 doubles <span style="color:#f92672">=</span> map(<span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>, numbers)
@@ -254,15 +260,15 @@ evens <span style="color:#f92672">=</span> filter(<span style="color:#66d9ef">la
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_26/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_30-32/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Effective Python]項目26 functools.wrapsを使って関数デコレータを定義する</p>
+			<p class="pager__title">[Effective Python]30,32 ジェネレータ</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_25/" rel="next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python03_26/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[Effective Python]25 キーワード専用引数・位置専用引数の活用</p>
+			<p class="pager__title">[Effective Python]26 関数をラップするデコレータについて</p>
 		</a>
 	</div>
 </nav>

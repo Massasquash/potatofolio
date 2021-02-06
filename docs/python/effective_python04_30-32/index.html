@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Effective Python]30,32 ジェネレータ - Potatofolio</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[Effective Python]30,32 ジェネレータ" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python04_30-32/" />
+
+
+		<meta itemprop="name" content="[Effective Python]30,32 ジェネレータ">
+<meta itemprop="description" content="">
+
+<meta itemprop="wordCount" content="3307">
+
+
+
+<meta itemprop="keywords" content="" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="https://massasquash.github.io/potatofolio/css/style.css">
+	
+
+	<link rel="shortcut icon" href="https://massasquash.github.io/potatofolio/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="https://massasquash.github.io/potatofolio/" title="Potatofolio" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://massasquash.github.io/potatofolio/img/page_logo.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Potatofolio</div>
+					<div class="logo__tagline">Agrifeel-LABO - My Development Note</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/works/">
+				
+				<span class="menu__text">Works</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/notes/">
+				
+				<span class="menu__text">Notes</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/auther/">
+				
+				<span class="menu__text">auther</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/about/">
+				
+				<span class="menu__text">about</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[Effective Python]30,32 ジェネレータ</h1>
+			<p class="post__lead">「Effective python第２版」の学習備忘録</p>
+			<div class="post__meta meta"><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/" rel="category">Effective Python</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#項目30-リストを返さずにジェネレータを返すことを考える">項目30 リストを返さずにジェネレータを返すことを考える</a></li>
+    <li><a href="#項目32-大きなリスト内包表記にはジェネレータ式を考える">項目32 大きなリスト内包表記にはジェネレータ式を考える</a></li>
+    <li><a href="#解説">解説</a>
+      <ul>
+        <li><a href="#１リストを返す関数とジェネレータを返す関数の比較">（１）リストを返す関数とジェネレータを返す関数の比較</a></li>
+      </ul>
+    </li>
+    <li><a href="#２ジェネレータ">（２）ジェネレータ</a></li>
+    <li><a href="#３ジェネレータ関数とジェネレータ式">（３）ジェネレータ関数とジェネレータ式</a></li>
+    <li><a href="#感想">感想</a></li>
+    <li><a href="#memo">MEMO</a></li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			<h1 id="はじめに">はじめに</h1>
+<p>この記事は「Effective Python 第二版」の学習の備忘録です。</p>
+<p><strong>4章 内包表記とジェネレータ</strong></p>
+<blockquote>
+<p>Pythonには、リスト、辞書、集合の要素を簡単にイテレーションする特別な構文が用意されていて、派生的なデータ構造が作れます。また、列挙可能なストリームから値を取り出し、1つずつ返す関数も作れます。4章では、これらの機能を使い、性能向上、メモリ使用量削減、読みやすさの改善をどのようにして達成するかを述べます。（まえがき xii より引用）</p>
+</blockquote>
+<p>（目次）</p>
+<ul>
+<li>項目27 mapやfilterの代わりにリスト内包表記を使う</li>
+<li>項目28 内包表記では、3つ以上の式を避ける</li>
+<li>項目29 代入式を使い内包表記での繰り返し作業をなくす</li>
+<li><strong>項目30 リストを返さずにジェネレータを返すことを考える</strong></li>
+<li>項目31 引数に対してイテレータを使うときには確実さを優先する</li>
+<li><strong>項目32 大きなリスト内包表記にはジェネレータ式を考える</strong></li>
+<li>項目33 yield fromで複数のジェネレータを作る</li>
+<li>項目34 sendでジェネレータにデータを注入するのは避ける</li>
+<li>項目35 ジェネレータでthrowによる状態遷移を起こすのは避ける</li>
+<li>項目36 イテレータとジェネレータの作業ではitertoolsを使う</li>
+</ul>
+<h2 id="項目30-リストを返さずにジェネレータを返すことを考える">項目30 リストを返さずにジェネレータを返すことを考える</h2>
+<p><strong>ジェネレータ</strong>はリストと同じくfor文で利用できる<strong>イテラブル</strong>なオブジェクトですが、次のような違いがあります。</p>
+<ul>
+<li>リスト：全ての要素をメモリ上に保持するため、要素数が増えればメモリ使用量が増える</li>
+<li>ジェネレータ：次の要素が求められた時に次の要素が生成されて返されるため、要素数が増えてもメモリ消費が少なくて済む</li>
+</ul>
+<p>この利点を利用して「リストで返す関数を作る時にはジェネレータを返す関数に置き換えてみよう」というのがこの項目の内容でした。
+（このようなジェネレータを返す関数のことを<strong>ジェネレータ関数</strong>と呼びます。また、ジェネレータというのはイテレータの一種、と考えて良さそうです）</p>
+<p>小規模なプログラムで少量のデータを扱うならリストで問題はないのですが、大規模なプログラムでリストを使うと要素数が大量になった場合にメモリクラッシュを引き起こしかねません。一方でジェネレータを使うと大量のデータを扱ってもメモリを一定しか必要としない、という利点があるようです。</p>
+<h2 id="項目32-大きなリスト内包表記にはジェネレータ式を考える">項目32 大きなリスト内包表記にはジェネレータ式を考える</h2>
+<p>項目30では「リストの代わりにジェネレータを使うと、大量の入力に対してもメモリ不足の心配がない」というお話でした。<br>
+ジェネレータを作るためにジェネレータ関数を使っていましたが、もう１つの作り方として<strong>ジェネレータ式</strong>があります。<br>
+これは<a href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/">項目27</a>のリスト内包表記を使ってリストを作るのと似た構文で、内包表記を使ってジェネレータを作る構文です。</p>
+<p>また、ジェネレータ式から得られたジェネレータを他のジェネレータ式に渡すこともできて、そのように連鎖したジェネレータは非常に高速に動作する、とのことです。</p>
+<h2 id="解説">解説</h2>
+<p>この項目では「英文の文字列中の単語の１文字目の位置のインデックスを求める関数」を作る例が題材になっています。<br>
+結果をシーケンスで返す関数の実装として、インデックスが格納されたリストを返す関数と、同じくインデックスが格納されたジェネレータを返す関数のコードをそれぞれ比較してみてから、ジェネレータの仕組みについて整理してみます。</p>
+<h3 id="１リストを返す関数とジェネレータを返す関数の比較">（１）リストを返す関数とジェネレータを返す関数の比較</h3>
+<p>コードを並べて比較してみます。<br>
+結論を言ってしまうと、ジェネレータを使う方が短く書くことができます。確かにリストを使う場合は<code>append()</code>メソッドを呼び出したりする手間が多いように見えます。</p>
+<p><a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_30.py">サンプルコード</a>より引用させていただきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># リストを返す関数</span>
+<span style="color:#75715e"># Example 1</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index_words</span>(text):
+    result <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">if</span> text:
+        result<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">for</span> index, letter <span style="color:#f92672">in</span> enumerate(text):
+        <span style="color:#66d9ef">if</span> letter <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span>:
+            result<span style="color:#f92672">.</span>append(index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> result
+
+<span style="color:#75715e"># Example 2</span>
+address <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Four score and seven years ago...&#39;</span>
+result <span style="color:#f92672">=</span> index_words(address)
+<span style="color:#66d9ef">print</span>(result[:<span style="color:#ae81ff">10</span>])
+</code></pre></div><p>結果</p>
+<blockquote>
+<p>[0, 5, 11, 15, 21, 27]</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># ジェネレータを返す関数</span>
+<span style="color:#75715e"># Example 3</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index_words_iter</span>(text):
+    <span style="color:#66d9ef">if</span> text:
+        <span style="color:#66d9ef">yield</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> index, letter <span style="color:#f92672">in</span> enumerate(text):
+        <span style="color:#66d9ef">if</span> letter <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span>:
+            <span style="color:#66d9ef">yield</span> index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+<span style="color:#75715e"># Example 4</span>
+address <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Four score and seven years ago...&#39;</span>
+it <span style="color:#f92672">=</span> index_words_iter(address)
+<span style="color:#66d9ef">print</span>(next(it))
+<span style="color:#66d9ef">print</span>(next(it))
+</code></pre></div><p>結果</p>
+<blockquote>
+<p>0
+5</p>
+</blockquote>
+<h2 id="２ジェネレータ">（２）ジェネレータ</h2>
+<p>ここで出てくる「ジェネレータ」について整理してみます。</p>
+<p><strong>ジェネレータ</strong>はリストと同じくfor文で利用できる<strong>イテラブル</strong>なオブジェクトです。<br>
+リストとの違いは次の要素があらかじめ格納されているわけではなく、組み込み関数<code>next()</code>で呼び出された時に初めて要素が取り出されます。<br>
+内部的には返り値の部分で<code>yield</code>式が使われていて、yieldは「生み出す」「算出する」のような意味を持ちます。</p>
+<p>ジェネレータは要素の数に関係なく一定の大きさの箱（メモリ）と次の要素を取り出す仕組みだけが用意されていて、要素を１個１個取り出す時にその仕組みに従って要素を取り出す、というイメージかなと思います。<br>
+数学がわかる方は、この仕組みは数列を作るときの「漸化式」のようにイメージできるかもしれません。</p>
+<p>例えばリストでは作ることのできない、無限に要素を持つリスト&hellip;のようなものもジェネレータを活用すると作ることができます。<br>
+（これをリストで作ろうとすると、要素を入れるための箱（メモリ）が無限に必要になってしまいます）</p>
+<p>ジェネレータを作るには「ジェネレータ関数」を使って作る方法と、「ジェネレータ式」を使って作る方法があります。</p>
+<h2 id="３ジェネレータ関数とジェネレータ式">（３）ジェネレータ関数とジェネレータ式</h2>
+<p><strong>ジェネレータ関数</strong>
+ジェネレータ関数とは内部で<code>yield</code>式を使う関数のことで、呼び出された際に実際の処理を行わずに<strong>イテレータ</strong>を返します。<br>
+組み込み関数<code>next()</code>が呼ばれるごとに、イテレータはジェネレータを次の<code>yield</code>式に１つ進めます。ジェネレータによりyieldに渡される値は、それぞれイテレータによって呼び出し元に返されます。</p>
+<p>実際のジェネレータ関数のコードの例を見てみます。<br>
+組み込み関数<code>enumerate()</code>で返されるenumerateオブジェクトはジェネレータに当たるようなので、それを題材にしてみます。<br>
+<a href="https://docs.python.org/ja/3/library/functions.html#enumerate">ドキュメント</a>に内部的なコードが書かれているので、そちらを引用してみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">enumerate</span>(sequence, start<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+    n <span style="color:#f92672">=</span> start
+    <span style="color:#66d9ef">for</span> elem <span style="color:#f92672">in</span> sequence:
+        <span style="color:#66d9ef">yield</span> n, elem
+        n <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><p><code>sequence</code>にリストのようなイテラブル（シーケンスかイテレータ）が与えられると、処理をしていって<code>yield</code>の値をイテレータ（ジェネレータイテレータ）として返します。<br>
+通常値を返す関数では<code>return</code>で終わるところを、ループの処理の途中で<code>yield</code>で返しているのがポイントかな、と思います。</p>
+<p>実際にジェネレータを生成して、組み込み関数<code>next()</code>で要素を１つずつ取り出している様子です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gen <span style="color:#f92672">=</span> enumerate(range(<span style="color:#ae81ff">10</span>))
+next(gen)  <span style="color:#75715e"># -&gt; (0, &#39;A&#39;)</span>
+next(gen)  <span style="color:#75715e"># -&gt; (1, &#39;B&#39;)</span>
+next(gen)  <span style="color:#75715e"># -&gt; (2, &#39;C&#39;)</span>
+next(gen)  <span style="color:#75715e"># -&gt; エラー「StopIteration」が発生して実行が止まる</span>
+</code></pre></div><p><strong>ジェネレータ式</strong>
+もう１つのジェネレータの作り方はこのジェネレータ式という内包表記を使う方法です。<a href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/#%EF%BC%91%E5%86%85%E5%8C%85%E8%A1%A8%E8%A8%98">リスト内包表記</a>と似た書き方でジェネレータを生成できます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1〜10をそれぞれ2乗した値を生成するジェネレータ式</span>
+gen <span style="color:#f92672">=</span> (i<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>))
+</code></pre></div><p>この式から作られたジェネレータも関数で生成された時と同様で、組み込み関数<code>next()</code>で次の値を取り出すことができます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gen <span style="color:#f92672">=</span> (i<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>))
+next(gen)  <span style="color:#75715e"># -&gt; 0</span>
+next(gen)  <span style="color:#75715e"># -&gt; 1</span>
+next(gen)  <span style="color:#75715e"># -&gt; 4</span>
+</code></pre></div><p>試しにこのジェネレータ式と等価のジェネレータを作成するジェネレータ関数も書いてみました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">squares</span>(max):
+  i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(max):
+    <span style="color:#66d9ef">yield</span> i<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+    i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><!--
+## （３）用語の整理
+シーケンス、イテレータ・イテラブル、ジェネレータ
+
+-->
+<h2 id="感想">感想</h2>
+<p>ジェネレータの特徴を理解すると、案外難しいものではなくすごく身近に感じられるものだなと思いました。実際に使ってみたくなります。</p>
+<p>書籍でPythonの文法を体系的に学習していると「ジェネレータ」という謎のものが突然出てきて仕組みの解説が出てくる…という感じで、使い道がよくわからないなーという印象でした。<br>
+この項目でなぞったようにまずリストには「課題」があってそれを解決するための「手段」としてジェネレータがある、と考えると、すごく腑に落ちました。<br>
+ストーリーを学んでから再び仕組みを学ぶと理解が深まります。新しい概念を学ぶ時には、このようにいくつかの視点を行き来しながら学ぶことが重要なんだろうなー、と思いました。</p>
+<hr>
+<h2 id="memo">MEMO</h2>
+<p>【参考書籍】</p>
+<ul>
+<li><a href="https://www.amazon.co.jp/Python%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80-%E8%A8%80%E8%AA%9E%E3%81%AE%E5%8A%9B%E3%82%92%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%97%E3%80%81%E9%96%8B%E7%99%BA%E5%8A%B9%E7%8E%87%E3%82%92%E9%AB%98%E3%82%81%E3%82%8B-WEB-PRESS-plus-ebook/dp/B0842JDVBZ">Python実践入門</a></li>
+</ul>
+<p>【Effective Pythonサンプルコード】</p>
+<ul>
+<li><a href="https://github.com/bslatkin/effectivepython">GitHub - bslatkin/effectivepython: Effective Python: Second Edition — Source Code and Errata for the Book</a></li>
+</ul>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B0842JDVBZ&linkId=25d949cbd1c5fb4187836e2a7ab30cb3&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+<hr>
+
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_9/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Effective Python]9 for, whileループの後のelseブロック</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[Effective Python]27-28 リスト内包表記について</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://duckduckgo.com/">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sites" value="https://massasquash.github.io/potatofolio/"/>
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python00/">[Effective Python]目次</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_1/">[Effective Python]01 Pythonのバージョンについて</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_2/">[Effective Python]02 PEP8スタイルガイド</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_3/">[Effective Python]03 str型とbytes型</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_4/">[Effective Python]04 フォーマット済み文字列の活用</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/">Effective Python</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8/">ひとりごと</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/">退屈Python</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/%E5%AD%A6%E7%BF%92/" title="学習">学習</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/massasquash" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Massasquash" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Note" rel="noopener noreferrer" href="https://note.com/agrifeel_labo" target="_blank">
+				<span>Note</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Youtube" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCsu1mENsBiVFsdc-yq0a4Aw" target="_blank">
+				<span>Youtube</span>
+			</a>
+		</div>
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+<div class="footer__links">
+	<a class="footer__link" href="https://massasquash.github.io/potatofolio/privacy/">プライバシーポリシー</a>
+</div>
+		<div class="footer__copyright">
+			&copy; 2021 Massa.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="https://massasquash.github.io/potatofolio/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

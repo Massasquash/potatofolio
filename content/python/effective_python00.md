@@ -24,7 +24,7 @@ categories:
 - [項目6 インデックスではなく複数代入アンパックを使う](https://massasquash.github.io/potatofolio/python/effective_python01_6/)  
 - [項目7 rangeではなくenumerateを使う](https://massasquash.github.io/potatofolio/python/effective_python01_7-8/)  
 - [項目8 イテレータを並列に処理するにはzipを使う](https://massasquash.github.io/potatofolio/python/effective_python01_7-8/)  
-- 項目9 forループとwhileループの後のelseブロックは使わない  
+- [項目9 forループとwhileループの後のelseブロックは使わない](https://massasquash.github.io/potatofolio/python/effective_python01_9/)
 - [項目10 代入式で繰り返しを防ぐ](https://massasquash.github.io/potatofolio/python/effective_python01_10/)  
 
 
@@ -62,10 +62,10 @@ categories:
 （目次）  
 - [項目27 mapやfilterの代わりにリスト内包表記を使う](https://massasquash.github.io/potatofolio/python/effective_python04_27-28/)  
 - [項目28 内包表記では、3つ以上の式を避ける](https://massasquash.github.io/potatofolio/python/effective_python04_27-28/)  
-- [項目29 代入式を使い内包表記での繰り返し作業をなくす](https://massasquash.github.io/potatofolio/python/effective_python04_89/)  
-- 項目30 リストを返さずにジェネレータを返すことを考える  
+- 項目29 代入式を使い内包表記での繰り返し作業をなくす  
+- [項目30 リストを返さずにジェネレータを返すことを考える](https://massasquash.github.io/potatofolio/python/effective_python04_30-32/)  
 - 項目31 引数に対してイテレータを使うときには確実さを優先する  
-- 項目32 大きなリスト内包表記にはジェネレータ式を考える  
+- [項目32 大きなリスト内包表記にはジェネレータ式を考える](https://massasquash.github.io/potatofolio/python/effective_python04_30-32/)  
 - 項目33 yield fromで複数のジェネレータを作る  
 - 項目34 sendでジェネレータにデータを注入するのは避ける  
 - 項目35 ジェネレータでthrowによる状態遷移を起こすのは避ける  

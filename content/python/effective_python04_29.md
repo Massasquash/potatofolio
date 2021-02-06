@@ -30,8 +30,13 @@ draft: true
 ## 項目29 代入式を使い内包表記での繰り返し作業をなくす
 
 
-辞書型のgetメソッドについてはこちら -> [Effective Python項目5 複雑な式の代わりにヘルパー関数を書く - Potatofolio](https://massasquash.github.io/potatofolio/python/effective_python01_5/#1%E6%A7%8B%E6%96%87dictget%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)  
-代入式（ウォルラス演算子）についてはこちら -> [Effective Python項目10 代入式で繰り返しを防ぐ - Potatofolio](https://massasquash.github.io/potatofolio/python/effective_python01_10/#%EF%BC%91%E4%BB%A3%E5%85%A5%E5%BC%8F%E3%81%AE%E5%9F%BA%E6%9C%AC%E6%A7%8B%E6%96%87walrus%E6%BC%94%E7%AE%97%E5%AD%90)
+## 解説
+
+- 辞書型のgetメソッドについては  
+[Effective Python項目5 複雑な式の代わりにヘルパー関数を書く - Potatofolio](https://massasquash.github.io/potatofolio/python/effective_python01_5/#1%E6%A7%8B%E6%96%87dictget%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)  
+
+- 代入式（ウォルラス演算子）については  
+[Effective Python項目10 代入式で繰り返しを防ぐ - Potatofolio](https://massasquash.github.io/potatofolio/python/effective_python01_10/#%EF%BC%91%E4%BB%A3%E5%85%A5%E5%BC%8F%E3%81%AE%E5%9F%BA%E6%9C%AC%E6%A7%8B%E6%96%87walrus%E6%BC%94%E7%AE%97%E5%AD%90)
 
 ---
 ## MEMO

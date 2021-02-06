@@ -16,7 +16,7 @@
 		<meta itemprop="name" content="[Effective Python]07-08 enumerate関数とzip関数">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="1418">
+<meta itemprop="wordCount" content="2539">
 
 
 
@@ -113,15 +113,6 @@
   <ul>
     <li><a href="#項目7-rangeではなくenumerateを使う">項目7 rangeではなくenumerateを使う</a></li>
     <li><a href="#項目8-イテレータを並列に処理するにはzipを使う">項目8 イテレータを並列に処理するにはzipを使う</a></li>
-    <li><a href="#解説">解説</a>
-      <ul>
-        <li><a href="#１range型とrange関数">（１）range型とrange()関数</a></li>
-        <li><a href="#2enumerate型とenumerate関数">（2）enumerate型とenumerate()関数</a></li>
-        <li><a href="#３zip型とzip関数">（３）zip型とzip()関数</a></li>
-        <li><a href="#４組み込みモジュールitertoolsについて">（４）組み込みモジュールitertoolsについて</a></li>
-      </ul>
-    </li>
-    <li><a href="#感想">感想</a></li>
     <li><a href="#memo">MEMO</a></li>
   </ul>
 </nav>
@@ -152,22 +143,115 @@
 ループの中でシーケンスのインデックスが必要になるときは、<code>range()</code>を使うよりも<code>enumerate()</code>を使う方がシンプルに書くことができる、というのがこの項目の内容でした。</p>
 <h2 id="項目8-イテレータを並列に処理するにはzipを使う">項目8 イテレータを並列に処理するにはzipを使う</h2>
 <p>forループにおいて<code>enumerate()</code>と同様に便利でよく使われる組み込み関数として<code>zip()</code>というのもあります。<br>
-<code>enumerate()</code>が　**「１つのイテラブルに対してインデックスと要素を取り出す」**関数と捉えると、<code>zip()</code>は　**「２つのイテラブルに対して各要素をそれぞれ取り出す」**関数と捉えられるのかな、と思います。<br>
-<code>zip()</code>関数の特徴として、異なる長さのイテレータを扱う場合でもエラーにはならず、短いイテレータに合わせて処理が終了するため、場合によっては予期しない不具合が起きる可能性があります。もしこれを防いで一番長いイテレータに合わせて処理したい場合は、<code>zip()</code>関数を使う代わりに組み込みモジュール<code>itertools</code>の<code>zip_longest</code>関数というのもこの項目で紹介されています。</p>
-<h2 id="解説">解説</h2>
-<p><code>enumerate()</code>関数と<code>zip()</code>関数の基本的な使い方について、整理してきます。<br>
-この中で(前回の項目)[https://massasquash.github.io/potatofolio/python/effective_python01_6/]で見てきたアンパック構文が活用されています。</p>
-<h3 id="１range型とrange関数">（１）range型とrange()関数</h3>
-<h3 id="2enumerate型とenumerate関数">（2）enumerate型とenumerate()関数</h3>
-<h3 id="３zip型とzip関数">（３）zip型とzip()関数</h3>
-<h3 id="４組み込みモジュールitertoolsについて">（４）組み込みモジュールitertoolsについて</h3>
-<h2 id="感想">感想</h2>
-<p>forループと組み合わせるとシンプルに書けて便利な2つの関数について見てきました。アンパック構文と合わせて、個人的にも使いやすくて好きな構文です。</p>
+<code>enumerate()</code>が　**「１つのイテラブルに対してインデックスと要素を取り出す」**関数と捉えると、<code>zip()</code>は　**「２つ以上のイテラブルに対して各要素をそれぞれ取り出す」**関数と捉えられるのかな、と思います。</p>
+<p><code>zip()</code>関数の特徴として、異なる長さのイテレータを扱う場合でもエラーにはならず、短いイテレータに合わせて処理が終了するため、場合によっては予期しない不具合が起きる可能性があります。<br>
+もしこれを防いで一番長いイテレータに合わせて処理したい場合は、<code>zip()</code>関数を使う代わりに組み込みモジュール<code>itertools</code>の<code>zip_longest</code>関数を使えば良い、というのもこの項目で紹介されています。</p>
+<!--
+## 解説
+`enumerate()`関数と`zip()`関数について、整理してきます。  
+この中で(前回の項目)[https://massasquash.github.io/potatofolio/python/effective_python01_6/]で見てきたアンパック構文が活用されています。
+
+### （2）enumerate()関数
+enumerateとは「列挙する」「数え上げる」のような意味の単語のようです。  
+`enumerate()`関数に例えばリストなどのイテラブルを与えてやると、その各要素のインデックスと値をセットで取り出して返してくれる関数です。  
+
+書籍の中で、  
+>enumerateは、遅延評価ジェネレータでイテレータをラップします。  
+>enumerateは、ループのインデックスとイテレータの次の値の対をyieldします。
+
+というような記述があります。出てくる用語がわかりづらいので、わかりやすくするために逆から整理して見ます。
+
+**イテレータとは**
+要素を反復して取り出すことのできるもの。  
+内部構造的には、イテレータに当たるものは次の特殊メソッドを持っているクラスのオブジェクトがイテレータに当たります。
+
+| 特殊メソッド | 役割 |
+| :--- | :--- |
+| __iter__() | イテレータオブジェクトを作るときに働く |
+| __next__() | 次の値を取り出すときに働く |
+
+似たような用語に「イテラブル」というものがありますが、こちらは次の特殊メソッドを持っているクラスのオブジェクトのことです。
+
+| 特殊メソッド | 役割 |
+| :--- | :--- |
+| __iter__() | イテレータオブジェクトを作るときに働く |
+| __getitem__() | 値に`[]`でアクセスしたときに働く |
+
+
+こちらの記事を参考にさせていただいています。  
+[Pythonのイテレータとイテラブルとは  |  Hbk project](https://hibiki-press.tech/python/iterable_iterator/1567#toc6)
+
+**ジェネレータとは**
+
+１要素を取り出そうとするたびに処理を行って
+「ジェネレータイテレータ」のことを単に「ジェネレータ」と呼ぶこともあるそうです。
+
+`yield`で
+
+**遅延評価とは**
+
+
+なかなか理解が難しいです。  
+次に、`enumerate()`関数を使うとどんな動きをするのか実験してみます。
+
+```python
+values = ['a', 'b', 'c']
+enum = enumerate(values)
+
+# enumerateという型
+print(enum)  # -> <enumerate object at 0x110dda900>
+
+# 組み込み関数list()でインデックスと値のペアのタプルのりすとが作れる
+print(list(enum)) # -> [(0, 'a'), (1, 'b'), (2, 'c')]
+
+# forループの中でよく使われる
+for i, v in enumerate(values):
+
+```
+
+次に、こんなのを試してみます。
+
+```python
+values = ['a', 'b', 'c']
+enum = enumerate(values)
+
+print(next(enum)) # -> (0, 'a')
+print(next(enum)) # -> (1, 'b')
+print(next(enum)) # -> (2, 'c')
+print(next(enum)) # -> StopIteration エラー
+```
+
+ここで出てくる組み込み関数`next()`で次の値を取り出せるのは **「ジェネレータイテレータ」**というものの性質です。  
+ジェネレータは内部では特殊メソッド`__next__()`が実装されていおり、またこのジェネレータを生成する関数には`return`で返り値を返す代わりに`yield`式が使われています。
+
+
+**enumerate(iterable, start=0)**
+[組み込み関数 — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/functions.html#enumerate)より引用。
+>enumerate オブジェクトを返します。 iterable は、シーケンスか iterator か、あるいはイテレーションをサポートするその他のオブジェクトでなければなりません。 enumerate() によって返されたイテレータの __next__() メソッドは、 (デフォルトでは 0 となる start からの) カウントと、 iterable 上のイテレーションによって得られた値を含むタプルを返します。
+
+ドキュメントに乗っている例で、組み込み関数`enumerate()`関数は次と等価です。
+```python
+def enumerate(sequence, start=0):
+    n = start
+    for elem in sequence:
+        yield n, elem
+        n += 1
+```
+
+
+### （３）zip()関数
+**zip(*iterables)**
+>それぞれのイテラブルから要素を集めたイテレータを作ります。
+>この関数はタプルのイテレータを返し、その i 番目のタプルは引数シーケンスまたはイテラブルそれぞれの i 番目の要素を含みます。このイテレータは、入力イテラブルの中で最短のものが尽きたときに止まります。単一のイテラブル引数が与えられたときは、1 要素のタプルからなるイテレータを返します。引数がなければ、空のイテレータを返します。
+
+### （４）組み込みモジュールitertoolsについて
+-->
 <hr>
 <h2 id="memo">MEMO</h2>
 <p>【参考記事】</p>
 <ul>
-<li><a href="https://docs.python.org/ja/3/library/stdtypes.html#typesseq">組み込み型 — Python 3.9.1 ドキュメント</a></li>
+<li><a href="https://docs.python.org/ja/3/library/stdtypes.html">組み込み型 — Python 3.9.1 ドキュメント</a></li>
+<li><a href="https://hibiki-press.tech/python/iterable_iterator/1567#toc6">Pythonのイテレータとイテラブルとは  |  Hbk project</a></li>
 </ul>
 <p>【Effective Pythonサンプルコード】</p>
 <ul>

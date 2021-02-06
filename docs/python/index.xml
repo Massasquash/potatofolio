@@ -98,6 +98,15 @@
     </item>
     
     <item>
+      <title>[Effective Python]26 関数をラップするデコレータについて</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python03_26/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python03_26/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>[Effective Python]27-28 リスト内包表記について</title>
       <link>https://massasquash.github.io/potatofolio/python/effective_python04_27-28/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -107,11 +116,29 @@
     </item>
     
     <item>
-      <title>[Effective Python]項目26 functools.wrapsを使って関数デコレータを定義する</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python03_26/</link>
+      <title>[Effective Python]30,32 ジェネレータ</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python04_30-32/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python03_26/</guid>
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python04_30-32/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Effective Python]9 for, whileループの後のelseブロック</title>
+      <link>https://massasquash.github.io/potatofolio/python/effective_python01_9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[退屈Python]15章 時間制御、自動実行、プログラム起動</title>
+      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/</guid>
       <description></description>
     </item>
     

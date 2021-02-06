@@ -1,5 +1,5 @@
 ---
-title: "[Effective Python]項目26 functools.wrapsを使って関数デコレータを定義する"
+title: "[Effective Python]26 関数をラップするデコレータについて"
 date: 2021-01-01T03:26
 lead: "「Effective python第２版」の学習備忘録"
 categories:
