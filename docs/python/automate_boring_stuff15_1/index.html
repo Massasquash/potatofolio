@@ -4,19 +4,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[退屈Python]15章 時間制御、自動実行、プログラム起動 - Potatofolio</title>
+	<title>15-1 時間の表現について - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[退屈Python]15章 時間制御、自動実行、プログラム起動" />
+		<meta property="og:title" content="15-1 時間の表現について" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/" />
 
 
-		<meta itemprop="name" content="[退屈Python]15章 時間制御、自動実行、プログラム起動">
+		<meta itemprop="name" content="15-1 時間の表現について">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="766">
+<meta itemprop="wordCount" content="1345">
 
 
 
@@ -55,13 +55,6 @@
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
-			<a class="menu__link" href="https://massasquash.github.io/potatofolio/python/">
-				
-				<span class="menu__text">Python</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="https://massasquash.github.io/potatofolio/works/">
 				
 				<span class="menu__text">Works</span>
@@ -69,9 +62,23 @@
 			</a>
 		</li>
 		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="https://massasquash.github.io/potatofolio/notes/">
 				
 				<span class="menu__text">Notes</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/rubberducking/">
+				
+				<span class="menu__text">RubberDucking</span>
 				
 			</a>
 		</li>
@@ -100,9 +107,9 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[退屈Python]15章 時間制御、自動実行、プログラム起動</h1>
+			<h1 class="post__title">15-1 時間の表現について</h1>
 			<p class="post__lead">「退屈なことはPythonにやらせよう」の学習備忘録</p>
-			<div class="post__meta meta"><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/" rel="category">退屈Python</a>
+			<div class="post__meta meta"><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/python%E9%80%80%E5%B1%88%E3%81%AA%E3%81%93%E3%81%A8%E3%81%AFpython%E3%81%AB%E3%82%84%E3%82%89%E3%81%9B%E3%82%88%E3%81%86/" rel="category">Python「退屈なことはPythonにやらせよう」</a>
 	</span>
 </div></div>
 		</header>
@@ -121,7 +128,8 @@
 </div>
 <div class="content post__content clearfix">
 			<h1 id="はじめに">はじめに</h1>
-<p>この記事はO’Reilly「退屈なことはPythonにやらせよう」をベースに学習した内容を残した備忘録です。</p>
+<p>この記事はO’Reilly「退屈なことはPythonにやらせよう」をベースに学習した内容を残した備忘録です。
+「15章 時間制御、自動実行、プログラム起動」をもとにまとめています。</p>
 <h2 id="１pythonの時間関数のまとめ">（１）Pythonの時間関数のまとめ</h2>
 <ul>
 <li>Pythonで日付と時間を扱うデータ型は主に３種類</li>
@@ -188,32 +196,146 @@ td <span style="color:#f92672">=</span> dt2 <span style="color:#f92672">-</span>
 <span style="color:#66d9ef">print</span>(type(td))  <span style="color:#75715e"># -&gt; &lt;class &#39;datetime.timedelta&#39;&gt;</span>
 </code></pre></div><h2 id="２datetime型文字列-に変換">（２）datetime型→文字列 に変換</h2>
 <ul>
-<li>datetimeオブジェクトを<code>datetime.strftime()</code>メソッドでフォーマットして文字列表示させることができる。</li>
+<li>datetimeオブジェクトを<code>.strftime()</code>メソッドでフォーマットして文字列表示させることができる。</li>
 <li>引数に変換したい書式文字列を渡す</li>
 <li>「f」はフォーマット（整形）の意味</li>
 </ul>
-<p><strong>strftime()書式一覧</strong></p>
+<p><strong>strftime()書式一覧</strong>
+<strong>基本</strong></p>
 <table>
 <thead>
 <tr>
 <th style="text-align:left">書式</th>
 <th style="text-align:left">意味</th>
+<th style="text-align:left">例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left">%Y</td>
+<td style="text-align:left">西暦 4桁</td>
+<td style="text-align:left">&lsquo;2021&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%y</td>
+<td style="text-align:left">西暦 2桁</td>
+<td style="text-align:left">&lsquo;00&rsquo;〜&lsquo;99&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%m</td>
+<td style="text-align:left">月（0埋め）</td>
+<td style="text-align:left">&lsquo;01&rsquo;〜&lsquo;12&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%d</td>
+<td style="text-align:left">日</td>
+<td style="text-align:left">&lsquo;01&rsquo;〜&lsquo;31&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%H</td>
+<td style="text-align:left">時（24時間制）</td>
+<td style="text-align:left">&lsquo;00&rsquo;〜&lsquo;23&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%h</td>
+<td style="text-align:left">時（12時間制）</td>
+<td style="text-align:left">&lsquo;01&rsquo;〜&lsquo;12&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%M</td>
+<td style="text-align:left">分（0埋め）</td>
+<td style="text-align:left">&lsquo;00&rsquo;〜&lsquo;59&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%S</td>
+<td style="text-align:left">秒（0埋め）</td>
+<td style="text-align:left">&lsquo;01&rsquo;〜&lsquo;31&rsquo;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>その他</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">書式</th>
+<th style="text-align:left">意味</th>
+<th style="text-align:left">例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">%B</td>
+<td style="text-align:left">月名</td>
+<td style="text-align:left">&lsquo;January&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%b</td>
+<td style="text-align:left">月の略称</td>
+<td style="text-align:left">&lsquo;Jan&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%w</td>
+<td style="text-align:left">曜日</td>
+<td style="text-align:left">&lsquo;0&rsquo;（日曜）〜&lsquo;6&rsquo;（土）</td>
+</tr>
+<tr>
+<td style="text-align:left">%A</td>
+<td style="text-align:left">曜日名</td>
+<td style="text-align:left">&lsquo;Sunday&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%a</td>
+<td style="text-align:left">曜日の略称</td>
+<td style="text-align:left">&lsquo;Sun&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%j</td>
+<td style="text-align:left">年初からの日数</td>
+<td style="text-align:left">&lsquo;001&rsquo;〜&lsquo;366&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%p</td>
+<td style="text-align:left">AMかPMか</td>
+<td style="text-align:left">&lsquo;AM&rsquo;, &lsquo;PM&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%c</td>
+<td style="text-align:left">日時をまとめて表示</td>
+<td style="text-align:left">&lsquo;Sun Feb  7 12:57:18 2021&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%x</td>
+<td style="text-align:left">日付をまとめて表示</td>
+<td style="text-align:left">&lsquo;02/07/21&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%X</td>
+<td style="text-align:left">時間をまとめて表示</td>
+<td style="text-align:left">&lsquo;12:57:18&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">%%</td>
+<td style="text-align:left">%文字</td>
 <td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>より詳細はドキュメント参照
+<a href="https://docs.python.org/ja/3/library/datetime.html#strftime-strptime-behavior">datetime — 基本的な日付型および時間型 — Python 3.9.1 ドキュメント</a></li>
+</ul>
 <h2 id="３文字列datetime型-に変換">（３）文字列→datetime型 に変換</h2>
 <ul>
-<li>日付情報の入った文字列を<code>datetime.strptime()</code>メソッドでフォーマットして文字列表示させることができる。</li>
-<li>第１引数に変換したい文字列, 第２引数に対応する書式文字列を渡す</li>
+<li>日付情報の入った文字列を<code>datetime.datetime.strptime()</code>関数でdatetimeオブジェクトに変換することができる</li>
+<li>第１引数に変換したい文字列, 第２引数に対応する書式文字列を渡す(どちらも文字列)</li>
+<li>文字列が正確にマッチしないと<code>ValueError</code>例外が発生する</li>
 <li>「p」はパース（構文解析）の意味</li>
 </ul>
-<hr>
+<p><strong>使用例</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#39;20200207&#39;</span>, <span style="color:#e6db74">&#39;%Y%m</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span>(date)  <span style="color:#75715e"># -&gt; 2020-02-07 00:00:00</span>
+<span style="color:#66d9ef">print</span>(type(date))  <span style="color:#75715e"># -&gt; &lt;class &#39;datetime.datetime&#39;&gt;</span>
+</code></pre></div><hr>
 <h2 id="memo">MEMO</h2>
 <p>【参考】</p>
 <ul>
@@ -230,15 +352,15 @@ td <span style="color:#f92672">=</span> dt2 <span style="color:#f92672">-</span>
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_1/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[退屈Python]7章 正規表現によるパターンマッチング</p>
+			<p class="pager__title">[Effective Python]01 Pythonのバージョンについて</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_9/" rel="next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[Effective Python]9 for, whileループの後のelseブロック</p>
+			<p class="pager__title">07 正規表現によるパターンマッチング プロジェクト＆演習</p>
 		</a>
 	</div>
 </nav>
@@ -258,11 +380,11 @@ td <span style="color:#f92672">=</span> dt2 <span style="color:#f92672">-</span>
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python00/">[Effective Python]目次</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_1/">[Effective Python]01 Pythonのバージョンについて</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_2/">[Effective Python]02 PEP8スタイルガイド</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_3/">[Effective Python]03 str型とbytes型</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_4/">[Effective Python]04 フォーマット済み文字列の活用</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog05/">[Hugoブログ05]テーマのカスタマイズその２</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog04/">[Hugoブログ04]テーマのカスタマイズその１</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog03/">[Hugoブログ03]記事更新する際の手順</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog02/">[Hugoブログ02]GitHub Pagesで公開する</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/works/hugo_blog01/">[Hugoブログ01]構築をはじめる</a></li>
 		</ul>
 	</div>
 </div>
@@ -271,16 +393,19 @@ td <span style="color:#f92672">=</span> dt2 <span style="color:#f92672">-</span>
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item">
-				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/effective-python/">Effective Python</a>
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/note/">Note</a>
 			</li>
 			<li class="widget__item">
-				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/">Hugoブログ</a>
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/pythoneffective-python-2th/">Python「Effective Python 2th」</a>
 			</li>
 			<li class="widget__item">
-				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8/">ひとりごと</a>
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/python%E9%80%80%E5%B1%88%E3%81%AA%E3%81%93%E3%81%A8%E3%81%AFpython%E3%81%AB%E3%82%84%E3%82%89%E3%81%9B%E3%82%88%E3%81%86/">Python「退屈なことはPythonにやらせよう」</a>
 			</li>
 			<li class="widget__item">
-				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/">退屈Python</a>
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/rubberducking/">RubberDucking</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/works/">Works</a>
 			</li>
 		</ul>
 	</div>
@@ -288,7 +413,7 @@ td <span style="color:#f92672">=</span> dt2 <span style="color:#f92672">-</span>
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/%E5%AD%A6%E7%BF%92/" title="学習">学習</a>
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/hugo%E3%83%96%E3%83%AD%E3%82%B0/" title="Hugoブログ">Hugoブログ</a>
 	</div>
 </div>
 <div class="widget-social widget">

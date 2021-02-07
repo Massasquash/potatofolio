@@ -3,6 +3,8 @@ title: "[Hugoブログ05]テーマのカスタマイズその２"
 date: 2021-01-15
 lead: "固定ページや記事に関する詳細を設定していく"
 categories:
+  - "Works"
+tags:
   - "Hugoブログ"
 ---
 

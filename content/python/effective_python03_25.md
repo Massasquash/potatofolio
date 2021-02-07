@@ -3,7 +3,7 @@ title: "[Effective Python]25 キーワード専用引数・位置専用引数の
 date: 2021-01-01T03:25
 lead: "「Effective python第２版」の学習備忘録"
 categories:
-  - "Effective Python"
+  - "Python「Effective Python 2th」"
 ---
 
 # はじめに

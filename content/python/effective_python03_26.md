@@ -3,7 +3,7 @@ title: "[Effective Python]26 関数をラップするデコレータについて
 date: 2021-01-01T03:26
 lead: "「Effective python第２版」の学習備忘録"
 categories:
-  - "Effective Python"
+  - "Python「Effective Python 2th」"
 ---
 
 # はじめに

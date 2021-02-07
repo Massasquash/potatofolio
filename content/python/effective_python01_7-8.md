@@ -3,7 +3,7 @@ title: "[Effective Python]07-08 enumerate関数とzip関数"
 date: 2021-01-01T01:07
 lead: "「Effective python第２版」の学習備忘録"
 categories:
-  - "Effective Python"
+  - "Python「Effective Python 2th」"
 ---
 
 # はじめに

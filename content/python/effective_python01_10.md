@@ -3,7 +3,7 @@ title: "[Effective Python]10 代入式で繰り返しを防ぐ"
 date: 2021-01-01T01:10
 lead: "「Effective python第２版」の学習備忘録"
 categories:
-  - "Effective Python"
+  - "Python「Effective Python 2th」"
 ---
 
 # はじめに

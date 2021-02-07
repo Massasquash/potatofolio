@@ -3,6 +3,8 @@ title: "[Hugoブログ02]GitHub Pagesで公開する"
 date: 2021-01-09
 lead: "ローカル・リモートリポジトリの設定を行いWebでページを表示させる"
 categories:
+  - "Works"
+tags:
   - "Hugoブログ"
 ---
 

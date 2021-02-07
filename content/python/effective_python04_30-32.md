@@ -3,7 +3,7 @@ title: "[Effective Python]30,32 ジェネレータ"
 date: 2021-01-01T04:30
 lead: "「Effective python第２版」の学習備忘録"
 categories:
-  - "Effective Python"
+  - "Python「Effective Python 2th」"
 ---
 
 # はじめに
@@ -169,7 +169,6 @@ def squares(max):
     yield i**2
     i += 1
 ```
-
 
 
 <!--

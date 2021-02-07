@@ -1,9 +1,9 @@
 ---
 title: "[Effective Python]目次"
-date: 2020-01-01
+date: 2021-01-01T00:01
 lead: "「Effective python第２版」の学習備忘録"
 categories:
-  - "Effective Python"
+  - "Python「Effective Python 2th」"
 ---
 
 # はじめに

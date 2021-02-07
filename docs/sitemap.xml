@@ -8,22 +8,22 @@
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/notes/</loc>
-    <lastmod>2021-01-24T09:33:09+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://massasquash.github.io/potatofolio/</loc>
     <lastmod>2021-01-24T09:33:09+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/categories/%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8/</loc>
+    <loc>https://massasquash.github.io/potatofolio/categories/rubberducking/</loc>
     <lastmod>2021-01-24T09:33:09+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/notes/output_plan/</loc>
+    <loc>https://massasquash.github.io/potatofolio/rubberducking/</loc>
+    <lastmod>2021-01-24T09:33:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/rubberducking/20210124_output_plan/</loc>
     <lastmod>2021-01-24T09:33:09+09:00</lastmod>
   </url>
   
@@ -33,7 +33,17 @@
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/categories/hugo%E3%83%96%E3%83%AD%E3%82%B0/</loc>
+    <loc>https://massasquash.github.io/potatofolio/tags/hugo%E3%83%96%E3%83%AD%E3%82%B0/</loc>
+    <lastmod>2021-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/tags/</loc>
+    <lastmod>2021-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/categories/works/</loc>
     <lastmod>2021-01-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -68,12 +78,12 @@
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/tags/</loc>
+    <loc>https://massasquash.github.io/potatofolio/categories/note/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/tags/%E5%AD%A6%E7%BF%92/</loc>
+    <loc>https://massasquash.github.io/potatofolio/notes/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -83,18 +93,15 @@
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/python/effective_python00/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <loc>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</loc>
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/categories/effective-python/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <loc>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</loc>
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/python/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <loc>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/</loc>
   </url>
   
   <url>
@@ -150,15 +157,19 @@
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/</loc>
+    <loc>https://massasquash.github.io/potatofolio/python/effective_python00/</loc>
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</loc>
+    <loc>https://massasquash.github.io/potatofolio/python/</loc>
   </url>
   
   <url>
-    <loc>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</loc>
+    <loc>https://massasquash.github.io/potatofolio/categories/pythoneffective-python-2th/</loc>
+  </url>
+  
+  <url>
+    <loc>https://massasquash.github.io/potatofolio/categories/python%E9%80%80%E5%B1%88%E3%81%AA%E3%81%93%E3%81%A8%E3%81%AFpython%E3%81%AB%E3%82%84%E3%82%89%E3%81%9B%E3%82%88%E3%81%86/</loc>
   </url>
   
   <url>
@@ -171,10 +182,6 @@
   
   <url>
     <loc>https://massasquash.github.io/potatofolio/auther/</loc>
-  </url>
-  
-  <url>
-    <loc>https://massasquash.github.io/potatofolio/categories/%E9%80%80%E5%B1%88python/</loc>
   </url>
   
 </urlset>

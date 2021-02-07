@@ -3,7 +3,7 @@ title: "[Effective Python]84 docstring"
 date: 2021-01-01T10:84
 lead: "「Effective python第２版」の学習備忘録"
 categories:
-  - "Effective Python"
+  - "Python「Effective Python 2th」"
 draft: true
 ---
 

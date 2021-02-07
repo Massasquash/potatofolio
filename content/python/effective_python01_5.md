@@ -3,7 +3,7 @@ title: "[Effective Python]05 条件分岐(論理式・三項式)とヘルパー�
 date: 2021-01-01T01:05
 lead: "「Effective python第２版」の学習備忘録"
 categories:
-  - "Effective Python"
+  - "Python「Effective Python 2th」"
 ---
 
 # はじめに
