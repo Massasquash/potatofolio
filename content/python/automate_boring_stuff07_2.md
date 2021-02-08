@@ -11,6 +11,36 @@ categories:
 この記事はO’Reilly「退屈なことはPythonにやらせよう」をベースに学習した内容を残した備忘録です。　　
 「7章 正規表現によるパターンマッチング」のプロジェクト・演習問題でやったことを残しておきます。
 
+## プロジェクト
+### 電話番号とメールアドレスの正規表現
+[サンプルコード](https://github.com/oreilly-japan/automatestuff-ja/blob/master/ch07/phoneAndEmail.py)より一部変更（書籍版に記載されているバージョン）して記載させていただきます。
+
+
+**日本の電話番号用の正規表現**
+```python
+# 市外局番が0から始まる1〜4桁、市内局番が1〜4桁、加入者番号4桁
+phone_regex = re.compile(r'''
+  (\d{1,4}|\(\d{1,4}\))  # 市外局番
+  (\s|-)           # 区切り
+  (\d){1,4})            # ３桁の番号
+  (\s|-)           # 区切り
+  (\d{3,4})             # ４桁の番号
+  (\s*(ext|x|ext.)\s*(\d{2, 5}))?  # 内線番号
+  ''', re.VERBOSE)
+```
+
+**電子メールの正規表現**
+```python
+# ユーザー名@ドメイン名.トップレベルドメイン
+phone_regex = re.compile(r'''
+  [a-zA-Z0-9._%+-]+   # ユーザー名
+  @
+  [a-zA-Z0-9.-]+      # ドメイン名
+  (\.[a-zA-Z]{2,4})  # ドットなんとか
+  ''', re.VERBOSE)
+```
+
+
 ## 演習問題
 ### 7-17
 
@@ -391,3 +421,16 @@ print(re.compile('何らかの文字列' or r'\s'))
 
     re.compile('\\s')
     re.compile('何らかの文字列')
+
+---
+## MEMO
+【参考】
+- 公式Web版（英語）  
+  [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+
+- 公式サンプルコード  
+  [GitHub - oreilly-japan/automatestuff-ja: 『退屈なことはPythonにやらせよう』のリポジトリ](https://github.com/oreilly-japan/automatestuff-ja)
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=487311778X&linkId=691e891718cdd36feb75e664a0a2f53a&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+
+---

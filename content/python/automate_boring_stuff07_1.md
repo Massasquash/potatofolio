@@ -67,7 +67,7 @@ print(mo)  # -> ['101', '133']
 >    Scan through string looking for a match to the pattern, returning  
 >    a Match object, or None if no match was found.  
 
-**`search()`メソッドのヘルプ**  
+**`group()`メソッドのヘルプ**  
 >group(...) method of re.Match instance  
 >    group([group1, ...]) -> str or tuple.  
 >    Return subgroup(s) of the match by indices or names.  
@@ -144,8 +144,8 @@ print(after)  # -> xxx匹わんちゃんをxxx回見た
 ## （４）re.compile()に渡すオプション
 [サンプルコード](https://github.com/oreilly-japan/automatestuff-ja/blob/master/ch07/phoneAndEmail.py)より記載させていただきます。
 
+**日本の電話番号用の正規表現**
 ```python
-# 日本の電話番号用の正規表現
 # （市外局番が0から始まる1〜4桁、市内局番が1〜4桁、加入者番号4桁）
 phone_regex = re.compile(r'''
   (\d{1,4}|\(\d{1,4}\))            # 市外局番
@@ -164,47 +164,13 @@ phone_regex = re.compile(r'''
 - これらのオプションを組み合わせる場合は`|`でつなぐ（例： `re.IGNORECASE | re.DOTALL`）
 
 
-<!-- 
-## （3）解読
-
-### 電話番号とメールアドレスの正規表現
-[サンプルコード](https://github.com/oreilly-japan/automatestuff-ja/blob/master/ch07/phoneAndEmail.py)より一部変更して（書籍版に記載されているバージョン）記載させていただきます。
-
-```python
-# 日本の電話番号用の正規表現
-# （市外局番が0から始まる1〜4桁、市内局番が1〜4桁、加入者番号4桁）
-phone_regex = re.compile(r'''
-  (\d{1,4}|\(\d{1,4}\))  # 市外局番
-  (\s|-)           # 区切り
-  (\d){1,4})            # ３桁の番号
-  (\s|-)           # 区切り
-  (\d{3,4})             # ４桁の番号
-  (\s*(ext|x|ext.)\s*(\d{2, 5}))?  # 内線番号
-  ''', re.VERBOSE)
-
-
-# 電子メールの正規表現
-phone_regex = re.compile(r'''
-  [a-zA-Z0-9._%+-]+   # ユーザー名
-  @
-  [a-zA-Z0-9.-]+      # ドメイン名
-  (\.[a-zA-Z]{2,4})  # ドットなんとか
-  ''', re.VERBOSE)
-```
-
-
--->
-
-
 ---
 ## MEMO
 【参考】
 - 公式Web版（英語）  
   [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
-- 公式サンプルコード  
-  [GitHub - oreilly-japan/automatestuff-ja: 『退屈なことはPythonにやらせよう』のリポジトリ](https://github.com/oreilly-japan/automatestuff-ja)
-- 公式の演習問題の解答例  
-  [GitHub - oreilly-japan/automatestuff-ja: 『退屈なことはPythonにやらせよう』のリポジトリ](https://github.com/oreilly-japan/automatestuff-ja)
+
+- [re — 正規表現操作 — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/re.html)
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=487311778X&linkId=691e891718cdd36feb75e664a0a2f53a&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 
