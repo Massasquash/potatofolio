@@ -16,7 +16,7 @@
 		<meta itemprop="name" content="[Effective Python]30,32 ジェネレータ">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="3307">
+<meta itemprop="wordCount" content="3294">
 
 
 
@@ -89,13 +89,6 @@
 				
 			</a>
 		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="https://massasquash.github.io/potatofolio/about/">
-				
-				<span class="menu__text">about</span>
-				
-			</a>
-		</li>
 	</ul>
 </nav>
 
@@ -126,7 +119,8 @@
       </ul>
     </li>
     <li><a href="#２ジェネレータ">（２）ジェネレータ</a></li>
-    <li><a href="#３ジェネレータ関数とジェネレータ式">（３）ジェネレータ関数とジェネレータ式</a></li>
+    <li><a href="#３ジェネレータ関数">（３）ジェネレータ関数</a></li>
+    <li><a href="#４ジェネレータ式">（４）ジェネレータ式</a></li>
     <li><a href="#感想">感想</a></li>
     <li><a href="#memo">MEMO</a></li>
   </ul>
@@ -222,9 +216,8 @@ it <span style="color:#f92672">=</span> index_words_iter(address)
 <p>例えばリストでは作ることのできない、無限に要素を持つリスト&hellip;のようなものもジェネレータを活用すると作ることができます。<br>
 （これをリストで作ろうとすると、要素を入れるための箱（メモリ）が無限に必要になってしまいます）</p>
 <p>ジェネレータを作るには「ジェネレータ関数」を使って作る方法と、「ジェネレータ式」を使って作る方法があります。</p>
-<h2 id="３ジェネレータ関数とジェネレータ式">（３）ジェネレータ関数とジェネレータ式</h2>
-<p><strong>ジェネレータ関数</strong>
-ジェネレータ関数とは内部で<code>yield</code>式を使う関数のことで、呼び出された際に実際の処理を行わずに<strong>イテレータ</strong>を返します。<br>
+<h2 id="３ジェネレータ関数">（３）ジェネレータ関数</h2>
+<p>ジェネレータ関数とは内部で<code>yield</code>式を使う関数のことで、呼び出された際に実際の処理を行わずに<strong>イテレータ</strong>を返します。<br>
 組み込み関数<code>next()</code>が呼ばれるごとに、イテレータはジェネレータを次の<code>yield</code>式に１つ進めます。ジェネレータによりyieldに渡される値は、それぞれイテレータによって呼び出し元に返されます。</p>
 <p>実際のジェネレータ関数のコードの例を見てみます。<br>
 組み込み関数<code>enumerate()</code>で返されるenumerateオブジェクトはジェネレータに当たるようなので、それを題材にしてみます。<br>
@@ -242,8 +235,8 @@ next(gen)  <span style="color:#75715e"># -&gt; (0, &#39;A&#39;)</span>
 next(gen)  <span style="color:#75715e"># -&gt; (1, &#39;B&#39;)</span>
 next(gen)  <span style="color:#75715e"># -&gt; (2, &#39;C&#39;)</span>
 next(gen)  <span style="color:#75715e"># -&gt; エラー「StopIteration」が発生して実行が止まる</span>
-</code></pre></div><p><strong>ジェネレータ式</strong>
-もう１つのジェネレータの作り方はこのジェネレータ式という内包表記を使う方法です。<a href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/#%EF%BC%91%E5%86%85%E5%8C%85%E8%A1%A8%E8%A8%98">リスト内包表記</a>と似た書き方でジェネレータを生成できます。</p>
+</code></pre></div><h2 id="４ジェネレータ式">（４）ジェネレータ式</h2>
+<p>もう１つのジェネレータの作り方はこのジェネレータ式という内包表記を使う方法です。<a href="https://massasquash.github.io/potatofolio/python/effective_python04_27-28/#%EF%BC%91%E5%86%85%E5%8C%85%E8%A1%A8%E8%A8%98">リスト内包表記</a>と似た書き方でジェネレータを生成できます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1〜10をそれぞれ2乗した値を生成するジェネレータ式</span>
 gen <span style="color:#f92672">=</span> (i<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>))
 </code></pre></div><p>この式から作られたジェネレータも関数で生成された時と同様で、組み込み関数<code>next()</code>で次の値を取り出すことができます。</p>
@@ -288,9 +281,9 @@ next(gen)  <span style="color:#75715e"># -&gt; 4</span>
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python01_9/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python00/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Effective Python]9 for, whileループの後のelseブロック</p>
+			<p class="pager__title">[Effective Python]目次</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
