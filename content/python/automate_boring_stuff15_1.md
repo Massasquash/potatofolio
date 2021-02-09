@@ -1,6 +1,6 @@
 ---
 title: "15-1 時間の表現について"
-date: 2021-02-06T10:00
+date: 2021-02-09T12:00
 lead: "「退屈なことはPythonにやらせよう」の学習備忘録"
 categories:
   - "Python「退屈なことはPythonにやらせよう」"

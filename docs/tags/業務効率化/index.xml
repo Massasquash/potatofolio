@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>業務効率化 on Potatofolio</title>
+    <link>https://massasquash.github.io/potatofolio/tags/%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96/</link>
+    <description>Recent content in 業務効率化 on Potatofolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 09 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/tags/%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[GAS]SpreadSheetにカスタムメニューを追加して簡単なUIを作る</title>
+      <link>https://massasquash.github.io/potatofolio/posts/20210209_gas_spreadsheet_custommenu/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/20210209_gas_spreadsheet_custommenu/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

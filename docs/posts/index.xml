@@ -6,49 +6,85 @@
     <description>Recent content in Posts on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 15 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[GAS]SpreadSheetにカスタムメニューを追加して簡単なUIを作る</title>
+      <link>https://massasquash.github.io/potatofolio/posts/20210209_gas_spreadsheet_custommenu/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/20210209_gas_spreadsheet_custommenu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>アウトプットの取り組み方 前編</title>
+      <link>https://massasquash.github.io/potatofolio/posts/20210124_output_plan/</link>
+      <pubDate>Sun, 24 Jan 2021 09:33:09 +0900</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/20210124_output_plan/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Hugoブログ05]テーマのカスタマイズその２</title>
-      <link>https://massasquash.github.io/potatofolio/posts/hugo_blog05/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/20210115_hugo_blog05/</link>
       <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog05/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/20210115_hugo_blog05/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ04]テーマのカスタマイズその１</title>
-      <link>https://massasquash.github.io/potatofolio/posts/hugo_blog04/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/20210111_hugo_blog04/</link>
       <pubDate>Mon, 11 Jan 2021 10:15:30 +0900</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog04/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/20210111_hugo_blog04/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ03]記事更新する際の手順</title>
-      <link>https://massasquash.github.io/potatofolio/posts/hugo_blog03/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/20210111_hugo_blog03/</link>
       <pubDate>Mon, 11 Jan 2021 09:46:35 +0900</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog03/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/20210111_hugo_blog03/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ02]GitHub Pagesで公開する</title>
-      <link>https://massasquash.github.io/potatofolio/posts/hugo_blog02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/20210109_hugo_blog02/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/20210109_hugo_blog02/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ01]構築をはじめる</title>
-      <link>https://massasquash.github.io/potatofolio/posts/hugo_blog01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/20210108_hugo_blog01/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/hugo_blog01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/20210108_hugo_blog01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Udemy]現役エンジニアが教える、手を動かして学ぶGoogle Cloud Platform(GCP) 入門</title>
+      <link>https://massasquash.github.io/potatofolio/posts/20200721_udemy-gcp/</link>
+      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/20200721_udemy-gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[書籍]IT農家のラズパイ製ディープ・ラーニング・カメラ</title>
+      <link>https://massasquash.github.io/potatofolio/posts/20200601_book_itnouka/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/20200601_book_itnouka/</guid>
       <description></description>
     </item>
     

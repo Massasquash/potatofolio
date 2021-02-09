@@ -40,7 +40,7 @@ canonifyurls = true
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
   post_meta = ["date", "categories"] # Order of post meta information
 
-  mainSections = ["works"] # Specify section pages to show on home page and the "Recent articles" widget
+  mainSections = ["posts"] # Specify section pages to show on home page and the "Recent articles" widget
 
 [Params.logo]
   subtitle = "Agrifeel-LABO - My Development Note" # Logo subtitle
@@ -83,8 +83,8 @@ canonifyurls = true
 
 # メインメニュー
 [[Menus.main]]
-  name = "Works"
-  url = "/works/"
+  name = "Home"
+  url = "/"
   weight = 1
 
 [[Menus.main]]
@@ -93,21 +93,26 @@ canonifyurls = true
   weight = 2
 
 [[Menus.main]]
-  name = "Notes"
-  url = "/Notes/"
+  name = "GAS"
+  url = "/categories/gas/"
   weight = 3
 
 [[Menus.main]]
-  name = "RubberDucking"
-  url = "/RubberDucking/"
+  name = "Notes"
+  url = "/categories/学習ノート/"
   weight = 4
 
 [[Menus.main]]
+  name = "RubberDucking"
+  url = "/categories/ひとりごと/"
+  weight = 5
+
+[[Menus.main]]
   name = "auther"
-  url = "/auther/"
+  url = "/pages/auther/"
   weight = 11
 
 # フッターメニュー
 [[Menus.footer]]
   name = "プライバシーポリシー"
-  url = "/privacy/"
+  url = "/pages/privacy/"

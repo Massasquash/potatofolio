@@ -1,6 +1,6 @@
 ---
-title: "[Effective Python]目次"
-date: 2021-01-01T00:01
+title: "[Effective Python]00 目次"
+date: 2021-01-01T00:30
 lead: "「Effective python第２版」の学習備忘録"
 categories:
   - "Python「Effective Python 2th」"
@@ -8,9 +8,7 @@ categories:
 
 # はじめに
 この一連の記事は「Effective Python 第二版」の学習の備忘録です。  
-学習した内容について、わかりづらかった点を整理したりして自分なりの視点で学んでいます。  
-
-ここではEffective Pythonの目次を並べてみます。
+学習した内容について、わかりづらかった点を整理したり補足事項をまとめたりして学習しています。  
 
 **１章 Pythonic思考**  
 >Pythonコミュニティでは、特定のスタイルに沿ったコードを表すのにPythonicという形容詞を使います。Pythonのイディオムは、この言語を使い仲間と作業する経験から時間をかけて発展してきました。１章では、Pythonで最も中心的な共通的に使われる最良の方法を扱います。（まえがき xii より引用）
