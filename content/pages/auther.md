@@ -9,22 +9,23 @@ pager: false
 ## Massa（Masahiro Ohsaki）
 
 ### 仕事とプログラミング
-仕事は北海道の畑作専業農家です。ITに全く関係のないノンプログラマです。
+仕事は北海道の畑作専業農家。ITに全く関係のないノンプログラマです。  
 ちょっとしたツール制作なんかが好きで、2019年から趣味と実益を兼ねてコードを書いています。  
-農業の仕事中に感じる小さな不便を解消すべく、主に[ノンプログラマーのためのスキルアップ研究会](https://tonari-it.com/community-nonpro-semi/)というコミュニティで業務効率化やデータ活用といった情報にを学んでいます。
+農業の仕事中に感じる小さな不便を解消すべく、主に[ノンプログラマーのためのスキルアップ研究会](https://tonari-it.com/community-nonpro-semi/)というコミュニティでプログラミングによる業務効率化スキルを学んでいます。
 
 現場の人間としてプログラミングやIT技術を活用して業務を楽に・楽しくやっていきたい、というのが動機ですが、単純に何か作ることができたり、新しいことを学ぶことを楽しんでます。  
 今後は農業データの活用の仕方についても学び、業務に活かしたり農業の発展に貢献するような働き方をしていけたら、というのが目標です。
 
 ### プライベート
-趣味はあまりないけど、数学ネタとCapoeiraが好き。あと農作業中にpodcastをよく聞いています。
+趣味はあまりないけど、数学ネタとCapoeiraが好き。あと農作業中にpodcastをよく聞いています。  
 お酒苦手だけどビールはよく飲む人です。最近日本酒に手を出し始めました。
 
 ### このブログについて
 僕が個人的に制作したもの・学習したことについて残していくという、備忘録的なブログになっています。個人でのツール制作とPythonの学習がメインです。作業机＆ノートみたいなイメージです。  
 分かりづらい点などあれば、[twitter](https://twitter.com/massasquash)などでコメントいただけると嬉しいです。
 
-[HUGO](https://gohugo.io/)という静的サイトジェネレータで制作し、[GitHub Pages](https://docs.github.com/ja/free-pro-team@latest/github/working-with-github-pages/about-github-pages)を使って公開しています（運用は全て無料！）
+[HUGO](https://gohugo.io/)という静的サイトジェネレータで制作し、[GitHub Pages](https://docs.github.com/ja/free-pro-team@latest/github/working-with-github-pages/about-github-pages)を使って公開中。  
+全て無料で運営しています。
 
 ### 主な制作物とスキル
 - 主な制作物：GASでの業務効率化ツール、Pythonでのスクレイピングツール、LINEbot、楽天市場の価格の収集・分析など

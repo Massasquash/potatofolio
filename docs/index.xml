@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>アウトプットの取り組み方 前編</title>
+      <title>[ひとりごと]]アウトプットの取り組み方 前編</title>
       <link>https://massasquash.github.io/potatofolio/posts/20210124_output_plan/</link>
       <pubDate>Sun, 24 Jan 2021 09:33:09 +0900</pubDate>
       
@@ -85,42 +85,6 @@
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/posts/20200601_book_itnouka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>07 正規表現について</title>
-      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>07 正規表現によるパターンマッチング プロジェクト＆演習</title>
-      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>15-1 時間の表現について</title>
-      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>15-2 マルチスレッドと他プログラムの起動</title>
-      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_2/</guid>
       <description></description>
     </item>
     
@@ -247,6 +211,42 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/python/effective_python04_30-32/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[退屈なことはPythonにやらせよう]07 正規表現について</title>
+      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[退屈なことはPythonにやらせよう]07 正規表現によるパターンマッチング プロジェクト＆演習</title>
+      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff07_2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[退屈なことはPythonにやらせよう]15-1 時間の表現について</title>
+      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[退屈なことはPythonにやらせよう]15-2 マルチスレッドと他プログラムの起動</title>
+      <link>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_2/</guid>
       <description></description>
     </item>
     
