@@ -83,8 +83,8 @@ canonifyurls = true
 
 # メインメニュー
 [[Menus.main]]
-  name = "Home"
-  url = "/"
+  name = "Posts"
+  url = "/posts/"
   weight = 1
 
 [[Menus.main]]
