@@ -7,23 +7,8 @@ categories:
 ---
 
 # はじめに
-この記事は「Effective Python 第二版」の学習の備忘録です。
-
-**4章 内包表記とジェネレータ**  
->Pythonには、リスト、辞書、集合の要素を簡単にイテレーションする特別な構文が用意されていて、派生的なデータ構造が作れます。また、列挙可能なストリームから値を取り出し、1つずつ返す関数も作れます。4章では、これらの機能を使い、性能向上、メモリ使用量削減、読みやすさの改善をどのようにして達成するかを述べます。（まえがき xii より引用）
-
-（目次）  
-- 項目27 mapやfilterの代わりにリスト内包表記を使う  
-- 項目28 内包表記では、3つ以上の式を避ける
-- 項目29 代入式を使い内包表記での繰り返し作業をなくす
-- **項目30 リストを返さずにジェネレータを返すことを考える**  
-- 項目31 引数に対してイテレータを使うときには確実さを優先する  
-- **項目32 大きなリスト内包表記にはジェネレータ式を考える**
-- 項目33 yield fromで複数のジェネレータを作る  
-- 項目34 sendでジェネレータにデータを注入するのは避ける  
-- 項目35 ジェネレータでthrowによる状態遷移を起こすのは避ける  
-- 項目36 イテレータとジェネレータの作業ではitertoolsを使う  
-
+この記事は「Effective Python 第二版」の学習の備忘録です。  
+今回は**4章 内包表記とジェネレータ**の項目30と32について学びました。
 
 
 ## 項目30 リストを返さずにジェネレータを返すことを考える
@@ -37,9 +22,8 @@ categories:
 
 小規模なプログラムで少量のデータを扱うならリストで問題はないのですが、大規模なプログラムでリストを使うと要素数が大量になった場合にメモリクラッシュを引き起こしかねません。一方でジェネレータを使うと大量のデータを扱ってもメモリを一定しか必要としない、という利点があるようです。  
 
-## 項目32 大きなリスト内包表記にはジェネレータ式を考える
-項目30では「リストの代わりにジェネレータを使うと、大量の入力に対してもメモリ不足の心配がない」というお話でした。  
-ジェネレータを作るためにジェネレータ関数を使っていましたが、もう１つの作り方として**ジェネレータ式**があります。  
+## 項目32 大きなリスト内包表記にはジェネレータ式を考える  
+ジェネレータを作るために項目30ではジェネレータ関数を使っていましたが、もう１つの作り方として**ジェネレータ式**があります。  
 これは[項目27](https://massasquash.github.io/potatofolio/python/effective_python04_27-28/)のリスト内包表記を使ってリストを作るのと似た構文で、内包表記を使ってジェネレータを作る構文です。  
 
 また、ジェネレータ式から得られたジェネレータを他のジェネレータ式に渡すこともできて、そのように連鎖したジェネレータは非常に高速に動作する、とのことです。
@@ -183,12 +167,12 @@ def squares(max):
 
 ---
 ## MEMO
-【参考書籍】
-- [Python実践入門](https://www.amazon.co.jp/Python%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80-%E8%A8%80%E8%AA%9E%E3%81%AE%E5%8A%9B%E3%82%92%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%97%E3%80%81%E9%96%8B%E7%99%BA%E5%8A%B9%E7%8E%87%E3%82%92%E9%AB%98%E3%82%81%E3%82%8B-WEB-PRESS-plus-ebook/dp/B0842JDVBZ)
-
 【Effective Pythonサンプルコード】
 - [GitHub - bslatkin/effectivepython: Effective Python: Second Edition — Source Code and Errata for the Book](https://github.com/bslatkin/effectivepython)
 
+【書籍】
+- Effective Python 第2版 ―Pythonプログラムを改良する90項目
+- Python実践入門
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
   
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B0842JDVBZ&linkId=25d949cbd1c5fb4187836e2a7ab30cb3&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>

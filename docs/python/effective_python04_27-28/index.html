@@ -16,7 +16,7 @@
 		<meta itemprop="name" content="[Effective Python]27-28 リスト内包表記について">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="2397">
+<meta itemprop="wordCount" content="1979">
 
 
 
@@ -134,24 +134,8 @@
 </div>
 <div class="content post__content clearfix">
 			<h1 id="はじめに">はじめに</h1>
-<p>この記事は「Effective Python 第二版」の学習の備忘録です。</p>
-<p><strong>4章 内包表記とジェネレータ</strong></p>
-<blockquote>
-<p>Pythonには、リスト、辞書、集合の要素を簡単にイテレーションする特別な構文が用意されていて、派生的なデータ構造が作れます。また、列挙可能なストリームから値を取り出し、1つずつ返す関数も作れます。4章では、これらの機能を使い、性能向上、メモリ使用量削減、読みやすさの改善をどのようにして達成するかを述べます。（まえがき xii より引用）</p>
-</blockquote>
-<p>（目次）</p>
-<ul>
-<li><strong>項目27 mapやfilterの代わりにリスト内包表記を使う</strong></li>
-<li>項目28 内包表記では、3つ以上の式を避ける</li>
-<li>項目29 代入式を使い内包表記での繰り返し作業をなくす</li>
-<li>項目30 リストを返さずにジェネレータを返すことを考える</li>
-<li>項目31 引数に対してイテレータを使うときには確実さを優先する</li>
-<li>項目32 大きなリスト内包表記にはジェネレータ式を考える</li>
-<li>項目33 yield fromで複数のジェネレータを作る</li>
-<li>項目34 sendでジェネレータにデータを注入するのは避ける</li>
-<li>項目35 ジェネレータでthrowによる状態遷移を起こすのは避ける</li>
-<li>項目36 イテレータとジェネレータの作業ではitertoolsを使う</li>
-</ul>
+<p>この記事は「Effective Python 第二版」の学習の備忘録です。<br>
+今回は<strong>3章 関数</strong>の項目27-28について学びました。</p>
 <h2 id="項目27-mapやfilterの代わりにリスト内包表記を使う">項目27 mapやfilterの代わりにリスト内包表記を使う</h2>
 <p>Pythonの<strong>リスト内包表記</strong>を使うと、他のシーケンスやイテラブルオブジェクトから簡単な記法でリストを作ることができます。
 内包表記を使うと通常の<code>for</code>文よりも実行速度が速い、というメリットもあります。<br>
@@ -164,7 +148,7 @@
 <li>２つの条件</li>
 <li>２つのループ</li>
 <li>１つの条件と１つのループ
-までにして、それよりも複雑になる場合は通常の<code>if</code>文や<code>for</code>文を使って書くのが良い、というのがこの項目の内容です。</li>
+までにして、それよりも複雑になる場合は通常の<code>if</code>文や<code>for</code>文を使って書くのが良い、とのことです。</li>
 </ul>
 <h2 id="解説">解説</h2>
 <h3 id="１内包表記">（１）内包表記</h3>
@@ -251,9 +235,10 @@ evens <span style="color:#f92672">=</span> filter(<span style="color:#66d9ef">la
 関係する用語として <strong>「イテレータ」「ジェネレータ」</strong> についてはわかりづらく今後整理が必要そうです。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
-<p>【参考書籍】</p>
+<p>【書籍】</p>
 <ul>
-<li><a href="https://www.amazon.co.jp/Python%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80-%E8%A8%80%E8%AA%9E%E3%81%AE%E5%8A%9B%E3%82%92%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%97%E3%80%81%E9%96%8B%E7%99%BA%E5%8A%B9%E7%8E%87%E3%82%92%E9%AB%98%E3%82%81%E3%82%8B-WEB-PRESS-plus-ebook/dp/B0842JDVBZ">Python実践入門</a></li>
+<li>Effective Python 第2版 ―Pythonプログラムを改良する90項目</li>
+<li>Python実践入門</li>
 </ul>
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 　

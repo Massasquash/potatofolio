@@ -16,7 +16,7 @@
 		<meta itemprop="name" content="[Effective Python]26 関数をラップするデコレータについて">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="1174">
+<meta itemprop="wordCount" content="817">
 
 
 
@@ -133,26 +133,12 @@
 </div>
 <div class="content post__content clearfix">
 			<h1 id="はじめに">はじめに</h1>
-<p>この記事は「Effective Python 第二版」の学習の備忘録です。</p>
-<p><strong>3章 関数</strong></p>
-<blockquote>
-<p>Pythonの関数には、プログラマを助けるためのさまざまな機能があります。一部は、他のプログラミング言語にもある機能ですが、多くはPythonに特有のものです。3章では、関数をどのように使えば、プログラムの意図が明確になり、再利用を促進し、バグを減らせるかを示します。（まえがき xii より引用）</p>
-</blockquote>
-<p>（目次）</p>
-<ul>
-<li>項目19 複数の戻り値では、4個以上の変数なら決してアンパックしない</li>
-<li>項目20 Noneを返すのではなく例外を送出する</li>
-<li>項目21 クロージャが変数スコープとどう関わるかを把握しておく</li>
-<li>項目22 可変長位置引数を使って、見た目をすっきりさせる</li>
-<li>項目23 キーワード引数にオプションの振る舞いを与える</li>
-<li>項目24 動的なデフォルト引数を指定するときにはNoneとdocstringを使う</li>
-<li>項目25 キーワード専用引数と位置専用引数で明確さを高める</li>
-<li><strong>項目26 functools.wrapsを使って関数デコレータを定義する</strong></li>
-</ul>
+<p>この記事は「Effective Python 第二版」の学習の備忘録です。<br>
+今回は<strong>3章 関数</strong>の項目26について学びました。</p>
 <h2 id="項目26-functoolswrapsを使って関数デコレータを定義する">項目26 functools.wrapsを使って関数デコレータを定義する</h2>
 <p>Pythonの<strong>デコレータ</strong>構文を使うと、関数実行時にその関数の動きに装飾を加えることができます。<br>
 しかし自分でデコレータを定義して実際に関数に適用してみると、表向きの動作には問題がないのですが、デコレータを適用した関数名が変わってしまい<code>help</code>関数や<code>docstring</code>が働かない、という副作用があります。</p>
-<p>これを解消するために、デコレータを定義する時には組み込みモジュール<code>functools</code>の<code>wraps</code>ヘルパー関数を使うと良い、というのがこの項目の内容です。この<code>functools.wraps()</code>は「デコレータを書くのを助けるデコレータ」と言えます。</p>
+<p>これを解消するために、デコレータを定義する時には組み込みモジュール<code>functools</code>の<code>wraps</code>ヘルパー関数を使うと良い、とのことです。この<code>functools.wraps()</code>は「デコレータを書くのを助けるデコレータ」と言えます。</p>
 <h2 id="解説">解説</h2>
 <h3 id="１デコレータ構文">（１）デコレータ構文</h3>
 <h3 id="２デコレータが役に立つ例">（２）デコレータが役に立つ例</h3>
@@ -167,10 +153,6 @@
 ひとまずはこのような<code>@</code>のついた構文が出てきても身構えず「その下に出てくる関数に対して何かしらの処理を追加している関数なんだな〜」と思えるようになれば良いのかな、と思います。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
-<p>【参考書籍】</p>
-<ul>
-<li><a href="https://www.amazon.co.jp/Python%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80-%E8%A8%80%E8%AA%9E%E3%81%AE%E5%8A%9B%E3%82%92%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%97%E3%80%81%E9%96%8B%E7%99%BA%E5%8A%B9%E7%8E%87%E3%82%92%E9%AB%98%E3%82%81%E3%82%8B-WEB-PRESS-plus-ebook/dp/B0842JDVBZ">Python実践入門</a></li>
-</ul>
 <p>【参考記事】</p>
 <ul>
 <li><a href="https://qiita.com/_rdtr/items/d3bc1a8d4b7eb375c368">Pythonのデコレータを理解するための12Step - Qiita</a></li>
@@ -178,6 +160,11 @@
 <p>【Effective Pythonサンプルコード】</p>
 <ul>
 <li><a href="https://github.com/bslatkin/effectivepython">GitHub - bslatkin/effectivepython: Effective Python: Second Edition — Source Code and Errata for the Book</a></li>
+</ul>
+<p>【書籍】</p>
+<ul>
+<li>Effective Python 第2版 ―Pythonプログラムを改良する90項目</li>
+<li>Python実践入門</li>
 </ul>
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 　

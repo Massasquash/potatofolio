@@ -7,24 +7,8 @@ categories:
 ---
 
 # はじめに
-この記事は「Effective Python 第二版」の学習の備忘録です。
-
-**１章 Pythonic思考**  
->Pythonコミュニティでは、特定のスタイルに沿ったコードを表すのにPythonicという形容詞を使います。Pythonのイディオムは、この言語を使い仲間と作業する経験から時間をかけて発展してきました。１章では、Pythonで最も中心的な共通的に使われる最良の方法を扱います。（まえがき xii より引用）
-
-（目次）
-- 項目1 使用するPythonのバージョンを知っておく
-- 項目2 PEP8スタイルガイドに従う
-- 項目3 bytesとstrの違いを知っておく
-- **項目4 Cスタイルフォーマット文字列とstr.formatは使わずf 文字列で埋め込む**
-- 項目5 複雑な式の代わりにヘルパー関数を書く
-- 項目6 インデックスではなく複数代入アンパックを使う
-- 項目7 rangeではなくenumerateを使う
-- 項目8 イテレータを並列に処理するにはzipを使う
-- 項目9 forループとwhileループの後のelseブロックは使わない
-- 項目10 代入式で繰り返しを防ぐ
-
-
+この記事は「Effective Python 第二版」の学習の備忘録です。  
+今回は**１章 Pythonic思考**の項目4について学びました。
 
 ## 項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む
 Python3では４つの出力フォーマット方式があります。これらの記法を使うと、文字列にデータ値を埋め込んでテキストとして出力できます。  
@@ -156,7 +140,7 @@ print(formatted)  # Bob は 30 歳です。
 1つ目の方式だと文字列が長い場合に可読性が落ちたり、メンテナンス性が悪くなります（現在は非推奨になっているようです）。  
 新しい3つ目の方式のほうが冗長性はなくなるが、それでもやはり最新のf文字列が一番スッキリする書き方ができます。
 
-書籍のこの項目では、古い書き方それぞれの問題点について深掘りされていて、f文字列がなぜ優れているのかが解説されていました。
+書籍のこの項目では、古い書き方それぞれの問題点について深掘りされていて、f文字列がなぜ優れているのかが解説されています。
 
 ## 感想
 f文字列でもミニ言語でフォーマットを指定できるのは上手く活用していきたいです。特に数値のゼロ埋めやカンマ区切りなどが短く書けるのが実用性のありそうな印象でした。  
@@ -171,6 +155,8 @@ f文字列でもミニ言語でフォーマットを指定できるのは上手�
 【Effective Pythonサンプルコード】
 - [GitHub - bslatkin/effectivepython: Effective Python: Second Edition — Source Code and Errata for the Book](https://github.com/bslatkin/effectivepython)
 
+【書籍】
+- Effective Python 第2版 ―Pythonプログラムを改良する90項目
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 
 ---

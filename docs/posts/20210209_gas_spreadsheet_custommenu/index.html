@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2673">
+<meta itemprop="wordCount" content="2661">
 
 
 
@@ -188,7 +188,7 @@
 <p>第二引数には、追加したいメニューをオブジェクトの配列で書いてあげます。<br>
 このオブジェクトに<code>name</code>と<code>functionName</code>というプロパティを持たせることで、メニューに表記する文字列と、選択されたときに実行する関数名を指定することができます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;メニューに表記する文字列&gt;&#39;</span>, <span style="color:#a6e22e">functionName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;関数名&gt;&#39;</span>}
-</code></pre></div><p>ここで指定する関数は後ほど作るので、現段階ではまだ作っていないけど実装予定の名前で大丈夫です。<br>
+</code></pre></div><p>ここで指定する関数は後ほど作るので、現段階では実装予定の名前で大丈夫です。<br>
 ここでは<code>moveToLastRow_</code>という関数名を指定しておきました。</p>
 <p>注意点としては、関数名には丸かっこをつけずに書くことです。<br>
 もし丸カッコをつけてしまうと、その関数が実行されて戻り値が<code>functionName</code>の値に設定されてしまうことになります。今回は関数名を文字列として指定したいので、丸かっこをつけないで文字列リテラルで書くのが正解になります。</p>
@@ -229,8 +229,8 @@
 そうしたい場合は、<code>onOpen()</code>に直接今回の<code>moveToLastRow_()</code>の中身の処理を書いてあげればOKです。<br>
 ただし、セル数にもよりますが起動が重くなってしまうかもしれないので、ご注意ください。</p>
 <h1 id="おわりに">おわりに</h1>
-<p>カスタムメニューは、スプレッドシートを使っていて「ボタンをクリックしたら一括で処理するようにしたい」というような場合にシンプルなUIを作ることができて、とても便利ですね。<br>
-他にも、スプレッドシートの関数で転記できるような作業でも、GASのカスタムメニューを使って実装をすることでシートを軽くすることもできそうです。</p>
+<p>カスタムメニューは、スプレッドシートを使っていて「ボタンをクリックしたら一括で処理するようにしたい」というような場合にシンプルなUIを作ることができて、とても便利です。<br>
+他にもスプレッドシートの関数で転記できるような作業でも、GASのカスタムメニューを使って実装をすることでシートを軽くすることもできそうです。</p>
 <p>いろんな用途で使えるので、是非試してみましょう！</p>
 <p><strong>その他の実装アイデア</strong></p>
 <ul>

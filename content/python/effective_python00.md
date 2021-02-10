@@ -111,6 +111,8 @@ Pythonプログラムで協働作業を行うには、コードをどのよう�
 
 ---
 ## MEMO
-【参考書籍】
-- [O’Reilly Japan - Effective Python 第2版](https://www.oreilly.co.jp/books/9784873119175/)
+【書籍】
+- Effective Python 第2版 ―Pythonプログラムを改良する90項目
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+
 ---

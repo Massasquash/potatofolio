@@ -8,28 +8,12 @@ categories:
 
 # はじめに
 この記事は「Effective Python 第二版」の学習の備忘録です。
-
-**１章 Pythonic思考**  
->Pythonコミュニティでは、特定のスタイルに沿ったコードを表すのにPythonicという形容詞を使います。Pythonのイディオムは、この言語を使い仲間と作業する経験から時間をかけて発展してきました。１章では、Pythonで最も中心的な共通的に使われる最良の方法を扱います。（まえがき xii より引用）
-
-（目次）
-- 項目1 使用するPythonのバージョンを知っておく
-- 項目2 PEP8スタイルガイドに従う
-- **項目3 bytesとstrの違いを知っておく**
-- 項目4 Cスタイルフォーマット文字列とstr.formatは使わずf 文字列で埋め込む
-- 項目5 複雑な式の代わりにヘルパー関数を書く
-- 項目6 インデックスではなく複数代入アンパックを使う
-- 項目7 rangeではなくenumerateを使う
-- 項目8 イテレータを並列に処理するにはzipを使う
-- 項目9 forループとwhileループの後のelseブロックは使わない
-- 項目10 代入式で繰り返しを防ぐ
-
-
+今回は**１章 Pythonic思考**の項目3です。
 
 ## 項目3 bytesとstrの違いを知っておく
 Python3では、文字列データ型を表すのにbytes型とstr型の２種類の組み込み型があります。  
 bytes型は「バイナリデータ」でstr型は「テキストデータ」に当たります。bytesは8ビット値の列を含み、strはUnicodeコードポイント（割り振られている番号のこと）の文字列を含む、と表現されています。  
-それぞれの型は似たような文字列を出力できますが、演算子で一緒に扱うことが一緒にできないので注意が必要、ということがこの項目で書かれていました。
+それぞれの型は似たような文字列を出力できますが、演算子で一緒に扱うことが一緒にできないので注意が必要、とのことです。
 
 
 ## 解説
@@ -137,6 +121,8 @@ Python3ではこれらは似たような文字列型として扱えるのです�
 
 - [Pythonのstr型とbytes型 | KISO-REN](https://www.kannon.link/fuku/index.php/2017/02/22/01-34/)
 
+【書籍】
+- Effective Python 第2版 ―Pythonプログラムを改良する90項目
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 
 ---
