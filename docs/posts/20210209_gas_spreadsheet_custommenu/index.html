@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2661">
+<meta itemprop="wordCount" content="2658">
 
 
 
@@ -131,7 +131,7 @@
 <br>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210209_gas_spreadsheet_custommenu/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-09%2023.15.06.png" alt="image"></p>
 <p>今回カスタムメニューを作って実装する内容は「最終行へアクティブセルを移動する」というシンプルなものです。<br>
-例えば僕は特定のPC作業をしたときのログをスプレッドシートを作っているのですが、行数が増えてくると一番下までスクロールして入力するのが面倒になります。クリックするだけで一番下に飛べると便利だなーと思って作ってみました。</p>
+例えば僕は特定のPC作業をしたときのログをスプレッドシートを作っているのですが、行数が増えてくると一番下までスクロールして入力するのが面倒になります。クリックするだけで一番下に飛べると便利だなーと思ってよく活用しています。</p>
 <h2 id="全体のスクリプト">全体のスクリプト</h2>
 <p>まずは今回作成するスクリプトの全体像です。</p>
 <p>スプレッドシートのコンテナバインドスクリプトを作り、以下のスクリプトを記述します。<br>
@@ -187,7 +187,8 @@
 もし丸カッコをつけてしまうと、その関数が実行されて戻り値が<code>functionName</code>の値に設定されてしまうことになります。今回は関数名を文字列として指定したいので、丸かっこをつけないで文字列リテラルで書くのが正解になります。</p>
 <p>この<code>addMenu()</code>の第二引数に指定するオブジェクトを増やしていくことで、どんどんメニューを追加することもできます（後ほど備考として記載します）。</p>
 <h2 id="3-メニューを選択したときに動作する関数を作る">3. メニューを選択したときに動作する関数を作る</h2>
-<p>最後に、先ほど関数名に指定した<code>moveToLastRow_()</code>関数を新たに定義すればOKです。</p>
+<p>最後に、先ほど関数名に指定した<code>moveToLastRow_()</code>関数を新たに定義すればOKです。<br>
+ここでは現在のシートの「最終行の次の行の１列目」にアクティブセルを移動させています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 最終行にアクティブセルを移動する関数
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">moveToLastRow_</span>(){
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SS</span>.<span style="color:#a6e22e">getActiveSheet</span>();
@@ -197,13 +198,12 @@
 }
 </code></pre></div><br>
 <p><strong>アクティブセルの移動先を指定したい場合</strong><br>
-ここでは現在のシートの「最終行の次の行の１列目」にアクティブセルを移動させています。<br>
-もし移動させるセルを変更したい場合は、上のコードの5行目のこの部分を変えてあげましょう。</p>
+もし移動させるセルを変更したい場合は、上のコードの5行目の<code>getRange()</code>に渡す引数を変えてあげましょう。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lastRange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sheet</span>.<span style="color:#a6e22e">getRange</span>(<span style="color:#a6e22e">lastRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>);
 </code></pre></div><p>例えば、現在のシートの「最終行の３列目」などとしたい場合は、次のようにカスタマイズすればOKです。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lastRange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sheet</span>.<span style="color:#a6e22e">getRange</span>(<span style="color:#a6e22e">lastRow</span>, <span style="color:#ae81ff">3</span>);
 </code></pre></div><p>以上で実装は完了です。<br>
-スクリプトを保存して、スプレッドシートを開いているページをリロードして少し待つと、カスタムメニューが追加されているかと思います！</p>
+スクリプトを保存して、スプレッドシートを開いているページをリロードして少し待つと、カスタムメニューが追加されているかと思います。</p>
 <h2 id="備考">備考</h2>
 <p><strong>カスタムメニューの選択肢を増やしたい場合</strong><br>
 <code>onOpen()</code>に書いた<code>SS.addMenu()</code>の中身のオブジェクトを増やしてみましょう。</p>
@@ -216,15 +216,14 @@
   ]);
 }
 </code></pre></div><p>配列の要素としてオブジェクトを追加していく形になるので、注意してくださいね。<br>
-構文エラー（SyntaxError）が出てしまう場合は、オブジェクトの書き方やカンマの有無など要チェックです！</p>
+構文エラー（SyntaxError）が出てしまう場合は、オブジェクトの書き方やカンマの有無など要チェックです。</p>
 <p><strong>スプレッドシートを開いたときに最終行に移動させたい場合</strong><br>
 今回はカスタムメニューを使って最終行へ移動するスクリプトを書きましたが、ファイルを開いたときにアクティブセルを移動させるやり方でも良いかもしれません。<br>
 そうしたい場合は、<code>onOpen()</code>に直接今回の<code>moveToLastRow_()</code>の中身の処理を書いてあげればOKです。<br>
 ただし、セル数にもよりますが起動が重くなってしまうかもしれないので、ご注意ください。</p>
 <h1 id="おわりに">おわりに</h1>
 <p>カスタムメニューは、スプレッドシートを使っていて「ボタンをクリックしたら一括で処理するようにしたい」というような場合にシンプルなUIを作ることができて、とても便利です。<br>
-他にもスプレッドシートの関数で転記できるような作業でも、GASのカスタムメニューを使って実装をすることでシートを軽くすることもできそうです。</p>
-<p>いろんな用途で使えるので、是非試してみましょう！</p>
+他にもスプレッドシートの関数で転記できるような作業でも、GASのカスタムメニューを使った実装をすることでシートを軽くしたりもできるので、よく活用しています。</p>
 <p><strong>その他の実装アイデア</strong></p>
 <ul>
 <li>カスタムメニューを実行すると、マスターデータから必要な情報を探して一括で転記する</li>

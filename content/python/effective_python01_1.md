@@ -7,7 +7,7 @@ categories:
 ---
 
 # はじめに
-この記事は「Effective Python 第二版」の学習の備忘録です。
+この記事は「Effective Python 第二版」の学習の備忘録です。  
 今回は**１章 Pythonic思考**の項目1について学びました。
 
 
