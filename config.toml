@@ -103,11 +103,6 @@ canonifyurls = true
   weight = 4
 
 [[Menus.main]]
-  name = "RubberDucking"
-  url = "/categories/ひとりごと/"
-  weight = 5
-
-[[Menus.main]]
   name = "auther"
   url = "/pages/auther/"
   weight = 11
