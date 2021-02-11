@@ -34,8 +34,7 @@ canonifyurls = true
   comments = true
   pager = true
   toc = true # Enable Table of Contents for specific page
-  
-  twitter_cards = true
+  eyecatch = '/img/page_logo.jpg' #アイキャッチ見よう見まねで追加。不要なら削除する
 
   mathjax = true # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
