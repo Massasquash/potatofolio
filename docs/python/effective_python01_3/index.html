@@ -16,11 +16,15 @@
 		<meta itemprop="name" content="[Effective Python]03 str型とbytes型">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="3063">
+<meta itemprop="wordCount" content="3054">
 
 
 
 <meta itemprop="keywords" content="" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Effective Python]03 str型とbytes型"/>
+<meta name="twitter:description" content=""/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -203,8 +207,8 @@ strインスタンスはバイナリエンコーディングを持たず、bytes
 </blockquote>
 <p>表現がだいぶ難しいですが、</p>
 <ul>
-<li>str型は文字変換される一歩手前の「Unicodeコードポイント」（文字と対応づけされた番号）の状態で保持されていて、<code>print()</code>で出力されるときにエンコードされて僕らが読める文字列が出力される</li>
-<li>bytes型は符号なし8ビット値というコンピュータが読める値で保持されていて、<code>print()</code>で出力されるときには「ASCIIコード」でエンコードされて僕らが読める文字列として出力される</li>
+<li>str型は文字変換される一歩手前の「Unicodeコードポイント」（文字と対応づけされた番号）の状態で保持されていて、<code>print()</code>で出力されるときに僕らが読める文字列が出力される</li>
+<li>bytes型は符号なし8ビット値というコンピュータが読める値で保持されていて、<code>print()</code>で出力されるときに「ASCIIコード」でエンコードされて僕らが読める文字列として出力される</li>
 </ul>
 <p>と言うことでしょうか…？（間違っていたらすみません）<br>
 strからbytesに変換することをエンコード、bytesからstrに変換することがデコードに当たるようです。</p>
