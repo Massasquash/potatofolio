@@ -1,7 +1,7 @@
 ---
 title: "[GAS]日付型を簡単なフォーマットで文字列変換する関数"
 date: 2021-02-11
-lead: "日付を文字列に変換したい場合に使うreplace()とpadStart()メソッド"
+lead: "文字列型のreplace()とpadStart()メソッド"
 categories:
   - "GAS"
 tags:
