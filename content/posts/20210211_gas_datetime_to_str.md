@@ -33,10 +33,10 @@ tags:
  *  - m: 分
  *  - s: 秒
  * 
- * @params {Object} date - 日付型
- * @params {String} format - 文字列フォーマット（例 Y/M/D h:m:s）
- * @params {Boolean} zeroPadding - true指定で月以下0埋め二桁数字に（例 2021/01/01 10:05:00）
- * @returns {String} formatStr - フォーマットした文字列
+ * @param {Object} date - 日付型
+ * @param {String} format - 文字列フォーマット（例 Y/M/D h:m:s）
+ * @param {Boolean} zeroPadding - true指定で月以下0埋め二桁数字に（例 2021/01/01 10:05:00）
+ * @return {String} formatStr - フォーマットした文字列
  */
 function datetimeToStr_(date, format, zeroPadding=false) {
 
