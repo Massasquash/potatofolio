@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-11T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-11T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2196">
+<meta itemprop="wordCount" content="2407">
 
 
 
@@ -167,9 +167,40 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">datetimeToStr3_</span>(<span style="color:#a6e22e">date</span>, <span style="color:#a6e22e">format</span>, <span style="color:#a6e22e">zeroPadding</span><span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>) {
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 日付を指定文字列でフォーマットした文字列を返す
+</span><span style="color:#75715e"> * フォーマットに使用できる文字（マッチした先頭のものが変換される）
+</span><span style="color:#75715e"> *  - Y: 年
+</span><span style="color:#75715e"> *  - M: 月
+</span><span style="color:#75715e"> *  - D: 日
+</span><span style="color:#75715e"> *  - h: 時間
+</span><span style="color:#75715e"> *  - m: 分
+</span><span style="color:#75715e"> *  - s: 秒
+</span><span style="color:#75715e"> * 
+</span><span style="color:#75715e"> * @params {Object} date - 日付型
+</span><span style="color:#75715e"> * @params {String} format - 文字列フォーマット（例 Y/M/D h:m:s）
+</span><span style="color:#75715e"> * @params {Boolean} zeroPadding - true指定で月以下0埋め二桁数字に（例 2021/01/01 10:05:00）
+</span><span style="color:#75715e"> * @returns {String} formatStr - フォーマットした文字列
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">datetimeToStr_</span>(<span style="color:#a6e22e">date</span>, <span style="color:#a6e22e">format</span>, <span style="color:#a6e22e">zeroPadding</span><span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>) {
 
   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [
     <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>(),   <span style="color:#75715e">//Y
@@ -184,7 +215,8 @@
     <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">value</span> =&gt; String(<span style="color:#a6e22e">value</span>).<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>));
   }
 
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/Y/</span>, <span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">0</span>])
+  <span style="color:#75715e">// 複数のマッチに対応する場合は正規表現にgオプション（/Y/g）
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/Y/</span>, <span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">0</span>])
                     .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/M/</span>, <span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">1</span>])
                     .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/D/</span>, <span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">2</span>])
                     .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/h/</span>, <span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">3</span>])
@@ -235,7 +267,7 @@
 </code></pre></div><br>
 <p><strong>年を4桁ではなく2桁表示にしたい場合</strong><br>
 例えば「2021」を「21」と表示させたいケースも多いのかなと思いました。<br>
-ちょっとだけカスタマイズをして簡単に動かせれば良いよという場合は、全体のスクリプトの16行目を以下のようにしてやるといけそうです。</p>
+とりあえず簡単に動かせれば良いよという場合は、全体のスクリプトの32行目を以下のようにカスタマイズしてやるといけそうです。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/Y/</span>, String(<span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">0</span>]).<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>))
 </span>..(<span style="color:#a6e22e">省略</span>)..
 </code></pre></div><br>

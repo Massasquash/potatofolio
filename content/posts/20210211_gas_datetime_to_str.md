@@ -23,7 +23,22 @@ tags:
 
 ## 全体のスクリプト
 ```javascript {linenos=table}
-function datetimeToStr3_(date, format, zeroPadding=false) {
+/**
+ * 日付を指定文字列でフォーマットした文字列を返す
+ * フォーマットに使用できる文字（マッチした先頭のものが変換される）
+ *  - Y: 年
+ *  - M: 月
+ *  - D: 日
+ *  - h: 時間
+ *  - m: 分
+ *  - s: 秒
+ * 
+ * @params {Object} date - 日付型
+ * @params {String} format - 文字列フォーマット（例 Y/M/D h:m:s）
+ * @params {Boolean} zeroPadding - true指定で月以下0埋め二桁数字に（例 2021/01/01 10:05:00）
+ * @returns {String} formatStr - フォーマットした文字列
+ */
+function datetimeToStr_(date, format, zeroPadding=false) {
 
   let arr = [
     date.getFullYear(),   //Y
@@ -38,6 +53,7 @@ function datetimeToStr3_(date, format, zeroPadding=false) {
     arr = arr.map(value => String(value).padStart(2, '0'));
   }
 
+  // 複数のマッチに対応する場合は正規表現にgオプション（/Y/g）
   const formatStr = format.replace(/Y/, arr[0])
                     .replace(/M/, arr[1])
                     .replace(/D/, arr[2])
@@ -109,7 +125,7 @@ function testFunction(){
 
 **年を4桁ではなく2桁表示にしたい場合**  
 例えば「2021」を「21」と表示させたいケースも多いのかなと思いました。  
-ちょっとだけカスタマイズをして簡単に動かせれば良いよという場合は、全体のスクリプトの16行目を以下のようにしてやるといけそうです。  
+とりあえず簡単に動かせれば良いよという場合は、全体のスクリプトの32行目を以下のようにカスタマイズしてやるといけそうです。  
 
 ```javascript {hl_lines=[1]}
 const formatStr = format.replace(/Y/, String(arr[0]).slice(2))
