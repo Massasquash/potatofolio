@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2658">
+<meta itemprop="wordCount" content="2663">
 
 
 
@@ -115,24 +115,26 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#全体のスクリプト">全体のスクリプト</a></li>
-    <li><a href="#1-onopen関数を作る">1. onOpen()関数を作る</a></li>
-    <li><a href="#2-メニューの選択肢を追加する">2. メニューの選択肢を追加する</a></li>
-    <li><a href="#3-メニューを選択したときに動作する関数を作る">3. メニューを選択したときに動作する関数を作る</a></li>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#1全体のスクリプト">1.全体のスクリプト</a></li>
+    <li><a href="#2onopen関数を作る">2.onOpen()関数を作る</a></li>
+    <li><a href="#3メニューの選択肢を追加する">3.メニューの選択肢を追加する</a></li>
+    <li><a href="#4メニューを選択したときに動作する関数を作る">4.メニューを選択したときに動作する関数を作る</a></li>
     <li><a href="#備考">備考</a></li>
+    <li><a href="#おわりに">おわりに</a></li>
   </ul>
 </nav>
 	</div>
 </div>
 <div class="content post__content clearfix">
-			<h1 id="はじめに">はじめに</h1>
+			<h2 id="はじめに">はじめに</h2>
 <p>GASでカスタムメニューを追加するスクリプトについてです。</p>
 <p>画像のようにスプレッドシートのメニューバー（ツールバー）の一番右に「カスタムメニュー」という項目が新しく追加され、クリックしたときの処理をカスタマイズすることができます。<br>
 <br>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210209_gas_spreadsheet_custommenu/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-09%2023.15.06.png" alt="image"></p>
 <p>今回カスタムメニューを作って実装する内容は「最終行へアクティブセルを移動する」というシンプルなものです。<br>
 例えば僕は特定のPC作業をしたときのログをスプレッドシートを作っているのですが、行数が増えてくると一番下までスクロールして入力するのが面倒になります。クリックするだけで一番下に飛べると便利だなーと思ってよく活用しています。</p>
-<h2 id="全体のスクリプト">全体のスクリプト</h2>
+<h2 id="1全体のスクリプト">1.全体のスクリプト</h2>
 <p>まずは今回作成するスクリプトの全体像です。</p>
 <p>スプレッドシートのコンテナバインドスクリプトを作り、以下のスクリプトを記述します。<br>
 その後、スプレッドシートのページをリロードすると、カスタムメニューが反映されるはずです。</p>
@@ -154,7 +156,7 @@
   <span style="color:#a6e22e">SpreadsheetApp</span>.<span style="color:#a6e22e">setActiveRange</span>(<span style="color:#a6e22e">lastRange</span>);
 }
 </code></pre></div><p>それでは作り方とカスタマイズの仕方を見ていきます。</p>
-<h2 id="1-onopen関数を作る">1. onOpen()関数を作る</h2>
+<h2 id="2onopen関数を作る">2.onOpen()関数を作る</h2>
 <p>まずは<code>onOpen()</code>という名前で、ファイルが開かれたときに動作する関数を作っておきます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 現在のスプレッドシート
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">SS</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SpreadsheetApp</span>.<span style="color:#a6e22e">getActiveSpreadsheet</span>();
@@ -166,7 +168,7 @@
 </code></pre></div><p>SpreadSheetオブジェクトの定義も最初にしておきましょう。のちの関数でもこのオブジェクトを使うため、グローバルスコープに記述しています。</p>
 <p>このように<code>onOpen()</code>という名前で関数を作ると、ファイルが開いたときに動作する処理を作ることができます。トリガーを設定する必要などありません。<br>
 こういった特定のイベントが起こったときに処理を実行する関数を「イベントハンドラ」と呼ぶそうです。</p>
-<h2 id="2-メニューの選択肢を追加する">2. メニューの選択肢を追加する</h2>
+<h2 id="3メニューの選択肢を追加する">3.メニューの選択肢を追加する</h2>
 <p>続いてカスタムメニューをクリックした時の選択肢を追加していきます。<br>
 スプレッドシートオブジェクトの<code>addMenu()</code>メソッドを使い、先ほどのコードに以下のように記述します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ファイルが開いたときに動作する処理
@@ -186,7 +188,7 @@
 <p>注意点としては、関数名には丸かっこをつけずに書くことです。<br>
 もし丸カッコをつけてしまうと、その関数が実行されて戻り値が<code>functionName</code>の値に設定されてしまうことになります。今回は関数名を文字列として指定したいので、丸かっこをつけないで文字列リテラルで書くのが正解になります。</p>
 <p>この<code>addMenu()</code>の第二引数に指定するオブジェクトを増やしていくことで、どんどんメニューを追加することもできます（後ほど備考として記載します）。</p>
-<h2 id="3-メニューを選択したときに動作する関数を作る">3. メニューを選択したときに動作する関数を作る</h2>
+<h2 id="4メニューを選択したときに動作する関数を作る">4.メニューを選択したときに動作する関数を作る</h2>
 <p>最後に、先ほど関数名に指定した<code>moveToLastRow_()</code>関数を新たに定義すればOKです。<br>
 ここでは現在のシートの「最終行の次の行の１列目」にアクティブセルを移動させています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 最終行にアクティブセルを移動する関数
@@ -221,7 +223,7 @@
 今回はカスタムメニューを使って最終行へ移動するスクリプトを書きましたが、ファイルを開いたときにアクティブセルを移動させるやり方でも良いかもしれません。<br>
 そうしたい場合は、<code>onOpen()</code>に直接今回の<code>moveToLastRow_()</code>の中身の処理を書いてあげればOKです。<br>
 ただし、セル数にもよりますが起動が重くなってしまうかもしれないので、ご注意ください。</p>
-<h1 id="おわりに">おわりに</h1>
+<h2 id="おわりに">おわりに</h2>
 <p>カスタムメニューは、スプレッドシートを使っていて「ボタンをクリックしたら一括で処理するようにしたい」というような場合にシンプルなUIを作ることができて、とても便利です。<br>
 他にもスプレッドシートの関数で転記できるような作業でも、GASのカスタムメニューを使った実装をすることでシートを軽くしたりもできるので、よく活用しています。</p>
 <p><strong>その他の実装アイデア</strong></p>
@@ -276,11 +278,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210213_gas_reduce/">[GAS]配列のreduce()メソッドを活用して文字列をまとめて置換する</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/">[GAS]日付型を簡単なフォーマットで文字列変換する関数</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210209_gas_spreadsheet_custommenu/">[GAS]SpreadSheetにカスタムメニューを追加して簡単なUIを作る</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210115_hugo_blog05/">[Hugoブログ05]テーマのカスタマイズその２</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210111_hugo_blog04/">[Hugoブログ04]テーマのカスタマイズその１</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210111_hugo_blog03/">[Hugoブログ03]記事更新する際の手順</a></li>
 		</ul>
 	</div>
 </div>

@@ -21,7 +21,7 @@ tags:
 - `zeroPadding`をつけると月以下はゼロ埋めして返してくれる（例： 2021/01/01 10:05:00）
 
 
-## 全体のスクリプト
+## 1.全体のスクリプト
 ```javascript {linenos=table}
 /**
  * 日付を指定文字列でフォーマットした文字列を返す
@@ -71,7 +71,7 @@ function datetimeToStr_(date, format, zeroPadding=false) {
 この`testFunction()`を走らせてみると、  
 
 ```javascript
-function testFunction(){
+function sampleFunction(){
 
   const date = new Date();
   const str1 = datetimeToStr_(date, 'Y-M-D');
@@ -98,7 +98,7 @@ function testFunction(){
 スプレッドシートのセルに年月日と時間を分けて入れたり、保存するファイル名の先頭に日付をちょっと加工して挿入したい場合に手軽に使えるかなと思います。
 
 
-## スクリプトの補足
+## 2.スクリプトの補足
 全体のスクリプトの27〜29行目で書いた部分が、ゼロ埋めするための処理です。
 
 ```javascript
@@ -133,13 +133,13 @@ const formatStr = format.replace(/Y/, String(arr[0]).slice(2))
 ```
 <br>
 
-## 文字列型のメソッド replace() と padStart()
+## 3.文字列型のメソッド replace() と padStart()
 今回主に活躍しているメソッドはこちらの2つ。
 
 - (1)[String.prototype.replace() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 - (2)[String.prototype.padStart() - JavaScript | MDN](~https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/padStart~)
 
-### (1)String.replace()  
+### (1)replace()  
 > *構文*
 > *str.replace(regexp|substr, newSubstr|function)*
 
@@ -164,7 +164,7 @@ console.log(str.replace(/Y/, year));
 
 
 
-### (2)String.padStart()  
+### (2)padStart()  
 > *構文*  
 > *str.padStart(targetLength [, padString])*  
 
