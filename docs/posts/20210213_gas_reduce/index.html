@@ -178,10 +178,10 @@
     [<span style="color:#e6db74">/s/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>()]
   ];
 
-    <span style="color:#75715e">// replaceListsを使って置換
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">list</span>) =&gt; <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">replace</span>(...<span style="color:#a6e22e">list</span>);
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">replaceLists</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">reducer</span>, <span style="color:#a6e22e">format</span>);
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">formatStr</span>);
+  <span style="color:#75715e">// replaceListsを使って置換
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">list</span>) =&gt; <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">replace</span>(...<span style="color:#a6e22e">list</span>);
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">replaceLists</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">reducer</span>, <span style="color:#a6e22e">format</span>);
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">formatStr</span>);
 }
 </code></pre></td></tr></table>
 </div>

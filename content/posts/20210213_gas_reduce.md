@@ -38,10 +38,10 @@ function sampleFunction() {
     [/s/, date.getSeconds()]
   ];
 
-    // replaceListsを使って置換
-    const reducer = (acc, list) => acc.replace(...list);
-    const formatStr = replaceLists.reduce(reducer, format);
-    console.log(formatStr);
+  // replaceListsを使って置換
+  const reducer = (acc, list) => acc.replace(...list);
+  const formatStr = replaceLists.reduce(reducer, format);
+  console.log(formatStr);
 }
 ```
 <br>
