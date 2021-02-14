@@ -1,5 +1,5 @@
 ---
-title: "[GAS]配列のreduce()メソッドを活用して文字列をまとめて置換する"
+title: "[GAS]reduce()メソッドを活用して文字列をまとめて置換する"
 date: 2021-02-14
 lead: "配列のreduce()メソッドと仲良くなる"
 categories:
