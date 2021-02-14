@@ -8,12 +8,14 @@ categories:
 
 ## はじめに
 今回は、配列の`reduce()`メソッドの理解を深める記事です。  
+[先日の記事]((https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart))の自分のコードを題材に、文字列置換の操作を`reduce()`メソッドを使って書き換えてみました。
 
-[先日の記事]((https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart))の自分のコードを題材に、文字列置換の操作を`reduce()`メソッドを使って書き換えてみました。  
-先日のGAS中級講座受講後に先生に見てもらった時に、文字列型の`replace()`を使って文字列置換する時に`reduce()`を合わせて使えるよーというのを教えてもらってすごく面白かったので、せっかくなのでその練習をしてみました。
+先日のGAS中級講座受講後に先生に見てもらった時に、文字列型の`replace()`を使って文字列置換する時に`reduce()`を合わせて使えるよーというのを教えてもらってすごく面白かったです。  
 
 こちらが教えてもらった内容です。  
 [etau the non programmer coder  — GAS replace メソッドと reduce メソッド](https://etauthenonprogrammercoder.tumblr.com/post/637788437137719296/gas-replace-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A8-reduce-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89)
+
+せっかくなのでその練習をしてみた、というのが今回の記事の内容です。
 
 
 ## 1.今回のスクリプト
