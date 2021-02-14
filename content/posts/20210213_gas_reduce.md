@@ -9,7 +9,7 @@ categories:
 ## はじめに
 今回は、配列の`reduce()`メソッドの理解を深める記事です。  
 
-[先日の記事]((https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart))の自分のコードを題材に、文字列置換で`reduce()`メソッドを使って書き換えてみました。  
+[先日の記事]((https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart))の自分のコードを題材に、文字列置換の操作を`reduce()`メソッドを使って書き換えてみました。  
 先日のGAS中級講座受講後に先生に見てもらった時に、文字列型の`replace()`を使って文字列置換する時に`reduce()`を合わせて使うと面白いよーというのを教えてもらったので、せっかくなのでその練習をしてみました。
 
 こちらが教えてもらった内容です。  
