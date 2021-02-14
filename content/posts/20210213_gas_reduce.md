@@ -18,7 +18,7 @@ categories:
 
 ## 1.今回のスクリプト
 [先日の記事](https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart)のスクリプトから枝葉の部分は省略して、コアな部分だけ書いて独立した関数にしました。  
-日付のフォーマットを表す文字列、例えば「Y/M/D h:m:s」みたいな文字列を、それぞれDate型の年月日などの値に置き換える、という処理を書いたコードです。
+日付のフォーマットを表す文字列、例えば「Y/M/D h:m:s」みたいな文字列を、それぞれDate型の年月日などの値に置き換える、という処理です。
 
 ```javascript {linenos=table}
 function sampleFunction() {
