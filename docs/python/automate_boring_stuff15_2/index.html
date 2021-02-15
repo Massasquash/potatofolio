@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="[退屈なことはPythonにやらせよう]15-2 マルチスレッドと他プログラムの起動">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="2857">
+<meta itemprop="wordCount" content="2852">
 <meta itemprop="image" content="https://massasquash.github.io/potatofolio/105"/>
 
 
@@ -199,24 +199,19 @@
 thread_obj <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>stopSecond)
 thread_obj<span style="color:#f92672">.</span>start()
 <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;プログラム終わり&#39;</span>)
-</code></pre></div><blockquote>
-<p>プログラム終わり   （ &lt;- 先にこれが出力される）<br>
-関数終わり</p>
-</blockquote>
-<ul>
+</code></pre></div><pre><code>プログラム終わり   （ &lt;- 先にこれが出力される）  
+関数終わり  
+</code></pre><ul>
 <li>スレッドが終了（正常終了・例外による終了・タイムアウト）
 するまで待機させる場合は<code>thread.join()</code>メソッドを使う</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># </span>
-thread_obj <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>stopSecond)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">thread_obj <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>stopSecond)
 thread_obj<span style="color:#f92672">.</span>start()
 thread_obj<span style="color:#f92672">.</span>join()
 <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;プログラム終了&#39;</span>)
-</code></pre></div><blockquote>
-<p>関数終わり<br>
-プログラム終了     （&lt;- これが一番最後に出力される）</p>
-</blockquote>
-<ul>
+</code></pre></div><pre><code>&gt; 関数終わり  
+&gt; プログラム終了     （&lt;- これが一番最後に出力される）  
+</code></pre><ul>
 <li>スレッドで実行する関数に引数を渡したい場合は <code>threading.Thread()</code>にキーワード引数<code>args=[]</code>,<code>kwargs={}</code>を渡す</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">thread_obj <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span><span style="color:#66d9ef">print</span>,
@@ -231,13 +226,24 @@ thread_obj<span style="color:#f92672">.</span>start()
 <li><code>subprocess</code>モジュール：Pythonからコマンドを実行するための標準モジュール</li>
 <li>例えば毎日起動する定番のアプリをプログラムを実行することで一発で開いたりできるようになる</li>
 </ul>
-<p><strong>規定のアプリでファイルを開く</strong><br>
-- プログラム（プロセス）をオープンする関数  <code>subprocess.Popen()</code>を使う
-- ここではGUI上で「ファイルをダブルクリック」した時と同じ動作をプログラムで実行するやり方を書いておく
-- コマンドライン引数を渡したい場合は、リストの&lt;ファイルパス&gt;の後に要素を追加して渡すことができる</p>
-<pre><code>- OSによって起動方法や、渡すコマンド（`start`, `open`）が違うので注意
-</code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 直接ファイルを指定して「規定のアプリでファイルを開く」ことができる</span>
+<p><strong>規定のアプリでファイルを開く</strong></p>
+<ul>
+<li>
+<p>プログラム（プロセス）をオープンする関数  <code>subprocess.Popen()</code>を使う</p>
+</li>
+<li>
+<p>ここではGUI上で「ファイルをダブルクリック」した時と同じ動作をプログラムで実行するやり方を書いておく</p>
+</li>
+<li>
+<p>コマンドライン引数を渡したい場合は、リストの&lt;ファイルパス&gt;の後に要素を追加して渡すことができる</p>
+</li>
+<li>
+<p>OSによって起動方法や、渡すコマンド（<code>start</code>, <code>open</code>）が違うので注意</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> subprocess
+
+<span style="color:#75715e"># 直接ファイルを指定して「規定のアプリでファイルを開く」ことができる</span>
 proc <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen([<span style="color:#e6db74">&#39;start&#39;</span>, <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">ファイルのパス</span><span style="color:#f92672">&gt;</span>], shell<span style="color:#f92672">=</span>True)  <span style="color:#75715e"># Windows</span>
 proc <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen([<span style="color:#e6db74">&#39;open&#39;</span>, <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">ファイルのパス</span><span style="color:#f92672">&gt;</span>])  <span style="color:#75715e"># Mac</span>
 </code></pre></div><table>
