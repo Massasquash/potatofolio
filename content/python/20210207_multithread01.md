@@ -1,7 +1,7 @@
 ---
 title: "[Python]スレッド・プロセスの概念とマルチスレッド"
 date: 2021-02-07T10:00
-lead: "「退屈なことはPythonにやらせよう」の学習備忘録"
+lead: "threadingモジュールでのマルチスレッド実装"
 categories:
   - “Python”
 ---
