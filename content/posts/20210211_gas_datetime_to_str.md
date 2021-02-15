@@ -9,7 +9,7 @@ tags:
 ---
 
 ## はじめに
-日付オブジェクトをちょっとした文字列に変換して使いたい…などというケースに使える関数です。  
+日付オブジェクトをちょっとした文字列に変換して使いたい…などというケースに使えそうな関数です。  
 
 現在受講中のノンプロ研 GAS講座の予習をしていたらゼロ埋めのテクニックが出てきて、まさに「これこれ！」と思うようなかゆいところに手の届く感じでした。
 これまで泥臭いコードでなんとなく対応していたのですが、これを機に整理してみたので紹介します。  
@@ -18,7 +18,7 @@ tags:
 
 - Date型のオブジェクトと文字列フォーマットを渡すと、それに沿った文字列を返してくれる（例： Y-M-D を渡すと 2021-1-1 に変換）
 - Y, M, D, h, m, sという文字が使える
-- `zeroPadding`をつけると月以下はゼロ埋めして返してくれる（例： 2021/01/01 10:05:00）
+- `zeroPadding=true`を引数に渡すと月以下はゼロ埋めして返してくれる（例： 2021/01/01 10:05:00）
 
 
 ## 1.全体のスクリプト
@@ -67,7 +67,7 @@ function datetimeToStr_(date, format, zeroPadding=false) {
 <br>
 
 使うときは、次のコードの4, 5行目のように使います。  
-基本的には`datetimeToStr_()`関数に第1引数として日付型、第2引数としてフォーマットしたい文字列を入れてやります。  
+基本的には`datetimeToStr_()`関数に第1引数としてDate型、第2引数としてフォーマットしたい文字列を入れてやります。  
 この`testFunction()`を走らせてみると、  
 
 ```javascript
@@ -91,7 +91,7 @@ function sampleFunction(){
 
 
 
-このように、日付型が整形されて文字列として返ってきます。
+このように、Date型が整形されて文字列として返ってきます。
 月以下をゼロ埋め2桁で使いたい場合は、`zeroPadding=true`を引数として渡してあげます（仮引数名をつけずに`true`だけでもOKです）。  
 第3引数は省略しても大丈夫で、その場合は1桁の数値はそのまま使うことになります。  
 
@@ -139,7 +139,7 @@ const formatStr = format.replace(/Y/, String(arr[0]).slice(2))
 - (1)[String.prototype.replace() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 - (2)[String.prototype.padStart() - JavaScript | MDN](~https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/padStart~)
 
-### (1)replace()  
+### (1)replace()メソッド  
 > *構文*
 > *str.replace(regexp|substr, newSubstr|function)*
 
@@ -164,7 +164,7 @@ console.log(str.replace(/Y/, year));
 
 
 
-### (2)padStart()  
+### (2)padStart()メソッド  
 > *構文*  
 > *str.padStart(targetLength [, padString])*  
 

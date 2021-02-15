@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-11T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-11T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2413">
+<meta itemprop="wordCount" content="2457">
 
 
 
@@ -120,8 +120,8 @@
     <li><a href="#2スクリプトの補足">2.スクリプトの補足</a></li>
     <li><a href="#3文字列型のメソッド-replace-と-padstart">3.文字列型のメソッド replace() と padStart()</a>
       <ul>
-        <li><a href="#1replace">(1)replace()</a></li>
-        <li><a href="#2padstart">(2)padStart()</a></li>
+        <li><a href="#1replaceメソッド">(1)replace()メソッド</a></li>
+        <li><a href="#2padstartメソッド">(2)padStart()メソッド</a></li>
       </ul>
     </li>
     <li><a href="#おわりに">おわりに</a></li>
@@ -131,14 +131,14 @@
 </div>
 <div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
-<p>日付オブジェクトをちょっとした文字列に変換して使いたい…などというケースに使える関数です。</p>
+<p>日付オブジェクトをちょっとした文字列に変換して使いたい…などというケースに使えそうな関数です。</p>
 <p>現在受講中のノンプロ研 GAS講座の予習をしていたらゼロ埋めのテクニックが出てきて、まさに「これこれ！」と思うようなかゆいところに手の届く感じでした。
 これまで泥臭いコードでなんとなく対応していたのですが、これを機に整理してみたので紹介します。</p>
 <p>今回の関数でできることはシンプルです。</p>
 <ul>
 <li>Date型のオブジェクトと文字列フォーマットを渡すと、それに沿った文字列を返してくれる（例： Y-M-D を渡すと 2021-1-1 に変換）</li>
 <li>Y, M, D, h, m, sという文字が使える</li>
-<li><code>zeroPadding</code>をつけると月以下はゼロ埋めして返してくれる（例： 2021/01/01 10:05:00）</li>
+<li><code>zeroPadding=true</code>を引数に渡すと月以下はゼロ埋めして返してくれる（例： 2021/01/01 10:05:00）</li>
 </ul>
 <h2 id="1全体のスクリプト">1.全体のスクリプト</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -229,7 +229,7 @@
 </div>
 </div><br>
 <p>使うときは、次のコードの4, 5行目のように使います。<br>
-基本的には<code>datetimeToStr_()</code>関数に第1引数として日付型、第2引数としてフォーマットしたい文字列を入れてやります。<br>
+基本的には<code>datetimeToStr_()</code>関数に第1引数としてDate型、第2引数としてフォーマットしたい文字列を入れてやります。<br>
 この<code>testFunction()</code>を走らせてみると、</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sampleFunction</span>(){
 
@@ -244,7 +244,7 @@
 <pre><code>実行ログ
 &gt; Y-M-D でフォーマット -&gt;  2021-02-12  
 &gt; Y/M/D h:m:s でフォーマット -&gt;  2021/02/12 09:03:50  
-</code></pre><p>このように、日付型が整形されて文字列として返ってきます。
+</code></pre><p>このように、Date型が整形されて文字列として返ってきます。
 月以下をゼロ埋め2桁で使いたい場合は、<code>zeroPadding=true</code>を引数として渡してあげます（仮引数名をつけずに<code>true</code>だけでもOKです）。<br>
 第3引数は省略しても大丈夫で、その場合は1桁の数値はそのまま使うことになります。</p>
 <p>スプレッドシートのセルに年月日と時間を分けて入れたり、保存するファイル名の先頭に日付をちょっと加工して挿入したい場合に手軽に使えるかなと思います。</p>
@@ -277,7 +277,7 @@
 <li>(1)<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace">String.prototype.replace() - JavaScript | MDN</a></li>
 <li>(2)<a href="~https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/padStart~">String.prototype.padStart() - JavaScript | MDN</a></li>
 </ul>
-<h3 id="1replace">(1)replace()</h3>
+<h3 id="1replaceメソッド">(1)replace()メソッド</h3>
 <blockquote>
 <p><em>構文</em>
 <em>str.replace(regexp|substr, newSubstr|function)</em></p>
@@ -295,7 +295,7 @@
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/Y/</span>, <span style="color:#a6e22e">year</span>));
 </code></pre></div><pre><code>実行ログ
 &gt; 2021/M/D
-</code></pre><h3 id="2padstart">(2)padStart()</h3>
+</code></pre><h3 id="2padstartメソッド">(2)padStart()メソッド</h3>
 <blockquote>
 <p><em>構文</em><br>
 <em>str.padStart(targetLength [, padString])</em></p>

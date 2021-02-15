@@ -6,28 +6,27 @@ categories:
   - "Python「退屈なことはPythonにやらせよう」"
 ---
 
-# はじめに
+## はじめに
 この記事はO’Reilly「退屈なことはPythonにやらせよう」をベースに学習した内容を残した備忘録です。
 「15章 時間制御、自動実行、プログラム起動」をもとにまとめています。
 
-## （１）Pythonの時間関数のまとめ
-- Pythonで日付と時間を扱うデータ型は主に３種類
+## 1.Pythonの時間関数のまとめ
+### (1)日付と時間を扱う主なデータ型
 
 | 呼称 | データ型 | モジュール |  表示例 | 備考 |  
 | :--- | :--- | :--- | :--- | :--- |  
-| ①UNIXエポックに基づくタイムスタンプ | float型 | time | 1612587698.479415 | エポックタイぷからの秒数<br>整数値または浮動小数点値　|  
+| ①UNIXエポックに基づくタイムスタンプ | float型 | time | 1612587698.479415 | エポックタイムからの秒数<br>整数値または浮動小数点値　|  
 | ②特定の時刻・時間 | datetime型 | datetime | 2021-02-06 14:02:23.592996 | date(), time()メソッドの戻り値はdatetime型<br>他それぞれの属性は整数値 |  
 | ③datetime同士の時間差 | timedelta型 | datetime | 0:00:03.003681 | それぞれの属性は整数値 |  
 
-- **UNIXエポックタイム**は多くのプログラミング言語で標準的な参照時間 =  1970/1/1 0:00 UTC（協定世界時）
+- **UNIXエポックタイム**は多くのプログラミング言語で標準的な参照時間（1970/1/1 0:00 UTC（協定世界時））
 - その時間からの経過時間を**エポックタイムスタンプ**と呼ぶ
 
-**参考コード**
 ```python
 import time
 import datetime
 
-# ①UNIXエポックに基づくタイムスタンプ
+# ①UNIXエポックに基づくタイムスタンプ 数値型
 epoch = time.time()
 print(epoch)  # -> 1612587698.479415
 print(type(epoch)) # -> <class 'float'>
@@ -38,20 +37,40 @@ print(dt)  # -> 2021-02-06 14:02:23.592996
 print(type(dt))  # -> <class 'datetime.datetime'>
 
 # ③datetime同士の時間差 timedelta型
-dt1 = datetime.datetime.now()
-time.sleep(3)
-dt2 = datetime.datetime.now()
-
-td = dt2 - dt1
+td = datetime.timedelta(seconds=3)
 print(td)  # -> 0:00:03.003681
 print(type(td))  # -> <class 'datetime.timedelta'>
 ```
 
+### (2)datetimeオブジェクトの生成
+- 現在日時を表すdatetimeオブジェクトを作る`datetime.datetime.now()`
+  - `datetime`モジュールの`datetime`クラスの`now()`メソッドを使う
+- 指定日時のdatetimeオブジェクトを作る`datetime.datetime()`
+  - `datetime`モジュールの`datetime`関数を呼び出す
 
-## （２）datetime型→文字列 に変換
-- datetimeオブジェクトを`.strftime()`メソッドでフォーマットして文字列表示させることができる。
+```python
+import datetime
+
+now = datetime.datetime.now()  # 現在日時
+dt = datetime.datetime(2021, 1, 1, 10, 00, 00)  # 指定日時
+```
+
+- 生成したdatetimeオブジェクトは、year, month, day, hour, minute, second, microsecondという属性を持つ
+```python
+print(dt.year, dt.month, dt.day)
+```
+
+## ２.datetime型→文字列 に変換
+- datetimeオブジェクトを`strftime()`メソッドでフォーマットして文字列表示させることができる。
 - 引数に変換したい書式文字列を渡す
 - 「f」はフォーマット（整形）の意味
+
+```python
+from datetime import datetime
+
+dt = datetime.now()
+print(dt.strftime('%Y/%m/%d'))
+```
 
 **strftime()書式一覧**  
 **よく使うやつ**  
@@ -84,11 +103,17 @@ print(type(td))  # -> <class 'datetime.timedelta'>
 - より詳細はドキュメント参照
   [datetime — 基本的な日付型および時間型 — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/datetime.html#strftime-strptime-behavior)
 
-## （３）文字列→datetime型 に変換
+## ３.文字列→datetime型 に変換
 - 日付情報の入った文字列を`datetime.datetime.strptime()`関数でdatetimeオブジェクトに変換することができる
 - 第１引数に変換したい文字列, 第２引数に対応する書式文字列を渡す(どちらも文字列)
 - 文字列が正確にマッチしないと`ValueError`例外が発生する
 - 「p」はパース（構文解析）の意味
+
+```python
+from datetime import datetime
+
+datetime.strptime('2021/01/01', '%Y/%m/%d')
+```
 
 **使用例**
 ```python

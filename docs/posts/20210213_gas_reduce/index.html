@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-14T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2514">
+<meta itemprop="wordCount" content="2513">
 
 
 
@@ -117,7 +117,7 @@
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#1今回のスクリプト">1.今回のスクリプト</a></li>
-    <li><a href="#2reduceメソッドの基本">2.reduce()メソッドの基本</a>
+    <li><a href="#2reduceメソッド">2.reduce()メソッド</a>
       <ul>
         <li><a href="#1初期値がない場合">(1)初期値がない場合</a></li>
         <li><a href="#2初期値がある場合">(2)初期値がある場合</a></li>
@@ -202,7 +202,7 @@
 <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/s/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>());
 </code></pre></div><p>このコードだと処理はわかりやすいですが、同じ変数とメソッドが重複してしまっています。<br>
 また、置き換えたい文字列が増えた場合にはコピペして1行を書き足さなければいけないので、あまりスマートじゃなないなあと思ってしまいます。</p>
-<h2 id="2reduceメソッドの基本">2.reduce()メソッドの基本</h2>
+<h2 id="2reduceメソッド">2.reduce()メソッド</h2>
 <p>reduceは「減らす」という和訳の他に「変える」とか「まとめる」という意味もあるようなので、こちらの意味合いが近そうに思いました。</p>
 <p><code>reduce()</code>メソッドは <strong>「（初期値に対して）配列の各要素を順番に関数で処理していって最終的に1つの値を得る」</strong> と言う感じかと思います。<br>
 得られる値は配列ではなく「1つの値」になるのがポイントかなと思いました。</p>
@@ -247,7 +247,7 @@
 </code></pre><p>配列の要素を頭から順番に足し合わせていった結果がログ出力されています。</p>
 <p>例2で使っている<code>reducer</code>はいわゆるコールバック関数。<br>
 コールバック関数は、<strong>配列内のそれぞれの要素について呼び出す関数</strong> のことで、今回の<code>reduce()</code>の他<code>map()</code>, <code>filter()</code>などの反復メソッドを使う時にも登場します。</p>
-<p>この<code>reducer</code>の仮引数で出てくる登場人物2つを基本として抑えておくようにします。</p>
+<p>この<code>reducer</code>の仮引数で出てくる登場人物2つだけを基本として抑えておくようにします。</p>
 <ul>
 <li>
 <p><strong>acc</strong>（accumulator、蓄積者とか累算器みたいな意味）：<br>
