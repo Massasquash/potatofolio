@@ -4,6 +4,7 @@ date: 2021-01-30T10:00
 lead: "「退屈なことはPythonにやらせよう」の学習備忘録"
 categories:
   - "Python「退屈なことはPythonにやらせよう」"
+images: "img/page_logo.jpg"
 ---
 
 # はじめに

@@ -37,7 +37,6 @@ canonifyurls = true
   eyecatch = '/img/page_logo.jpg' #アイキャッチ見よう見まねで追加。不要なら削除する
 
   twitter_cards = true
-  images = "img/page_logo.jpg"
 
   mathjax = true # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
