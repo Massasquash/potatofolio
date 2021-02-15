@@ -3,7 +3,8 @@ title: "[退屈なことはPythonにやらせよう]07 正規表現によるパ�
 date: 2021-01-30T11:00
 lead: "「退屈なことはPythonにやらせよう」の学習備忘録"
 categories:
-  - "Python「退屈なことはPythonにやらせよう」"
+  - "Python"
+draft: true
 ---
 
 

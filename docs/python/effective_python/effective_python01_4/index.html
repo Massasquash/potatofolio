@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Effective Python]04 フォーマット済み文字列の活用 - Potatofolio</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[Effective Python]04 フォーマット済み文字列の活用" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_4/" />
+
+
+		<meta itemprop="name" content="[Effective Python]04 フォーマット済み文字列の活用">
+<meta itemprop="description" content="">
+
+<meta itemprop="wordCount" content="1969">
+
+
+
+<meta itemprop="keywords" content="" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Effective Python]04 フォーマット済み文字列の活用"/>
+<meta name="twitter:description" content=""/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="https://massasquash.github.io/potatofolio/css/style.css">
+	
+
+	<link rel="shortcut icon" href="https://massasquash.github.io/potatofolio/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="https://massasquash.github.io/potatofolio/" title="Potatofolio" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://massasquash.github.io/potatofolio/img/page_logo.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Potatofolio</div>
+					<div class="logo__tagline">Agrifeel-LABO - My Development Note</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/posts/">
+				
+				<span class="menu__text">Posts</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/categories/gas/">
+				
+				<span class="menu__text">GAS</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/categories/%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/">
+				
+				<span class="menu__text">Notes</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/pages/auther/">
+				
+				<span class="menu__text">auther</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[Effective Python]04 フォーマット済み文字列の活用</h1>
+			<p class="post__lead">「Effective python第２版」の学習備忘録</p>
+			<div class="post__meta meta"><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/pythoneffective-python-2th/" rel="category">Python「Effective Python 2th」</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#項目4-cスタイルフォーマット文字列とstrformatは使わずf文字列で埋め込む">項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</a></li>
+    <li><a href="#解説">解説</a>
+      <ul>
+        <li><a href="#１f文字列の基本構文">（１）f文字列の基本構文</a></li>
+        <li><a href="#２f文字列で書式設定をつける">（２）f文字列で書式設定をつける</a></li>
+        <li><a href="#３f文字列以外の出力フォーマットの記述法">（３）f文字列以外の出力フォーマットの記述法</a></li>
+      </ul>
+    </li>
+    <li><a href="#感想">感想</a></li>
+    <li><a href="#memo">MEMO</a></li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			<h1 id="はじめに">はじめに</h1>
+<p>この記事は「Effective Python 第二版」の学習の備忘録です。<br>
+今回は<strong>１章 Pythonic思考</strong>の項目4について学びました。</p>
+<h2 id="項目4-cスタイルフォーマット文字列とstrformatは使わずf文字列で埋め込む">項目4 Cスタイルフォーマット文字列とstr.formatは使わずf文字列で埋め込む</h2>
+<p>Python3では４つの出力フォーマット方式があります。これらの記法を使うと、文字列にデータ値を埋め込んでテキストとして出力できます。</p>
+<ol>
+<li>Cスタイルフォーマット文字列（フォーマット演算子<code>%</code>を使う）</li>
+<li>組み込みのformat関数</li>
+<li>str.formatメソッド</li>
+<li>フォーマット済み文字列（f文字列）</li>
+</ol>
+<p>この中でどの書き方が良いのか、というのを検証しているのがこの項目の内容でした。<br>
+結論から言うと、4つ目の<strong>フォーマット済み文字列（f文字列）</strong> の方法で書くのが一番簡潔で表現もしやすい、と言うことです。<br>
+f文字列の記法はPython3.6以降にできた一番新しい構文のため、この使い方だけでもマスターしておくのが大事そうです。</p>
+<h2 id="解説">解説</h2>
+<h3 id="１f文字列の基本構文">（１）f文字列の基本構文</h3>
+<p>フォーマット済み文字列（f文字列）は、文字列の中に式や値を埋め込むことができる構文です。
+文字列リテラルの頭に<code>f</code>をつけて、文字列の中に埋め込みたい式や値を<code>{}</code>の中に書くことができます。
+（この埋め込む式や値の入った<code>{}</code>を <strong>「プレースホルダ」</strong> と呼びます）</p>
+<p><a href="https://github.com/bslatkin/effectivepython/blob/master/example_code/item_04.py">サンプルコード</a>を記載します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Example 23</span>
+key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;my_var&#39;</span>
+value <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.234</span>
+
+formatted <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;{key} = {value}&#39;</span>
+<span style="color:#66d9ef">print</span>(formatted)
+
+<span style="color:#75715e"># -&gt; my_var = 1.234</span>
+</code></pre></div><h3 id="２f文字列で書式設定をつける">（２）f文字列で書式設定をつける</h3>
+<p>f文字列を使って、プレースホルダーの<code>{}</code>の式や値の後に<code>:</code>を使って、様々な書式設定ができます。<br>
+（例えば整列（アライン）、文字埋め、数値の桁区切り、パーセンテージ表記など）</p>
+<p>この書式オプションの書き方は、ドキュメントでは <strong>「書式指定ミニ言語」</strong> と呼ばれています。</p>
+<p><strong>整列と文字埋め</strong></p>
+<ul>
+<li>整列（左寄せ・中央寄せ・右寄せ）　　<code>:&lt;10``:^10``:&gt;10</code></li>
+<li>整列の際に埋める文字を指定する　<code>:a&lt;10</code>　</li>
+</ul>
+<p>2つ目の埋める文字については、<code>a</code>を埋めたい文字列にします）
+実際にコードを書いてみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">value <span style="color:#f92672">=</span> <span style="color:#ae81ff">12345</span>
+
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:&lt;10}&#39;</span>)   <span style="color:#75715e"># 12345</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:^10}&#39;</span>)   <span style="color:#75715e">#   12345   </span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:&gt;10}&#39;</span>)   <span style="color:#75715e">#     12345</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:a&lt;10}&#39;</span>)  <span style="color:#75715e"># 12345aaaaa</span>
+</code></pre></div><p><strong>数値をゼロ埋め・桁区切り</strong></p>
+<ul>
+<li>数値をゼロ埋めして10桁で表示　<code>:0=10</code>, <code>:010</code></li>
+<li>数値を3桁ずつカンマ区切りで表示 <code>:,</code></li>
+</ul>
+<p>先ほどの文字列で埋める書式を利用すると、数値のゼロ埋めができます。<br>
+大きい数のカンマ区切りも簡単にできて便利です。<br>
+これらは使う機会も多いかもしれません。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">value <span style="color:#f92672">=</span> <span style="color:#ae81ff">12345</span>
+
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:0=10}&#39;</span>)  <span style="color:#75715e"># 0000012345（0埋め10桁）</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:06}&#39;</span>)    <span style="color:#75715e"># 012345（0埋め6桁）</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:,}&#39;</span>)     <span style="color:#75715e"># 12,345（カンマ区切り）</span>
+</code></pre></div><p><strong>小数点以下の桁数指定</strong></p>
+<ul>
+<li>小数点以下3桁で丸める　<code>:.3f</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">value <span style="color:#f92672">=</span> <span style="color:#ae81ff">123.45678</span>
+
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:.3f}&#39;</span>)  <span style="color:#75715e"># 123.456</span>
+</code></pre></div><p><strong>パーセント表記</strong></p>
+<ul>
+<li>数値をパーセント表記にする　<code>:%</code></li>
+</ul>
+<p>デフォルトでは小数点以下が6桁で表示されるそうです。
+パーセント表記も、上で行った表記で小数点以下n桁で丸めることができます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">value <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.123</span>
+
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:%}&#39;</span>)   <span style="color:#75715e"># 12.300000%</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{value:.2%}&#39;</span>) <span style="color:#75715e"># 12.30%</span>
+
+</code></pre></div><h3 id="３f文字列以外の出力フォーマットの記述法">（３）f文字列以外の出力フォーマットの記述法</h3>
+<p>最初にあげた他の3つの書き方</p>
+<ol>
+<li>Cスタイルフォーマット文字列（フォーマット演算子<code>%</code>を使う）</li>
+<li>組み込みのformat関数</li>
+<li>str.formatメソッド</li>
+</ol>
+<p>これらについてもさらっと見ておきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1. Cスタイルフォーマット文字列（%演算子）</span>
+<span style="color:#75715e"># %d（10進数整数値）, %s（文字列）などをプレースホルダーとし、置き換えたい変数は%の後にタプルで指定</span>
+name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
+age <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>
+formatted <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> は </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> 歳です。&#39;</span> <span style="color:#f92672">%</span> (name, age)
+<span style="color:#66d9ef">print</span>(formatted)  <span style="color:#75715e"># Bob は 30 歳です。</span>
+
+
+<span style="color:#75715e"># 2. 組み込みのformat関数</span>
+<span style="color:#75715e"># Python3より。第1引数に表示したい値、第2引数に書式化するためのミニ言語</span>
+num <span style="color:#f92672">=</span> <span style="color:#ae81ff">123456789</span>
+formatted <span style="color:#f92672">=</span> format(num, <span style="color:#e6db74">&#39;,&#39;</span>)
+<span style="color:#66d9ef">print</span>(formatted)  <span style="color:#75715e">#  123,456,789</span>
+
+
+<span style="color:#75715e"># 3. str.formatメソッド</span>
+<span style="color:#75715e"># {}でプレースホルダの指定ができるようになる</span>
+name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
+age <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>
+formatted <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{} は {} 歳です。&#39;</span><span style="color:#f92672">.</span>format(name, age)
+<span style="color:#66d9ef">print</span>(formatted)  <span style="color:#75715e"># Bob は 30 歳です。</span>
+</code></pre></div><p>1つ目の方式だと文字列が長い場合に可読性が落ちたり、メンテナンス性が悪くなります（現在は非推奨になっているようです）。<br>
+新しい3つ目の方式のほうが冗長性はなくなるが、それでもやはり最新のf文字列が一番スッキリする書き方ができます。</p>
+<p>書籍のこの項目では、古い書き方それぞれの問題点について深掘りされていて、f文字列がなぜ優れているのかが解説されています。</p>
+<h2 id="感想">感想</h2>
+<p>f文字列でもミニ言語でフォーマットを指定できるのは上手く活用していきたいです。特に数値のゼロ埋めやカンマ区切りなどが短く書けるのが実用性のありそうな印象でした。<br>
+その他のフォーマットについては正直不要だと思うのですが、古いコードを読んでいると出てくることもあるのかなと思います。こんな書き方があるんだと言うのを知っていれば、出てきた際に読み解きやすくなるのかな、と思いました。</p>
+<hr>
+<h2 id="memo">MEMO</h2>
+<p>【参考ページ】</p>
+<ul>
+<li>フォーマット済み文字列 <a href="https://docs.python.org/ja/3/tutorial/inputoutput.html#formatted-string-literals">7. 入力と出力 — Python 3.9.1 ドキュメント</a></li>
+<li>ミニ言語 <a href="https://docs.python.org/ja/3/library/string.html#formatspec">string — 一般的な文字列操作 — Python 3.9.1 ドキュメント</a></li>
+</ul>
+<p>【Effective Pythonサンプルコード】</p>
+<ul>
+<li><a href="https://github.com/bslatkin/effectivepython">GitHub - bslatkin/effectivepython: Effective Python: Second Edition — Source Code and Errata for the Book</a></li>
+</ul>
+<p>【書籍】</p>
+<ul>
+<li>Effective Python 第2版 ―Pythonプログラムを改良する90項目</li>
+</ul>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+<hr>
+
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_5/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Effective Python]05 条件分岐(論理式・三項式)とヘルパー関数の活用</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_3/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[Effective Python]03 str型とbytes型</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://duckduckgo.com/">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sites" value="https://massasquash.github.io/potatofolio/"/>
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210213_gas_reduce/">[GAS]reduce()メソッドを活用して文字列をまとめて置換する</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/">[GAS]日付型を簡単なフォーマットで文字列変換する関数</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210209_gas_spreadsheet_custommenu/">[GAS]SpreadSheetにカスタムメニューを追加して簡単なUIを作る</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210115_hugo_blog05/">[Hugoブログ05]テーマのカスタマイズその２</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210111_hugo_blog04/">[Hugoブログ04]テーマのカスタマイズその１</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/gas/">GAS</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/python/">Python</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/pythoneffective-python-2th/">Python「Effective Python 2th」</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/works/">Works</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/">学習ノート</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/hugo%E3%83%96%E3%83%AD%E3%82%B0/" title="Hugoブログ">Hugoブログ</a>
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96/" title="業務効率化">業務効率化</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/massasquash" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Massasquash" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Note" rel="noopener noreferrer" href="https://note.com/agrifeel_labo" target="_blank">
+				<span>Note</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Youtube" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCsu1mENsBiVFsdc-yq0a4Aw" target="_blank">
+				<span>Youtube</span>
+			</a>
+		</div>
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+<div class="footer__links">
+	<a class="footer__link" href="https://massasquash.github.io/potatofolio/pages/privacy/">プライバシーポリシー</a>
+</div>
+		<div class="footer__copyright">
+			&copy; 2021 Massa.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="https://massasquash.github.io/potatofolio/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

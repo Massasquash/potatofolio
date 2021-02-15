@@ -1,36 +1,53 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on Potatofolio</title>
+    <title>Python on Potatofolio</title>
     <link>https://massasquash.github.io/potatofolio/categories/python/</link>
-    <description>Recent content in python on Potatofolio</description>
+    <description>Recent content in Python on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <lastBuildDate>Thu, 21 Jan 2021 09:26:50 +0900</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language><atom:link href="https://massasquash.github.io/potatofolio/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Effective Python]項目25:キーワード専用引数と位置専用引数で明確さを高める</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python03_25/</link>
-      <pubDate>Thu, 21 Jan 2021 09:26:50 +0900</pubDate>
+      <title>[Python]スレッド・プロセスの概念とマルチスレッド</title>
+      <link>https://massasquash.github.io/potatofolio/python/20210207_multithread01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python03_25/</guid>
+      <guid>https://massasquash.github.io/potatofolio/python/20210207_multithread01/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>[Effective Python]項目2:PEP8スタイルガイドに従う</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_2/</link>
-      <pubDate>Thu, 21 Jan 2021 09:26:50 +0900</pubDate>
+      <title>[Python]プロセス実行・プログラム起動</title>
+      <link>https://massasquash.github.io/potatofolio/python/20210207_multithread02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_2/</guid>
+      <guid>https://massasquash.github.io/potatofolio/python/20210207_multithread02/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>[Effective Python]項目1:使用するPythonのバージョンを知っておく</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python01_1/</link>
-      <pubDate>Wed, 20 Jan 2021 09:26:50 +0900</pubDate>
+      <title>[Python]時間の表現</title>
+      <link>https://massasquash.github.io/potatofolio/python/20210209_time01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python01_1/</guid>
+      <guid>https://massasquash.github.io/potatofolio/python/20210209_time01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Python]正規表現テキストパターンの検索と置換</title>
+      <link>https://massasquash.github.io/potatofolio/python/20210130_regex01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/20210130_regex01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Python]正規表現パターン表</title>
+      <link>https://massasquash.github.io/potatofolio/python/20210130_regex02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/python/20210130_regex02/</guid>
       <description></description>
     </item>
     
