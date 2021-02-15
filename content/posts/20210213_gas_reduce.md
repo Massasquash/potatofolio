@@ -10,7 +10,7 @@ categories:
 今回は、配列の`reduce()`メソッドの理解を深める記事です。  
 [先日の記事]((https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart))の自分のコードを題材に、文字列置換の操作を`reduce()`メソッドを使って書き換えてみました。
 
-先日のGAS中級講座受講後に先生に見てもらった時に、文字列型の`replace()`を使って文字列置換する時に`reduce()`を合わせて使えるよーというのを教えてもらってすごく面白かったです。  
+GAS中級講座受講後に先生に見てもらった時に、文字列型の`replace()`を使って文字列置換する時に`reduce()`を合わせて使えるよーというのを教えてもらってすごく面白かったです。  
 
 こちらが教えてもらった内容です。  
 [etau the non programmer coder  — GAS replace メソッドと reduce メソッド](https://etauthenonprogrammercoder.tumblr.com/post/637788437137719296/gas-replace-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A8-reduce-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89)
@@ -19,7 +19,7 @@ categories:
 
 
 ## 1.今回のスクリプト
-[先日の記事](https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart)のスクリプトから枝葉の部分は省略して、コアな部分だけ書いて独立した関数にしました。  
+[先日の記事](https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart)のスクリプトから枝葉の部分は省略して独立した関数にしました。  
 日付のフォーマットを表す文字列、例えば「Y/M/D h:m:s」みたいな文字列を、それぞれDate型の年月日などの値に置き換える、という処理です。
 
 ```javascript {linenos=table}
@@ -48,13 +48,15 @@ function sampleFunction() {
 
 この17, 18行目のところで`reduce()`メソッドを使っています。  
 第1引数に置換した文字列を返すコールバック関数、第2引数に初期値として`format`の文字列を渡しています。  
+
 普通なら文字列に`replace()`メソッドを適用させて順番に１つずつ置き換えていく必要があるところを、配列と組み合わせて短く書くことができました。
 
 まとめて置換するために`replaceLists`という配列を先に用意しておいて、そこに「置き換えたい文字列(正規表現)」と「置き換える値」を配列で入れています。  
-これによりどの文字を置き換えるのか対象がはっきりするし、今後また置換するものを増減させた場合にもこの配列だけをいじれば良いので、わかりやすくメンテナンス性が良さそうだなと思いました。
 
-この17, 18行目の置換の処理を１つ１つ書いてみます。  
-（[先日の記事](https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart)のスクリプトのようにreplaceメソッドを繋げて書くこともできます）
+これによりどの文字を置き換えるのか対象がはっきりするし、今後また置換するものを増減させた場合にもこの配列だけをいじれば良いので、わかりやすくメンテナンス性が良さそうに思います。
+
+この17, 18行目の置換の処理を１つ１つ書いてみたのがこちらのコードです。  
+（[先日の記事](https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart)のようにreplaceメソッドを繋げて書くこともできます）
 ```javascript
 const formatStr;
 formatStr = format.replace(/Y/, date.getFullYear())
@@ -65,7 +67,7 @@ formatStr = formatStr.replace(/m/, date.getMinutes())
 formatStr = formatStr.replace(/s/, date.getSeconds());
 ```
 
-このコードだと処理はわかりやすいですが、同じ変数とメソッドが重複してしまっています。  
+このコードだと処理手順が見えてわかりやすいですが、同じ変数とメソッドが重複してしまっています。  
 また、置き換えたい文字列が増えた場合にはコピペして1行を書き足さなければいけないので、あまりスマートじゃなないなあと思ってしまいます。
 
 
@@ -172,7 +174,7 @@ function sampleFunction() {
 
 最初の`acc`にその初期値が入った状態から処理がスタートする、と言う感じでしょうか。  
 
-この初期値として文字列フォーマットを入れておいてそれに配列と`reduce()`を使って`replace()`を適用していくことで、今回の冒頭のスクリプトのような次々に置換していく処理が実現できます。
+今回の冒頭のスクリプトのような次々に置換していく処理は、この初期値として文字列フォーマットを入れておいてそれに配列と`reduce()`を使って`replace()`を適用していくことで実現できています。
 
 ## おわりに
 `reduce()`の活用についてはこちらのブログも参考にさせていただきました。色々な活用例が載っていてわかりやすかったです。  

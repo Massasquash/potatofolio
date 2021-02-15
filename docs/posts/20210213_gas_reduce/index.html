@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-14T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2513">
+<meta itemprop="wordCount" content="2507">
 
 
 
@@ -132,12 +132,12 @@
 			<h2 id="はじめに">はじめに</h2>
 <p>今回は、配列の<code>reduce()</code>メソッドの理解を深める記事です。<br>
 <a href="(https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart)">先日の記事</a>の自分のコードを題材に、文字列置換の操作を<code>reduce()</code>メソッドを使って書き換えてみました。</p>
-<p>先日のGAS中級講座受講後に先生に見てもらった時に、文字列型の<code>replace()</code>を使って文字列置換する時に<code>reduce()</code>を合わせて使えるよーというのを教えてもらってすごく面白かったです。</p>
+<p>GAS中級講座受講後に先生に見てもらった時に、文字列型の<code>replace()</code>を使って文字列置換する時に<code>reduce()</code>を合わせて使えるよーというのを教えてもらってすごく面白かったです。</p>
 <p>こちらが教えてもらった内容です。<br>
 <a href="https://etauthenonprogrammercoder.tumblr.com/post/637788437137719296/gas-replace-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A8-reduce-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89">etau the non programmer coder  — GAS replace メソッドと reduce メソッド</a></p>
 <p>せっかくなのでその練習をしてみた、というのが今回の記事の内容です。</p>
 <h2 id="1今回のスクリプト">1.今回のスクリプト</h2>
-<p><a href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart">先日の記事</a>のスクリプトから枝葉の部分は省略して、コアな部分だけ書いて独立した関数にしました。<br>
+<p><a href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart">先日の記事</a>のスクリプトから枝葉の部分は省略して独立した関数にしました。<br>
 日付のフォーマットを表す文字列、例えば「Y/M/D h:m:s」みたいな文字列を、それぞれDate型の年月日などの値に置き換える、という処理です。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -187,12 +187,12 @@
 </div>
 </div><br>
 <p>この17, 18行目のところで<code>reduce()</code>メソッドを使っています。<br>
-第1引数に置換した文字列を返すコールバック関数、第2引数に初期値として<code>format</code>の文字列を渡しています。<br>
-普通なら文字列に<code>replace()</code>メソッドを適用させて順番に１つずつ置き換えていく必要があるところを、配列と組み合わせて短く書くことができました。</p>
-<p>まとめて置換するために<code>replaceLists</code>という配列を先に用意しておいて、そこに「置き換えたい文字列(正規表現)」と「置き換える値」を配列で入れています。<br>
-これによりどの文字を置き換えるのか対象がはっきりするし、今後また置換するものを増減させた場合にもこの配列だけをいじれば良いので、わかりやすくメンテナンス性が良さそうだなと思いました。</p>
-<p>この17, 18行目の置換の処理を１つ１つ書いてみます。<br>
-（<a href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart">先日の記事</a>のスクリプトのようにreplaceメソッドを繋げて書くこともできます）</p>
+第1引数に置換した文字列を返すコールバック関数、第2引数に初期値として<code>format</code>の文字列を渡しています。</p>
+<p>普通なら文字列に<code>replace()</code>メソッドを適用させて順番に１つずつ置き換えていく必要があるところを、配列と組み合わせて短く書くことができました。</p>
+<p>まとめて置換するために<code>replaceLists</code>という配列を先に用意しておいて、そこに「置き換えたい文字列(正規表現)」と「置き換える値」を配列で入れています。</p>
+<p>これによりどの文字を置き換えるのか対象がはっきりするし、今後また置換するものを増減させた場合にもこの配列だけをいじれば良いので、わかりやすくメンテナンス性が良さそうに思います。</p>
+<p>この17, 18行目の置換の処理を１つ１つ書いてみたのがこちらのコードです。<br>
+（<a href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart">先日の記事</a>のようにreplaceメソッドを繋げて書くこともできます）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatStr</span>;
 <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/Y/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>())
 <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/M/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
@@ -200,7 +200,7 @@
 <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/h/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>())
 <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/m/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>())
 <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/s/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>());
-</code></pre></div><p>このコードだと処理はわかりやすいですが、同じ変数とメソッドが重複してしまっています。<br>
+</code></pre></div><p>このコードだと処理手順が見えてわかりやすいですが、同じ変数とメソッドが重複してしまっています。<br>
 また、置き換えたい文字列が増えた場合にはコピペして1行を書き足さなければいけないので、あまりスマートじゃなないなあと思ってしまいます。</p>
 <h2 id="2reduceメソッド">2.reduce()メソッド</h2>
 <p>reduceは「減らす」という和訳の他に「変える」とか「まとめる」という意味もあるようなので、こちらの意味合いが近そうに思いました。</p>
@@ -279,7 +279,7 @@
 &gt; 115
 &gt; XYZabcde
 </code></pre><p>最初の<code>acc</code>にその初期値が入った状態から処理がスタートする、と言う感じでしょうか。</p>
-<p>この初期値として文字列フォーマットを入れておいてそれに配列と<code>reduce()</code>を使って<code>replace()</code>を適用していくことで、今回の冒頭のスクリプトのような次々に置換していく処理が実現できます。</p>
+<p>今回の冒頭のスクリプトのような次々に置換していく処理は、この初期値として文字列フォーマットを入れておいてそれに配列と<code>reduce()</code>を使って<code>replace()</code>を適用していくことで実現できています。</p>
 <h2 id="おわりに">おわりに</h2>
 <p><code>reduce()</code>の活用についてはこちらのブログも参考にさせていただきました。色々な活用例が載っていてわかりやすかったです。<br>
 <a href="https://kde.hateblo.jp/entry/2018/10/13/065738">【JavaScript基礎】Array.prototype.reduce() をしっかり理解する＆サンプル集 - KDE BLOG</a></p>
