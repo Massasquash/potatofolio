@@ -6,9 +6,6 @@ categories:
   - “Python”
 ---
 
-# はじめに
-この記事はO’Reillyの「退屈なことはPythonにやらせよう」の「15章 時間制御、自動実行、プログラム起動」で学習した内容を主にまとめています。
-
 ## 1.コア・スレッド・プロセスについての整理
 まず、コンピュータの一般的な用語についてわかりづらいので整理しました。  
 書籍の内容のほか、以下のページも参照にさせていただきました。  
@@ -113,7 +110,9 @@ thread_obj.start()
 - [【図解】CPUのコアとスレッドとプロセスの違い,コンテキストスイッチ,マルチスレッディングについて | SEの道標](https://milestone-of-se.nesuke.com/sv-basic/architecture/cpu/)
 - [並列処理の用語 - 猫型エンジニアのブログ](http://alexei-karamazov.hatenablog.com/entry/2014/04/20/105644)
 
-
+【参考書籍】
+- O’Reilly「退屈なことはPythonにやらせよう」 15章 時間制御、自動実行、プログラム起動
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=487311778X&linkId=691e891718cdd36feb75e664a0a2f53a&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 
 ---

@@ -6,15 +6,12 @@ categories:
   - “Python”
 ---
 
-# はじめに
-この記事はO’Reillyの「退屈なことはPythonにやらせよう」の「15章 時間制御、自動実行、プログラム起動」で学習した内容を主にまとめています。
-
 
 ## 1.コマンドを実行する
 - Pythonプログラムを実行する
 
 ## 2.プロセスを実行する
-書籍の他に下記を参考にさせていただきました。実際の使いやすさを想定して、書籍の流れと違う感じで整理している部分もあります。  
+下記を参考にさせていただきました。  
 [【Python】subprocess.Popen()関数で他のプログラムを起動する | OFFICE54](https://office54.net/python/python-subprocess-popen)  
 
 
@@ -91,7 +88,9 @@ while datetime.now() < target_date:
 - [webbrowser — 便利なウェブブラウザコントローラー — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/webbrowser.html)
 - [【Python】subprocess.Popen()関数で他のプログラムを起動する | OFFICE54](https://office54.net/python/python-subprocess-popen)
 
-
+【参考書籍】
+- O’Reilly「退屈なことはPythonにやらせよう」 15章 時間制御、自動実行、プログラム起動
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=487311778X&linkId=691e891718cdd36feb75e664a0a2f53a&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 
 ---
