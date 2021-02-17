@@ -16,7 +16,7 @@
 		<meta itemprop="name" content="[Effective Python]06 タプルとアンパック構文">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="1275">
+<meta itemprop="wordCount" content="1329">
 
 
 
@@ -133,12 +133,11 @@
 <p>この記事は「Effective Python 第二版」の学習の備忘録です。<br>
 今回は<strong>１章 Pythonic思考</strong>の項目6について学びました。</p>
 <h2 id="項目6-インデックスではなく複数代入アンパックを使う">項目6 インデックスではなく複数代入アンパックを使う</h2>
-<p>Pythonの組み込み型のタプルは、値の変更不可能なシーケンスを作る型です。このタプルを使った<strong>アンパック構文</strong>という便利な書き方があり、１つの代入式で複数の値に代入することができます。<br>
+<p>Pythonの組み込み型のタプルは、値の変更不可能なシーケンスを作る型です。このタプルを使った<strong>アンパック代入</strong>という便利な書き方があり、１つの代入式で複数の値に代入することができます。<br>
 この構文を使うと見た目がすっきりとして行数も少なくなり、Pythonicなコードになります。</p>
 <p>この構文の便利な例として、例えば値の交換（スワップ）に不要な一時変数を定義する必要がなくシンプルに書くことができる、というのがあります。<br>
 また組み込み関数<code>enumerate()</code>関数を活用する際にも便利な構文です（項目7で詳しく見ていきます）。</p>
 <h2 id="解説">解説</h2>
-<p>Pythonの「タプル」という組み込み型と、そのタプルのアンパック構文についての解説です。</p>
 <h3 id="１リストとタプル">（１）リストとタプル</h3>
 <p>どちらも、</p>
 <ul>
@@ -159,13 +158,29 @@
 <p>タプルはイミュータブルなシーケンスで、一般的に異種のデータの集まり (組み込みの enumerate() で作られた 2-タプルなど) を格納するために使われます。タプルはまた、同種のデータのイミュータブルなシーケンスが必要な場合 (set インスタンスや dict インスタンスに保存できるようにするためなど) にも使われます。</p>
 </blockquote>
 <h3 id="２アンパック構文">（２）アンパック構文</h3>
-<p>アンパック構文は、**「１つの代入式で複数の値に代入できる」**と言う構文です。
-インデックスでタプルにアクセスする場合よりも行数が少なくシンプルに書くことができます。<br>
-例えば、Pythonではこのアンパック構文を使って値のスワップ（交換）が簡単にできる、と言うのが有名なようです。</p>
-<p>次回以降の項目で出てくる<code>enumerate()</code>関数, <code>zip()</code>関数でもこのアンパック構文を使うことでシンプルに書けるのが特徴です。</p>
+<p>アンパック構文は、**「１つの代入式で複数の値に代入できる」**と言う構文です。<br>
+リストもタプルも、このアンパック代入を使うことができます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># リストのアンパック代入</span>
+lst <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+a, b, c <span style="color:#f92672">=</span> lst
+<span style="color:#66d9ef">print</span>(a, b, c)
+
+<span style="color:#75715e"># タプルのアンパック代入</span>
+tup <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
+x, y, z <span style="color:#f92672">=</span> tup
+<span style="color:#66d9ef">print</span>(x, y, z)
+
+width, height <span style="color:#f92672">=</span> <span style="color:#ae81ff">210</span>, <span style="color:#ae81ff">297</span>
+</code></pre></div><p>インデックスでリストやタプルにアクセスする場合よりも行数が少なくシンプルに書くことができます。<br>
+例えば、Pythonではこのアンパック代入を使って値のスワップ（交換）が簡単にできる、と言うのが有名なようです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+
+a, b <span style="color:#f92672">=</span> b, a
+
+</code></pre></div><p>次回以降の項目で出てくる<code>enumerate()</code>関数, <code>zip()</code>関数でもこのアンパック構文を使うことでシンプルに書けるのが特徴です。</p>
 <h2 id="感想">感想</h2>
-<p>タプルを使ったアンパック構文は僕もすごく好きです。おそらく初心者が一番最初に触れる「Pythonic」な書き方なのかな？と思います。<br>
-積極的に使っていきたい構文です。</p>
+<p>タプルを使ったアンパック構文は僕もすごく好きです。おそらく初心者が一番最初に触れる「Pythonic」な書き方なのかな？と思います。積極的に使っていきたい構文です。</p>
 <hr>
 <h2 id="memo">MEMO</h2>
 <p>【参考記事】</p>
@@ -218,11 +233,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210214_gas_utilities_formatdate/">[GAS]日付をフォーマット指定で文字列変換するのに便利なクラス</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210213_gas_reduce/">[GAS]reduce()メソッドを活用して文字列をまとめて置換する</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/">[GAS]日付型を簡単なフォーマットで文字列変換する関数</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210209_gas_spreadsheet_custommenu/">[GAS]SpreadSheetにカスタムメニューを追加して簡単なUIを作る</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210115_hugo_blog05/">[Hugoブログ05]テーマのカスタマイズその２</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210111_hugo_blog04/">[Hugoブログ04]テーマのカスタマイズその１</a></li>
 		</ul>
 	</div>
 </div>
