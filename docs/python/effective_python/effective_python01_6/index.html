@@ -16,7 +16,7 @@
 		<meta itemprop="name" content="[Effective Python]06 タプルとアンパック構文">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="1269">
+<meta itemprop="wordCount" content="1275">
 
 
 
@@ -148,12 +148,13 @@
 <p>という<strong>シーケンス</strong>型なのですが、大きな違いはリストが要素の追加・削除が後からできる（<strong>ミュータブル</strong>）のに対して、タプルはそれができず定義した時点から不変（<strong>イミュータブル</strong>）ということです。<br>
 タプルを使うと最初に定義した値を変更することができないため、変更されたくない値を扱う際により安全に変数を扱うことができます。</p>
 <p>参考までに、公式ドキュメントの表現を以下に引用させていただきます。</p>
-<p><strong>リスト型 (list)</strong>
+<p><strong>リスト型 (list)</strong><br>
 <a href="https://docs.python.org/ja/3/library/stdtypes.html#list">組み込み型 — Python 3.9.1 ドキュメント</a></p>
 <blockquote>
 <p>リストはミュータブルなシーケンスで、一般的に同種の項目の集まりを格納するために使われます (厳密な類似の度合いはアプリケーションによって異なる場合があります)。</p>
 </blockquote>
-<p><a href="https://docs.python.org/ja/3/library/stdtypes.html#tuples">組み込み型 — Python 3.9.1 ドキュメント</a></p>
+<p><strong>タプル型 (tuple)</strong><br>
+<a href="https://docs.python.org/ja/3/library/stdtypes.html#tuples">組み込み型 — Python 3.9.1 ドキュメント</a></p>
 <blockquote>
 <p>タプルはイミュータブルなシーケンスで、一般的に異種のデータの集まり (組み込みの enumerate() で作られた 2-タプルなど) を格納するために使われます。タプルはまた、同種のデータのイミュータブルなシーケンスが必要な場合 (set インスタンスや dict インスタンスに保存できるようにするためなど) にも使われます。</p>
 </blockquote>
@@ -163,7 +164,7 @@
 例えば、Pythonではこのアンパック構文を使って値のスワップ（交換）が簡単にできる、と言うのが有名なようです。</p>
 <p>次回以降の項目で出てくる<code>enumerate()</code>関数, <code>zip()</code>関数でもこのアンパック構文を使うことでシンプルに書けるのが特徴です。</p>
 <h2 id="感想">感想</h2>
-<p>タプルを使ったアンパック構文は僕もすごく好きで、おそらく初心者が一番最初に触れる「Pythonic」な書き方なのかな？と思います。<br>
+<p>タプルを使ったアンパック構文は僕もすごく好きです。おそらく初心者が一番最初に触れる「Pythonic」な書き方なのかな？と思います。<br>
 積極的に使っていきたい構文です。</p>
 <hr>
 <h2 id="memo">MEMO</h2>

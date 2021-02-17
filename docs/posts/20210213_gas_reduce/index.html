@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-14T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2507">
+<meta itemprop="wordCount" content="2428">
 
 
 
@@ -135,11 +135,9 @@
 <div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
 <p>今回は、配列の<code>reduce()</code>メソッドの理解を深める記事です。<br>
-<a href="(https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart)">先日の記事</a>の自分のコードを題材に、文字列置換の操作を<code>reduce()</code>メソッドを使って書き換えてみました。</p>
-<p>GAS中級講座受講後に先生に見てもらった時に、文字列型の<code>replace()</code>を使って文字列置換する時に<code>reduce()</code>を合わせて使えるよーというのを教えてもらってすごく面白かったです。</p>
+<a href="(https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart)">先日の記事</a>をGAS中級講座受講後に先生に見てもらった時に、文字列型の<code>replace()</code>を使って文字列置換する時に<code>reduce()</code>を合わせて使えるよーというのを教えてもらってすごく面白かったです。</p>
 <p>こちらが教えてもらった内容です。<br>
 <a href="https://etauthenonprogrammercoder.tumblr.com/post/637788437137719296/gas-replace-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A8-reduce-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89">etau the non programmer coder  — GAS replace メソッドと reduce メソッド</a></p>
-<p>せっかくなのでその練習をしてみた、というのが今回の記事の内容です。</p>
 <h2 id="1今回のスクリプト">1.今回のスクリプト</h2>
 <p><a href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart">先日の記事</a>のスクリプトから枝葉の部分は省略して独立した関数にしました。<br>
 日付のフォーマットを表す文字列、例えば「Y/M/D h:m:s」みたいな文字列を、それぞれDate型の年月日などの値に置き換える、という処理です。</p>
