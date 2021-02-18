@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-17T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-17T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2679">
+<meta itemprop="wordCount" content="2665">
 
 
 
@@ -248,7 +248,7 @@
 </blockquote>
 <p>文字のエンコード・デコード、データフォーマット、JSONの操作、その他様々なタスクのためのユーティリティ（実用ツール）を提供するサービス、とあります。<br>
 なんだか色々な雑務をこなしてくれそうな感じです。</p>
-<p>今回はこのサービスが提供してくれる<code>Utilities</code>クラスの<code>formatDate()</code>というメソッドを使って、日付を文字列に変換しています。</p>
+<p>今回はこのサービスが提供してくれる<code>Utilities</code>クラスの<code>formatDate()</code>というメソッドを使います。</p>
 <p><code>Utilities.formatDate()</code>の引数にDate型、タイムゾーン、フォーマットしたい文字列を入れて呼び出すことで、フォーマットに従った文字列が返ってきます。<br>
 以下のコードでは、Date型を<code>toString()</code>で文字列に変換するのと、このフォーマット変換を使うのとで比較してみました。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sumpleFunction</span>() {
@@ -261,7 +261,7 @@
 </code></pre></div><pre><code>&lt;実行ログ&gt;
 Wed Feb 17 2021 23:14:29 GMT+0900 (Japan Standard Time)  
 21/02/17
-</code></pre><p>このように、自分の好きなフォーマットに指定して変換してくれるとても便利な機能です。</p>
+</code></pre><p>このように、自分の好きなように日付型を文字列に変換してくれるとても便利な機能です。</p>
 <h2 id="3クラスの静的メソッドstaticメソッド">3.クラスの静的メソッド（staticメソッド）</h2>
 <p>先ほどの<code>Utilities</code>を使った1文ですが、1つのスクリプトのなかで1回や2回ぐらいならこの書き方で問題ありません。<br>
 ただもし何度も使っているなーと思ったら、それを関数なりクラスなりでパーツ化しておくと、コードが短くなり便利に使えるようになります。</p>
