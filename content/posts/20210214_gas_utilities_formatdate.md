@@ -106,11 +106,12 @@ function sampleFunction() {
 ドキュメントを見てみると、
 > This service provides utilities for string encoding/decoding, date formatting, JSON manipulation, and other miscellaneous tasks.  
 
-文字のエンコード・デコード、データフォーマット、JSONの操作、その他様々なタスクのためのユーティリティ（実用ツール）を提供するサービス、とあります。
+文字のエンコード・デコード、データフォーマット、JSONの操作、その他様々なタスクのためのユーティリティ（実用ツール）を提供するサービス、とあります。  
+なんだか色々な雑務をこなしてくれそうな感じです。  
 
-今回はこのサービスが提供してくれる`Utilities`クラスの`formatDate()`というメソッドを使っています。  
+今回はこのサービスが提供してくれる`Utilities`クラスの`formatDate()`というメソッドを使って、日付を文字列に変換しています。  
 
-`Utilities.formatDate()`の引数にDate型、タイムゾーン、フォーマットしたい文字列を入れて呼び出すことで、文字列が返ってきます。  
+`Utilities.formatDate()`の引数にDate型、タイムゾーン、フォーマットしたい文字列を入れて呼び出すことで、フォーマットに従った文字列が返ってきます。  
 以下のコードでは、Date型を`toString()`で文字列に変換するのと、このフォーマット変換を使うのとで比較してみました。
 
 ```javascript

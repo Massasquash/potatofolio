@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-17T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-17T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2634">
+<meta itemprop="wordCount" content="2680">
 
 
 
@@ -246,9 +246,10 @@
 <blockquote>
 <p>This service provides utilities for string encoding/decoding, date formatting, JSON manipulation, and other miscellaneous tasks.</p>
 </blockquote>
-<p>文字のエンコード・デコード、データフォーマット、JSONの操作、その他様々なタスクのためのユーティリティ（実用ツール）を提供するサービス、とあります。</p>
-<p>今回はこのサービスが提供してくれる<code>Utilities</code>クラスの<code>formatDate()</code>というメソッドを使っています。</p>
-<p><code>Utilities.formatDate()</code>の引数にDate型、タイムゾーン、フォーマットしたい文字列を入れて呼び出すことで、文字列が返ってきます。<br>
+<p>文字のエンコード・デコード、データフォーマット、JSONの操作、その他様々なタスクのためのユーティリティ（実用ツール）を提供するサービス、とあります。<br>
+なんだか色々な雑務をこなしてくれそうな感じです。</p>
+<p>今回はこのサービスが提供してくれる<code>Utilities</code>クラスの<code>formatDate()</code>というメソッドを使って、日付を文字列に変換しています。</p>
+<p><code>Utilities.formatDate()</code>の引数にDate型、タイムゾーン、フォーマットしたい文字列を入れて呼び出すことで、フォーマットに従った文字列が返ってきます。<br>
 以下のコードでは、Date型を<code>toString()</code>で文字列に変換するのと、このフォーマット変換を使うのとで比較してみました。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sumpleFunction</span>() {
 
