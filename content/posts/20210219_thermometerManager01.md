@@ -4,7 +4,6 @@ date: 2021-02-19
 lead: ""
 categories:
   - "Works"
-draft: true
 ---
 
 ## はじめに

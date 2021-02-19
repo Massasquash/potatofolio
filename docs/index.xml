@@ -6,7 +6,16 @@
     <description>Recent content on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[温度管理ツール01][GAS]T&amp;D温度計デバイスから現在気温を取得する</title>
+      <link>https://massasquash.github.io/potatofolio/posts/20210219_thermometermanager01/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/20210219_thermometermanager01/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[GAS]日付をフォーマット指定で文字列変換するのに便利なクラス</title>
       <link>https://massasquash.github.io/potatofolio/posts/20210214_gas_utilities_formatdate/</link>
