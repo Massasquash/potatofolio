@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2047">
+<meta itemprop="wordCount" content="2021">
 
 
 
@@ -203,10 +203,14 @@
   }
 </code></pre></div><p>うまくこのスクリプトが実行できれば、得られるResponseオブジェクトの文字列<code>response.getContentText()</code>は以下のような文字列になっているはずです。</p>
 <pre><code>&lt;実行ログ&gt;
-{&quot;devices&quot;:[{&quot;num&quot;:&quot;1&quot;,&quot;serial&quot;:&quot;xxxxxxx&quot;,&quot;model&quot;:&quot;TR-71wf&quot;,&quot;name&quot;:&quot;TR-71wf&quot;,&quot;battery&quot;:&quot;5&quot;,&quot;rssi&quot;:&quot;&quot;,&quot;time_diff&quot;:&quot;540&quot;,&quot;std_bias&quot;:&quot;0&quot;,&quot;dst_bias&quot;:&quot;60&quot;,&quot;unixtime&quot;:&quot;1613745724&quot;,&quot;channel&quot;:[{&quot;num&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Ch.1&quot;,&quot;value&quot;:&quot;-6.1&quot;,&quot;unit&quot;:&quot;C&quot;},{&quot;num&quot;:&quot;2&quot;,&quot;name&quot;:&quot;Ch.2&quot;,&quot;value&quot;:&quot;Sensor Error&quot;,&quot;unit&quot;:&quot;C&quot;}],&quot;baseunit&quot;:{&quot;serial&quot;:&quot;52126FF8&quot;,&quot;model&quot;:&quot;TR-71wf&quot;,&quot;name&quot;:&quot;TR-71wf&quot;},&quot;group&quot;:{&quot;num&quot;:&quot;0&quot;,&quot;name&quot;:&quot;GROUP1&quot;}}]}
+{&quot;devices&quot;:[{&quot;num&quot;:&quot;1&quot;,&quot;serial&quot;:&quot;xxxxxxx&quot;,&quot;model&quot;:&quot;TR-71wf&quot;,&quot;name&quot;:&quot;TR-71wf&quot;,
+&quot;battery&quot;:&quot;5&quot;,&quot;rssi&quot;:&quot;&quot;,&quot;time_diff&quot;:&quot;540&quot;,&quot;std_bias&quot;:&quot;0&quot;,&quot;dst_bias&quot;:&quot;60&quot;,
+&quot;unixtime&quot;:&quot;1613745724&quot;,&quot;channel&quot;:[{&quot;num&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Ch.1&quot;,&quot;value&quot;:&quot;-6.1&quot;,&quot;unit&quot;:&quot;C&quot;},
+{&quot;num&quot;:&quot;2&quot;,&quot;name&quot;:&quot;Ch.2&quot;,&quot;value&quot;:&quot;Sensor Error&quot;,&quot;unit&quot;:&quot;C&quot;}],&quot;baseunit&quot;:
+{&quot;serial&quot;:&quot;52126FF8&quot;,&quot;model&quot;:&quot;TR-71wf&quot;,&quot;name&quot;:&quot;TR-71wf&quot;},&quot;group&quot;:{&quot;num&quot;:&quot;0&quot;,
+&quot;name&quot;:&quot;GROUP1&quot;}}]}
 </code></pre><h2 id="4ハマった点">4.ハマった点</h2>
-<p>APIを叩くには、デバイス側が提供してくれているAPIのURLにリクエストを送る必要があります。</p>
-<p>リクエストを送るために必要な情報は、<code>uri</code>（リクエストURI）, <code>header</code>（リクエストヘッダ）, <code>body</code>（リクエストパラメータ・リクエストボディ）です。</p>
+<p>APIにリクエストを送るために必要な情報は、スクリプトで定義した<code>uri</code>（リクエストURI）, <code>header</code>（リクエストヘッダ）, <code>body</code>（リクエストパラメータ・リクエストボディ）の3つです。</p>
 <p>それぞれ<a href="https://ondotori.webstorage.jp/docs/api/reference/devices_device.html">ドキュメント</a>に従いながら、<code>header</code>と<code>body</code>はjavascriptのオブジェクト形式で定義していきました。</p>
 <p>ちょっと詰まってしまったのが、<code>header</code>（リクエストヘッダ）のところです。<br>
 ドキュメントだと<code>Host: api.webstorage.jp:443</code>が記載されていますが、実際にはこの<code>Host</code>のところでエラーが発生してしまったことでした。</p>

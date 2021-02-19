@@ -94,14 +94,17 @@ function myFunction() {
 
 ```
 <実行ログ>
-{"devices":[{"num":"1","serial":"xxxxxxx","model":"TR-71wf","name":"TR-71wf","battery":"5","rssi":"","time_diff":"540","std_bias":"0","dst_bias":"60","unixtime":"1613745724","channel":[{"num":"1","name":"Ch.1","value":"-6.1","unit":"C"},{"num":"2","name":"Ch.2","value":"Sensor Error","unit":"C"}],"baseunit":{"serial":"52126FF8","model":"TR-71wf","name":"TR-71wf"},"group":{"num":"0","name":"GROUP1"}}]}
+{"devices":[{"num":"1","serial":"xxxxxxx","model":"TR-71wf","name":"TR-71wf",
+"battery":"5","rssi":"","time_diff":"540","std_bias":"0","dst_bias":"60",
+"unixtime":"1613745724","channel":[{"num":"1","name":"Ch.1","value":"-6.1","unit":"C"},
+{"num":"2","name":"Ch.2","value":"Sensor Error","unit":"C"}],"baseunit":
+{"serial":"52126FF8","model":"TR-71wf","name":"TR-71wf"},"group":{"num":"0",
+"name":"GROUP1"}}]}
 ```
 
 
 ## 4.ハマった点
-APIを叩くには、デバイス側が提供してくれているAPIのURLにリクエストを送る必要があります。
-
-リクエストを送るために必要な情報は、`uri`（リクエストURI）, `header`（リクエストヘッダ）, `body`（リクエストパラメータ・リクエストボディ）です。
+APIにリクエストを送るために必要な情報は、スクリプトで定義した`uri`（リクエストURI）, `header`（リクエストヘッダ）, `body`（リクエストパラメータ・リクエストボディ）の3つです。
 
 それぞれ[ドキュメント](https://ondotori.webstorage.jp/docs/api/reference/devices_device.html)に従いながら、`header`と`body`はjavascriptのオブジェクト形式で定義していきました。  
 
