@@ -134,6 +134,8 @@
 <p>今回は、APIを叩いて現在気温を取得するのをやってみたいと思います。</p>
 <h2 id="1作りたいツール">1.作りたいツール</h2>
 <p>当農場でたまたま使っていたT&amp;D Thermoの「おんどとり」という温度計（データロガー）がAPIを提供していたので、これを使って温度データを扱ってみることにしました。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B07NHYL461&linkId=7122ef05ade3a94e8f1379ede13586f6&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
+</iframe>
 <p>この温度計はクラウド対応なので、取得した温度データはWebやスマホでも専用のアプリで見られます。<br>
 ですが今回プログラムで実現したいのは、指定した日からの積算温度を取り出したり、一定温度になったらアラートを飛ばしてくれるような仕組みを作れないかなと思い、試作してみることにしました。<br>
 取得した温度やアラートはLINEに通知が来るようにします。</p>
@@ -141,7 +143,7 @@
 <p>これまで温度の上げ下げのタイミングを温度計はつけているもののだいぶ感覚頼りにやっていたので、数値で判断できるようになると良いなと思っています。</p>
 <h2 id="2使用するデバイス">2.使用するデバイス</h2>
 <ul>
-<li><a href="https://www.monotaro.com/g/04324284/?t.q=%96%B3%90%FC%81%40%82%A8%82%F1%82%C7%82%C6%82%E8%20TR-7">T&amp;D 温度測定データロガー「おんどとり」 TR-71wb</a></li>
+<li>T&amp;D 温度測定データロガー「おんどとり」 TR-71wb</li>
 </ul>
 <p>このデバイスのデータはクラウドに蓄積されるため、Webやスマホアプリでの確認も可能です。<br>
 （機種にもよるので注意が必要です）</p>
