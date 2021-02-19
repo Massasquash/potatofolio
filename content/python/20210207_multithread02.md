@@ -11,10 +11,6 @@ categories:
 - Pythonプログラムを実行する
 
 ## 2.プロセスを実行する
-下記を参考にさせていただきました。  
-[【Python】subprocess.Popen()関数で他のプログラムを起動する | OFFICE54](https://office54.net/python/python-subprocess-popen)  
-
-
 - `subprocess`モジュール：Pythonからコマンドを実行するための標準モジュール
 - 例えば毎日起動する定番のアプリをプログラムを実行することで一発で開いたりできるようになる
 
@@ -32,7 +28,6 @@ proc = subprocess.Popen(['start', <ファイルのパス>], shell=True)  # Windo
 proc = subprocess.Popen(['open', <ファイルのパス>])  # Mac
 ```
 
-
 | OS | ファイルを開くためのコマンド | ファイルパスの調べ方 |  
 | :--- | :--- | :--- |  
 | Windows | start | エクスプローラで目的のファイルの上で Shift キー押しながら右クリック<br> -> 「パスのコピー」|  
@@ -45,8 +40,7 @@ proc = subprocess.Popen(['open', <ファイルのパス>])  # Mac
 
 
 **Webサイトを開く**
-  - 単純にWebブラウザを開くだけなら標準モジュールの`webbrowser.open()`が便利
-  - [webbrowser — 便利なウェブブラウザコントローラー — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/webbrowser.html)
+  - 規定のWebブラウザを開くだけなら標準モジュールの`webbrowser.open()`が便利
 
 ```python
 import webbrowser
@@ -87,6 +81,7 @@ while datetime.now() < target_date:
 - [subprocess — サブプロセス管理 — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/subprocess.html#popen-constructor)
 - [webbrowser — 便利なウェブブラウザコントローラー — Python 3.9.1 ドキュメント](https://docs.python.org/ja/3/library/webbrowser.html)
 - [【Python】subprocess.Popen()関数で他のプログラムを起動する | OFFICE54](https://office54.net/python/python-subprocess-popen)
+- [Pythonで特定のファイルをアプリケーションで開く方法とフォルダを開く方法](https://tonari-it.com/python-popen-start-folder/)
 
 【参考書籍】
 - O’Reilly「退屈なことはPythonにやらせよう」 15章 時間制御、自動実行、プログラム起動

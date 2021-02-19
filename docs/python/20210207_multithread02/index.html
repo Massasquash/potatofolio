@@ -16,7 +16,7 @@
 		<meta itemprop="name" content="[Python]プロセス実行・プログラム起動">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="1315">
+<meta itemprop="wordCount" content="1265">
 
 
 
@@ -129,8 +129,6 @@
 <li>Pythonプログラムを実行する</li>
 </ul>
 <h2 id="2プロセスを実行する">2.プロセスを実行する</h2>
-<p>下記を参考にさせていただきました。<br>
-<a href="https://office54.net/python/python-subprocess-popen">【Python】subprocess.Popen()関数で他のプログラムを起動する | OFFICE54</a></p>
 <ul>
 <li><code>subprocess</code>モジュール：Pythonからコマンドを実行するための標準モジュール</li>
 <li>例えば毎日起動する定番のアプリをプログラムを実行することで一発で開いたりできるようになる</li>
@@ -178,8 +176,7 @@ proc <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">
 </ul>
 <p><strong>Webサイトを開く</strong></p>
 <ul>
-<li>単純にWebブラウザを開くだけなら標準モジュールの<code>webbrowser.open()</code>が便利</li>
-<li><a href="https://docs.python.org/ja/3/library/webbrowser.html">webbrowser — 便利なウェブブラウザコントローラー — Python 3.9.1 ドキュメント</a></li>
+<li>規定のWebブラウザを開くだけなら標準モジュールの<code>webbrowser.open()</code>が便利</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> webbrowser
 webbrowser<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#39;https://massasquash.github.io/potatofolio/python/automate_boring_stuff15_1/&#39;</span>)
@@ -241,6 +238,7 @@ targate_date <span style="color:#f92672">=</span> datetime(<span style="color:#a
 <li><a href="https://docs.python.org/ja/3/library/subprocess.html#popen-constructor">subprocess — サブプロセス管理 — Python 3.9.1 ドキュメント</a></li>
 <li><a href="https://docs.python.org/ja/3/library/webbrowser.html">webbrowser — 便利なウェブブラウザコントローラー — Python 3.9.1 ドキュメント</a></li>
 <li><a href="https://office54.net/python/python-subprocess-popen">【Python】subprocess.Popen()関数で他のプログラムを起動する | OFFICE54</a></li>
+<li><a href="https://tonari-it.com/python-popen-start-folder/">Pythonで特定のファイルをアプリケーションで開く方法とフォルダを開く方法</a></li>
 </ul>
 <p>【参考書籍】</p>
 <ul>
