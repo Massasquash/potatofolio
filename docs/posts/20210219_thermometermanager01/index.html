@@ -4,28 +4,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[温度管理ツール01][GAS]T&amp;D温度計デバイスから現在気温を取得する - Potatofolio</title>
+	<title>[温度管理ツール01][GAS]T&amp;D温度計デバイスを使って現在気温を取得する - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[温度管理ツール01][GAS]T&amp;D温度計デバイスから現在気温を取得する" />
+		<meta property="og:title" content="[温度管理ツール01][GAS]T&amp;D温度計デバイスを使って現在気温を取得する" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/20210219_thermometermanager01/" />
 <meta property="article:published_time" content="2021-02-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-19T00:00:00+00:00" />
 
-		<meta itemprop="name" content="[温度管理ツール01][GAS]T&amp;D温度計デバイスから現在気温を取得する">
+		<meta itemprop="name" content="[温度管理ツール01][GAS]T&amp;D温度計デバイスを使って現在気温を取得する">
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2021">
+<meta itemprop="wordCount" content="2057">
 
 
 
 <meta itemprop="keywords" content="" />
 
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[温度管理ツール01][GAS]T&amp;D温度計デバイスから現在気温を取得する"/>
+<meta name="twitter:title" content="[温度管理ツール01][GAS]T&amp;D温度計デバイスを使って現在気温を取得する"/>
 <meta name="twitter:description" content=""/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,7 +106,8 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[温度管理ツール01][GAS]T&amp;D温度計デバイスから現在気温を取得する</h1>
+			<h1 class="post__title">[温度管理ツール01][GAS]T&amp;D温度計デバイスを使って現在気温を取得する</h1>
+			<p class="post__lead">おんどとりWeb APIを叩いてみる</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-19T00:00:00Z">February 19, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/works/" rel="category">Works</a>
@@ -213,15 +214,15 @@
 <p>APIにリクエストを送るために必要な情報は、スクリプトで定義した<code>uri</code>（リクエストURI）, <code>header</code>（リクエストヘッダ）, <code>body</code>（リクエストパラメータ・リクエストボディ）の3つです。</p>
 <p>それぞれ<a href="https://ondotori.webstorage.jp/docs/api/reference/devices_device.html">ドキュメント</a>に従いながら、<code>header</code>と<code>body</code>はjavascriptのオブジェクト形式で定義していきました。</p>
 <p>ちょっと詰まってしまったのが、<code>header</code>（リクエストヘッダ）のところです。<br>
-ドキュメントだと<code>Host: api.webstorage.jp:443</code>が記載されていますが、実際にはこの<code>Host</code>のところでエラーが発生してしまったことでした。</p>
+ドキュメントだと<code>Host: api.webstorage.jp:443</code>が記載されていますが、実際にはこの<code>Host</code>を記述しているとエラーが発生してしまったことでした。</p>
 <pre><code>&lt;エラーログ&gt;
 Attribute provided with invalid value: Header:Host
-</code></pre><p>GASではなくPythonの<code>requests</code>モジュールを使って同じ操作を検証してみたところ、そちらは正常にデータを取得することができました。<br>
-なのでおそらくGAS側のUrlFetchAppで何か制約があるのではないか、というところ（本当のところはちょっとわかっておりません）。
-結果的に、今回記載したスクリプトのように、リクエストヘッダから<code>Host</code>を丸々無くして動作させることができました。</p>
-<p>またこれはJavascriptの書き方の話ですが、オブジェクトリテラルを書く際に、今回の例のようにプロパティ名にハイフンが入る場合は、<code>''</code>か<code>&quot;&quot;</code>で囲ってやる必要があるので注意が必要です。</p>
+</code></pre><p>GASではなくPythonの<code>requests</code>モジュールを使って同じAPIを叩く操作を検証してみたところ、そちらは正常にデータを取得することができました。<br>
+詳しい方に聞いてみたところ、おそらくGAS側のUrlFetchAppで何か制約があるのではないか、との意見をいただきました（本当のところはちょっとわかっておりません）。
+結果的に、今回記載したスクリプトのように、リクエストヘッダから<code>Host</code>の記述を省くことで動作させることができました。</p>
+<p>またこれはJavascriptの文法の話ですが、オブジェクトリテラルを書く際に、今回の例のようにプロパティ名にハイフンが入る場合は、<code>''</code>か<code>&quot;&quot;</code>で囲ってやる必要があるので注意が必要です。</p>
 <h2 id="おわりに">おわりに</h2>
-<p>今回は、現在地を取得してみることを行いました。</p>
+<p>今回は、温度計デバイスから現在値を取得してみることを行いました。</p>
 <p>引き続き、この温度管理ツール制作の過程を紹介していきたいと思います。</p>
 
 		</div>
@@ -253,7 +254,7 @@ Attribute provided with invalid value: Header:Host
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210219_thermometermanager01/">[温度管理ツール01][GAS]T&amp;D温度計デバイスから現在気温を取得する</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210219_thermometermanager01/">[温度管理ツール01][GAS]T&amp;D温度計デバイスを使って現在気温を取得する</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210214_gas_utilities_formatdate/">[GAS]日付をフォーマット指定で文字列変換するのに便利なクラス</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210213_gas_reduce/">[GAS]reduce()メソッドを活用して文字列をまとめて置換する</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/">[GAS]日付型を簡単なフォーマットで文字列変換する関数</a></li>
