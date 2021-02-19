@@ -17,7 +17,8 @@ T&Dの「おんどとり」という温度計デバイスから定期的にデ�
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B07NHYL461&linkId=7122ef05ade3a94e8f1379ede13586f6&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
 </iframe>
 
-この温度計はクラウド対応なので、取得した温度データはWebやスマホでも専用のアプリで見られます。  
+この温度計はクラウド対応なので、取得した温度データはWeb上などでも見られます。  
+
 ですが今回プログラムで実現したいのは、指定した日からの積算温度を取り出したり、一定温度になったらアラートを飛ばしてくれるような仕組みを作れないかなと思い、試作してみることにしました。  
 取得した温度やアラートはLINEに通知が来るようにします。  
 
