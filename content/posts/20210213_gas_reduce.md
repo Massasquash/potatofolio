@@ -114,7 +114,7 @@ function sampleFunction() {
   // 例2
   const chars = ['a', 'b', 'c', 'd', 'e'];
   const reducer = (acc, cur) => acc + cur;
-  console.log(chars.reduce(reducer, 'XYZ');
+  console.log(chars.reduce(reducer));
 
 }
 ```
@@ -128,7 +128,7 @@ function sampleFunction() {
 配列の要素を頭から順番に足し合わせていった結果がログ出力されています。  
 
 例2で使っている`reducer`はいわゆるコールバック関数。  
-コールバック関数は、**配列内のそれぞれの要素について呼び出す関数** のことで、今回の`reduce()`の他`map()`, `filter()`などの反復メソッドを使う時にも登場します。
+コールバック関数は **配列内のそれぞれの要素について呼び出す関数** のことで、他にも配列でよく活用する`map()`, `filter()`などの反復メソッドを使う時にも登場します。
 
 
 この`reducer`の仮引数で出てくる登場人物2つだけを基本として抑えておくようにします。
