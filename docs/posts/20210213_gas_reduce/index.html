@@ -18,7 +18,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-02-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-14T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2431">
+<meta itemprop="wordCount" content="2518">
 
 
 
@@ -235,7 +235,7 @@
 
   <span style="color:#75715e">// 例1
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>))
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>));
 
   <span style="color:#75715e">// 例2
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chars</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>];
@@ -248,6 +248,7 @@
 &gt; abcde
 </code></pre><p>配列の要素を頭から順番に足し合わせていった結果がログ出力されています。</p>
 <p>例2で使っている<code>reducer</code>はいわゆるコールバック関数。<br>
+例1はそのコールバック関数の中味を<code>reduce()</code>メソッドの引数に直接書いた形なので、どちらの書き方でも動作します。読みやすさと一貫性を意識してかくと良いのかな、と思います。
 コールバック関数は <strong>配列内のそれぞれの要素について呼び出す関数</strong> のことで、他にも配列でよく活用する<code>map()</code>, <code>filter()</code>などの反復メソッドを使う時にも登場します。</p>
 <p>この<code>reducer</code>の仮引数で出てくる登場人物2つだけを基本として抑えておくようにします。</p>
 <ul>

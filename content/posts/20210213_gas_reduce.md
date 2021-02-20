@@ -109,7 +109,7 @@ function sampleFunction() {
 
   // 例1
   const numbers = [1, 2, 3, 4, 5];
-  console.log(numbers.reduce((acc, cur) => acc + cur))
+  console.log(numbers.reduce((acc, cur) => acc + cur));
 
   // 例2
   const chars = ['a', 'b', 'c', 'd', 'e'];
@@ -128,6 +128,7 @@ function sampleFunction() {
 配列の要素を頭から順番に足し合わせていった結果がログ出力されています。  
 
 例2で使っている`reducer`はいわゆるコールバック関数。  
+例1はそのコールバック関数の中味を`reduce()`メソッドの引数に直接書いた形なので、どちらの書き方でも動作します。読みやすさと一貫性を意識してかくと良いのかな、と思います。
 コールバック関数は **配列内のそれぞれの要素について呼び出す関数** のことで、他にも配列でよく活用する`map()`, `filter()`などの反復メソッドを使う時にも登場します。
 
 
