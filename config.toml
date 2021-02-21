@@ -23,7 +23,7 @@ canonifyurls = true
 
 
 [Params]
-  description = "This Is My Dïevelopment Note" # Description of your site
+  description = "This Is My Development Note" # Description of your site
   copyright = "Massa" # Footer copyright holder, otherwise will use site title
 
   opengraph = true # Enable OpenGraph if true
@@ -37,7 +37,8 @@ canonifyurls = true
   eyecatch = '/img/page_logo.jpg' #アイキャッチ見よう見まねで追加。不要なら削除する
 
   twitter_cards = true
-  images = "img/page_logo.jpg"
+  images = ["img/page_logo.jpg"]
+
 
   mathjax = true # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path

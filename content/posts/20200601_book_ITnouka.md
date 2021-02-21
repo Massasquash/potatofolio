@@ -4,7 +4,7 @@ date: 2020-06-01
 lead: "ディープラーニングで野菜選別のための学習済みモデルを制作する流れ"
 categories:
   - "学習ノート"
-images: "img/page_logo.jpg"
+images: ["img/page_logo.jpg"]
 ---
 
 # 読書記録
