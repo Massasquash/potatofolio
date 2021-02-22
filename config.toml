@@ -8,7 +8,7 @@ hasCJKLanguage = true # 日本語・中国語・韓国語の単語カウント�
 summaryLength = 0 # サマリーの長さ
 
 # disqusShortname = "potatofolio" # Enable comments by entering your Disqus shortname
-# googleAnalytics = "G-ZSG8MKNR7M" # Enable Google Analytics by entering your tracking id
+googleAnalytics = "G-ZSG8MKNR7M" # Enable Google Analytics by entering your tracking id
 
 # github公開用
 baseurl = "https://massasquash.github.io/potatofolio/"
