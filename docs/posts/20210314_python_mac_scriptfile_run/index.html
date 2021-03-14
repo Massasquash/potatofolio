@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[Python][Mac]スクリプトをダブルクリックで実行">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1157"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="1179"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -150,8 +150,9 @@ Windows環境だったりPython2を使用する場合はこの方法では実現
 <p>本題に入る前に、Pythonスクリプト（.pyファイル）の基本的な起動の方法について整理しておきます。</p>
 <p>Macならターミナルを起動し、</p>
 <pre><code>$ python3 &lt;.pyファイルの絶対パス&gt;
-</code></pre><p>ターミナルに<code>python3</code>と半角スペースを1つ入れた後に、実行したい.pyファイルをターミナル上にドラッグ&amp;ドロップすると、自動で絶対パスが入力されるので便利です。</p>
-<p>このやり方で十分ですが、仮に絶対パスを使わずファイル名で実行する場合は、カレントディレクトリをその.pyファイルのあるディレクトリパスにしておく必要があります。</p>
+</code></pre><p>このコマンドを実行するとスクリプトが起動します。
+ターミナルに<code>python3</code>と半角スペースを1つ入れた後に、実行したい.pyファイルをターミナル上にドラッグ&amp;ドロップすると、自動で絶対パスが入力されるので便利です。</p>
+<p>このやり方で十分ですが、仮に絶対パスを使わずファイル名で実行する場合は、カレントディレクトリをその.pyファイルのあるディレクトリにしておく必要があります。</p>
 <pre><code>$ cd &lt;.pyファイルがあるフォルダのパス&gt;
 $ python3 &lt;.pyファイル名&gt;
 </code></pre><p>ディレクトリのパスの調べ方は、Finderで該当のディレクトリの上で右クリックしてメニューを表示した状態でoptionキーを押すと、押している間だけ「&ldquo;xxx&quot;をコピー」 -&gt; 「&ldquo;xxx&quot;のパス名をコピー」に変わっているので、それを選択することでコピーすることができます。</p>
