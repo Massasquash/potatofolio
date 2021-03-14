@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[Python][Mac]スクリプトをダブルクリックで実行">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="952"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="1157"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -117,7 +117,7 @@ if (!doNotTrack) {
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">[Python][Mac]スクリプトをダブルクリックで実行</h1>
-			<p class="post__lead">.pyファイルをダブルクリックで実行するように設定する</p>
+			<p class="post__lead">.pyファイルのターミナルからの実行方法と、ダブルクリックで実行するように設定</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-14T00:00:00Z">March 14, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/python/" rel="category">Python</a>
@@ -139,13 +139,13 @@ if (!doNotTrack) {
 </div>
 <div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
-<p>制作したPythonスクリプトのツール化の一つの方法です。<br>
+<p>制作したPythonスクリプトのツール化。<br>
 ファイルのダブルクリックでスクリプトを実行するように設定します。<br>
 調べれば出てくる情報ではありますが、備忘録としてまとめておくことにしました。</p>
 <p>環境はMac + Python3 です。
 Python3のインストールは済んでいる状態が前提となっています。
 Windows環境だったりPython2を使用する場合はこの方法では実現できないと思うのでご注意ください。</p>
-<p>また、MacでPython3インストール状態であっても、インストールのやり方によっては今回使用する「Python Launcher 3.app」が使えない場合があるようです。</p>
+<p>また、MacでPython3インストール状態であっても、インストールのやり方によっては今回使用する <strong>「Python Launcher 3.app」</strong> が使えない場合があるようです。</p>
 <h2 id="1pythonスクリプトのターミナルでの起動方法">1.Pythonスクリプトのターミナルでの起動方法</h2>
 <p>本題に入る前に、Pythonスクリプト（.pyファイル）の基本的な起動の方法について整理しておきます。</p>
 <p>Macならターミナルを起動し、</p>
@@ -160,14 +160,26 @@ $ python3 &lt;.pyファイル名&gt;
 <br>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/1.png" alt="image"></p>
 <p>「このアプリケーションで開く」を展開
+<br>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/2.png" alt="image"></p>
 <p>「Python Launcher3」を選択
+<br>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/3.png" alt="image"></p>
-<p>これで、スクリプトファイルをダブルクリックで実行できるようになっているようです。</p>
+<p>これで、スクリプトファイルをダブルクリックで実行できるようになっています。</p>
 <h2 id="おわりに">おわりに</h2>
-<p>気になること
-・エイリアスを実行するには？
-・仮想環境を作っているときにどうなのか？</p>
+<p>いくつか気になることがあります。</p>
+<ul>
+<li>
+<p>エイリアスを実行するには？
+スクリプトファイルのエイリアスをデスクトップに作成して、それをダブルクリックで実行できるようにしたいです。確か以前できたような気がします。</p>
+</li>
+<li>
+<p>仮想環境を作ってスクリプト作成しているのでその影響は？
+venvで仮想環境を作り、サードパーティライブラリのインストールをその仮想環境内で行っています。<br>
+今のところダブルクリックで実行できているようですが、なんだか直感的には仮想環境に入らないとライブラリが使えないような&hellip;。<br>
+この辺りの仕組みを知りたいです。</p>
+</li>
+</ul>
 
 		</div>
 	</article>
