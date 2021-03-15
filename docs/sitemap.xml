@@ -2,25 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/</loc>
-    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
+    <loc>https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/</loc>
+    <lastmod>2021-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/categories/</loc>
-    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/posts/</loc>
-    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/</loc>
+    <lastmod>2021-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/categories/works/</loc>
+    <lastmod>2021-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/categories/python/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://massasquash.github.io/potatofolio/categories/works/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01-copy/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/posts/20210214_gas_utilities_formatdate/</loc>

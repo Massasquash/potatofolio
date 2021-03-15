@@ -6,7 +6,16 @@
     <description>Recent content on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[温度管理ツール02][GAS]APIに必要な情報をオブジェクトとクラスにまとめてみる</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/</link>
+      <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Python][Mac]スクリプトをダブルクリックで実行</title>
       <link>https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/</link>
@@ -18,10 +27,10 @@
     
     <item>
       <title>[温度管理ツール01][GAS]T&amp;D温度計デバイスを使って現在気温を取得する</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01-copy/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01-copy/</guid>
       <description></description>
     </item>
     
