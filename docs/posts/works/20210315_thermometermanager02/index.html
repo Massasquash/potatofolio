@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[温度管理ツール02][GAS]APIに関する情報と処理をオブジェクト・クラスにまとめる">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3595"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="3653"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -302,11 +302,10 @@ ch1の現在温度:  16.2
 
 ch2の現在温度:  14.5
 </code></pre><p><code>const sensorData = new SensorData();</code>の１行で内部的にAPIを叩く処理が行われるため、メインのスクリプトでこのAPI周りの処理を書く必要がなくなりました。<br>
-また、温度データを取り出すのもとても簡単なコードで書けるようになりました。</p>
+また、レスポンスオブジェクトから温度データを取り出すのもとても簡単なコードで書けるようになりました。これもクラスの中でオブジェクトのプロパティとしてその値を保持するようにしたためです。</p>
 <h2 id="おわりに">おわりに</h2>
-<p>最近はオブジェクト指向言語のクラスの学習をしていることもあり、このようにクラス化を試みてみました。<br>
-必要な情報をオブジェクトにまとめ、APIで取得する情報と処理をクラスにまとめておくことで、コードがすっきりしてとても良いなと思いました。</p>
-<p>次はLINE Messaging APIを使ってLINEにメッセージを送ってみたいと思います。</p>
+<p>必要な情報をオブジェクトにまとめ、APIで取得する情報と処理をクラスにまとめておくことで、コードがすっきりしてとても使い勝手が良くなるのを実感できました。</p>
+<p>今回は実装は進めずコードを抽象化するだけの記事となってしまいました。次回はLINE Messaging APIを使ってLINEにメッセージを送る処理について書いてみたいと思います。</p>
 
 		</div>
 	</article>
