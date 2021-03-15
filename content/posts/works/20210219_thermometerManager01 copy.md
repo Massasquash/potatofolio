@@ -1,5 +1,5 @@
 ---
-title: "[温度管理ツール01][GAS]T&D温度計デバイスを使って現在気温を取得する"
+title: "[温度管理ツール01]T&D温度計デバイスを使って現在気温を取得する[GAS]"
 date: 2021-02-19
 lead: "おんどとりWebStorage APIを叩いてみる"
 categories:

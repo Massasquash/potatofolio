@@ -5,26 +5,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[温度管理ツール02][GAS]APIに関する情報と処理をオブジェクト・クラスにまとめる - Potatofolio</title>
+	<title>[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS] - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[温度管理ツール02][GAS]APIに関する情報と処理をオブジェクト・クラスにまとめる" />
+		<meta property="og:title" content="[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/" /><meta property="og:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/" /><meta property="og:image" content="https://massasquash.github.io/potatofolio/img/header/20210315.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-15T00:00:00&#43;00:00" />
 <meta property="article:modified_time" content="2021-03-15T00:00:00&#43;00:00" />
 
 
-		<meta itemprop="name" content="[温度管理ツール02][GAS]APIに関する情報と処理をオブジェクト・クラスにまとめる">
+		<meta itemprop="name" content="[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3653"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="3587"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/header/20210315.png">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/header/20210315.png"/>
 
-<meta name="twitter:title" content="[温度管理ツール02][GAS]APIに関する情報と処理をオブジェクト・クラスにまとめる"/>
+<meta name="twitter:title" content="[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]"/>
 <meta name="twitter:description" content=""/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,7 +116,7 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[温度管理ツール02][GAS]APIに関する情報と処理をオブジェクト・クラスにまとめる</h1>
+			<h1 class="post__title">[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</h1>
 			<p class="post__lead">前回のコードのリファクタリング、センサーデータを取得・保持するためのクラス作成</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
@@ -148,11 +148,10 @@ if (!doNotTrack) {
 </div>
 <div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
-<p>前回の記事<a href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/">温度管理ツール01GAST&amp;D温度計デバイスを使って現在気温を取得する - Potatofolio</a>で、GASを使って<strong>おんどとり WebStorage API</strong>にリクエストを送り、現在の温度の取得に成功しました。</p>
-<p>次のLINEに送ったり積算温度を算出したりというメインの実装をしていきたいところですが、その前に今後の実装のためにリファクタリングをしておくことにしました。<br>
+<p><a href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/">前回の記事</a>で、GASを使って<strong>おんどとり WebStorage API</strong>にリクエストを送り、現在の温度の取得に成功しました。</p>
+<p>次のLINEに送ったり積算温度を算出したりという実装を進めていきたいところですが、その前に今後の実装とメンテナンスをしやすくするためにリファクタリングをしておくことにしました。<br>
 APIを使うための情報と処理を、オブジェクトやクラスを活用してメインのコードとは分離して、整理しておきたいと思います。</p>
-<p>ちょっと蛇足的な記事になるかもしれませんし、またこのようなやり方がベストプラクティスなのかわからないのですが、クラスの学習も兼ねて実装しました。</p>
-<p>その実装についての解説記事となります。</p>
+<p>かなり蛇足的な記事になるかもしれませんが、クラスの学習も兼ねてコードを書いているので、その実装についての記事となります。</p>
 <h2 id="1-スクリプトファイルを分ける">1. スクリプトファイルを分ける</h2>
 <p>以下のようにファイル分けしてスクリプトを整理することにしました。</p>
 <h3 id="１認証に必要な秘匿情報を記述する-credentialsgs">（１）認証に必要な秘匿情報を記述する credentials.gs</h3>
@@ -205,7 +204,7 @@ GASを使っているのでプロパティサービスを活用する方がよ�
 }
 </code></pre></div><p>こうすることで、例えば<code>APIINFO_THERMO.current.headers</code>としてやれば現在値を取得するAPIを叩くためのヘッダー情報を取り出すことができるようになります。</p>
 <p>わざわざ辞書の入れ子構造にしたのは、この「おんどとり WebStorage API」サービスが複数のAPIを提供しているためです。今回は「現在地の取得」を行うためのAPIしか使わないのですが、今後必要に応じて追加していくことが容易にできます。<br>
-また、ヘッダー情報をオブジェクトでなくJSON形式の文字列リテラルで書いたのも理由がありますがここでは割愛します（LINE Messaging APIを活用する際にその方が便利だったため）。</p>
+また、ヘッダー情報をオブジェクトでなくJSON形式の文字列リテラルで書いたのも理由がありますが詳細はここでは割愛します（LINE Messaging APIを活用する際にその方が記述しやすかったため）。</p>
 <p>ここでオブジェクトに入れた情報は、基本的には次に定義するクラスの中でのみ使用するようにして、メインスクリプトでは使用しないようにします。そうすることで役割を分離させられるので良いのかな、と思いました。</p>
 <h2 id="4-aip関連の処理とデータをクラスにまとめる">4. AIP関連の処理とデータをクラスにまとめる</h2>
 <p><code>apis.gs</code>のスクリプトファイルに続けて記述します。</p>
@@ -316,7 +315,7 @@ ch2の現在温度:  14.5
 	<div class="pager__item pager__item--prev">
 		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Python][Mac]スクリプトをダブルクリックで実行</p>
+			<p class="pager__title">[Python]Macでスクリプトをダブルクリックで実行できるようにする</p>
 		</a>
 	</div>
 </nav>
@@ -336,9 +335,9 @@ ch2の現在温度:  14.5
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/">[温度管理ツール02][GAS]APIに関する情報と処理をオブジェクト・クラスにまとめる</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/">[Python][Mac]スクリプトをダブルクリックで実行</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01-copy/">[温度管理ツール01][GAS]T&amp;D温度計デバイスを使って現在気温を取得する</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/">[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/">[Python]Macでスクリプトをダブルクリックで実行できるようにする</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01-copy/">[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210214_gas_utilities_formatdate/">[GAS]日付をフォーマット指定で文字列変換するのに便利なクラス</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210213_gas_reduce/">[GAS]reduce()メソッドを活用して文字列をまとめて置換する</a></li>
 		</ul>
