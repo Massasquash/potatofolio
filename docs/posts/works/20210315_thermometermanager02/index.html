@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[温度管理ツール02][GAS]APIに関する情報と処理をオブジェクト・クラスにまとめる">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3603"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="3595"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -151,8 +151,8 @@ if (!doNotTrack) {
 <p>前回の記事<a href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/">温度管理ツール01GAST&amp;D温度計デバイスを使って現在気温を取得する - Potatofolio</a>で、GASを使って<strong>おんどとり WebStorage API</strong>にリクエストを送り、現在の温度の取得に成功しました。</p>
 <p>次のLINEに送ったり積算温度を算出したりというメインの実装をしていきたいところですが、その前に今後の実装のためにリファクタリングをしておくことにしました。<br>
 APIを使うための情報と処理を、オブジェクトやクラスを活用してメインのコードとは分離して、整理しておきたいと思います。</p>
-<p>ちょっと蛇足的な記事になるかもしれませんが、ご了承ください。<br>
-このようなやり方がベストプラクティスなのかわからないのですが、こんな風にできるんだとコードを書くときの参考程度に見ていただければ幸いです。</p>
+<p>ちょっと蛇足的な記事になるかもしれませんし、またこのようなやり方がベストプラクティスなのかわからないのですが、クラスの学習も兼ねて実装しました。</p>
+<p>その実装についての解説記事となります。</p>
 <h2 id="1-スクリプトファイルを分ける">1. スクリプトファイルを分ける</h2>
 <p>以下のようにファイル分けしてスクリプトを整理することにしました。</p>
 <h3 id="1認証に必要な秘匿情報を記述する-credentialsgs">（1）認証に必要な秘匿情報を記述する credentials.gs</h3>
