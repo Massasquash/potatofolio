@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3837"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/header/20210315.png">
+<meta itemprop="wordCount" content="3836"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/header/20210315.png">
 <meta itemprop="keywords" content="GASツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/header/20210315.png"/>
@@ -130,7 +130,7 @@ if (!doNotTrack) {
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#1-スクリプトファイルの分類基準">1. スクリプトファイルの分類基準</a>
+    <li><a href="#1-スクリプトファイルを分ける">1. スクリプトファイルを分ける</a>
       <ul>
         <li><a href="#１認証に必要な秘匿情報を記述する-credentialsgs">（１）認証に必要な秘匿情報を記述する credentials.gs</a></li>
         <li><a href="#２apiに関する情報と処理を記述する--apisgs">（２）APIに関する情報と処理を記述する  apis.gs</a></li>
@@ -152,7 +152,7 @@ if (!doNotTrack) {
 <p>次のLINEに送ったり積算温度を算出したりという実装を進めていきたいところですが、その前に今後の実装とメンテナンスをしやすくするためにリファクタリングをしておくことにしました。<br>
 APIを使うための情報と処理をメインの処理とは分離して、オブジェクトやクラスを活用して整理しておきたいと思います。</p>
 <p>かなり蛇足的な記事になるかもしれませんが、クラスの学習も兼ねてコードを書いたのでそれついての記事となります。</p>
-<h2 id="1-スクリプトファイルの分類基準">1. スクリプトファイルの分類基準</h2>
+<h2 id="1-スクリプトファイルを分ける">1. スクリプトファイルを分ける</h2>
 <p>以下のようにGASのスクリプトファイルを分けてコードを整理することにしました。</p>
 <h3 id="１認証に必要な秘匿情報を記述する-credentialsgs">（１）認証に必要な秘匿情報を記述する credentials.gs</h3>
 <p>APIを活用するために必要な情報で外部に公開したくない秘匿情報をまとめておくファイルです。この中に必要な情報を、APIごとにオブジェクト形式で保管しておくことにしました。<br>
