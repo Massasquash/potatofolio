@@ -4,6 +4,8 @@ date: 2021-02-19
 lead: "おんどとりWebStorage APIを叩いてみる"
 categories:
   - "Works"
+tags:
+  - "GASツール制作"
 ---
 
 ## はじめに
