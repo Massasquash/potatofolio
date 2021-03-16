@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-02-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-02-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2208"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="2288"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="GASツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -117,7 +117,7 @@ if (!doNotTrack) {
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</h1>
-			<p class="post__lead">おんどとりWebStorage APIを叩いてみる</p>
+			<p class="post__lead">おんどとりWebStorage APIを使ってみる</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-19T00:00:00Z">February 19, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/works/" rel="category">Works</a>
@@ -165,10 +165,11 @@ if (!doNotTrack) {
 </ul>
 <p>とあります。この中で、今回の記事では <strong>「現在値の取得」</strong> を使っていきます。</p>
 <h2 id="2作りたいツールの概要">2.作りたいツールの概要</h2>
-<p>今回プログラムで実現したいのは、指定した日からの積算温度を取り出したり、一定温度になったらアラートを飛ばしてくれるような仕組みを作れないかなと思い、試作してみました。<br>
-取得した温度やアラートはLINEに通知が来るようにします。</p>
+<p>今回プログラムで実現したいのは、温度を把握しやすくすること、指定した日からの積算温度を取り出すこと、そして一定温度になったらアラートを飛ばしてくれるような仕組みを作れないかなと思い、試作してみました。<br>
+取得した温度やアラートはLINEに通知が来るようにします。<br>
+（※追記：アラートはスマホアプリを活用すると簡単に実現できそうなので、要件からは外すことにしました）</p>
 <p>実際の温度管理作業については、春先（3月〜4月）の育苗・種子の催芽（種を植える前に高温多湿な環境を作って出芽させることで、発芽を揃えるための作業）をビニルハウスや倉庫の中で温度管理しながら行なっています。</p>
-<p>これまで温度の上げ下げのタイミングを温度計はつけているもののだいぶ感覚頼りにやっていたので、数値で判断できると良いなと思っています。</p>
+<p>これまで温度の上げ下げのタイミングを温度計はつけているもののだいぶ感覚頼りにやっていたので、数値で測定できると良いなと思っています。</p>
 <h2 id="3現在の温度を取得するスクリプト">3.現在の温度を取得するスクリプト</h2>
 <p>ドキュメントの以下のページにしたがって、APIを叩いてみます。<br>
 <a href="https://ondotori.webstorage.jp/docs/api/reference/devices_device.html">現在値の取得 | おんどとり WebStorage API</a></p>
@@ -242,12 +243,12 @@ ch2の現在温度: Sensor Error
 <pre><code>&lt;エラーログ&gt;
 Attribute provided with invalid value: Header:Host
 </code></pre><p>GASではなくPythonの<code>requests</code>モジュールを使って同じAPIを叩く操作を検証してみたところ、そちらは正常にデータを取得することができました。<br>
-詳しい方に聞いてみたところ、おそらくGAS側のUrlFetchAppで何か制約があるのではないか、との意見をいただきました（本当のところはちょっとわかっておりません）。</p>
+詳しい方に聞いてみたところ、おそらくGAS側のUrlFetchAppで何か制約があるのではないか、との意見をいただきました（本当のところはちょっと僕にはわかっておりません）。</p>
 <p>結果的に、今回記載したスクリプトのように、リクエストヘッダから<code>Host</code>の記述を省くことで動作させることができました。</p>
 <p>またこれはJavascriptの文法の話ですが、オブジェクトリテラルを書く際に、今回の例のようにプロパティ名にハイフンが入る場合は、<code>''</code>か<code>&quot;&quot;</code>で囲ってやる必要があるので注意が必要です。</p>
 <h2 id="おわりに">おわりに</h2>
 <p>今回は、温度計デバイスから現在値を取得してみました。<br>
-今後はLINEにメッセージを送ったり、積算温度を算出したりしてみます。</p>
+今後はLINEに現在気温を送ったり、積算温度を算出したりする実装をしていきたいと思います。</p>
 
 		</div>
 		<footer class="post__footer">
