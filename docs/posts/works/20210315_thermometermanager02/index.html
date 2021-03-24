@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3918"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/header/20210315.png">
+<meta itemprop="wordCount" content="3926"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/header/20210315.png">
 <meta itemprop="keywords" content="GASツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/header/20210315.png"/>
@@ -274,8 +274,8 @@ GASを使っているので<strong>プロパティストア</strong>を活用す
 <h2 id="5メインスクリプトでのこのクラスの使い方">5.メインスクリプトでのこのクラスの使い方</h2>
 <p>上記のようにクラス化したことで、メインスクリプトでセンサーから取得したデータを簡単にオブジェクトとして生成することができるようになります。<br>
 また必要な情報に<code>オブジェクト名.プロパティ名</code>を使って、短いコードでアクセスできるようにもなりました。</p>
-<p>実際のコードについては次回以降に見ていきますが、ここではクラスがどう使われるかの確認をします。<br>
-<code>main.gs</code>スクリプトファイルに以下のように書いて、先ほど整理したクラスを呼び出して見ることにします。</p>
+<p>実際のコードについては次回以降に見ていきますが、今回は先ほどのクラスがどう使われるかを確認します。<br>
+<code>main.gs</code>スクリプトファイルに以下のように書いて、クラスの呼び出しとプロパティを参照してみます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">mainFunction</span>(){
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sensorData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SensorData</span>();
 
@@ -312,7 +312,7 @@ ch2の現在温度:  14.5
 また、レスポンスオブジェクトから温度データを取り出すのもとても簡単なコードで書けるようになりました。これもクラスの中でオブジェクトのプロパティとしてその値を保持するようにしたためです。</p>
 <h2 id="おわりに">おわりに</h2>
 <p>必要な情報をオブジェクトにまとめ、APIで取得する情報と処理をクラスにまとめておくことで、コードがすっきりしてとても使い勝手が良くなるのを実感できました。<br>
-コードの設計に関してはこれまで言語問わず教わったこと、書籍で学んだことを総動員することになり、点と点が繋がっていく感覚がありました。</p>
+ファイルの分け方などコード設計に関してこれまで言語問わず教わったこと・書籍で学んだことを総動員することになり、点と点が繋がっていく感覚がありました。</p>
 <p>今回は実装は進めずコードを抽象化するだけの記事となってしまいましたが、次回はLINE Messaging APIを使ってLINEにメッセージを送る処理について書いてみたいと思います。</p>
 
 		</div>
@@ -357,7 +357,7 @@ ch2の現在温度:  14.5
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/">[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/">[Python]Macでスクリプトをダブルクリックで実行できるようにする</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01-copy/">[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/">[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210214_gas_utilities_formatdate/">[GAS]日付をフォーマット指定で文字列変換するのに便利なクラス</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210213_gas_reduce/">[GAS]reduce()メソッドを活用して文字列をまとめて置換する</a></li>
 		</ul>

@@ -27,10 +27,10 @@
     
     <item>
       <title>[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01-copy/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01-copy/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/</guid>
       <description></description>
     </item>
     
@@ -58,15 +58,6 @@
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[GAS]SpreadSheetにカスタムメニューを追加して簡単なUIを作る</title>
-      <link>https://massasquash.github.io/potatofolio/posts/20210209_gas_spreadsheet_custommenu/</link>
-      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/posts/20210209_gas_spreadsheet_custommenu/</guid>
       <description></description>
     </item>
     
