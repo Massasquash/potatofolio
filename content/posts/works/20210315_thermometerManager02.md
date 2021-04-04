@@ -61,7 +61,7 @@ const CRED_THERMO_API = {
 ## 3. APIの情報をオブジェクトにまとめる
 次に`apis.gs`というスクリプトファイルを作り、ここにAPIに関係する情報や処理を記述していきます。
 
-APIドキュメントを参考に、リクエストURIやヘッダー情報などのAPIにリクエストを送るために必要な情報をオブジェクトとして入れておきます。  
+APIドキュメントを参考に、リクエストurlやヘッダー情報などのAPIにリクエストを送るために必要な情報をオブジェクトとして入れておきます。  
 ここではグローバル領域に`APIINFO_THERMO`という定数を定義し、その中にさらに`current`という「現在値の取得」をするためのAPIの情報をオブジェクトでまとめました。
 
 ```javascript
@@ -76,7 +76,7 @@ const APIINFO_THERMO = {
   https://ondotori.webstorage.jp/docs/api/reference/devices_device.html
   */
   current:{
-    uri: 'https://api.webstorage.jp/v1/devices/current',
+    url: 'https://api.webstorage.jp/v1/devices/current',
     headers: `{
       "Content-Type":"application/json",
       "X-HTTP-Method-Override":"GET"
@@ -125,7 +125,7 @@ class SensorData{
    * @returns {Object} センサーから取得したレスポンスオブジェクト
    */
   getSensorData() {
-    const uri = APIINFO_THERMO.current.uri;
+    const url = APIINFO_THERMO.current.url;
     const headers = APIINFO_THERMO.current.headers;
     const body = {
         'api-key': CRED_THERMO_API.apiKey,
@@ -139,7 +139,7 @@ class SensorData{
       muteHttpExceptions: true
     };
 
-    const response = UrlFetchApp.fetch(uri, options);
+    const response = UrlFetchApp.fetch(url, options);
 
     return JSON.parse(response.getContentText());
   }

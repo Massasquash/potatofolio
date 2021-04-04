@@ -182,7 +182,7 @@ GASを使っているので<strong>プロパティストア</strong>を活用す
 <p>今後「LINE Messaging API」など他のサービスのAPIも活用することを考えているので、サービスごとに必要な情報をまとめたオブジェクトを作っておくようなイメージになります。</p>
 <h2 id="3-apiの情報をオブジェクトにまとめる">3. APIの情報をオブジェクトにまとめる</h2>
 <p>次に<code>apis.gs</code>というスクリプトファイルを作り、ここにAPIに関係する情報や処理を記述していきます。</p>
-<p>APIドキュメントを参考に、リクエストURIやヘッダー情報などのAPIにリクエストを送るために必要な情報をオブジェクトとして入れておきます。<br>
+<p>APIドキュメントを参考に、リクエストurlやヘッダー情報などのAPIにリクエストを送るために必要な情報をオブジェクトとして入れておきます。<br>
 ここではグローバル領域に<code>APIINFO_THERMO</code>という定数を定義し、その中にさらに<code>current</code>という「現在値の取得」をするためのAPIの情報をオブジェクトでまとめました。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/*
 </span><span style="color:#75715e">T&amp;D Thermo おんどとりWebStoraage
@@ -195,7 +195,7 @@ GASを使っているので<strong>プロパティストア</strong>を活用す
 </span><span style="color:#75715e">  https://ondotori.webstorage.jp/docs/api/reference/devices_device.html
 </span><span style="color:#75715e">  */</span>
   <span style="color:#a6e22e">current</span><span style="color:#f92672">:</span>{
-    <span style="color:#a6e22e">uri</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://api.webstorage.jp/v1/devices/current&#39;</span>,
+    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://api.webstorage.jp/v1/devices/current&#39;</span>,
     <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`{
 </span><span style="color:#e6db74">      &#34;Content-Type&#34;:&#34;application/json&#34;,
 </span><span style="color:#e6db74">      &#34;X-HTTP-Method-Override&#34;:&#34;GET&#34;
@@ -235,7 +235,7 @@ GASを使っているので<strong>プロパティストア</strong>を活用す
 </span><span style="color:#75715e">   * @returns {Object} センサーから取得したレスポンスオブジェクト
 </span><span style="color:#75715e">   */</span>
   <span style="color:#a6e22e">getSensorData</span>() {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">uri</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">APIINFO_THERMO</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">uri</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">APIINFO_THERMO</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">url</span>;
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">APIINFO_THERMO</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">headers</span>;
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> {
         <span style="color:#e6db74">&#39;api-key&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">CRED_THERMO_API</span>.<span style="color:#a6e22e">apiKey</span>,
@@ -249,7 +249,7 @@ GASを使っているので<strong>プロパティストア</strong>を活用す
       <span style="color:#a6e22e">muteHttpExceptions</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
     };
 
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">UrlFetchApp</span>.<span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">uri</span>, <span style="color:#a6e22e">options</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">UrlFetchApp</span>.<span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">options</span>);
 
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">getContentText</span>());
   }
