@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 15 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GoogleWorkspace</title>
+      <link>https://massasquash.github.io/potatofolio/categories/googleworkspace/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/categories/googleworkspace/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Works</title>
       <link>https://massasquash.github.io/potatofolio/categories/works/</link>
