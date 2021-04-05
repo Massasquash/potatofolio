@@ -4,6 +4,7 @@ date: 2021-04-05
 lead: ""
 categories:
   - "GoogleWorkspace"
+draft: true
 ---
 
 ## はじめに

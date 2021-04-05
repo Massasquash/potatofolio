@@ -6,16 +6,7 @@
     <description>Recent content in Posts on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GoogleDriveの画像ファイルのダウンロードリンクを直接取得する方法</title>
-      <link>https://massasquash.github.io/potatofolio/posts/20210405_google_drive_download_link/</link>
-      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/posts/20210405_google_drive_download_link/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Mon, 15 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</title>
       <link>https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/</link>

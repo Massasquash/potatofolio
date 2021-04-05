@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[Python]Macでスクリプトをダブルクリックで実行できるようにする">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1176"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="1512"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -132,6 +132,7 @@ if (!doNotTrack) {
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#1pythonスクリプトのターミナルでの起動方法">1.Pythonスクリプトのターミナルでの起動方法</a></li>
     <li><a href="#2-pythonスクリプトをダブルクリックで実行できるように設定する">2. Pythonスクリプトをダブルクリックで実行できるように設定する</a></li>
+    <li><a href="#備考">備考</a></li>
     <li><a href="#おわりに">おわりに</a></li>
   </ul>
 </nav>
@@ -167,6 +168,22 @@ $ python3 &lt;.pyファイル名&gt;
 <br>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/3.png" alt="image"></p>
 <p>これで、スクリプトファイルをダブルクリックで実行できるようになっています。</p>
+<h2 id="備考">備考</h2>
+<p>スクリプトファイルをダブルクリックしたら、「Python3 Launcher 3」が立ち上がって、次のような設定ダイアログが出現します。<br>
+<br>
+<img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/4.png" alt="image"></p>
+<p>どうにもスクリプトがうまく動作しないな&hellip;という時は、こちらをチェックしてみると良いかもしれません。</p>
+<ul>
+<li>
+<p>「Interpreter」がPython3のパスになっているか
+自身のPCにインストールされているPython3の場所を参照しているかチェックします。
+ターミナルで<code>$ which python3</code>コマンドでPython3のパスが確認できます。</p>
+</li>
+<li>
+<p>「Run in a Terminal window」のチェックを外す
+あんまり理解してないのですが、僕の環境だとこのチェックがついたままだとちゃんとスクリプトが実行されませんでした。</p>
+</li>
+</ul>
 <h2 id="おわりに">おわりに</h2>
 <p>いくつか気になることがあります。</p>
 <ul>
@@ -176,8 +193,8 @@ $ python3 &lt;.pyファイル名&gt;
 </li>
 <li>
 <p>仮想環境を作ってスクリプト作成しているのでその影響は？
-現在はvenvで仮想環境を作り、必要なライブラリのインストールはその仮想環境内で行っています。仮想環境に入らないとライブラリが使えないため、なんだか直感的にはただダブルクリックするだけだと実行できないような&hellip;。<br>
-この辺りの仕組みを知りたいです。</p>
+現在はvenvで仮想環境を作り、必要なライブラリのインストールはその仮想環境内で行っています。仮想環境に入らないとライブラリが使えないため、なんだか直感的にはただダブルクリックするだけだと実行できないような気はするけど、現実的には実行できています。
+何か根本的に理解不足な気がします。この辺りの仕組みを知りたいです。</p>
 </li>
 </ul>
 
@@ -216,11 +233,11 @@ $ python3 &lt;.pyファイル名&gt;
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210405_google_drive_download_link/">GoogleDriveの画像ファイルのダウンロードリンクを直接取得する方法</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/">[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run-copy/">[Python]Macでスクリプトをダブルクリックで実行できるようにする</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/">[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210214_gas_utilities_formatdate/">[GAS]日付をフォーマット指定で文字列変換するのに便利なクラス</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210213_gas_reduce/">[GAS]reduce()メソッドを活用して文字列をまとめて置換する</a></li>
 		</ul>
 	</div>
 </div>
@@ -230,9 +247,6 @@ $ python3 &lt;.pyファイル名&gt;
 		<ul class="widget__list">
 			<li class="widget__item">
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/gas/">GAS</a>
-			</li>
-			<li class="widget__item">
-				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/googleworkspace/">GoogleWorkspace</a>
 			</li>
 			<li class="widget__item">
 				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/python/">Python</a>
