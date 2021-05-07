@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[Python]ファイル管理">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="1088"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="1111"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -176,11 +176,12 @@ folder/documents/file.txt
 pritn(p<span style="color:#f92672">.</span>is_file())
 </code></pre></div><h3 id="3パスの情報">(3)パスの情報</h3>
 <p>Pathオブジェクトの親ディレクトリのPathオブジェクトを<code>parent</code>属性で調べることができる。<br>
-パス名は<code>name</code>属性, 拡張子は<code>suffix</code>属性でそれぞれ文字列で得られる。</p>
+パス名は<code>name</code>属性、さらに拡張子は<code>suffix</code>属性・拡張子なしのファイル名は<code>stem</code>属性でそれぞれ文字列で得られる。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">p <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#39;sample.txt&#39;</span>)
 <span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>parent)
 <span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>name)
-pritn(p<span style="color:#f92672">.</span>suffix)
+<span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>suffix)
+<span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>stem)
 </code></pre></div><h3 id="4パスの一覧を取得するメソッド">(4)パスの一覧を取得するメソッド</h3>
 <p><code>iterdir()</code>メソッドは、Pathオブジェクトが表すディレクトリ内のPathオブジェクト一覧を調べ、そのジェネレータを返す。<br>
 <code>glob()</code>メソッドは、Pathオブジェクトが表すディレクトリ内の文字列パターンにマッチしたPathオブジェクト一覧を調べ、そのジェネレータを返す。</p>

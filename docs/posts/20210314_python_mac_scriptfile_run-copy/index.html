@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[Python]Macでスクリプトをダブルクリックで実行できるようにする">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1512"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="1771"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -131,8 +131,11 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#1pythonスクリプトのターミナルでの起動方法">1.Pythonスクリプトのターミナルでの起動方法</a></li>
-    <li><a href="#2-pythonスクリプトをダブルクリックで実行できるように設定する">2. Pythonスクリプトをダブルクリックで実行できるように設定する</a></li>
-    <li><a href="#備考">備考</a></li>
+    <li><a href="#2-pythonスクリプトをダブルクリックで実行できるように設定する">2. Pythonスクリプトをダブルクリックで実行できるように設定する</a>
+      <ul>
+        <li><a href="#python3-launcher-3の設定の見直し">Python3 Launcher 3の設定の見直し</a></li>
+      </ul>
+    </li>
     <li><a href="#おわりに">おわりに</a></li>
   </ul>
 </nav>
@@ -168,35 +171,36 @@ $ python3 &lt;.pyファイル名&gt;
 <br>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/3.png" alt="image"></p>
 <p>これで、スクリプトファイルをダブルクリックで実行できるようになっています。</p>
-<h2 id="備考">備考</h2>
-<p>スクリプトファイルをダブルクリックしたら、「Python3 Launcher 3」が立ち上がって、次のような設定ダイアログが出現します。<br>
+<p>試しにスクリプトファイルをダブルクリックしてみると、Docにロケットみたいなアイコンが出現しているはずです。
+<img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/5.png" alt="image"></p>
+<p>「ランチャーアプリは立ち上がってるけどスクリプト実行が上手くいかない」というような場合、自分の環境だと以下の設定の見直しを行うと上手くいきました。</p>
+<h3 id="python3-launcher-3の設定の見直し">Python3 Launcher 3の設定の見直し</h3>
+<p>ダブルクリックした際に、以下のような「Python3 Launcher 3」の設定ダイアログが出現しているはず。
 <br>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/4.png" alt="image"></p>
 <p>どうにもスクリプトがうまく動作しないな&hellip;という時は、こちらをチェックしてみると良いかもしれません。</p>
 <ul>
-<li>
-<p>「Interpreter」がPython3のパスになっているか
-自身のPCにインストールされているPython3の場所を参照しているかチェックします。
-ターミナルで<code>$ which python3</code>コマンドでPython3のパスが確認できます。</p>
-</li>
-<li>
-<p>「Run in a Terminal window」のチェックを外す
-あんまり理解してないのですが、僕の環境だとこのチェックがついたままだとちゃんとスクリプトが実行されませんでした。</p>
-</li>
+<li>「Interpreter」がPython3のパスになっているか</li>
 </ul>
-<h2 id="おわりに">おわりに</h2>
-<p>いくつか気になることがあります。</p>
+<p>自身のPCにインストールされているPython3のパスになっているかチェックします。
+ここで設定するのは要するにPython3を実行するためのスクリプトがどこに保存されているかを示した場所で、ターミナルで<code>$ which python3</code>コマンドでPython3のパスが確認できます。
+このパスが異なっていると、Python3コマンドが実行できないためそのスクリプトファイルの実行自体ができません。</p>
 <ul>
-<li>
-<p>エイリアスを実行するには？
-スクリプトファイルのエイリアスをデスクトップに作成して、それをダブルクリックで実行できるようにしたいです。確か以前できたような気がします。</p>
-</li>
-<li>
-<p>仮想環境を作ってスクリプト作成しているのでその影響は？
-現在はvenvで仮想環境を作り、必要なライブラリのインストールはその仮想環境内で行っています。仮想環境に入らないとライブラリが使えないため、なんだか直感的にはただダブルクリックするだけだと実行できないような気はするけど、現実的には実行できています。
-何か根本的に理解不足な気がします。この辺りの仕組みを知りたいです。</p>
-</li>
+<li>「Run in a Terminal window」のチェックを外す</li>
 </ul>
+<p>僕の環境だとこのチェックがついたままだとちゃんとスクリプトが実行されませんでした（あまり理屈は理解できていません）。</p>
+<h2 id="おわりに">おわりに</h2>
+<p>いくつかメモ。</p>
+<ul>
+<li>エイリアスでの実行</li>
+</ul>
+<p>スクリプトファイルのエイリアスをデスクトップに作成して、それをダブルクリックで実行できるようにしました。<br>
+本体のスクリプトファイルが上手く実行できるようなら、エイリアスにしても問題なく実行できているようです。</p>
+<ul>
+<li>仮想環境を作ってスクリプト作成しているのでその影響は？</li>
+</ul>
+<p>現在はvenvで仮想環境を作り、必要なライブラリのインストールはその仮想環境内で行っています。仮想環境に入らないとライブラリが使えないため、なんだか直感的にはただダブルクリックするだけだと実行できないような気はするけど、現実的には問題なく実行できています。<br>
+何か根本的に理解不足な気がするので、この辺りの仕組みを知りたいです。</p>
 
 		</div>
 	</article>
