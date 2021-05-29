@@ -5,10 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[ファイル整理ツール]要件定義とイシュー - Potatofolio</title>
+	<title>[ファイル整理ツール01]要件定義とイシュー - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[ファイル整理ツール]要件定義とイシュー" />
+		<meta property="og:title" content="[ファイル整理ツール01]要件定義とイシュー" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/" /><meta property="og:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/><meta property="article:section" content="posts" />
@@ -16,15 +16,15 @@
 <meta property="article:modified_time" content="2021-05-29T00:00:00&#43;00:00" />
 
 
-		<meta itemprop="name" content="[ファイル整理ツール]要件定義とイシュー">
+		<meta itemprop="name" content="[ファイル整理ツール01]要件定義とイシュー">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-29T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-05-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1056"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="1083"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="ツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 
-<meta name="twitter:title" content="[ファイル整理ツール]要件定義とイシュー"/>
+<meta name="twitter:title" content="[ファイル整理ツール01]要件定義とイシュー"/>
 <meta name="twitter:description" content=""/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,7 +116,7 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[ファイル整理ツール]要件定義とイシュー</h1>
+			<h1 class="post__title">[ファイル整理ツール01]要件定義とイシュー</h1>
 			<p class="post__lead">要件定義、GitHub Issue作成</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
@@ -133,7 +133,6 @@ if (!doNotTrack) {
     <li><a href="#1-インプットフォルダアーカイブフォルダの運用方法">1. インプットフォルダ・アーカイブフォルダの運用方法</a></li>
     <li><a href="#2-機能の洗い出し">2. 機能の洗い出し</a></li>
     <li><a href="#3-githubリポジトリとissue立てた">3. GitHubリポジトリとIssue立てた</a></li>
-    <li><a href="#4-使用する言語">4 使用する言語</a></li>
     <li><a href="#おわりに">おわりに</a></li>
   </ul>
 </nav>
@@ -142,9 +141,10 @@ if (!doNotTrack) {
 <div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
 <p>今回作っていきたいのは、自分用のローカルファイルの管理ツール。<br>
-具体的には普段よく使う「インプットフォルダ」にあたる「画像フォルダ」と「ダウンロードフォルダ」を整理するためのツールを作ります。</p>
-<p>今回はコードを書く前に要件を整理します。</p>
-<p><strong>「要求」<strong>と <strong>「要件」</strong>、</strong>「設計」</strong> …この辺りの用語の違いがイマイチよくわかっていません。</p>
+具体的には普段よく使う「インプットフォルダ」にあたる「画像フォルダ」と「ダウンロードフォルダ」を整理するためのツールを作っていきます。
+言語はPython。</p>
+<p>今回はコードを書く前に要件を整理してみました。</p>
+<p>「要求」「要件」「設計」 …この辺りの用語の違いがイマイチよくわかっていません。</p>
 <h2 id="1-インプットフォルダアーカイブフォルダの運用方法">1. インプットフォルダ・アーカイブフォルダの運用方法</h2>
 <p>普段は2つのインプットフォルダをdropbox内に作って、インプットを一元管理しています。</p>
 <ul>
@@ -152,29 +152,28 @@ if (!doNotTrack) {
 <li>ダウンロードフォルダ：Web上からダウンロードしたものを一箇所に集めたフォルダ</li>
 </ul>
 <p>Web上で拾ったデータやメールの添付ファイル、ブログ用に用意した素材など。全てこのどちらかに突っ込んでおきます。</p>
-<p>そしてこれらのフォルダから、必要に応じてジャンルごとに振り分けていきます。<br>
+<p>そしてこれらのフォルダに入ったファイルを、必要に応じてジャンルごとに振り分けていきます。<br>
 振り分けないファイルは、月ごとにフォルダ分けして「アーカイブフォルダ」に移動して保管しておきます。</p>
-<p>このような運用をすることで、インプットフォルダは常に綺麗な状態にして、インプットしたファイルを探しやすい状態を作っておく、というのが目的です。</p>
-<p>…この月ごとにフォルダ整理して「アーカイブフォルダ」へ移動する、という部分が今のところ運用できていないので、この部分を自動化しよう！というものです。</p>
+<p>このような運用をすることで、インプットフォルダは常に綺麗な状態にして、ファイルを探しやすい状態を作っておく、というのが目的です。</p>
+<p>この”月ごとにフォルダ整理して「アーカイブフォルダ」へ移動する”という部分が今のところうまく運用できていません。<br>
+なので、この部分を自動化しよう！というところです。</p>
 <h2 id="2-機能の洗い出し">2. 機能の洗い出し</h2>
-<p>最初は、思いつくがままに機能を洗い出していきます。</p>
-<p>使う時を想定したら列挙しやすいです。</p>
+<p>最初は、思いつくがままに機能を洗い出しました。<br>
+使う時を想定して列挙していきました。</p>
 <p><img src="20210529_my_file_organizer/2021-05-30-00-43-15.png" alt=""></p>
 <p>この後、実装を想定した単位でIssueを作っていきます。</p>
 <h2 id="3-githubリポジトリとissue立てた">3. GitHubリポジトリとIssue立てた</h2>
-<p>せっかくなので自分用ツールもGitHubでしっかり管理しよう、と思います。<br>
+<p>せっかくなので、自分用ツールもGitHubでしっかり管理しよう、と思い、リポジトリを用意しました。<br>
 GitHubがそのままポートフォリオにもなりえます。</p>
 <p>そんなわけでリポジトリを作り、上記で洗い出した機能をもとにIssueを立ててみました。<br>
-このIssueはできるだけ関数単位とか、実装単位で立てるように心がけました。ざっくりですので、実際には修正しつつやることになりそうです。 <br>
-<a href="https://github.com/Massasquash/MyFileOrganizer/issues">Issues · Massasquash/MyFileOrganizer · GitHub</a></p>
-<p>ローカルフォルダも同じ名前で統一しています。</p>
+このIssueはできるだけ関数単位とか、実装単位で立てるように心がけました。ざっくりですので、実際には修正しつつやることになりそうです。</p>
+<p><a href="https://github.com/Massasquash/MyFileOrganizer/issues">Issues · Massasquash/MyFileOrganizer · GitHub</a></p>
+<p>ローカルフォルダもリポジトリ名と同じ名前で統一しています。</p>
 <p>自分用のツールなので、リポジトリ名の頭に「My」をつけました。<br>
-今後も<strong>自分用ツールは頭に「My」をつける</strong>という命名規則でやっていくと便利かな、と思っています。</p>
-<h2 id="4-使用する言語">4 使用する言語</h2>
-<p>Pythonを使っていきます。</p>
+今後も<strong>自分用ツールは頭に「My」をつける</strong>というルールでやっていくと、リポジトリが分かりやすく便利かな、と思っています。</p>
 <h2 id="おわりに">おわりに</h2>
 <p>次回は実際にコードを書いていきます。<br>
-ツール制作が久々？なのもあり、なんだか緊張しますね。</p>
+ツール制作が久々？なのもあり、なんだか緊張します。</p>
 
 		</div>
 		<footer class="post__footer">
@@ -216,7 +215,7 @@ GitHubがそのままポートフォリオにもなりえます。</p>
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/">[ファイル整理ツール]要件定義とイシュー</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/">[ファイル整理ツール01]要件定義とイシュー</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/">[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run-copy/">[Python]Macでスクリプトをダブルクリックで実行できるようにする</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/">[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</a></li>
