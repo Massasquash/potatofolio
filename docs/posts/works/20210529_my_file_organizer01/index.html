@@ -5,26 +5,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[Effective Python]01 Pythonのバージョンについて - Potatofolio</title>
+	<title>[ファイル整理ツール01]要件定義とイシュー - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[Effective Python]01 Pythonのバージョンについて" />
+		<meta property="og:title" content="[ファイル整理ツール01]要件定義とイシュー" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_1/" /><meta property="og:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/><meta property="article:section" content="python" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer01/" /><meta property="og:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-29T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-05-29T00:00:00&#43;00:00" />
 
 
-
-
-		<meta itemprop="name" content="[Effective Python]01 Pythonのバージョンについて">
-<meta itemprop="description" content="">
-
-<meta itemprop="wordCount" content="1294"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
-<meta itemprop="keywords" content="" />
+		<meta itemprop="name" content="[ファイル整理ツール01]要件定義とイシュー">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-05-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1086"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="keywords" content="ツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 
-<meta name="twitter:title" content="[Effective Python]01 Pythonのバージョンについて"/>
+<meta name="twitter:title" content="[ファイル整理ツール01]要件定義とイシュー"/>
 <meta name="twitter:description" content=""/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,9 +116,11 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[Effective Python]01 Pythonのバージョンについて</h1>
-			<p class="post__lead">「Effective python第２版」の学習備忘録</p>
-			<div class="post__meta meta"><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/pythoneffective-python-2th/" rel="category">Python「Effective Python 2th」</a>
+			<h1 class="post__title">[ファイル整理ツール01]要件定義とイシュー</h1>
+			<p class="post__lead">要件定義、GitHub Issue作成</p>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-05-29T00:00:00Z">May 29, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/works/" rel="category">Works</a>
 	</span>
 </div></div>
 		</header>
@@ -127,80 +129,73 @@ if (!doNotTrack) {
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#項目1-使用するpythonのバージョンを知っておく">項目1 使用するPythonのバージョンを知っておく</a></li>
-    <li><a href="#解説">解説</a>
-      <ul>
-        <li><a href="#１コマンドラインでバージョンを調べる方法">（１）コマンドラインでバージョンを調べる方法</a></li>
-        <li><a href="#２python実行時にバージョンを調べる方法">（２）Python実行時にバージョンを調べる方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#感想">感想</a></li>
-    <li><a href="#memo">MEMO</a></li>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#1-インプットフォルダアーカイブフォルダの運用方法">1. インプットフォルダ・アーカイブフォルダの運用方法</a></li>
+    <li><a href="#2-必要な機能の洗い出し">2. 必要な機能の洗い出し</a></li>
+    <li><a href="#3-githubリポジトリとissue立てた">3. GitHubリポジトリとIssue立てた</a></li>
+    <li><a href="#おわりに">おわりに</a></li>
   </ul>
 </nav>
 	</div>
 </div>
 <div class="content post__content clearfix">
-			<h1 id="はじめに">はじめに</h1>
-<p>この記事は「Effective Python 第二版」の学習の備忘録です。<br>
-今回は<strong>１章 Pythonic思考</strong>の項目1について学びました。</p>
-<h2 id="項目1-使用するpythonのバージョンを知っておく">項目1 使用するPythonのバージョンを知っておく</h2>
-<p>Python3.8が2019年10月にリリースされ、多くの便利な構文が導入されました。<br>
-またPython2は2020年1月にサポートがなくなり、さらに2020年4月に使用期限が終わり公式な保守が行われなくなりました。<br>
-自己責任で使うことはできますが、Python2の利用は避け、Python3をプロジェクトに使っていくのが安全です。そのために、自分のPCにどのバージョンがインストールされているのかを確認する方法が整理されているのがこの項目の内容でした。</p>
-<h2 id="解説">解説</h2>
-<p>使用しているPythonのバージョンを調べるには、以下の方法があります。</p>
+			<h2 id="はじめに">はじめに</h2>
+<p>今回作っていきたいのは、自分用のローカルファイルの管理ツール。<br>
+具体的には普段よく使う「インプットフォルダ」にあたる「画像フォルダ」と「ダウンロードフォルダ」を整理するためのツールを作っていきます。
+言語はPython。</p>
+<p>今回はコードを書く前に要件を整理してみました。</p>
+<p>「要求」「要件」「設計」 …この辺りの用語の違いがイマイチよくわかっていません。</p>
+<h2 id="1-インプットフォルダアーカイブフォルダの運用方法">1. インプットフォルダ・アーカイブフォルダの運用方法</h2>
+<p>普段は2つのインプットフォルダをdropbox内に作って、インプットを一元管理しています。</p>
 <ul>
-<li>（１）コマンドラインで調べる方法</li>
-<li>（２）Python実行時（対話モードやJupyter Notebookのセル上などで）調べる方法</li>
+<li>画像フォルダ：スクショ、写真素材、スマホから転送した画像など、イメージファイルを一箇所に集めたフォルダ</li>
+<li>ダウンロードフォルダ：Web上からダウンロードしたものを一箇所に集めたフォルダ</li>
 </ul>
-<p>それぞれの方法について具体的に見ていきます。</p>
-<h3 id="１コマンドラインでバージョンを調べる方法">（１）コマンドラインでバージョンを調べる方法</h3>
-<p>まずはターミナルなどのコマンドライン確認する方法。自分のPCにインストールしているPythonのバージョンを調べられます。<br>
-<code>python</code>コマンドと<code>python3</code>コマンドでは結果が違い、インストール状況によって変わってきます。<br>
-例えばPython3をインストールしていない場合は、python3コマンドは動きません。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python --version  <span style="color:#75715e">#-&gt; Python 2.7.10</span>
-$ python3 --version <span style="color:#75715e">#-&gt; Python 3.8.0</span>
-</code></pre></div><h3 id="２python実行時にバージョンを調べる方法">（２）Python実行時にバージョンを調べる方法</h3>
-<p>次にPythonスクリプト上でバージョンを確認する方法です。組み込み関数<code>sys</code>を使います。<br>
-ここではJupyter Notebook上で確認することを想定していますが、ターミナルで<code>python3</code>（もしくは<code>python</code>）とコマンドを打ち、対話モードにした状態で確認することもできます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
-<span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>version_info)
-<span style="color:#75715e"># -&gt; sys.version_info(major=3, minor=8, micro=6, releaselevel=&#39;final&#39;, serial=0)</span>
-<span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>version)
-<span style="color:#75715e"># -&gt;3.8.6 (default, Oct  8 2020, 14:07:53) </span>
-</code></pre></div><h2 id="感想">感想</h2>
-<p>プログラミング自体を学習しはじめの頃は、プログラミング言語にバージョンがあることや、PCに複数のバージョンが同時に入っていること、という自体のイメージがしづらいかもしれません（自分はそうでした）。<br>
-「プログラミング言語もソフトウェアの一種」という考え方をすると少しイメージしやすいかなと思います。<br>
-ソフトウェアは日々更新されてより良いバージョンが出てきたり、古いバージョンのソフトウェアを使い続けることができるのと同じように、Python言語もにもバージョンがあり日々進化を続けています。</p>
-<p>プログラミング言語自体も、その中身は誰かがプログラミング言語で書いて作ったものです。<br>
-Pythonはオープンソースで作られている言語なので、裏側でコミュニティの皆さんが保守管理してくれているため、僕らは安心してコードを書いてプログラミングをすることができています。<br>
-より良くなるようにバグの改善・セキュリティ向上など改善を続けているので、しっかりと「サポートが受けられているバージョン」をプロジェクトに使っていくのが良さそうです。</p>
-<hr>
-<h2 id="memo">MEMO</h2>
-<p>【書籍】</p>
-<ul>
-<li>Effective Python 第2版 ―Pythonプログラムを改良する90項目</li>
-</ul>
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=massasquash08-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4873119170&linkId=b01ad363c615cc9408dfcc360b1a85de&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
-<hr>
+<p>Web上で拾ったデータやメールの添付ファイル、ブログ用に用意した素材など。全てこのどちらかに突っ込んでおきます。</p>
+<p>そしてこれらのフォルダに入ったファイルを、必要に応じてジャンルごとに振り分けていきます。<br>
+振り分けないファイルは、月ごとにフォルダ分けして「アーカイブフォルダ」に移動して保管しておきます。</p>
+<p>このような運用をすることで、インプットフォルダは常に綺麗な状態にして、ファイルを探しやすい状態を作っておく、というのが目的です。</p>
+<p>この”月ごとにフォルダ整理して「アーカイブフォルダ」へ移動する”という部分が今のところうまく運用できていません。<br>
+なので、この部分を自動化しよう！というところです。</p>
+<h2 id="2-必要な機能の洗い出し">2. 必要な機能の洗い出し</h2>
+<p>最初は、思いつくがままに機能を洗い出しました。<br>
+使う時を想定して列挙していきました。</p>
+<p><img src="https://massasquash.github.io/potatofolio/20210529_my_file_organizer01/2021-05-30-00-43-15.png" alt="画像"></p>
+<p>この後、実装を想定した単位でIssueを作っていきます。</p>
+<h2 id="3-githubリポジトリとissue立てた">3. GitHubリポジトリとIssue立てた</h2>
+<p>せっかくなので、自分用ツールもGitHubでしっかり管理しよう、と思い、リポジトリを用意しました。<br>
+GitHubがそのままポートフォリオにもなりえます。</p>
+<p>そんなわけでリポジトリを作り、上記で洗い出した機能をもとにIssueを立ててみました。<br>
+このIssueはできるだけ関数単位とか、実装単位で立てるように心がけました。ざっくりですので、実際には修正しつつやることになりそうです。</p>
+<p><a href="https://github.com/Massasquash/MyFileOrganizer/issues">Issues · Massasquash/MyFileOrganizer · GitHub</a></p>
+<p>ローカルフォルダもリポジトリ名と同じ名前で統一しています。</p>
+<p>自分用のツールなので、リポジトリ名の頭に「My」をつけました。<br>
+今後も<strong>自分用ツールは頭に「My」をつける</strong>というルールでやっていくと、リポジトリが分かりやすく便利かな、と思っています。</p>
+<h2 id="おわりに">おわりに</h2>
+<p>次回は実際にコードを書いていきます。<br>
+ツール制作が久々？なのもあり、なんだか緊張します。</p>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="https://massasquash.github.io/potatofolio/tags/%E3%83%84%E3%83%BC%E3%83%AB%E5%88%B6%E4%BD%9C/" rel="tag">ツール制作</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_2/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[Effective Python]02 PEP8スタイルガイド</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/python/effective_python/effective_python00/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[Effective Python]00 目次</p>
+			<p class="pager__title">[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</p>
 		</a>
 	</div>
 </nav>
