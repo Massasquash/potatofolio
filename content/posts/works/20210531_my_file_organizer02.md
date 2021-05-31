@@ -1,7 +1,7 @@
 ---
 title: "[ファイル整理ツール02]ファイルのリネーム処理を行う"
 date: 2021-05-31
-lead: "要件定義、GitHub Issue作成"
+lead: "Path.stat()でファイル作成日など、"
 categories:
   - "Works"
 tags:
@@ -12,6 +12,10 @@ tags:
 こちらのイシューを進めます。
 
 [リネーム処理の関数作成 · Issue #1 · Massasquash/MyFileOrganizer · GitHub](https://github.com/Massasquash/MyFileOrganizer/issues/1)
+
+
+- `Path.stat().st_birthtime`でファイルの作成日をエポックタイムで取得
+- 
 
 
 ## 1. ファイル名の頭に日付8桁を付与する関数
@@ -48,23 +52,25 @@ def rename_path_add_prefix(path, prefix_format='%Y%m%d'):
 ```
 
 ### Path.stat()
-`パスオブジェクト.stat()`で、そのパスオブジェクトの作成日時や更新日時などのタイムスタンプ情報を調べることができる。
+`パスオブジェクト.stat()`は、そのパスオブジェクトの作成日時や更新日時などのタイムスタンプ情報を調べることができるメソッドです。
 
-こんな感じで出てくる。  
+こんな感じで情報を得られます。  
 
 ```
 os.stat_result(st_mode=33188, st_ino=942852, st_dev=16777223, st_nlink=1, st_uid=501, st_gid=20, st_size=974565, st_atime=1620471805, st_mtime=1617714680, st_ctime=1620471803)
 ```
 
-属性にはこんな意味があるらしい。全てエポックタイムなので注意。
+属性にはこんな意味があるようです。 
+日時は全てエポックタイムになっているので注意。
 
 | TH | TH |
 | :--- | :--- |
 | st_atime | 最終アクセス日時 |
 | st_mtime | 最終内容更新日時 |
 | st_ctime | Macではメタデータの最終更新日時／ Windowsでは作成日時 |
-| st_mtime | Macでは作成日時 |
+| st_birthtime | Macでは作成日時 |
 
+上記はテストファイルで適当な環境で出したのですが`st_birthtime`がありませんでした。環境によって違うそうです。 
 
 ### datetime.fromtimestamp()
 エポックタイムとして得たファイルの作成日時を、`datetime.fromtimestamp(エポックタイム)`でdatetimeオブジェクトに変換して使う。
@@ -73,7 +79,8 @@ os.stat_result(st_mode=33188, st_ino=942852, st_dev=16777223, st_nlink=1, st_uid
 ## 2. ファイル名の頭の日付6桁を削除する関数
 この関数は本来なら不要なのですが、以前日付6桁をファイル名の先頭に加えたデータを作ってしまっていたので、それを日付8桁に揃えるために作りました。
 
-汎用性を高めるために、接頭辞を削除する処理だけを行う関数です。
+汎用性を高めるために、接頭辞を削除する処理だけを行う関数としました。  
+戻り値として変更後のパスオブジェクトを返すようにすることで、メイン処理の方で続けて`rename_path_add_prefix()`関数に渡せるようにしています
 
 ```python
 def rename_path_remove_prefix(path, prefix_nums=7):
@@ -131,9 +138,9 @@ for content in contents:
 
 ## おわりに
 久々にコードを書いていろいろ手間取りました。  
-このツール制作過程も少し時間がかかっているので、もうちょっとさらっと書いていきたいです。  
-
-今回のコード、`rename_path_remove_prefix()`と`rename_path_remove_prefix()`を対になるような感じで書けたのが個人的に良かった。  
+このツール制作過程のログを書くのも少し時間がかかってしまっているので、もう少しさくっと書いていきたいです。  
+  
+ちなみに今回のコード、`rename_path_remove_prefix()`と`rename_path_remove_prefix()`を対になるような感じで書けたのが個人的に良かった。  
 
 
 ### MEMO:今回のコード
