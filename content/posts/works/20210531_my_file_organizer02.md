@@ -1,7 +1,7 @@
 ---
-title: "[ファイル整理ツール02]ファイルのリネーム処理を行う"
+title: "[ファイル整理ツール02]ファイルのリネーム処理を行う[Python]"
 date: 2021-05-31
-lead: "Path.stat()でファイル作成日など、"
+lead: "pathlib、datetime、ファイル作成日8桁を頭につける"
 categories:
   - "Works"
 tags:
