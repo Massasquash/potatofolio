@@ -5,7 +5,7 @@ lead: "pathlib、datetime、ファイル作成日8桁を頭につける"
 categories:
   - "Works"
 tags:
-  - "ツール制作"
+  - "ツール制作",  "Python"
 ---
 
 ## はじめに
@@ -14,13 +14,9 @@ tags:
 [リネーム処理の関数作成 · Issue #1 · Massasquash/MyFileOrganizer · GitHub](https://github.com/Massasquash/MyFileOrganizer/issues/1)
 
 
-- `Path.stat().st_birthtime`でファイルの作成日をエポックタイムで取得
-- 
-
-
 ## 1. ファイル名の頭に日付8桁を付与する関数
 第一引数に与えたパス名を変更する関数です。  
-作成日の日付8桁とアンスコ（例：20210531_）をファイル名の頭に加えます。  
+作成日の日付8桁（例：20210531_）をファイル名の頭に加えます。  
 
 パスがフォルダの場合は、中身はいじらずそのフォルダ名のみ変更します。  
 戻り値には変更後のパスを指定しておきました（たぶん使わないけど次の関数と合わせるため）。  
@@ -73,13 +69,14 @@ os.stat_result(st_mode=33188, st_ino=942852, st_dev=16777223, st_nlink=1, st_uid
 上記はテストファイルで適当な環境で出したのですが`st_birthtime`がありませんでした。環境によって違うそうです。 
 
 ### datetime.fromtimestamp()
-エポックタイムとして得たファイルの作成日時を、`datetime.fromtimestamp(エポックタイム)`でdatetimeオブジェクトに変換して使う。
+エポックタイムとして得たファイルの作成日時を、`datetime.fromtimestamp(エポックタイム)`でdatetimeオブジェクトに変換しています。  
 
 
 ## 2. ファイル名の頭の日付6桁を削除する関数
 この関数は本来なら不要なのですが、以前日付6桁をファイル名の先頭に加えたデータを作ってしまっていたので、それを日付8桁に揃えるために作りました。
+（6桁にした方がファイル名が短くなって良いかと思ったのですが、どうも8桁の方が運用しやすかった）
 
-汎用性を高めるために、接頭辞を削除する処理だけを行う関数としました。  
+汎用性を高めるために、頭の日付を削除する処理だけを行う関数としました。  
 戻り値として変更後のパスオブジェクトを返すようにすることで、メイン処理の方で続けて`rename_path_add_prefix()`関数に渡せるようにしています
 
 ```python
@@ -143,5 +140,8 @@ for content in contents:
 ちなみに今回のコード、`rename_path_remove_prefix()`と`rename_path_remove_prefix()`を対になるような感じで書けたのが個人的に良かった。  
 
 
-### MEMO:今回のコード
+### MEMO
+- DS.storeをgitignoreに追加
+
+### GitHub
 [Feat: インプットフォルダ1つに対してリネーム処理を行う · Massasquash/MyFileOrganizer@319ff73 · GitHub](https://github.com/Massasquash/MyFileOrganizer/commit/319ff7358dc6ff5dca42daefbc64e57a69833010)
