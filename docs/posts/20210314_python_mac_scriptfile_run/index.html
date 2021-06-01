@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[Python]Macでスクリプトをダブルクリックで実行できるようにする">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-03-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1176"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="1774"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -131,7 +131,11 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#1pythonスクリプトのターミナルでの起動方法">1.Pythonスクリプトのターミナルでの起動方法</a></li>
-    <li><a href="#2-pythonスクリプトをダブルクリックで実行できるように設定する">2. Pythonスクリプトをダブルクリックで実行できるように設定する</a></li>
+    <li><a href="#2-pythonスクリプトをダブルクリックで実行できるように設定する">2. Pythonスクリプトをダブルクリックで実行できるように設定する</a>
+      <ul>
+        <li><a href="#python3-launcher-3の設定の見直し">Python3 Launcher 3の設定の見直し</a></li>
+      </ul>
+    </li>
     <li><a href="#おわりに">おわりに</a></li>
   </ul>
 </nav>
@@ -167,19 +171,36 @@ $ python3 &lt;.pyファイル名&gt;
 <br>
 <img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/3.png" alt="image"></p>
 <p>これで、スクリプトファイルをダブルクリックで実行できるようになっています。</p>
-<h2 id="おわりに">おわりに</h2>
-<p>いくつか気になることがあります。</p>
+<p>試しにスクリプトファイルをダブルクリックしてみると、Docにロケットみたいなアイコンが出現しているはずです。
+<img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/5.png" alt="image"></p>
+<p>「ランチャーアプリは立ち上がってるけどスクリプト実行が上手くいかない」というような場合、自分の環境だと以下の設定の見直しを行うと上手くいきました。</p>
+<h3 id="python3-launcher-3の設定の見直し">Python3 Launcher 3の設定の見直し</h3>
+<p>ダブルクリックした際に、以下のような「Python3 Launcher 3」の設定ダイアログが出現しているはず。
+<br>
+<img src="https://massasquash.github.io/potatofolio/img/posts/20210314_python_mac_scriptfile_run/4.png" alt="image"></p>
+<p>どうにもスクリプトがうまく動作しないな&hellip;という時は、こちらをチェックしてみると良いかもしれません。</p>
 <ul>
-<li>
-<p>エイリアスを実行するには？
-スクリプトファイルのエイリアスをデスクトップに作成して、それをダブルクリックで実行できるようにしたいです。確か以前できたような気がします。</p>
-</li>
-<li>
-<p>仮想環境を作ってスクリプト作成しているのでその影響は？
-現在はvenvで仮想環境を作り、必要なライブラリのインストールはその仮想環境内で行っています。仮想環境に入らないとライブラリが使えないため、なんだか直感的にはただダブルクリックするだけだと実行できないような&hellip;。<br>
-この辺りの仕組みを知りたいです。</p>
-</li>
+<li>「Interpreter」がPython3のパスになっているか</li>
 </ul>
+<p>自身のPCにインストールされているPython3のパスになっているかチェックします。
+ここで設定するのは要するにPython3を実行するためのスクリプトがどこに保存されているかを示した場所で、ターミナルで<code>$ which python3</code>コマンドでPython3のパスが確認できます。
+このパスが異なっていると、Python3コマンドが実行できないためそのスクリプトファイルの実行自体ができません。</p>
+<ul>
+<li>「Run in a Terminal window」のチェックを外す</li>
+</ul>
+<p>僕の環境だとこのチェックがついたままだとちゃんとスクリプトが実行されませんでした（あまり理屈は理解できていません）。</p>
+<h2 id="おわりに">おわりに</h2>
+<p>いくつかメモ。</p>
+<ul>
+<li>エイリアスでの実行</li>
+</ul>
+<p>スクリプトファイルのエイリアスをデスクトップに作成して、それをダブルクリックで実行できるようにしました。<br>
+本体のスクリプトファイルが上手く実行できるようなら、エイリアスにしても問題なく実行できているようです。</p>
+<ul>
+<li>仮想環境を作ってスクリプト作成しているのでその影響は？</li>
+</ul>
+<p>現在はvenvで仮想環境を作り、必要なライブラリのインストールはその仮想環境内で行っています。仮想環境に入らないとライブラリが使えないため、なんだか直感的にはただダブルクリックするだけだと実行できないような気がしていましたが、現実的には問題なく実行できています。<br>
+何か根本的に理解不足な気がするので、この辺りの仕組みを知りたいです。</p>
 
 		</div>
 	</article>
@@ -188,13 +209,13 @@ $ python3 &lt;.pyファイル名&gt;
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/01/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/" rel="next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/02/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</p>
 		</a>
@@ -216,11 +237,11 @@ $ python3 &lt;.pyファイル名&gt;
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/">[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/03_myfileorganizer/03/">[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/03_myfileorganizer/02/">[ファイル整理ツール02]ファイルのリネーム処理を行う[Python]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/03_myfileorganizer/01/">[ファイル整理ツール01]要件定義とイシュー</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/02/">[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/">[Python]Macでスクリプトをダブルクリックで実行できるようにする</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/">[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210214_gas_utilities_formatdate/">[GAS]日付をフォーマット指定で文字列変換するのに便利なクラス</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/20210213_gas_reduce/">[GAS]reduce()メソッドを活用して文字列をまとめて置換する</a></li>
 		</ul>
 	</div>
 </div>
@@ -251,6 +272,8 @@ $ python3 &lt;.pyファイル名&gt;
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/gas%E3%83%84%E3%83%BC%E3%83%AB%E5%88%B6%E4%BD%9C/" title="GASツール制作">GASツール制作</a>
 		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/hugo%E3%83%96%E3%83%AD%E3%82%B0/" title="Hugoブログ">Hugoブログ</a>
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/python/" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/%E3%83%84%E3%83%BC%E3%83%AB%E5%88%B6%E4%BD%9C/" title="ツール制作">ツール制作</a>
 		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96/" title="業務効率化">業務効率化</a>
 	</div>
 </div>

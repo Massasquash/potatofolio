@@ -1,5 +1,5 @@
 ---
-title: "GoogleDriveの画像ファイルのダウンロードリンクを直接取得する方法"
+title: "GoogleDriveの画像ファイルを直接ダウンロードするためのURL"
 date: 2021-04-05
 lead: ""
 categories:
@@ -10,14 +10,7 @@ draft: true
 ## はじめに
 IFTTTでGoogleDriveとDropboxを繋げて、
 「GoogleDriveに画像ファイルがアップロードされたらDropboxに保存する」
-というような連携をしている途中で気になったのでメモ。
-
-画像ファイルを直接ダウンロードするためのURLってないんだろうか？
-
-IFTTTを使うとそこは気にせず使えたが、
-
-
-
+というような連携をしている途中で発見したのでメモ。
 
 
 ## 
