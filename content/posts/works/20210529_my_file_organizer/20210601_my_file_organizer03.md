@@ -8,12 +8,9 @@ tags: ["ツール制作",  "Python"]
 ---
 
 ## はじめに
-前回ここまでやりました。  
+前回に引き続き、イシュー#1を続けていきます。  
 
-[Feat: インプットフォルダ1つに対してリネーム処理を行う · Massasquash/MyFileOrganizer@319ff73 · GitHub](https://github.com/Massasquash/MyFileOrganizer/commit/319ff7358dc6ff5dca42daefbc64e57a69833010)
-
-
-引き続き、イシュー#1を続けていきます。  
+https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/20210531_my_file_organizer02/
 
 [リネーム処理の関数作成 · Issue #1 · Massasquash/MyFileOrganizer · GitHub](https://github.com/Massasquash/MyFileOrganizer/issues/1)
 
