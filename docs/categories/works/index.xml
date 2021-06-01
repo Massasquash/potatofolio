@@ -6,85 +6,94 @@
     <description>Recent content in Works on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/works/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/works/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/20210601_my_file_organizer03/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/20210601_my_file_organizer03/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[ファイル整理ツール02]ファイルのリネーム処理を行う[Python]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210531_my_file_organizer02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/20210531_my_file_organizer02/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210531_my_file_organizer02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/20210531_my_file_organizer02/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ファイル整理ツール01]要件定義とイシュー</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/20210529_my_file_organizer01/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/20210529_my_file_organizer01/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager/20210315_thermometermanager02/</link>
       <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210315_thermometermanager02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager/20210315_thermometermanager02/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager/20210219_thermometermanager01/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210219_thermometermanager/20210219_thermometermanager01/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ05]テーマのカスタマイズその２</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210115_hugo_blog05/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210115_hugo_blog05/</link>
       <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210115_hugo_blog05/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210115_hugo_blog05/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ04]テーマのカスタマイズその１</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210111_hugo_blog04/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210111_hugo_blog04/</link>
       <pubDate>Mon, 11 Jan 2021 10:15:30 +0900</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210111_hugo_blog04/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210111_hugo_blog04/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ03]記事更新する際の手順</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210111_hugo_blog03/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210111_hugo_blog03/</link>
       <pubDate>Mon, 11 Jan 2021 09:46:35 +0900</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210111_hugo_blog03/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210111_hugo_blog03/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ02]GitHub Pagesで公開する</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210109_hugo_blog02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210109_hugo_blog02/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210109_hugo_blog02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210109_hugo_blog02/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ01]構築をはじめる</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210108_hugo_blog01/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/20210108_hugo_blog/20210108_hugo_blog01/</guid>
       <description></description>
     </item>
     

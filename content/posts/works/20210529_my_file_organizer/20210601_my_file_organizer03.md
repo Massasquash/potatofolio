@@ -2,7 +2,8 @@
 title: "[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]"
 date: 2021-06-01
 lead: "テスト用フォルダと本番用フォルダの切り替え"
-categories: "Works"
+categories: 
+    - "Works"
 tags: ["ツール制作",  "Python"]
 ---
 

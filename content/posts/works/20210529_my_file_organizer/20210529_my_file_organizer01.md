@@ -3,9 +3,8 @@ title: "[ファイル整理ツール01]要件定義とイシュー"
 date: 2021-05-29
 lead: "要件定義、GitHub Issue作成"
 categories:
-  - "Works"
-tags:
-  - "ツール制作"
+    - "Works"
+tags: ["ツール制作"]
 ---
 
 ## はじめに
