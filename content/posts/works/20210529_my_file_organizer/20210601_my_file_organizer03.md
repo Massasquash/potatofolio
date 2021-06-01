@@ -57,9 +57,11 @@ IN_PATHS = [
 今回はシンプルに。イシュー#1 完了しました。
 
 ### MEMO
-次回のイシュー  
+今回の実装  
+[Task: 複数のIN_PATHSへの対応・本番用フォルダ追加 · Massasquash/MyFileOrganizer@f5df0b1 · GitHub](https://github.com/Massasquash/MyFileOrganizer/commit/f5df0b17adcc38b40c778b4c7cc7f1d0296a6de8)
+
+次回の実装  
 [移動処理（同フォルダ）の関数作成 · Issue #2 · Massasquash/MyFileOrganizer · GitHub](https://github.com/Massasquash/MyFileOrganizer/issues/2)
 
-
 ### GitHub
-[Task: 複数のIN_PATHSへの対応・本番用フォルダ追加 · Massasquash/MyFileOrganizer@f5df0b1 · GitHub](https://github.com/Massasquash/MyFileOrganizer/commit/f5df0b17adcc38b40c778b4c7cc7f1d0296a6de8)
+[GitHub - Massasquash/MyFileOrganizer](https://github.com/Massasquash/MyFileOrganizer)

@@ -140,7 +140,11 @@ for content in contents:
 
 
 ### MEMO
+今回の実装
+[Feat: インプットフォルダ1つに対してリネーム処理を行う · Massasquash/MyFileOrganizer@319ff73 · GitHub](https://github.com/Massasquash/MyFileOrganizer/commit/319ff7358dc6ff5dca42daefbc64e57a69833010)
+
+次回の実装
 - DS.storeをgitignoreに追加
 
 ### GitHub
-[Feat: インプットフォルダ1つに対してリネーム処理を行う · Massasquash/MyFileOrganizer@319ff73 · GitHub](https://github.com/Massasquash/MyFileOrganizer/commit/319ff7358dc6ff5dca42daefbc64e57a69833010)
+[GitHub - Massasquash/MyFileOrganizer](https://github.com/Massasquash/MyFileOrganizer)
