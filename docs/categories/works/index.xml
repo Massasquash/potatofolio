@@ -6,7 +6,34 @@
     <description>Recent content in Works on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 15 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/works/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/works/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/03_myfileorganizer/03/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/03_myfileorganizer/03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[ファイル整理ツール02]ファイルのリネーム処理を行う[Python]</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/03_myfileorganizer/02/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/03_myfileorganizer/02/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[ファイル整理ツール01]要件定義とイシュー</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/03_myfileorganizer/01/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/03_myfileorganizer/01/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</title>
       <link>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/02/</link>
