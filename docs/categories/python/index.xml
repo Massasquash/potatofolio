@@ -9,64 +9,64 @@
     <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Python]Macでスクリプトをダブルクリックで実行できるようにする</title>
-      <link>https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/programming/20210314_python_mac_scriptfile_run/</link>
       <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/20210314_python_mac_scriptfile_run/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/programming/20210314_python_mac_scriptfile_run/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Python]スレッド・プロセスの概念とマルチスレッド</title>
-      <link>https://massasquash.github.io/potatofolio/python/20210207_multithread01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210207_multithread01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/20210207_multithread01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210207_multithread01/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Python]ファイル管理</title>
-      <link>https://massasquash.github.io/potatofolio/python/20210215_pathlib/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210215_pathlib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/20210215_pathlib/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210215_pathlib/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Python]プロセス実行・プログラム起動</title>
-      <link>https://massasquash.github.io/potatofolio/python/20210207_multithread02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210207_multithread02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/20210207_multithread02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210207_multithread02/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Python]時間の表現</title>
-      <link>https://massasquash.github.io/potatofolio/python/20210209_time01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210209_time01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/20210209_time01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210209_time01/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Python]正規表現テキストパターンの検索と置換</title>
-      <link>https://massasquash.github.io/potatofolio/python/20210130_regex01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210130_regex01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/20210130_regex01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210130_regex01/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Python]正規表現パターン表</title>
-      <link>https://massasquash.github.io/potatofolio/python/20210130_regex02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210130_regex02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/20210130_regex02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/automatepython/20210130_regex02/</guid>
       <description></description>
     </item>
     

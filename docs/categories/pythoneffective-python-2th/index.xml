@@ -8,127 +8,127 @@
     <language>ja</language><atom:link href="https://massasquash.github.io/potatofolio/categories/pythoneffective-python-2th/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Effective Python]00 目次</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python00/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python00/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python00/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python00/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]01 Pythonのバージョンについて</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_1/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_1/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]02 PEP8スタイルガイド</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_2/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_2/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]03 str型とbytes型</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_3/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_3/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]04 フォーマット済み文字列の活用</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_4/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_4/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]05 条件分岐(論理式・三項式)とヘルパー関数の活用</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_5/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_5/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]06 タプルとアンパック構文</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_6/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_6/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]07-08 enumerate関数とzip関数</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_7-8/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_7-8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_7-8/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_7-8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]09 for, whileループの後のelseブロック</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_9/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_9/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_9/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]10 代入式で繰り返しを防ぐ</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_10/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python01_10/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python01_10/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]25 キーワード専用引数・位置専用引数の活用</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python03_25/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python03_25/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python03_25/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python03_25/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]26 関数をラップするデコレータについて</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python03_26/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python03_26/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python03_26/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python03_26/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]27-28 リスト内包表記について</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python04_27-28/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python04_27-28/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python04_27-28/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python04_27-28/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Effective Python]30,32 ジェネレータ</title>
-      <link>https://massasquash.github.io/potatofolio/python/effective_python/effective_python04_30-32/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python04_30-32/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/python/effective_python/effective_python04_30-32/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/clipboard/effectivepython/effective_python04_30-32/</guid>
       <description></description>
     </item>
     
