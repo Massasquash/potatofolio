@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MyTools on Potatofolio</title>
+    <link>https://massasquash.github.io/potatofolio/categories/mytools/</link>
+    <description>Recent content in MyTools on Potatofolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/categories/mytools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ファイル整理ツール04]月ごとにフォルダを作成し移動する[Python]</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/04/</link>
+      <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/04/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/03/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[ファイル整理ツール02]ファイルのリネーム処理を行う[Python]</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/02/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/02/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[ファイル整理ツール01]要件定義とイシュー</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/01/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/01/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
