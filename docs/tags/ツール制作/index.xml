@@ -16,5 +16,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>test</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/03/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/02/</link>
+      <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/02/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/01/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/01/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
