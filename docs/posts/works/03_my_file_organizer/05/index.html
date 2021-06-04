@@ -5,26 +5,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python] - Potatofolio</title>
+	<title>[ファイル整理ツール05]メイン処理をリファクタリングする[Python] - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]" />
+		<meta property="og:title" content="[ファイル整理ツール05]メイン処理をリファクタリングする[Python]" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/03/" /><meta property="og:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-06-01T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-06-01T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/05/" /><meta property="og:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-04T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-04T00:00:00&#43;00:00" />
 
 
-		<meta itemprop="name" content="[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-06-01T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-06-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="644"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+		<meta itemprop="name" content="[ファイル整理ツール05]メイン処理をリファクタリングする[Python]">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-06-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-06-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1317"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="ツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 
-<meta name="twitter:title" content="[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]"/>
+<meta name="twitter:title" content="[ファイル整理ツール05]メイン処理をリファクタリングする[Python]"/>
 <meta name="twitter:description" content=""/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,11 +116,10 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]</h1>
-			<p class="post__lead">テスト用フォルダと本番用フォルダの切り替え</p>
+			<h1 class="post__title">[ファイル整理ツール05]メイン処理をリファクタリングする[Python]</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-06-01T00:00:00Z">June 01, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/mytools/" rel="category">MyTools</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-06-04T00:00:00Z">June 04, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/mytools/" rel="category">MyTools</a>
 	</span>
 </div></div>
 		</header>
@@ -130,8 +129,12 @@ if (!doNotTrack) {
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#1-メイン処理のforループ">1. メイン処理のforループ</a></li>
-    <li><a href="#2-本番用のフォルダ">2. 本番用のフォルダ</a></li>
+    <li><a href="#1-main関数">1. main関数</a></li>
+    <li><a href="#2-shutilmoveの上書き防止策">2. shutil.move()の上書き防止策</a>
+      <ul>
+        <li><a href="#pathlibpathオブジェクトのプロパティ">pathlib.Pathオブジェクトのプロパティ</a></li>
+      </ul>
+    </li>
     <li><a href="#おわりに">おわりに</a>
       <ul>
         <li><a href="#memo">MEMO</a></li>
@@ -144,42 +147,150 @@ if (!doNotTrack) {
 </div>
 <div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
-<p>前回に引き続き、イシュー#1を続けていきます。</p>
-<p><a href="https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/20210531_my_file_organizer02/">https://massasquash.github.io/potatofolio/posts/works/20210529_my_file_organizer/20210531_my_file_organizer02/</a></p>
-<p><a href="https://github.com/Massasquash/MyFileOrganizer/issues/1">リネーム処理の関数作成 · Issue #1 · Massasquash/MyFileOrganizer · GitHub</a></p>
-<h2 id="1-メイン処理のforループ">1. メイン処理のforループ</h2>
-<p>メイン処理に修正を加えます。<br>
-<code>IN_PATHS</code>の中身が増えても全てのフォルダに対して実行できるように、<code>for in</code>で回すように変更します。</p>
-<p>変数名<code>in_folder</code>はそのまま使うため、特に中身の変更点はなかったです。</p>
-<p>実行し、テスト用のフォルダで問題なく動作するかを確認しました。</p>
-<h2 id="2-本番用のフォルダ">2. 本番用のフォルダ</h2>
-<p>本番用のフォルダパスを用意します</p>
-<p>開発を楽にするために、テスト用のフォルダと本番用のフォルダをそれぞれ残しておき、コメントアウトで切替する、というような書き方をとってみます。<br>
-変数名を同じにすることで中のコードに変更を加えなくても良いようにするためです。<br>
-もっとスマートなやり方があるかもしれません。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># test： テスト用のフォルダ</span>
-<span style="color:#75715e"># IN_PATHS = [</span>
-<span style="color:#75715e">#     hogehoge,</span>
-<span style="color:#75715e">#     hugahuga</span>
-<span style="color:#75715e"># ]</span>
+<p>今回は イシュー#2 の続き。</p>
+<p><a href="https://github.com/Massasquash/MyFileOrganizer/issues/2">移動処理（同フォルダ）の関数作成 · Issue #2 · Massasquash/MyFileOrganizer · GitHub</a></p>
+<p>処理としてはできたので、メイン処理をリファクタリングしてすっきりさせようと思います。</p>
+<ul>
+<li>
+<p>メイン処理
+フォルダ内を探すひとまとまりの処理なので、これ以上処理を分ける必要はないかなと思いました。一連の分岐処理を<code>main</code>関数に突っ込み、スクリプト実行時に動作するようにします。</p>
+</li>
+<li>
+<p>ファイルの上書きを防ぐ
+現状の仕様だと、<code>shutil.move()</code>でファイルを移動すると、移動先に同名のファイルがあった際に上書きしてしまうようです。古いファイルを残しておきたい場合もあるため、ちょっと危険かもなと思いました。</p>
+</li>
+</ul>
+<h2 id="1-main関数">1. main関数</h2>
+<p><code>main</code>関数定義と、スクリプト実行時にそれが実行される処理を作りました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;メイン処理&#34;&#34;&#34;</span>
+    <span style="color:#960050;background-color:#1e0010">（コード省略）</span>
 
-<span style="color:#75715e"># prod： 本番用のフォルダ</span>
-IN_PATHS <span style="color:#f92672">=</span> [
-    hogehoge_prod,
-    hugahuga_prod
-]
-</code></pre></div><p>実行し、本番用のフォルダでもリネームされるかどうかをチェック。</p>
-<p>ファイルにプログラムで一気に手を加えるので、誤って削除されてしまったりすると面倒なことになります。念のためフォルダのコピーをとってから実行確認を行います（dropboxなら元に戻せるのであまり心配はいりませんが）。</p>
-<p>問題も起こらずうまくいきました。</p>
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    main()
+</code></pre></div><p>関数内の変数名が一部間違っていたのでそれも修正。</p>
+<h2 id="2-shutilmoveの上書き防止策">2. shutil.move()の上書き防止策</h2>
+<p><code>move_file_to_folder</code>関数でファイル移動の処理をする前に、ファイル名の存在確認をして、存在する場合はリネームするような処理をすれば良さそうです。<br>
+よくある、末尾にカッコで数値を増やしていくファイル名の付け方をします。</p>
+<p>ファイル名をつける際には拡張子があるので注意します。<br>
+<code>pathlib</code>を使って<code>new_path</code>変数を次のようにしました。同名のファイルがあれば、<code>count</code>変数が連番で増えていくような処理にしています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">new_path <span style="color:#f92672">=</span> new_path<span style="color:#f92672">.</span>parent <span style="color:#f92672">/</span> f<span style="color:#e6db74">&#39;{new_path.stem}({count}){new_path.suffix}&#39;</span>
+</code></pre></div><p>以下のようにすると、拡張子の前のドットが２つついてしまいました。<br>
+<code>suffix</code>プロパティはドットも含まれるようなので注意です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">new_path <span style="color:#f92672">=</span> new_path<span style="color:#f92672">.</span>parent <span style="color:#f92672">/</span> f<span style="color:#e6db74">&#39;{new_path.stem}({count}).{new_path.suffix}&#39;</span>
+</code></pre></div><p>関数全体のコード。やや長い気もしますが、パス存在確認のパートを書きました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">move_file_to_folder</span>(path, to_dir):
+    <span style="color:#e6db74">&#34;&#34;&#34;移動処理：指定のファイルを指定のディレクトリに移動する
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Args:
+</span><span style="color:#e6db74">        path(pathlib.Path): パスオブジェクト
+</span><span style="color:#e6db74">        to_dir_path(pathlib.Path): 移動先ディレクトリのパスオブジェクト 
+</span><span style="color:#e6db74">    Returns:
+</span><span style="color:#e6db74">        移動後のパスオブジェクト
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    os<span style="color:#f92672">.</span>makedirs(to_dir, exist_ok<span style="color:#f92672">=</span>True)
+    new_path <span style="color:#f92672">=</span> to_dir <span style="color:#f92672">/</span> path<span style="color:#f92672">.</span>name
+
+    <span style="color:#75715e"># パスの存在確認とパス末尾にカウント付与</span>
+    count <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">while</span> True:
+        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(new_path):
+            new_path <span style="color:#f92672">=</span> new_path<span style="color:#f92672">.</span>parent <span style="color:#f92672">/</span> f<span style="color:#e6db74">&#39;{new_path.stem}({count}){new_path.suffix}&#39;</span>
+            count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">break</span>
+
+    <span style="color:#66d9ef">return</span> shutil<span style="color:#f92672">.</span>move(path, new_path)
+</code></pre></div><p>参考</p>
+<ul>
+<li><a href="https://teratail.com/questions/145718">Python - 移動先に同名ファイルがあった場合リネームしたい｜teratail</a></li>
+</ul>
+<h3 id="pathlibpathオブジェクトのプロパティ">pathlib.Pathオブジェクトのプロパティ</h3>
+<p>パス名に関するプロパティをいくつか。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">プロパティ</th>
+<th style="text-align:left">解説</th>
+<th style="text-align:left">例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Path.parent</td>
+<td style="text-align:left">上位パスオブジェクト</td>
+<td style="text-align:left">Path('/a/b/c')</td>
+</tr>
+<tr>
+<td style="text-align:left">Path.name</td>
+<td style="text-align:left">パス要素の末尾を表す文字列</td>
+<td style="text-align:left">&lsquo;setup.py&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">Path.suffix</td>
+<td style="text-align:left">パスの末尾の要素の拡張子（あれば）</td>
+<td style="text-align:left">&lsquo;.py&rsquo;, ''</td>
+</tr>
+<tr>
+<td style="text-align:left">Path.stem</td>
+<td style="text-align:left">パス要素の末尾から拡張子を除いたもの</td>
+<td style="text-align:left">&lsquo;library&rsquo;</td>
+</tr>
+</tbody>
+</table>
+<p>こんなのも。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">プロパティ</th>
+<th style="text-align:left">解説</th>
+<th style="text-align:left">例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Path.drive</td>
+<td style="text-align:left">ドライブ文字か名前を表す文字列（あれば）</td>
+<td style="text-align:left">&lsquo;c:&rsquo;, ''</td>
+</tr>
+<tr>
+<td style="text-align:left">Path.parents</td>
+<td style="text-align:left">上位パスにアクセスできるイミュータブルなシーケンス</td>
+<td style="text-align:left">[Path(&lsquo;c:/foo/bar&rsquo;), Path(&lsquo;c:/foo), Path(&lsquo;c:')]</td>
+</tr>
+<tr>
+<td style="text-align:left">Path.suffixes</td>
+<td style="text-align:left">パスの拡張子のリスト</td>
+<td style="text-align:left">&lsquo;['.tar&rsquo;, &lsquo;.gar&rsquo;]&rsquo;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="https://docs.python.org/ja/3/library/pathlib.html">pathlib — オブジェクト指向のファイルシステムパス — Python 3.9.4 ドキュメント</a>****</li>
+</ul>
 <h2 id="おわりに">おわりに</h2>
-<p>今回はシンプルに。イシュー#1 完了しました。</p>
+<p>テスト用フォルダでうまくいっているので、恐る恐る実フォルダで実行。<br>
+無事に年月でファイルを分けることができました。</p>
+<p>Issue #2が完了したので、マージして</p>
 <h3 id="memo">MEMO</h3>
-<p>今回の実装<br>
-<a href="https://github.com/Massasquash/MyFileOrganizer/commit/f5df0b17adcc38b40c778b4c7cc7f1d0296a6de8">Task: 複数のIN_PATHSへの対応・本番用フォルダ追加 · Massasquash/MyFileOrganizer@f5df0b1 · GitHub</a></p>
-<p>次回の実装<br>
-<a href="https://github.com/Massasquash/MyFileOrganizer/issues/2">移動処理（同フォルダ）の関数作成 · Issue #2 · Massasquash/MyFileOrganizer · GitHub</a></p>
+<p>今回の実装</p>
+<ul>
+<li><a href="https://github.com/Massasquash/MyFileOrganizer/commit/be01703c8d5b6afaf75dce39e167383d64710772">Refactor: メイン関数作成と変数名の修正 · Massasquash/MyFileOrganizer@be01703 · GitHub</a></li>
+<li><a href="https://github.com/Massasquash/MyFileOrganizer/commit/6aa433fe2de1fae0d155352b6f27b4ea4b72e6f5">Task: パス移動時に存在確認してファイルがあれば連番を付与 · Massasquash/MyFileOrganizer@6aa433f · GitHub</a></li>
+</ul>
+<p>次回の実装</p>
+<ul>
+<li>Issue #3に移る
+<ul>
+<li><a href="https://github.com/Massasquash/MyFileOrganizer/issues/3">移動処理（アーカイブフォルダ）の関数作成 · Issue #3 · Massasquash/MyFileOrganizer · GitHub</a>
+　</li>
+</ul>
+</li>
+</ul>
 <h3 id="github">GitHub</h3>
-<p><a href="https://github.com/Massasquash/MyFileOrganizer">GitHub - Massasquash/MyFileOrganizer</a></p>
+<ul>
+<li><a href="https://github.com/Massasquash/MyFileOrganizer">GitHub - Massasquash/MyFileOrganizer</a></li>
+</ul>
 
 		</div>
 		<footer class="post__footer">
@@ -199,14 +310,8 @@ IN_PATHS <span style="color:#f92672">=</span> [
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/02/" rel="prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/04/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[ファイル整理ツール02]ファイルのリネーム処理を行う[Python]</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/04/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[ファイル整理ツール04]月ごとにフォルダを作成し移動する[Python]</p>
 		</a>
 	</div>
