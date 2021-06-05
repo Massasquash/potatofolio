@@ -5,10 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[ファイル整理ツール06]別フォルダにファイルを移動する[Python] - Potatofolio</title>
+	<title>[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python] - Potatofolio</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[ファイル整理ツール06]別フォルダにファイルを移動する[Python]" />
+		<meta property="og:title" content="[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/07/" /><meta property="og:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/><meta property="article:section" content="posts" />
@@ -16,15 +16,15 @@
 <meta property="article:modified_time" content="2021-06-05T00:00:00&#43;00:00" />
 
 
-		<meta itemprop="name" content="[ファイル整理ツール06]別フォルダにファイルを移動する[Python]">
+		<meta itemprop="name" content="[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-06-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-06-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1423"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="806"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="ツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 
-<meta name="twitter:title" content="[ファイル整理ツール06]別フォルダにファイルを移動する[Python]"/>
+<meta name="twitter:title" content="[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]"/>
 <meta name="twitter:description" content=""/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,8 +116,8 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</h1>
-			<p class="post__lead">shutil.moveでフォルダ移動時の考察</p>
+			<h1 class="post__title">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</h1>
+			<p class="post__lead">モジュール化</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-06-05T00:00:00Z">June 05, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/mytools/" rel="category">MyTools</a>
@@ -130,9 +130,9 @@ if (!doNotTrack) {
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#1-アーカイブフォルダのパスを定数に追加">1. アーカイブフォルダのパスを定数に追加</a></li>
-    <li><a href="#2-move_folder_to_archive関数を作成">2. move_folder_to_archive関数を作成</a></li>
-    <li><a href="#3-フォルダ移動時の挙動">3. フォルダ移動時の挙動</a></li>
+    <li><a href="#1-プロジェクトフォルダを引越しする">1. プロジェクトフォルダを引越しする</a></li>
+    <li><a href="#2-モジュール化するための準備">2. モジュール化するための準備</a></li>
+    <li><a href="#3-他スクリプトからモジュールとして呼び出す">3. 他スクリプトからモジュールとして呼び出す</a></li>
     <li><a href="#おわりに">おわりに</a>
       <ul>
         <li><a href="#memo">MEMO</a></li>
@@ -145,75 +145,40 @@ if (!doNotTrack) {
 </div>
 <div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
-<p>今回は イシュー#3。</p>
-<p><a href="https://github.com/Massasquash/MyFileOrganizer/issues/3">移動処理（アーカイブフォルダ）の関数作成 · Issue #3 · Massasquash/MyFileOrganizer · GitHub</a></p>
-<p>前回やったファイル移動の操作をするだけなので、特に詰まるポイントはないとは思っていますが…。</p>
-<ul>
-<li>メイン処理（リネームとフォルダ分け）が終わった後にこの処理が始まる</li>
-<li>インプットフォルダから当月と前月のフォルダのみ残し、残りの年月名のフォルダをアーカイブフォルダに移動する</li>
-<li>一致するフォルダ名がなければ作成し、あればそこに移動する</li>
-</ul>
-<h2 id="1-アーカイブフォルダのパスを定数に追加">1. アーカイブフォルダのパスを定数に追加</h2>
-<p><code>IN_PATHS</code>に並べて<code>ARCHIVE_PATHS</code>をグローバル定数で定義しました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># test</span>
-IN_PATHS <span style="color:#f92672">=</span> [
-    Path(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;/Users/massa/Dropbox/Lab/20210530_MyFileOrganizer/test_in_folder&#39;</span>)
-]
-ARCHIVE_PATHS <span style="color:#f92672">=</span> [
-    Path(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;/Users/massa/Dropbox/Lab/20210530_MyFileOrganizer/test_archive_folder&#39;</span>)
-]
-
-<span style="color:#75715e"># prod</span>
-<span style="color:#75715e"># IN_PATHS = [</span>
-<span style="color:#75715e">#     Path(r&#39;/Users/massa/Dropbox/11_ダウンロード&#39;),</span>
-<span style="color:#75715e">#     Path(r&#39;/Users/massa/Dropbox/12_ピクチャ&#39;)</span>
-<span style="color:#75715e"># ]</span>
-<span style="color:#75715e"># ARCHIVE_PATHS = [</span>
-<span style="color:#75715e">#     Path(r&#39;/Users/massa/Dropbox/21_アーカイブ/01_ダウンロード&#39;),</span>
-<span style="color:#75715e">#     Path(r&#39;/Users/massa/Dropbox/21_アーカイブ/02_ピクチャ&#39;)</span>
-<span style="color:#75715e"># ]</span>
-</code></pre></div><h2 id="2-move_folder_to_archive関数を作成">2. move_folder_to_archive関数を作成</h2>
-<p>ファイルを指定パスに移動する<code>move_file_to_folder</code>関数を再利用できそうだな、と思いました。</p>
-<p>ただこのままだと、<code>move_file_to_folder</code>関数で重複があった際の処理が、パス末尾にカウントをカッコでつける形になっています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">move_folder_to_archive</span>():
-    <span style="color:#e6db74">&#34;&#34;&#34;インプットフォルダからアーカイブフォルダに移動する処理処理&#34;&#34;&#34;</span>
-    today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>today()
-    thismonth <span style="color:#f92672">=</span> datetime(today<span style="color:#f92672">.</span>year, today<span style="color:#f92672">.</span>month, <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y%m&#39;</span>)
-    lastmonth <span style="color:#f92672">=</span> datetime(today<span style="color:#f92672">.</span>year, today<span style="color:#f92672">.</span>month <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y%m&#39;</span>)
-
-    <span style="color:#66d9ef">for</span> i, in_folder <span style="color:#f92672">in</span> enumerate(IN_PATHS):
-        contents <span style="color:#f92672">=</span> in_folder<span style="color:#f92672">.</span>iterdir()
-
-        <span style="color:#66d9ef">for</span> content <span style="color:#f92672">in</span> contents:
-            <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(content):
-                <span style="color:#66d9ef">continue</span>
-
-            <span style="color:#66d9ef">if</span> content<span style="color:#f92672">.</span>name <span style="color:#f92672">==</span> thismonth <span style="color:#f92672">or</span> content<span style="color:#f92672">.</span>name <span style="color:#f92672">==</span> lastmonth:
-                <span style="color:#66d9ef">continue</span>
-
-            to_dir <span style="color:#f92672">=</span> ARCHIVE_PATHS[i]
-            move_file_to_folder(content, to_dir)
-</code></pre></div><h2 id="3-フォルダ移動時の挙動">3. フォルダ移動時の挙動</h2>
-<p>フォルダ移動時に、移動先にフォルダパスが存在するケースを試してみます。</p>
-<p>パス末尾にカウント付与する現行のやり方だと、単純にカウント付与したフォルダができます。想定する挙動と同じです。</p>
-<p>一方でパス末尾にカウント付与しないやり方だと（<code>move_file_to_folder</code>で「パスの存在確認とパス末尾にカウント付与」のパートをなくした場合）、移動先のフォルダ内に同名のフォルダが作成され、その中にファイルが存在する形になるようです。<br>
-これは想定する挙動ではありませんでした。この場合は、中のファイルだけコピーされている形が理想です。</p>
-<p>これ、想定する挙動を取るようにするには、後者の場合にさらに<code>iterdir</code>でファイル一覧を取得して移動、という処理をするようにすれば実装はできそうです。</p>
-<p>ただ、あまりなさそうなケースに対して少し関数の記述が複雑になってしまいそうなので、ここは保留にして現行の挙動での運用を考えた方が良いのかな、と思いました。</p>
-<h2 id="おわりに">おわりに</h2>
-<p>本番用のフォルダでの実行も無事確認したので、ひとまず今回で基本の実装は完了した＝ひとまず使えるツールができた状態になりました。</p>
+<p>今回は イシュー#5。</p>
+<p><a href="https://github.com/Massasquash/MyFileOrganizer/issues/5">実行環境：MyMacToolに追加 · Issue #5 · Massasquash/MyFileOrganizer · GitHub</a></p>
+<p>今回のスクリプトファルはいじらず、他のスクリプトファイルをいじったり、フォルダ構成を変えたりします。</p>
+<h2 id="1-プロジェクトフォルダを引越しする">1. プロジェクトフォルダを引越しする</h2>
+<p>今回作ったプロジェクトフォルダを、gitなどはそのままにツール置き場としているフォルダに引越しします。</p>
+<p>開発は「lab」ファイル直下、運用は「lab/mytools」に自作ツールをまとめている形です。</p>
+<p>そのままフォルダごとコピーしてしまえば、gitも合わせて移動できているはずです。
+絶対パスを使っている場合は、このようなフォルダ移動をした場合に動作がしなくなるので、そこだけ注意します。今回の場合はテスト用ファイルが絶対パスで書かれているので、それは今後注意することにします。</p>
+<h2 id="2-モジュール化するための準備">2. モジュール化するための準備</h2>
+<p>ここは要学習です。これで良いのかな。</p>
+<p>ひとまず、プロジェクトフォルダ名を分かりやすく「<code>MyFileOrganizer</code>」、そして今回使うスクリプトファイル名を<code>app.py</code>から「<code>fileOrganizer.py</code>」に変更しました。</p>
+<p>これらはインポート先のスクリプトでこの名前で呼び出す必要があるため、分かりやすい名前をつけておきます。</p>
+<h2 id="3-他スクリプトからモジュールとして呼び出す">3. 他スクリプトからモジュールとして呼び出す</h2>
+<p>こんな感じで記述して呼び出し。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;FileOrganizerのインポート&#34;&#34;&#34;</span>
+sys<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>append(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;../MyFileOrganizer&#39;</span>)
+<span style="color:#f92672">import</span> fileOrganizer
+</code></pre></div><p>これで、<code>fileOrganizer.関数名</code>みたいにして呼び出すことができます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fileOrganizer<span style="color:#f92672">.</span>rename_and_devide_files()
+fileOrganizer<span style="color:#f92672">.</span>move_folder_to_archive()
+</code></pre></div><h2 id="おわりに">おわりに</h2>
+<p>これで、実行環境まで整いました。<br>
+一気にファイル移動をするスクリプトになるので、ちょっと誤動作が怖いなーとは思っています。</p>
+<p>バックアップを取る、移動を最小限にする、などの何らかの安全策を考えたいです。</p>
 <h3 id="memo">MEMO</h3>
 <p>今回の実装</p>
 <ul>
-<li><a href="https://github.com/Massasquash/MyFileOrganizer/commit/95beb3ac4fdfb582dbfaa6c8a409cd514b793711">Feat: アーカイブフォルダに年月名のフォルダを移動するmove_folder_to_archive関数 · Massasquash/MyFileOrganizer@95beb3a · GitHub</a></li>
-<li><a href="https://github.com/Massasquash/MyFileOrganizer/commit/f487dba0a2ee6d5325b1220e8237436398136017">Task: メイン関数名をrename_and_devide_filesに変更 · Massasquash/MyFileOrganizer@f487dba · GitHub</a></li>
-<li><a href="https://github.com/Massasquash/MyFileOrganizer/commit/ab8054d294c948e84b0e33c9e2ba8479e26e9595">Dev: PATHを本番環境prodにセッティング · Massasquash/MyFileOrganizer@ab8054d · GitHub</a></li>
+<li>Issue #5 完了</li>
 </ul>
 <p>次回の実装</p>
 <ul>
-<li>先に Issue #5を済ませて、実行環境を整えます。
+<li>Issue #4を実装して、ひとまず完成に持っていけるかなー
 <ul>
-<li><a href="https://github.com/Massasquash/MyFileOrganizer/issues/5">実行環境：MyMacToolに追加 · Issue #5 · Massasquash/MyFileOrganizer · GitHub</a>
+<li><a href="https://github.com/Massasquash/MyFileOrganizer/issues/4">PDFファイル · Issue #4 · Massasquash/MyFileOrganizer · GitHub</a>
 　</li>
 </ul>
 </li>
@@ -270,7 +235,7 @@ ARCHIVE_PATHS <span style="color:#f92672">=</span> [
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/07/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/05/">[ファイル整理ツール05]メイン処理をリファクタリングする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/04/">[ファイル整理ツール04]月ごとにフォルダを作成し移動する[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/03/">[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]</a></li>
