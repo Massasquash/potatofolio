@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する[Python]">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-06-05T07:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-06-05T07:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="95"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="873"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="ツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -117,7 +117,6 @@ if (!doNotTrack) {
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する[Python]</h1>
-			<p class="post__lead">モジュール化</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-06-05T07:00:00Z">June 05, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/mytools/" rel="category">MyTools</a>
@@ -130,6 +129,10 @@ if (!doNotTrack) {
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#1-まとめたい拡張子を記述しておくグローバル定数を用意する">1. まとめたい拡張子を記述しておくグローバル定数を用意する</a></li>
+    <li><a href="#2-実装の方針">2. 実装の方針</a></li>
+    <li><a href="#3-move_file_by_extension関数を作成する">3. move_file_by_extension関数を作成する</a></li>
+    <li><a href="#3-関数から呼び出すようにする">3. 関数から呼び出すようにする</a></li>
     <li><a href="#おわりに">おわりに</a>
       <ul>
         <li><a href="#memo">MEMO</a></li>
@@ -142,9 +145,62 @@ if (!doNotTrack) {
 </div>
 <div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
-<p>今回は イシュー#4。これで一旦</p>
+<p>今回は イシュー#4。<br>
+これで一旦ラストになります。　　</p>
 <p><a href="https://github.com/Massasquash/MyFileOrganizer/issues/4">PDFファイル · Issue #4 · Massasquash/MyFileOrganizer · GitHub</a></p>
-<h2 id="おわりに">おわりに</h2>
+<ul>
+<li>拡張子によって指定のフォルダに移動させる関数を作る
+<ul>
+<li>今回は、インプットフォルダの「ダウンロード」を対象に、PDFファイルを「PDF」フォルダに移動する</li>
+<li>今回は、同フォルダに移動するのみとする</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-まとめたい拡張子を記述しておくグローバル定数を用意する">1. まとめたい拡張子を記述しておくグローバル定数を用意する</h2>
+<p>今回はpdfファイルのみをフォルダにまとめたいのですが、今後増やせるようにグローバル定数としてリストに持たせるようにしました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">EXTENCIONS <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;pdf&#39;</span>]
+</code></pre></div><h2 id="2-実装の方針">2. 実装の方針</h2>
+<p>ちょっと設計的に、リネームとフォルダ分けを同時にやってしまうような設計にしてしまってるので、今回の実装があまりうまくないかもしれません。</p>
+<p><code>rename_and_devide_files</code>関数の最初の方でまずこの拡張子を持つものを抽出して、ごそっと別の関数に渡してしまう、というような実装がやりやすいのかなと思いました。</p>
+<h2 id="3-move_file_by_extension関数を作成する">3. move_file_by_extension関数を作成する</h2>
+<p>拡張子によってフォルダに格納する関数を作ります。<br>
+<code>new_path.suffix</code>は拡張子のドットを含む文字列になるので、必要な部分のみスライスで抽出。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">move_file_by_extension</span>(path):
+    <span style="color:#e6db74">&#34;&#34;&#34;拡張子によってフォルダに分類する関数。
+</span><span style="color:#e6db74">    - 拡張子と同じ名前のフォルダにまとめる
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Args:
+</span><span style="color:#e6db74">        path(pathlib.Path): パスオブジェクト
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    new_path <span style="color:#f92672">=</span> rename_path_add_prefix(path)
+    to_dir <span style="color:#f92672">=</span> new_path<span style="color:#f92672">.</span>parent <span style="color:#f92672">/</span> new_path<span style="color:#f92672">.</span>suffix[<span style="color:#ae81ff">1</span>:]
+    
+    move_file_to_folder(new_path, to_dir)
+</code></pre></div><h2 id="3-関数から呼び出すようにする">3. 関数から呼び出すようにする</h2>
+<p><code>rename_add_devide_diles</code>関数実行時に、ファイル拡張子が<code>EXTENCIONS</code>の要素と合致するかどうかをチェックし、合致した場合は先ほど作成した<code>move_file_by_extension</code>関数にパスを渡すようにします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rename_and_devide_files</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;インプットファイルのリネームとフォルダ分けを行う処理&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">for</span> in_folder <span style="color:#f92672">in</span> IN_PATHS:
+        contents <span style="color:#f92672">=</span> in_folder<span style="color:#f92672">.</span>iterdir()
+
+        <span style="color:#66d9ef">for</span> content <span style="color:#f92672">in</span> contents:
+            name <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>name
+            <span style="color:#75715e"># 下記１行追加</span>
+            suffix <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>suffix[<span style="color:#ae81ff">1</span>:]
+
+            <span style="color:#66d9ef">if</span> name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.DS_Store&#39;</span>:
+                <span style="color:#66d9ef">continue</span>
+
+            <span style="color:#75715e"># 下記３行追加</span>
+            <span style="color:#66d9ef">if</span> suffix <span style="color:#f92672">in</span> EXTENCIONS:
+                move_file_by_extension(content)
+                <span style="color:#66d9ef">continue</span>
+
+            <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d{6})$&#39;</span>)<span style="color:#f92672">.</span>search(name):
+                <span style="color:#66d9ef">continue</span>
+
+            <span style="color:#960050;background-color:#1e0010">（省略）</span>
+</code></pre></div><h2 id="おわりに">おわりに</h2>
 <h3 id="memo">MEMO</h3>
 <p>今回の実装</p>
 <ul>
