@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/08/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/</loc>
     <lastmod>2021-06-05T07:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/categories/</loc>
@@ -23,73 +23,82 @@
     <loc>https://massasquash.github.io/potatofolio/tags/%E3%83%84%E3%83%BC%E3%83%AB%E5%88%B6%E4%BD%9C/</loc>
     <lastmod>2021-06-05T07:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/07/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/</loc>
     <lastmod>2021-06-05T06:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/06/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/</loc>
     <lastmod>2021-06-05T05:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/05/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/crafts/01_netatmo/01/</loc>
+    <lastmod>2021-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/categories/crafts/</loc>
+    <lastmod>2021-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/tags/diy/</loc>
+    <lastmod>2021-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/05/</loc>
     <lastmod>2021-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/04/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/04/</loc>
     <lastmod>2021-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/03/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/03/</loc>
     <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/02/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/02/</loc>
     <lastmod>2021-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/01/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/01/</loc>
     <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/02/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/02/</loc>
     <lastmod>2021-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/categories/works/</loc>
     <lastmod>2021-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/programming/20210314_python_mac_scriptfile_run/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/tips/20210314_python_mac_scriptfile_run/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/categories/python/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/01/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/01/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/programming/20210214_gas_utilities_formatdate/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/tips/20210214_gas_utilities_formatdate/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/categories/gas/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/programming/20210213_gas_reduce/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/tips/20210213_gas_reduce/</loc>
     <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/programming/20210211_gas_datetime_to_str/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/tips/20210211_gas_datetime_to_str/</loc>
     <lastmod>2021-02-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/tags/%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96/</loc>
     <lastmod>2021-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210115_hugo_blog05/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210115_hugo_blog05/</loc>
     <lastmod>2021-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/tags/hugo%E3%83%96%E3%83%AD%E3%82%B0/</loc>
     <lastmod>2021-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210111_hugo_blog04/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210111_hugo_blog04/</loc>
     <lastmod>2021-01-11T10:15:30+09:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210111_hugo_blog03/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210111_hugo_blog03/</loc>
     <lastmod>2021-01-11T09:46:35+09:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210109_hugo_blog02/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210109_hugo_blog02/</loc>
     <lastmod>2021-01-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210108_hugo_blog01/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210108_hugo_blog01/</loc>
     <lastmod>2021-01-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/posts/learnings/20200721_udemy-gcp/</loc>

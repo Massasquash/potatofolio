@@ -9,172 +9,181 @@
     <lastBuildDate>Sat, 05 Jun 2021 07:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する[Python]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/08/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/</link>
       <pubDate>Sat, 05 Jun 2021 07:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/08/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/07/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/</link>
       <pubDate>Sat, 05 Jun 2021 06:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/07/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/06/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/</link>
       <pubDate>Sat, 05 Jun 2021 05:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/06/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[NETATMO]屋内モジュール設置</title>
+      <link>https://massasquash.github.io/potatofolio/posts/crafts/01_netatmo/01/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/crafts/01_netatmo/01/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ファイル整理ツール05]メイン処理をリファクタリングする[Python]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/05/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/05/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/05/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/05/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ファイル整理ツール04]月ごとにフォルダを作成し移動する[Python]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/04/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/04/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/04/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/04/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ファイル整理ツール03]ファイルのリネーム処理を行う2[Python]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/03/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/03/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/03/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/03/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ファイル整理ツール02]ファイルのリネーム処理を行う[Python]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/02/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/02/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ファイル整理ツール01]要件定義とイシュー</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/01/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/03_my_file_organizer/01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/01/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/02/</link>
       <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/02/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Python]Macでスクリプトをダブルクリックで実行できるようにする</title>
-      <link>https://massasquash.github.io/potatofolio/posts/programming/20210314_python_mac_scriptfile_run/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/tips/20210314_python_mac_scriptfile_run/</link>
       <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/programming/20210314_python_mac_scriptfile_run/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/tips/20210314_python_mac_scriptfile_run/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/01/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/02_thermometermanager/01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/01/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[GAS]日付をフォーマット指定で文字列変換するのに便利なクラス</title>
-      <link>https://massasquash.github.io/potatofolio/posts/programming/20210214_gas_utilities_formatdate/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/tips/20210214_gas_utilities_formatdate/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/programming/20210214_gas_utilities_formatdate/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/tips/20210214_gas_utilities_formatdate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[GAS]reduce()メソッドを活用して文字列をまとめて置換する</title>
-      <link>https://massasquash.github.io/potatofolio/posts/programming/20210213_gas_reduce/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/tips/20210213_gas_reduce/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/programming/20210213_gas_reduce/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/tips/20210213_gas_reduce/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[GAS]日付型を簡単なフォーマットで文字列変換する関数</title>
-      <link>https://massasquash.github.io/potatofolio/posts/programming/20210211_gas_datetime_to_str/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/tips/20210211_gas_datetime_to_str/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/programming/20210211_gas_datetime_to_str/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/tips/20210211_gas_datetime_to_str/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ05]テーマのカスタマイズその２</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210115_hugo_blog05/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210115_hugo_blog05/</link>
       <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210115_hugo_blog05/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210115_hugo_blog05/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ04]テーマのカスタマイズその１</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210111_hugo_blog04/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210111_hugo_blog04/</link>
       <pubDate>Mon, 11 Jan 2021 10:15:30 +0900</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210111_hugo_blog04/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210111_hugo_blog04/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ03]記事更新する際の手順</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210111_hugo_blog03/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210111_hugo_blog03/</link>
       <pubDate>Mon, 11 Jan 2021 09:46:35 +0900</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210111_hugo_blog03/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210111_hugo_blog03/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ02]GitHub Pagesで公開する</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210109_hugo_blog02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210109_hugo_blog02/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210109_hugo_blog02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210109_hugo_blog02/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Hugoブログ01]構築をはじめる</title>
-      <link>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210108_hugo_blog01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210108_hugo_blog01/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/works/01_hugoblog/20210108_hugo_blog01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/mytools/01_hugoblog/20210108_hugo_blog01/</guid>
       <description></description>
     </item>
     

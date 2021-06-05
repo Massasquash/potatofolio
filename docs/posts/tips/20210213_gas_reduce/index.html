@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<script src="//kitchen.juicer.cc/?color=F29g1LsUUno=" async></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[GAS]reduce()メソッドを活用して文字列をまとめて置換する - Potatofolio</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[GAS]reduce()メソッドを活用して文字列をまとめて置換する" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://massasquash.github.io/potatofolio/posts/tips/20210213_gas_reduce/" /><meta property="og:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-14T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-02-14T00:00:00&#43;00:00" />
+
+
+		<meta itemprop="name" content="[GAS]reduce()メソッドを活用して文字列をまとめて置換する">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-02-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-02-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2530"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="keywords" content="" />
+		<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+
+<meta name="twitter:title" content="[GAS]reduce()メソッドを活用して文字列をまとめて置換する"/>
+<meta name="twitter:description" content=""/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="https://massasquash.github.io/potatofolio/css/style.css">
+	
+
+	<link rel="shortcut icon" href="https://massasquash.github.io/potatofolio/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-ZSG8MKNR7M', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="https://massasquash.github.io/potatofolio/" title="Potatofolio" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://massasquash.github.io/potatofolio/img/page_logo.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Potatofolio</div>
+					<div class="logo__tagline">Agrifeel-LABO - My Development Note</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/posts/">
+				
+				<span class="menu__text">Posts</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/categories/gas/">
+				
+				<span class="menu__text">GAS</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/categories/%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/">
+				
+				<span class="menu__text">Notes</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://massasquash.github.io/potatofolio/pages/auther/">
+				
+				<span class="menu__text">auther</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[GAS]reduce()メソッドを活用して文字列をまとめて置換する</h1>
+			<p class="post__lead">配列のreduce()メソッドと仲良くなる</p>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-14T00:00:00Z">February 14, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/gas/" rel="category">GAS</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#1今回のスクリプト">1.今回のスクリプト</a></li>
+    <li><a href="#2reduceメソッド">2.reduce()メソッド</a>
+      <ul>
+        <li><a href="#1初期値がない場合">(1)初期値がない場合</a></li>
+        <li><a href="#2初期値がある場合">(2)初期値がある場合</a></li>
+      </ul>
+    </li>
+    <li><a href="#おわりに">おわりに</a></li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			<h2 id="はじめに">はじめに</h2>
+<p>今回は、配列の<code>reduce()</code>メソッドの理解を深める記事です。<br>
+<a href="(https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart)">先日の記事</a>をGAS中級講座受講後に先生に見てもらった時に、文字列型の<code>replace()</code>を使って文字列置換する時に<code>reduce()</code>を合わせて使えるよーというのを教えてもらってすごく面白かったです。</p>
+<p>こちらが教えてもらった内容です。<br>
+<a href="https://etauthenonprogrammercoder.tumblr.com/post/637788437137719296/gas-replace-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A8-reduce-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89">etau the non programmer coder  — GAS replace メソッドと reduce メソッド</a></p>
+<h2 id="1今回のスクリプト">1.今回のスクリプト</h2>
+<p><a href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart">先日の記事</a>のスクリプトから枝葉の部分は省略して独立した関数にしました。<br>
+日付のフォーマットを表す文字列、例えば「Y/M/D h:m:s」みたいな文字列を、それぞれDate型の年月日などの値に置き換える、という処理です。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sampleFunction</span>() {
+
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">format</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Y/M/D h:m:s&#39;</span>;
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">replaceLists</span> <span style="color:#f92672">=</span> [
+  	<span style="color:#75715e">// [置き換えたい文字列(正規表現), 置き換える値]
+</span><span style="color:#75715e"></span>    [<span style="color:#e6db74">/Y/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>()],
+    [<span style="color:#e6db74">/M/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>],
+    [<span style="color:#e6db74">/D/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()],
+    [<span style="color:#e6db74">/h/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>()],
+    [<span style="color:#e6db74">/m/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>()],
+    [<span style="color:#e6db74">/s/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>()]
+  ];
+
+  <span style="color:#75715e">// replaceListsを使って置換
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">list</span>) =&gt; <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">replace</span>(...<span style="color:#a6e22e">list</span>);
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">replaceLists</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">reducer</span>, <span style="color:#a6e22e">format</span>);
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">formatStr</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div><br>
+<p>この17, 18行目のところで<code>reduce()</code>メソッドを使った置換を行っています。<br>
+第1引数に置換した文字列を返すコールバック関数、第2引数に初期値として<code>format</code>の文字列を渡しています。</p>
+<p>普通なら文字列に<code>replace()</code>メソッドを適用させて順番に1つずつ置き換えていく必要があるところを、配列と組み合わせて短く書くことができました。</p>
+<p>まとめて置換するために<code>replaceLists</code>という配列を先に用意しておいて、そこに「置き換えたい文字列(正規表現)」と「置き換える値」を配列で入れています。</p>
+<p>これによりどの文字を置き換えるのか対象がはっきりするし、今後また置換するものを増減させた場合にもこの配列だけをいじれば良いので、わかりやすくメンテナンス性が良さそうに思います。</p>
+<p>この17, 18行目の置換の処理を1つ1つ書いてみたのがこちらのコードです。<br>
+（<a href="https://massasquash.github.io/potatofolio/posts/20210211_gas_datetime_to_str/#%E6%96%87%E5%AD%97%E5%88%97%E5%9E%8B%E3%81%AE%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-replace-%E3%81%A8-padstart">先日の記事</a>のようにreplaceメソッドを繋げて書くこともできます）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatStr</span>;
+<span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/Y/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>())
+<span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/M/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+<span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/D/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>())
+<span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/h/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>())
+<span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/m/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>())
+<span style="color:#a6e22e">formatStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatStr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/s/</span>, <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>());
+</code></pre></div><p>このコードだと処理手順が見えてわかりやすいですが、同じ変数とメソッドが重複してしまっています。<br>
+また、置き換えたい文字列が増えた場合にはコピペして1行を書き足さなければいけないので、あまりスマートじゃなないなあと思ってしまいます。</p>
+<h2 id="2reduceメソッド">2.reduce()メソッド</h2>
+<p>reduceは「減らす」という和訳の他に「変える」とか「まとめる」という意味もあるようなので、こちらの意味合いが近そうに思いました。</p>
+<p><code>reduce()</code>メソッドは <strong>「（初期値に対して）配列の各要素を順番に関数で処理していって最終的に1つの値を得る」</strong> と言う感じかと思います。<br>
+得られる値は配列ではなく「1つの値」になるのがポイントかなと思いました。</p>
+<p>以下、リファレンスより引用。<br>
+<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">Array.prototype.reduce() - JavaScript | MDN</a></p>
+<blockquote>
+<p><em>構文</em> <br>
+<em>arr.reduce(callback( accumulator, currentValue[, index[, array]] ) {</em><br>
+<em>// return result from executing something for accumulator or currentValue</em><br>
+<em>}[, initialValue]);</em></p>
+</blockquote>
+<blockquote>
+<p><em>解説</em> <br>
+<em>reduce() メソッドは、配列の各要素に対して (引数で与えられた) reducer 関数を実行して、単一の出力値を生成します。</em></p>
+<p><em>reducer 関数は 4 つの引数を取ります。</em><br>
+<em>1. アキュムレーター (acc)</em><br>
+<em>2. 現在値 (cur)</em><br>
+<em>3. 現在の添字 (idx)</em><br>
+<em>4. 元の配列 (src)</em><br>
+<em>reducer 関数の返値はアキュムレーターに代入され、配列内の各反復に対してこの値を記憶します。最終的に単一の結果値になります。</em></p>
+</blockquote>
+<p>構文と説明だけだと見るとかなり難しく感じますね。<br>
+簡単なコードを書いて、このメソッドの動きを見てみます。</p>
+<h3 id="1初期値がない場合">(1)初期値がない場合</h3>
+<p>配列に対して「全ての値を合算（+の演算）した結果を返す」というような例を考えます。<br>
+まずは初期値がない場合に、数値と文字列でそれぞれ<code>reduce()</code>を使った結果がどうなるか見てみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sampleFunction</span>() {
+
+  <span style="color:#75715e">// 例1
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>));
+
+  <span style="color:#75715e">// 例2
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chars</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>];
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>;
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">chars</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">reducer</span>));
+
+}
+</code></pre></div><pre><code>実行ログ  
+&gt; 15
+&gt; abcde
+</code></pre><p>配列の要素を頭から順番に足し合わせていった結果がログ出力されています。</p>
+<p>例2で使っている<code>reducer</code>はいわゆるコールバック関数です。<br>
+コールバック関数は <strong>配列内のそれぞれの要素について呼び出す関数</strong> のことで、他にも配列でよく活用する<code>map()</code>, <code>filter()</code>などの反復メソッドを使う時にも登場します。<br>
+例1はそのコールバック関数の中味を<code>reduce()</code>メソッドの引数に直接書いた形で、どちらの書き方でも動作します。読みやすさと一貫性を意識して書くと良いのかなと思います。</p>
+<p>さて、ここではコールバック関数<code>reducer</code>の仮引数で出てくる登場人物2つだけを基本として抑えておくようにします。</p>
+<ul>
+<li>
+<p><strong>acc</strong>（accumulator、蓄積者とか累算器みたいな意味）：<br>
+これまでの処理の返り値を蓄積しているもの</p>
+</li>
+<li>
+<p><strong>cur</strong>（currentValue、現在値と言う意味）：<br>
+今処理している配列の値</p>
+</li>
+</ul>
+<p>配列の要素を順番に<code>cur</code>として取り出しながら、これまでの処理結果<code>acc</code>に処理を加えて結果を次に渡していく、という感じかなと思います。<br>
+なんとなく、伝言ゲームのように順番に次に伝えていく感じをイメージしました。</p>
+<h3 id="2初期値がある場合">(2)初期値がある場合</h3>
+<p>先ほどのスクリプトとほぼ同じですが、<code>reduce()</code>メソッドの引数に、コールバック関数の他に第2引数として初期値を入れることができます（5, 10行目のハイライト行）。<br>
+今度は「初期値に全ての値を合算（+の演算）した結果を返す」というような処理になります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sampleFunction</span>() {
+
+  <span style="color:#75715e">// 例1
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+<span style="display:block;width:100%;background-color:#3c3d38">  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>, <span style="color:#ae81ff">100</span>));
+</span>
+  <span style="color:#75715e">// 例2
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chars</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>];
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>;
+<span style="display:block;width:100%;background-color:#3c3d38">  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">chars</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">reducer</span>, <span style="color:#e6db74">&#39;XYZ&#39;</span>));
+</span>
+}
+</code></pre></div><pre><code>実行ログ  
+&gt; 115
+&gt; XYZabcde
+</code></pre><p>最初の<code>acc</code>にその初期値が入った状態から処理がスタートする、と言う感じでしょうか。</p>
+<p>今回の冒頭のスクリプトのような次々に置換していく処理は、この初期値として文字列フォーマットを入れておいてそれに配列と<code>reduce()</code>を使って<code>replace()</code>を適用していくことで実現できています。</p>
+<h2 id="おわりに">おわりに</h2>
+<p><code>reduce()</code>の活用についてはこちらのブログも参考にさせていただきました。色々な活用例が載っていてわかりやすかったです。<br>
+<a href="https://kde.hateblo.jp/entry/2018/10/13/065738">【JavaScript基礎】Array.prototype.reduce() をしっかり理解する＆サンプル集 - KDE BLOG</a></p>
+<p>またGASでのDate型の文字列フォーマットについてはクラスと<code>Utilities.formatDate()</code>を使うやり方を教えてもらったので、改めて整理してみます。</p>
+
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/tips/20210211_gas_datetime_to_str/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[GAS]日付型を簡単なフォーマットで文字列変換する関数</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/tips/20210214_gas_utilities_formatdate/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[GAS]日付をフォーマット指定で文字列変換するのに便利なクラス</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://duckduckgo.com/">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sites" value="https://massasquash.github.io/potatofolio/"/>
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する[Python]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/01_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/05/">[ファイル整理ツール05]メイン処理をリファクタリングする[Python]</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/crafts/">crafts</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/gas/">GAS</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/mytools/">MyTools</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/python/">Python</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/pythoneffective-python-2th/">Python「Effective Python 2th」</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/works/">Works</a>
+			</li>
+			<li class="widget__item">
+				<a class="widget__link" href="https://massasquash.github.io/potatofolio/categories/%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/">学習ノート</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/diy/" title="DIY">DIY</a>
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/hugo%E3%83%96%E3%83%AD%E3%82%B0/" title="Hugoブログ">Hugoブログ</a>
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/%E3%83%84%E3%83%BC%E3%83%AB%E5%88%B6%E4%BD%9C/" title="ツール制作">ツール制作</a>
+		<a class="widget-taglist__link widget__link btn" href="https://massasquash.github.io/potatofolio/tags/%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96/" title="業務効率化">業務効率化</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/massasquash" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Massasquash" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Note" rel="noopener noreferrer" href="https://note.com/agrifeel_labo" target="_blank">
+				<span>Note</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Youtube" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCsu1mENsBiVFsdc-yq0a4Aw" target="_blank">
+				<span>Youtube</span>
+			</a>
+		</div>
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+<div class="footer__links">
+	<a class="footer__link" href="https://massasquash.github.io/potatofolio/pages/privacy/">プライバシーポリシー</a>
+</div>
+		<div class="footer__copyright">
+			&copy; 2021 Massa.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="https://massasquash.github.io/potatofolio/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

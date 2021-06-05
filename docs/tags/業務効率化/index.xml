@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/tags/%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[GAS]日付型を簡単なフォーマットで文字列変換する関数</title>
-      <link>https://massasquash.github.io/potatofolio/posts/programming/20210211_gas_datetime_to_str/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/tips/20210211_gas_datetime_to_str/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/programming/20210211_gas_datetime_to_str/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/tips/20210211_gas_datetime_to_str/</guid>
       <description></description>
     </item>
     
