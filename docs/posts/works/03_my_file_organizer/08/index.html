@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する[Python]">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-06-05T07:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-06-05T07:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="873"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="1434"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="ツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -117,6 +117,7 @@ if (!doNotTrack) {
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する[Python]</h1>
+			<p class="post__lead">ツール制作完了</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-06-05T07:00:00Z">June 05, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://massasquash.github.io/potatofolio/categories/mytools/" rel="category">MyTools</a>
@@ -132,7 +133,8 @@ if (!doNotTrack) {
     <li><a href="#1-まとめたい拡張子を記述しておくグローバル定数を用意する">1. まとめたい拡張子を記述しておくグローバル定数を用意する</a></li>
     <li><a href="#2-実装の方針">2. 実装の方針</a></li>
     <li><a href="#3-move_file_by_extension関数を作成する">3. move_file_by_extension関数を作成する</a></li>
-    <li><a href="#3-関数から呼び出すようにする">3. 関数から呼び出すようにする</a></li>
+    <li><a href="#3-rename_add_devide_diles関数から呼び出すようにする">3. rename_add_devide_diles関数から呼び出すようにする</a></li>
+    <li><a href="#move_folder_to_archive関数の修正">move_folder_to_archive関数の修正</a></li>
     <li><a href="#おわりに">おわりに</a>
       <ul>
         <li><a href="#memo">MEMO</a></li>
@@ -156,6 +158,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
+<p>ちょっと今回は詰まってしまいました。</p>
 <h2 id="1-まとめたい拡張子を記述しておくグローバル定数を用意する">1. まとめたい拡張子を記述しておくグローバル定数を用意する</h2>
 <p>今回はpdfファイルのみをフォルダにまとめたいのですが、今後増やせるようにグローバル定数としてリストに持たせるようにしました。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">EXTENCIONS <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;pdf&#39;</span>]
@@ -176,8 +179,10 @@ if (!doNotTrack) {
     to_dir <span style="color:#f92672">=</span> new_path<span style="color:#f92672">.</span>parent <span style="color:#f92672">/</span> new_path<span style="color:#f92672">.</span>suffix[<span style="color:#ae81ff">1</span>:]
     
     move_file_to_folder(new_path, to_dir)
-</code></pre></div><h2 id="3-関数から呼び出すようにする">3. 関数から呼び出すようにする</h2>
+</code></pre></div><h2 id="3-rename_add_devide_diles関数から呼び出すようにする">3. rename_add_devide_diles関数から呼び出すようにする</h2>
 <p><code>rename_add_devide_diles</code>関数実行時に、ファイル拡張子が<code>EXTENCIONS</code>の要素と合致するかどうかをチェックし、合致した場合は先ほど作成した<code>move_file_by_extension</code>関数にパスを渡すようにします。</p>
+<p>もう一つ、<code>move_folder_to_archive</code>関数は現時点では実行されないようにしておく必要がありました。<br>
+これが絡んできて目的の挙動をとってくれず、ハマってしまいました。後ほど修正します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rename_and_devide_files</span>():
     <span style="color:#e6db74">&#34;&#34;&#34;インプットファイルのリネームとフォルダ分けを行う処理&#34;&#34;&#34;</span>
     <span style="color:#66d9ef">for</span> in_folder <span style="color:#f92672">in</span> IN_PATHS:
@@ -200,20 +205,46 @@ if (!doNotTrack) {
                 <span style="color:#66d9ef">continue</span>
 
             <span style="color:#960050;background-color:#1e0010">（省略）</span>
+</code></pre></div><h2 id="move_folder_to_archive関数の修正">move_folder_to_archive関数の修正</h2>
+<p>最後にこちらを修正。<br>
+pdfフォルダはアーカイブされないようにします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">move_folder_to_archive</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;インプットフォルダからアーカイブフォルダに移動する処理処理&#34;&#34;&#34;</span>
+    <span style="color:#960050;background-color:#1e0010">（省略）</span>
+
+    <span style="color:#66d9ef">for</span> i, in_folder <span style="color:#f92672">in</span> enumerate(IN_PATHS):
+        contents <span style="color:#f92672">=</span> in_folder<span style="color:#f92672">.</span>iterdir()
+
+        <span style="color:#66d9ef">for</span> content <span style="color:#f92672">in</span> contents:
+            name <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>name
+
+            <span style="color:#66d9ef">if</span> name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.DS_Store&#39;</span>:
+                <span style="color:#66d9ef">continue</span>
+
+            <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(content):
+                <span style="color:#66d9ef">continue</span>
+
+            <span style="color:#66d9ef">if</span> name <span style="color:#f92672">in</span> EXTENCIONS:
+                <span style="color:#66d9ef">continue</span>
+
+            <span style="color:#66d9ef">if</span> name <span style="color:#f92672">==</span> thismonth <span style="color:#f92672">or</span> name <span style="color:#f92672">==</span> lastmonth:
+                <span style="color:#66d9ef">continue</span>
+
+            to_dir <span style="color:#f92672">=</span> ARCHIVE_PATHS[i]
+            move_file_to_folder(content, to_dir)
 </code></pre></div><h2 id="おわりに">おわりに</h2>
+<p>これで今回は完成にします。</p>
+<p>ちょっと複雑な自動化が起こってしまうのが怖いので、もうちょっとシンプルで最低限な実装を心がけた方が良いのかもしれません。</p>
+<p>運用してみて、デバッグの必要があればまた触ります。</p>
+<p>また今回GitHubのIssueを作って実装を進めてきました。<br>
+緊張感を持ってコーディングできて、コミットを大事にできるので良いやり方なのかな、と思います。
+ややストレスではありますが。今後もこのやり方で続けてみようと思います。</p>
 <h3 id="memo">MEMO</h3>
 <p>今回の実装</p>
 <ul>
-<li>Issue #5 完了</li>
-</ul>
-<p>次回の実装</p>
-<ul>
-<li>Issue #4を実装して、ひとまず完成に持っていけるかなー
-<ul>
-<li><a href="https://github.com/Massasquash/MyFileOrganizer/issues/4">PDFファイル · Issue #4 · Massasquash/MyFileOrganizer · GitHub</a>
+<li><a href="https://github.com/Massasquash/MyFileOrganizer/commit/b2a35cd8dc9ea69a44b5701d4644216062fea878">Feat: 拡張子によってファイル分類するmove_file_by_extension · Massasquash/MyFileOrganizer@b2a35cd · GitHub</a></li>
+<li><a href="https://github.com/Massasquash/MyFileOrganizer/commit/628c81cd8e1785ba8a9c962c45a7c21c7082951a">Task: move_folder_to_archive関数でpdfファイルをアーカイブしないよう修正 · Massasquash/MyFileOrganizer@628c81c · GitHub</a>
 　</li>
-</ul>
-</li>
 </ul>
 <h3 id="github">GitHub</h3>
 <ul>
