@@ -19,7 +19,7 @@
 		<meta itemprop="name" content="[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-06-05T07:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-06-05T07:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1437"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
+<meta itemprop="wordCount" content="1317"><meta itemprop="image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
 <meta itemprop="keywords" content="ツール制作," />
 		<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://massasquash.github.io/potatofolio/img/page_logo.jpg"/>
@@ -147,8 +147,7 @@ if (!doNotTrack) {
 </div>
 <div class="content post__content clearfix">
 			<h2 id="はじめに">はじめに</h2>
-<p>今回は イシュー#4。<br>
-これで一旦ラストになります。　　</p>
+<p>今回は イシュー#4。</p>
 <p><a href="https://github.com/Massasquash/MyFileOrganizer/issues/4">PDFファイル · Issue #4 · Massasquash/MyFileOrganizer · GitHub</a></p>
 <ul>
 <li>拡張子によって指定のフォルダに移動させる関数を作る
@@ -158,7 +157,8 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<p>ちょっと今回は詰まってしまいました。</p>
+<p>これで一旦ラストにしたいと思いましたが、途中ちょっと詰まってしまいました。<br>
+あまり</p>
 <h2 id="1-まとめたい拡張子を記述しておくグローバル定数を用意する">1. まとめたい拡張子を記述しておくグローバル定数を用意する</h2>
 <p>今回はpdfファイルのみをフォルダにまとめたいのですが、今後増やせるようにグローバル定数としてリストに持たせるようにしました。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">EXTENCIONS <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;pdf&#39;</span>]
@@ -234,10 +234,7 @@ pdfフォルダはアーカイブされないようにします。</p>
             move_file_to_folder(content, to_dir)
 </code></pre></div><h2 id="おわりに">おわりに</h2>
 <p>ひとまずこれで実装は完了ですが、ちょっと複雑な自動化が起こってしまうのが怖いので、もうちょっとシンプルで最低限な実装を心がけた方が良いのかもしれません。</p>
-<p>運用してみて、デバッグの必要があればまた触ります。</p>
-<p>また今回GitHubのIssueを作って実装を進めてきました。<br>
-緊張感を持ってコーディングできて、コミットを大事にできるので良いやり方なのかな、と思います。
-ややストレスではありますが。今後もこのやり方で続けてみようと思います。</p>
+<p>次回、調整します。</p>
 <h3 id="memo">MEMO</h3>
 <p>今回の実装</p>
 <ul>
@@ -276,7 +273,7 @@ pdfフォルダはアーカイブされないようにします。</p>
 	<div class="pager__item pager__item--next">
 		<a class="pager__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/09/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する2[Python]</p>
+			<p class="pager__title">[ファイル整理ツール09]PDFファイルのみ他フォルダに分類する2[Python]</p>
 		</a>
 	</div>
 </nav>
@@ -296,7 +293,7 @@ pdfフォルダはアーカイブされないようにします。</p>
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/09/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する2[Python]</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/09/">[ファイル整理ツール09]PDFファイルのみ他フォルダに分類する2[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
