@@ -169,11 +169,11 @@ if (!doNotTrack) {
 doubles <span style="color:#f92672">=</span> [i<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> numbers]
 evens <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> numbers <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>]
 
-<span style="color:#66d9ef">print</span>(numbers)
+print(numbers)
 <span style="color:#75715e"># -&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
-<span style="color:#66d9ef">print</span>(doubles)
+print(doubles)
 <span style="color:#75715e"># -&gt; [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span>
-<span style="color:#66d9ef">print</span>(evens)
+print(evens)
 <span style="color:#75715e"># -&gt; [0, 2, 4, 6, 8]</span>
 </code></pre></div><p>通常のfor文と比較すると、リストに追加する際の<code>append()</code>をする必要がない分、動作が軽くなります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># リスト内包表記</span>
@@ -197,11 +197,11 @@ numbers_set <span style="color:#f92672">=</span> {i <span style="color:#66d9ef">
 doubles <span style="color:#f92672">=</span> map(<span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>, numbers)
 evens <span style="color:#f92672">=</span> filter(<span style="color:#66d9ef">lambda</span> x: x <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>, numbers)
 
-<span style="color:#66d9ef">print</span>(type(numbers), numbers)
+print(type(numbers), numbers)
 <span style="color:#75715e"># -&gt; &lt;class &#39;list&#39;&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
-<span style="color:#66d9ef">print</span>(type(doubles), list(doubles))
+print(type(doubles), list(doubles))
 <span style="color:#75715e"># -&gt; &lt;class &#39;map&#39;&gt; [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span>
-<span style="color:#66d9ef">print</span>(type(evens), list(evens))
+print(type(evens), list(evens))
 <span style="color:#75715e"># -&gt; &lt;class &#39;filter&#39;&gt; [0, 2, 4, 6, 8]</span>
 </code></pre></div><p><code>type()</code>関数の結果でわかる通り、これらの組み込み関数で返されるオブジェクトはリストではなくあくまで<strong>イテラブルオブジェクト</strong>なので、リストを作りたい場合は組み込み関数<code>list()</code>でリスト型に変換してあげる必要があります。</p>
 <p>関数の詳細は以下のように整理できます。</p>
@@ -293,7 +293,7 @@ evens <span style="color:#f92672">=</span> filter(<span style="color:#66d9ef">la
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/01/">[NETATMO]屋内モジュール設置</a></li>
 		</ul>
 	</div>
 </div>

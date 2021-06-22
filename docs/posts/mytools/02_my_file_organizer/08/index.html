@@ -201,16 +201,16 @@ if (!doNotTrack) {
                 move_file_by_extension(content)
                 <span style="color:#66d9ef">continue</span>
 
-            <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d{6})$&#39;</span>)<span style="color:#f92672">.</span>search(name):
+            <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d</span><span style="color:#e6db74">{6}</span><span style="color:#e6db74">)$&#39;</span>)<span style="color:#f92672">.</span>search(name):
                 <span style="color:#66d9ef">continue</span>
 
-            <span style="color:#960050;background-color:#1e0010">（省略）</span>
+            <span style="color:#960050;background-color:#1e0010">（</span>省略<span style="color:#960050;background-color:#1e0010">）</span>
 </code></pre></div><h2 id="move_folder_to_archive関数の修正">move_folder_to_archive関数の修正</h2>
 <p>最後にこちらを修正。<br>
 pdfフォルダはアーカイブされないようにします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">move_folder_to_archive</span>():
     <span style="color:#e6db74">&#34;&#34;&#34;インプットフォルダからアーカイブフォルダに移動する処理処理&#34;&#34;&#34;</span>
-    <span style="color:#960050;background-color:#1e0010">（省略）</span>
+    <span style="color:#960050;background-color:#1e0010">（</span>省略<span style="color:#960050;background-color:#1e0010">）</span>
 
     <span style="color:#66d9ef">for</span> i, in_folder <span style="color:#f92672">in</span> enumerate(IN_PATHS):
         contents <span style="color:#f92672">=</span> in_folder<span style="color:#f92672">.</span>iterdir()
@@ -297,7 +297,7 @@ pdfフォルダはアーカイブされないようにします。</p>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/01/">[NETATMO]屋内モジュール設置</a></li>
 		</ul>
 	</div>
 </div>

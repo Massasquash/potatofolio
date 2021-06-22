@@ -156,15 +156,15 @@ if (!doNotTrack) {
 <code>input()</code>関数でユーザー入力を繰り返し受け付けてその内容を表示し、&ldquo;quit&quot;が入力されたら終了するコードです。<br>
 参考として、代入式を使わないパターンも書いてみました。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 代入式を使って書いた場合</span>
-<span style="color:#66d9ef">while</span> (command :<span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;&gt; &#34;</span>)) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;quit&#34;</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;You entered:&#34;</span>, command)
+<span style="color:#66d9ef">while</span> (command <span style="color:#f92672">:=</span> input(<span style="color:#e6db74">&#34;&gt; &#34;</span>)) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;quit&#34;</span>:
+    print(<span style="color:#e6db74">&#34;You entered:&#34;</span>, command)
 
 
 <span style="color:#75715e"># 代入式を使わないで書いた場合</span>
 command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
 <span style="color:#66d9ef">while</span> command <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;quit&#34;</span>:
     command <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;&gt; &#34;</span>)
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;You entered:&#34;</span>, command)
+    print(<span style="color:#e6db74">&#34;You entered:&#34;</span>, command)
 </code></pre></div><p>明らかに前者の方が簡潔に書けています。<code>command := input(&quot;&gt; &quot;)</code>の部分でウォルラス演算子を使って、<code>command</code>という変数への代入と評価を１回で行っています。</p>
 <p><code>if</code>条件式の中で代入して比較する場合は、カッコで括るのがポイントです。カッコがないと誤った値（式）が代入されてしまいます。</p>
 <h3 id="２pythonにはない制御構文">（２）Pythonにはない制御構文</h3>
@@ -248,7 +248,7 @@ command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/01/">[NETATMO]屋内モジュール設置</a></li>
 		</ul>
 	</div>
 </div>

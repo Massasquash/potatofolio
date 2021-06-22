@@ -173,7 +173,7 @@ if (!doNotTrack) {
 </span><span style="color:#e6db74">    Returns:
 </span><span style="color:#e6db74">        移動後のパスオブジェクト
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    os<span style="color:#f92672">.</span>makedirs(to_dir, exist_ok<span style="color:#f92672">=</span>True)
+    os<span style="color:#f92672">.</span>makedirs(to_dir, exist_ok<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
     new_path <span style="color:#f92672">=</span> to_dir <span style="color:#f92672">/</span> path<span style="color:#f92672">.</span>name
 
     <span style="color:#66d9ef">return</span> shutil<span style="color:#f92672">.</span>move(path, new_path)
@@ -224,15 +224,15 @@ move_folder(path, to_dir_path)
         <span style="color:#66d9ef">if</span> name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.DS_Store&#39;</span>:
             <span style="color:#66d9ef">continue</span>
 
-        <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d{6})$&#39;</span>)<span style="color:#f92672">.</span>search(name):
+        <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d</span><span style="color:#e6db74">{6}</span><span style="color:#e6db74">)$&#39;</span>)<span style="color:#f92672">.</span>search(name):
             <span style="color:#66d9ef">continue</span>
 
         <span style="color:#75715e"># ファイル名の先頭が数値8桁の場合</span>
-        <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d{8}_)&#39;</span>)<span style="color:#f92672">.</span>search(name):
+        <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d</span><span style="color:#e6db74">{8}</span><span style="color:#e6db74">_)&#39;</span>)<span style="color:#f92672">.</span>search(name):
             divide_file_by_date(content)
             <span style="color:#66d9ef">continue</span>
         <span style="color:#75715e"># ファイル名の先頭が数値6桁の場合</span>
-        <span style="color:#66d9ef">elif</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d{6}_)&#39;</span>)<span style="color:#f92672">.</span>search(name):
+        <span style="color:#66d9ef">elif</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d</span><span style="color:#e6db74">{6}</span><span style="color:#e6db74">_)&#39;</span>)<span style="color:#f92672">.</span>search(name):
             content <span style="color:#f92672">=</span> rename_path_remove_prefix(content)
         <span style="color:#75715e"># ファイル名の先頭が数値8桁以外の場合に実行される</span>
         new_path <span style="color:#f92672">=</span> rename_path_add_prefix(content)
@@ -308,7 +308,7 @@ move_folder(path, to_dir_path)
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/01/">[NETATMO]屋内モジュール設置</a></li>
 		</ul>
 	</div>
 </div>

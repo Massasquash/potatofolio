@@ -158,8 +158,8 @@ p <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">r</span>
 p_txtfile <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#39;documents&#39;</span>, <span style="color:#e6db74">&#39;file.txt&#39;</span>)
 p_dir <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#39;folder&#39;</span>)
 
-<span style="color:#66d9ef">print</span>(type(p), p)
-<span style="color:#66d9ef">print</span>(p_dir <span style="color:#f92672">/</span> p_txtfile)
+print(type(p), p)
+print(p_dir <span style="color:#f92672">/</span> p_txtfile)
 </code></pre></div><pre><code>&lt;実行ログ&gt;
 &lt;class 'pathlib.PosixPath'&gt; /Users/xxx/Desktop/image.png
 folder/documents/file.txt
@@ -171,17 +171,17 @@ folder/documents/file.txt
 <p>パスが存在しているかどうかを返す時は、Pathオブジェクトの<code>exists()</code>。<br>
 パスがディレクトリなのかファイルなのかを調べ時は、<code>is_dir()</code>, <code>is_file()</code>。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">p <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#39;sample.txt&#39;</span>)
-<span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>exists())
-<span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>is_dir())
+print(p<span style="color:#f92672">.</span>exists())
+print(p<span style="color:#f92672">.</span>is_dir())
 pritn(p<span style="color:#f92672">.</span>is_file())
 </code></pre></div><h3 id="3パスの情報">(3)パスの情報</h3>
 <p>Pathオブジェクトの親ディレクトリのPathオブジェクトを<code>parent</code>属性で調べることができる。<br>
 パス名は<code>name</code>属性、さらに拡張子は<code>suffix</code>属性・拡張子なしのファイル名は<code>stem</code>属性でそれぞれ文字列で得られる。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">p <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#39;sample.txt&#39;</span>)
-<span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>parent)
-<span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>name)
-<span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>suffix)
-<span style="color:#66d9ef">print</span>(p<span style="color:#f92672">.</span>stem)
+print(p<span style="color:#f92672">.</span>parent)
+print(p<span style="color:#f92672">.</span>name)
+print(p<span style="color:#f92672">.</span>suffix)
+print(p<span style="color:#f92672">.</span>stem)
 </code></pre></div><h3 id="4パスの一覧を取得するメソッド">(4)パスの一覧を取得するメソッド</h3>
 <p><code>iterdir()</code>メソッドは、Pathオブジェクトが表すディレクトリ内のPathオブジェクト一覧を調べ、そのジェネレータを返す。<br>
 <code>glob()</code>メソッドは、Pathオブジェクトが表すディレクトリ内の文字列パターンにマッチしたPathオブジェクト一覧を調べ、そのジェネレータを返す。</p>
@@ -268,7 +268,7 @@ sorted(Path(<span style="color:#e6db74">&#39;.&#39;</span>)<span style="color:#f
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/01/">[NETATMO]屋内モジュール設置</a></li>
 		</ul>
 	</div>
 </div>

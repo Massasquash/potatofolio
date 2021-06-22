@@ -197,11 +197,11 @@ if (!doNotTrack) {
 <span style="color:#75715e"># 呼び出したい関数</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">stopSecond</span>():
     time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;関数終わり&#39;</span>)
+    print(<span style="color:#e6db74">&#39;関数終わり&#39;</span>)
 
 thread_obj <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>stopSecond)
 thread_obj<span style="color:#f92672">.</span>start()
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;プログラム終わり&#39;</span>)
+print(<span style="color:#e6db74">&#39;プログラム終わり&#39;</span>)
 </code></pre></div><pre><code>プログラム終わり   （ &lt;- 先にこれが出力される）  
 関数終わり  
 </code></pre><ul>
@@ -211,13 +211,13 @@ thread_obj<span style="color:#f92672">.</span>start()
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">thread_obj <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>stopSecond)
 thread_obj<span style="color:#f92672">.</span>start()
 thread_obj<span style="color:#f92672">.</span>join()
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;プログラム終了&#39;</span>)
+print(<span style="color:#e6db74">&#39;プログラム終了&#39;</span>)
 </code></pre></div><pre><code>&gt; 関数終わり  
 &gt; プログラム終了     （&lt;- これが一番最後に出力される）  
 </code></pre><ul>
 <li>スレッドで実行する関数に引数を渡したい場合は <code>threading.Thread()</code>にキーワード引数<code>args=[]</code>,<code>kwargs={}</code>を渡す</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">thread_obj <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span><span style="color:#66d9ef">print</span>,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">thread_obj <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>print,
 									  args <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>]
                               kwargs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;sep&#39;</span>: <span style="color:#e6db74">&#39; &amp; &#39;</span>})
 thread_obj<span style="color:#f92672">.</span>start()
@@ -277,7 +277,7 @@ thread_obj<span style="color:#f92672">.</span>start()
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/01/">[NETATMO]屋内モジュール設置</a></li>
 		</ul>
 	</div>
 </div>

@@ -155,7 +155,7 @@ if (!doNotTrack) {
 <p>この項目は僕のようにデコレータそのものに馴染みがない人だと、わかりづらいところかもしれません。<br>
 今回は **「デコレータの構文と使うと便利な例を知る」**こと、そして今後自分でデコレータを作ることになった際には <strong>「活用するべき標準ライブラリがある」</strong> ということを抑えておけばいいのかな、と思いました。</p>
 <p>以前flaskアプリを制作した際に、ルーティングを定義するために以下のような構文がありました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/&#39;</span>)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>():
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Hello World!&#39;</span>
 </code></pre></div><p>ここの<code>@app.route('/')</code>でデコレータ構文が使われています。<br>
@@ -219,7 +219,7 @@ if (!doNotTrack) {
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/01/">[NETATMO]屋内モジュール設置</a></li>
 		</ul>
 	</div>
 </div>

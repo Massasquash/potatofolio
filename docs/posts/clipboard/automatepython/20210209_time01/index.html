@@ -187,18 +187,18 @@ if (!doNotTrack) {
 
 <span style="color:#75715e"># ①UNIXエポックに基づくタイムスタンプ 数値型</span>
 epoch <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-<span style="color:#66d9ef">print</span>(epoch)  <span style="color:#75715e"># -&gt; 1612587698.479415</span>
-<span style="color:#66d9ef">print</span>(type(epoch)) <span style="color:#75715e"># -&gt; &lt;class &#39;float&#39;&gt;</span>
+print(epoch)  <span style="color:#75715e"># -&gt; 1612587698.479415</span>
+print(type(epoch)) <span style="color:#75715e"># -&gt; &lt;class &#39;float&#39;&gt;</span>
 
 <span style="color:#75715e"># ②特定の時間 datetime型</span>
 dt <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now()
-<span style="color:#66d9ef">print</span>(dt)  <span style="color:#75715e"># -&gt; 2021-02-06 14:02:23.592996</span>
-<span style="color:#66d9ef">print</span>(type(dt))  <span style="color:#75715e"># -&gt; &lt;class &#39;datetime.datetime&#39;&gt;</span>
+print(dt)  <span style="color:#75715e"># -&gt; 2021-02-06 14:02:23.592996</span>
+print(type(dt))  <span style="color:#75715e"># -&gt; &lt;class &#39;datetime.datetime&#39;&gt;</span>
 
 <span style="color:#75715e"># ③datetime同士の時間差 timedelta型</span>
 td <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>timedelta(seconds<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
-<span style="color:#66d9ef">print</span>(td)  <span style="color:#75715e"># -&gt; 0:00:03.003681</span>
-<span style="color:#66d9ef">print</span>(type(td))  <span style="color:#75715e"># -&gt; &lt;class &#39;datetime.timedelta&#39;&gt;</span>
+print(td)  <span style="color:#75715e"># -&gt; 0:00:03.003681</span>
+print(type(td))  <span style="color:#75715e"># -&gt; &lt;class &#39;datetime.timedelta&#39;&gt;</span>
 </code></pre></div><h3 id="2datetimeオブジェクトの生成">(2)datetimeオブジェクトの生成</h3>
 <ul>
 <li>現在日時を表すdatetimeオブジェクトを作る<code>datetime.datetime.now()</code>
@@ -219,7 +219,7 @@ dt <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</s
 </code></pre></div><ul>
 <li>生成したdatetimeオブジェクトは、year, month, day, hour, minute, second, microsecondという属性を持つ</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(dt<span style="color:#f92672">.</span>year, dt<span style="color:#f92672">.</span>month, dt<span style="color:#f92672">.</span>day)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(dt<span style="color:#f92672">.</span>year, dt<span style="color:#f92672">.</span>month, dt<span style="color:#f92672">.</span>day)
 </code></pre></div><h2 id="２datetime型文字列-に変換">２.datetime型→文字列 に変換</h2>
 <ul>
 <li>datetimeオブジェクトを<code>strftime()</code>メソッドでフォーマットして文字列表示させることができる。</li>
@@ -229,7 +229,7 @@ dt <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</s
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
 
 dt <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>now()
-<span style="color:#66d9ef">print</span>(dt<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y/%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))
+print(dt<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y/%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))
 </code></pre></div><p><strong>strftime()書式一覧</strong><br>
 <strong>よく使うやつ</strong> </p>
 <table>
@@ -366,8 +366,8 @@ dt <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</s
 datetime<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#39;2021/01/01&#39;</span>, <span style="color:#e6db74">&#39;%Y/%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
 </code></pre></div><p><strong>使用例</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#39;20200207&#39;</span>, <span style="color:#e6db74">&#39;%Y%m</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#66d9ef">print</span>(date)  <span style="color:#75715e"># -&gt; 2020-02-07 00:00:00</span>
-<span style="color:#66d9ef">print</span>(type(date))  <span style="color:#75715e"># -&gt; &lt;class &#39;datetime.datetime&#39;&gt;</span>
+print(date)  <span style="color:#75715e"># -&gt; 2020-02-07 00:00:00</span>
+print(type(date))  <span style="color:#75715e"># -&gt; &lt;class &#39;datetime.datetime&#39;&gt;</span>
 </code></pre></div><hr>
 <h2 id="memo">MEMO</h2>
 <p>【参考】</p>
@@ -422,7 +422,7 @@ datetime<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74"
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/01/">[NETATMO]屋内モジュール設置</a></li>
 		</ul>
 	</div>
 </div>

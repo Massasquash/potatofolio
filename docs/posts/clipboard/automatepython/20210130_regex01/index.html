@@ -157,7 +157,7 @@ if (!doNotTrack) {
 
 regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d\d\d&#39;</span>)
 mo <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;警察は110番、消防は119番&#39;</span>)
-<span style="color:#66d9ef">print</span>(mo<span style="color:#f92672">.</span>group())
+print(mo<span style="color:#f92672">.</span>group())
 </code></pre></div><pre><code>&lt;実行ログ&gt;
 101
 </code></pre><h3 id="1regexオブジェクトの生成">(1)Regexオブジェクトの生成</h3>
@@ -171,7 +171,7 @@ mo <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</span
 <li>Regexオブジェクトの<code>serch()</code>メソッドに検索対象の文字列を渡す</li>
 <li>戻り値はMatchオブジェクト。マッチするパターンが見つからなければ<code>None</code>を返す</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(mo)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(mo)
 </code></pre></div><pre><code>&lt;実行ログ&gt;
 &lt;re.Match object; span=(3, 6), match='110'&gt;
 </code></pre><h3 id="3マッチした文字列を取得する">(3)マッチした文字列を取得する</h3>
@@ -190,7 +190,7 @@ mo <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</span
 
 regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d\d\d&#39;</span>)
 mo <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;警察は110番、消防は119番&#39;</span>)
-<span style="color:#66d9ef">print</span>(mo)
+print(mo)
 </code></pre></div><pre><code>&lt;実行ログ&gt;
 ['101', '133']
 </code></pre><ul>
@@ -205,7 +205,7 @@ regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span
 
 <span style="color:#75715e"># 文字列を置換</span>
 after <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\1??&#39;</span>, <span style="color:#e6db74">&#39;警察は110番、消防は119番&#39;</span>)
-<span style="color:#66d9ef">print</span>(after)
+print(after)
 </code></pre></div><pre><code>&lt;実行ログ&gt;
 警察は1??番、消防は1??番
 </code></pre><ul>
@@ -265,7 +265,7 @@ after <span style="color:#f92672">=</span> regex<span style="color:#f92672">.</s
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/">[ファイル整理ツール08]PDFファイルのみ他フォルダに分類する1[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/07/">[ファイル整理ツール07]他のツールからスクリプトを実行できるようにする[Python]</a></li>
 			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/06/">[ファイル整理ツール06]別フォルダにファイルを移動する[Python]</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/">[NETATMO]屋内モジュール設置</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://massasquash.github.io/potatofolio/posts/crafts/20210605_netatmo/01/01/">[NETATMO]屋内モジュール設置</a></li>
 		</ul>
 	</div>
 </div>
