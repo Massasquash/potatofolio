@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Potatofolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://massasquash.github.io/potatofolio/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[マルチユニットで遊ぶ01]GPSマルチユニットでやりたいこと</title>
+      <link>https://massasquash.github.io/potatofolio/posts/works/02_multiunit/01/</link>
+      <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://massasquash.github.io/potatofolio/posts/works/02_multiunit/01/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[ファイル整理ツール09]PDFファイルのみ他フォルダに分類する2[Python]</title>
       <link>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/09/</link>
@@ -99,10 +108,10 @@
     
     <item>
       <title>[温度管理ツール02]APIに関する情報と処理をオブジェクト・クラスにまとめる[GAS]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/myworks/01_thermometermanager/02/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/02/</link>
       <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/myworks/01_thermometermanager/02/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/02/</guid>
       <description></description>
     </item>
     
@@ -116,20 +125,11 @@
     </item>
     
     <item>
-      <title>[マルチユニットで遊ぶ01]GPSマルチユニットでやりたいこと</title>
-      <link>https://massasquash.github.io/potatofolio/posts/myworks/02_multiunit/01/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://massasquash.github.io/potatofolio/posts/myworks/02_multiunit/01/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>[温度管理ツール01]T&amp;D温度計デバイスを使って現在気温を取得する[GAS]</title>
-      <link>https://massasquash.github.io/potatofolio/posts/myworks/01_thermometermanager/01/</link>
+      <link>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/01/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://massasquash.github.io/potatofolio/posts/myworks/01_thermometermanager/01/</guid>
+      <guid>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/01/</guid>
       <description></description>
     </item>
     

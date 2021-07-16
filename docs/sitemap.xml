@@ -2,25 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://massasquash.github.io/potatofolio/posts/works/02_multiunit/01/</loc>
+    <lastmod>2021-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/categories/</loc>
+    <lastmod>2021-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/posts/</loc>
+    <lastmod>2021-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/</loc>
+    <lastmod>2021-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/tags/</loc>
+    <lastmod>2021-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/categories/works/</loc>
+    <lastmod>2021-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://massasquash.github.io/potatofolio/tags/%E3%83%84%E3%83%BC%E3%83%AB%E5%88%B6%E4%BD%9C/</loc>
+    <lastmod>2021-06-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/09/</loc>
     <lastmod>2021-06-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/categories/</loc>
-    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://massasquash.github.io/potatofolio/categories/mytools/</loc>
-    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/</loc>
-    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://massasquash.github.io/potatofolio/</loc>
-    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://massasquash.github.io/potatofolio/tags/</loc>
-    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://massasquash.github.io/potatofolio/tags/%E3%83%84%E3%83%BC%E3%83%AB%E5%88%B6%E4%BD%9C/</loc>
     <lastmod>2021-06-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/08/</loc>
@@ -56,10 +62,7 @@
     <loc>https://massasquash.github.io/potatofolio/posts/mytools/02_my_file_organizer/01/</loc>
     <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/myworks/01_thermometermanager/02/</loc>
-    <lastmod>2021-03-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://massasquash.github.io/potatofolio/categories/works/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/02/</loc>
     <lastmod>2021-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/posts/tips/20210314_python_mac_scriptfile_run/</loc>
@@ -68,10 +71,7 @@
     <loc>https://massasquash.github.io/potatofolio/categories/python/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/myworks/02_multiunit/01/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://massasquash.github.io/potatofolio/posts/myworks/01_thermometermanager/01/</loc>
+    <loc>https://massasquash.github.io/potatofolio/posts/works/01_thermometermanager/01/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://massasquash.github.io/potatofolio/posts/tips/20210214_gas_utilities_formatdate/</loc>
